@@ -21,6 +21,8 @@ namespace Academy.Presentation.Controllers
 
         private readonly User currentUser;
 
+        private readonly Profile currentProfile;
+
         public ProfileController()
         {
             userStorage = ApplicationContainer.Instance
@@ -29,6 +31,7 @@ namespace Academy.Presentation.Controllers
             if (membershipUser != null)
             {
                 currentUser = userStorage.Get(membershipUser.UserName);
+                currentProfile = new Profile(currentUser);
             }
         }
 
@@ -37,12 +40,12 @@ namespace Academy.Presentation.Controllers
 
         public ActionResult Index()
         {
-            return View(new Profile(currentUser));
+            return View(currentProfile);
         }
 
         public ActionResult Edit()
         {
-            return View(new Profile(currentUser));
+            return View(currentProfile);
         }
 
         [HttpPost]
@@ -59,12 +62,13 @@ namespace Academy.Presentation.Controllers
         {
             UpdateUserData(profile);
             userStorage.Update();
+            profile.PhotoFileName = currentUser.PhotoFileName;
         }
 
         private void UpdateUserData(Profile profile)
         {
             UploadPhoto(profile);
-            currentUser.PhotoFileName = profile.PhotoFileName;
+            currentUser.PhotoFileName = profile.PhotoFileName ?? currentProfile.PhotoFileName;
             currentUser.Email = profile.Email;
             currentUser.FirstName = profile.FirstName;
             currentUser.LastName = profile.LastName;
@@ -75,7 +79,7 @@ namespace Academy.Presentation.Controllers
 
         private void UploadPhoto(Profile profile)
         {
-            if (profile.PostedPhoto.ContentLength > 0)
+            if (profile.PostedPhoto != null && profile.PostedPhoto.ContentLength > 0)
             {
                 string photoPath = GetFullPhotoPath(profile.PostedPhoto.FileName);
                 profile.PostedPhoto.SaveAs(photoPath);
