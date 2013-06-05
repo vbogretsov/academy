@@ -1,0 +1,10 @@
+﻿@model Academy.Presentation.ViewModels.Profile
+
+<div class="brand">
+    @Html.ActionLink(
+        String.Format("{0} {1}", Model.FirstName, Model.LastName),
+        "Index",
+        "Profile",
+        new {@class = "title"})
+</div>
+

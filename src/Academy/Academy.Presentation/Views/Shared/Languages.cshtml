@@ -1,0 +1,19 @@
+﻿@using Academy.Resources
+
+<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+    @Localization.GetString("lang.language")
+    <b class="caret"></b>
+</a>
+<ul class="dropdown-menu" role="menu">
+    @foreach (var lang in Localization.SupportedLanguages)
+    {
+        <li role="presentation">
+            @Html.ActionLink(
+                Localization.GetString(lang),
+                "ChangeLanguage",
+                "Localization",
+                new {language = lang, returnUrl = Request.RawUrl},
+                null)
+        </li>
+    }
+</ul>

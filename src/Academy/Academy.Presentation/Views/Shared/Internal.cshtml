@@ -1,0 +1,52 @@
+﻿@using System.Web.Optimization
+@using Academy.Resources
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @RenderSection("styles", false)
+</head>
+<body>
+    @*<div>*@
+        <h1>
+            <a class="title" href="/">
+                @Localization.GetString("internal.title")
+            </a>
+        </h1>
+    <div class="navbar">
+        <div class="navbar-inner">
+            @RenderSection("UserName")
+            <ul class="nav pull-right">
+                <li class="divider-vertical">
+                    @Html.ActionLink(
+                        Localization.GetString("internal.menu.profile"), "Edit", "Profile")
+                </li>
+                <li class="divider-vertical">
+                    @Html.ActionLink(
+                        Localization.GetString("internal.menu.people"), "People", "Profile")
+                </li>
+                <li class="divider-vertical">
+                    @Html.ActionLink(
+                        Localization.GetString("internal.menu.articles"), "Index", "Articles")
+                </li>
+                <li class="divider-vertical">
+                    @Html.ActionLink(
+                        Localization.GetString("internal.menu.exit"), "Logout", "Account")
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="body">
+        <div class="profile">
+            @RenderSection("Profile", false)
+        </div>
+        @RenderBody()
+    </div>
+    @*</div>*@
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", false)
+</body>
+</html>

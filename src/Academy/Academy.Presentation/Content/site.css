@@ -1,0 +1,86 @@
+﻿body {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1024px;
+    height: 100%;
+}
+
+#body {
+    min-height: 100%;
+}
+
+.title {
+    text-decoration: none;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.select-day
+{
+    width : 60px;
+}
+.select-month
+{
+    width : 115px;
+}
+.select-year
+{
+    width : 80px;
+}
+
+.input-over-date {
+    width: 250px;
+}
+
+.with-for-date {
+    width: 400px;
+}
+
+.validation-summary-errors {
+    color: red;
+    font-size: 12px;
+}
+
+.validation-summary-errors li {
+    list-style: none;
+    display: inline;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: 12px;
+    display: block;
+    width: 250px;
+}
+
+.profile {
+    width: 30%;
+    vertical-align: middle;
+}
+
+.tree {
+    border: 0
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.profile img {
+    margin: 0 auto;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.photo-frame {
+    width: 250px;
+    height: 250px;
+}
