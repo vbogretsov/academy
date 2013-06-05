@@ -148,6 +148,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\bootstrap-fileupload.css" />
     <Content Include="Content\tree.css" />
     <Content Include="Resources\Users\UnknownUser.jpg" />
     <Content Include="Content\bootstrap.css" />

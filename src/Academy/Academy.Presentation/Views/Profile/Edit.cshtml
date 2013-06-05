@@ -9,7 +9,7 @@
 }
 
 @section styles {
-    @*@Styles.Render("~/Content/tree");*@
+    @Styles.Render("~/Content/tree");
 }
 
 @section UserName
@@ -37,34 +37,14 @@
     {
         @Html.ValidationSummary(true)
 
-@*<div class="controls">
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="fileupload-preview thumbnail" style="width: 250px; height: 250px;"></div>
-                    <div>
-                        <span class="btn btn-file">
-                            <span class="fileupload-new">Select image</span>
-                            <span class="fileupload-exists">Change</span>
-                            @Html.TextBoxFor(m => m.PostedPhoto, new { type = "file" })
-                        </span>
-                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                    </div>
-                </div>
-            </div>*@
-        
-        @*<div class="control-group">
-            <div class="controls">
-                
-            </div>
-        </div>*@
-
         <div class="control-group">
             <div class="controls">
                 <div class="fileupload fileupload-new" data-provides="fileupload">
-                    @*<input type="hidden" value="" name="">*@
-                    <div class="fileupload-new thumbnail" style="width: 250px; height: 250px;">
+                    <div class="fileupload-new thumbnail .photo-frame">
                         <img src="/Resources/Users/@Model.PhotoFileName"/>
                     </div>
-                    <div class="fileupload-preview fileupload-exists thumbnail" style="width: 250px; height: 250px; line-height: 20px;"></div>
+                    <div class="fileupload-preview fileupload-exists thumbnail photo-frame" style="line-height: 20px;">
+                    </div>
                     <div>
                         <span class="btn btn-file">
                             <span class="fileupload-new">Select image</span>
@@ -141,25 +121,6 @@
                 @Html.ValidationMessageFor(model => model.BirthDate)
             </div>
         </div>
-        @*<div class="control-group">
-            <div class="controls">
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <input type="hidden" value="" name="">
-                    <div class="fileupload-new thumbnail" style="width: 250px; height: 250px;">
-                        <img src="/Resources/Users/@Model.PhotoFileName"/>
-                    </div>
-                    <div class="fileupload-preview fileupload-exists thumbnail" style="width: 250px; height: 250px; line-height: 20px;"></div>
-                    <div>
-                        <span class="btn btn-file">
-                            <span class="fileupload-new">Select image</span>
-                            <span class="fileupload-exists">Change</span>
-                            <input type="file" name="">
-                        </span>
-                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>*@
         <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn pull-right" />
     }
 </div>

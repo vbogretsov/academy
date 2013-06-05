@@ -2563,7 +2563,7 @@
         var pos = this.caret(),
         begin = pos.begin,
         end = pos.end
-						
+                        
         if (end-begin === 0) {
           begin = k!=46 ? this.seekPrev(begin) : (end=this.seekNext(begin-1))
           end = k==46 ? this.seekNext(end) : end

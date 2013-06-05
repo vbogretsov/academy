@@ -83,4 +83,13 @@
 .photo-frame {
     width: 250px;
     height: 250px;
+    padding: 100px;
 }
+
+.photo-frame-large {
+    width: 300px;
+    height: 300px;
+    padding: 100%;
+}
+
+

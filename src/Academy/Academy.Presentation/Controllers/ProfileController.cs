@@ -21,7 +21,7 @@ namespace Academy.Presentation.Controllers
 
         private readonly User currentUser;
 
-        private readonly Profile currentProfile;
+        //private readonly Profile currentProfile;
 
         public ProfileController()
         {
@@ -31,7 +31,7 @@ namespace Academy.Presentation.Controllers
             if (membershipUser != null)
             {
                 currentUser = userStorage.Get(membershipUser.UserName);
-                currentProfile = new Profile(currentUser);
+                //currentProfile = new Profile(currentUser);
             }
         }
 
@@ -40,12 +40,12 @@ namespace Academy.Presentation.Controllers
 
         public ActionResult Index()
         {
-            return View(currentProfile);
+            return View(new Profile(currentUser));
         }
 
         public ActionResult Edit()
         {
-            return View(currentProfile);
+            return View(new Profile(currentUser));
         }
 
         [HttpPost]
@@ -62,13 +62,19 @@ namespace Academy.Presentation.Controllers
         {
             UpdateUserData(profile);
             userStorage.Update();
+            SynchronizeProfile(profile);
+        }
+
+        private void SynchronizeProfile(Profile profile)
+        {
             profile.PhotoFileName = currentUser.PhotoFileName;
         }
 
         private void UpdateUserData(Profile profile)
         {
             UploadPhoto(profile);
-            currentUser.PhotoFileName = profile.PhotoFileName ?? currentProfile.PhotoFileName;
+            currentUser.PhotoFileName =
+                profile.PhotoFileName ?? currentUser.PhotoFileName;
             currentUser.Email = profile.Email;
             currentUser.FirstName = profile.FirstName;
             currentUser.LastName = profile.LastName;
