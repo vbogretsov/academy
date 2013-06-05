@@ -21,8 +21,8 @@ namespace Academy.Utils
             var items = new Dictionary<TKey, Node<TItem>>();
             foreach (var item in linearCollection)
             {
-                //var key = getId(item);
-                //items.Add(key, new Node<TItem>(item));
+                var key = getId(item);
+                items.Add(key, new Node<TItem>(item));
                 var parentKey = getParentId(item);
                 if (parents.ContainsKey(parentKey))
                 {
