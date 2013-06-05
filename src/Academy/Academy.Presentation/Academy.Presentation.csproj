@@ -133,7 +133,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Helpers\TreeView.cs" />
     <Compile Include="Utils\AcademyEnvironment.cs" />
     <Compile Include="ViewModels\Profile.cs" />
     <Compile Include="Unity\ApplicationContainer.cs" />
@@ -229,6 +228,10 @@
     <ProjectReference Include="..\Academy.Security\Academy.Security.csproj">
       <Project>{3fdc5299-2d55-421f-ab6d-4494a279acc1}</Project>
       <Name>Academy.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Utils\Academy.Utils.csproj">
+      <Project>{269cc71e-6571-440c-bee6-126fb97ca7d3}</Project>
+      <Name>Academy.Utils</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Validation\Academy.Validation.csproj">
       <Project>{E7053069-1E36-4BD5-A9B8-CC070AA9E511}</Project>

@@ -6,6 +6,11 @@ namespace Academy.Domain.Objects
 {
     public class Discipline
     {
+        public override string ToString()
+        {
+            return Name;
+        }
+
         [Key]
         public int DisciplineId
         {
@@ -26,6 +31,12 @@ namespace Academy.Domain.Objects
         }
 
         public virtual ICollection<Article> Articles
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<User> Users
         {
             get;
             set;

@@ -1,6 +1,11 @@
 ﻿@using System.Web.Optimization
+@using Academy.Domain.Objects
+@using Academy.Presentation.Helpers
 @using Academy.Presentation.Utils
 @using Academy.Resources
+@using Academy.Presentation.Utils
+@using Academy.Utils
+
 @model Academy.Presentation.ViewModels.Profile
 
 @{
@@ -122,6 +127,11 @@
             </div>
         </div>
         <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn pull-right" />
+       
+        TreeLoader<Discipline, int> loader = new TreeLoader<Discipline, int>(
+            x => x.DisciplineId,
+            x => x.Parent != null ? x.Parent.DisciplineId : 0);
+        @Html.Tree(loader.Load(Model.Disciplines.ToList()));
     }
 </div>
 

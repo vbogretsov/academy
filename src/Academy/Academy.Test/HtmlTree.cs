@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Text;
-using System.Web.Mvc;
 using Academy.Utils.Trees;
 
-namespace Academy.Presentation.Helpers
+namespace Academy.Test
 {
-    public static class HtmlHelpers
+    public static class HtmlTree
     {
         private const int IndentSize = 4;
 
-        public static MvcHtmlString Tree<TModel, T>(
-            this HtmlHelper<TModel> html,
+        public static string Tree<T>(
             Node<T> root)
         {
             StringBuilder tree = new StringBuilder();
@@ -23,7 +21,7 @@ namespace Academy.Presentation.Helpers
             }
             AppendHtml(tree, "</ul>", indent);
             tree.AppendLine("</div>");
-            return new MvcHtmlString(tree.ToString());
+            return tree.ToString();
         }
 
         private static void AppendRootForTree<T>(

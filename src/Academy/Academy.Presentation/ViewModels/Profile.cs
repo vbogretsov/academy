@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Web;
 using Academy.Domain.Objects;
 using Academy.Presentation.Utils;
-using Academy.Validation;
 using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
@@ -23,6 +23,7 @@ namespace Academy.Presentation.ViewModels
             University = user.University;
             BirthDate = new Date(user.BirthDate);
             PhotoFileName = user.PhotoFileName;
+            Disciplines = user.Disciplines;
         }
 
         [LocalizedDisplay("")]
@@ -78,6 +79,12 @@ namespace Academy.Presentation.ViewModels
         }
 
         public string PhotoFileName
+        {
+            get;
+            set;
+        }
+
+        public IEnumerable<Discipline> Disciplines
         {
             get;
             set;

@@ -84,5 +84,11 @@ namespace Academy.Domain.Objects
             get;
             set;
         }
+
+        public virtual ICollection<Discipline> Disciplines
+        {
+            get;
+            set;
+        }
     }
 }
