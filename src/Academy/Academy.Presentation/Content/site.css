@@ -9,6 +9,8 @@
     min-height: 100%;
 }
 
+
+
 .title {
     text-decoration: none;
 }
@@ -59,9 +61,22 @@
     width: 250px;
 }
 
-.profile {
-    width: 30%;
+#profile {
+    float: left;
+    width: 300px;
     vertical-align: middle;
+}
+
+#profile-edit {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px;
+    border-style: groove;
+}
+
+.disciplines {
+    width: 200px;
 }
 
 .tree {

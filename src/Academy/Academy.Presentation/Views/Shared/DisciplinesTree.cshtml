@@ -1,0 +1,15 @@
+﻿@using Academy.Domain.DataAccess
+@using Academy.Domain.Objects
+@using Academy.Presentation.Unity
+@using Academy.Utils
+@using Academy.Presentation.Helpers
+
+@{
+    TreeLoader<int, Discipline> loader = new TreeLoader<int, Discipline>(
+            x => x.DisciplineId,
+            x => x.Parent != null ? x.Parent.DisciplineId : 0);
+    var allDisciplines = ApplicationContainer.Instance.Resolve<IStorageFactory>().
+        CreateDisciplineStorage().GetDisciplines().ToList();
+
+    @Html.Tree(loader.Load(allDisciplines))
+}

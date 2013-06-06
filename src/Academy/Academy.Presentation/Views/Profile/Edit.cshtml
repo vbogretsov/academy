@@ -1,10 +1,5 @@
 ﻿@using System.Web.Optimization
-@using Academy.Domain.Objects
-@using Academy.Presentation.Helpers
-@using Academy.Presentation.Utils
-@using Academy.Resources
-@using Academy.Presentation.Utils
-@using Academy.Utils
+
 
 @model Academy.Presentation.ViewModels.Profile
 
@@ -14,7 +9,7 @@
 }
 
 @section styles {
-    @Styles.Render("~/Content/tree");
+    @Styles.Render("~/Content/tree")
 }
 
 @section UserName
@@ -27,112 +22,12 @@
     @{ Html.RenderPartial("Profile", Model); }
 }
 
-
-@*<div class="well pull-left profile transparent tree">
-    @{ Html.RenderPartial("Disciplines", Model); }
-</div>*@
-
 <div class="pull-left">
+    @{ Html.RenderPartial("ProfileFieldsEditot", Model); }
+</div>
 
-    @using (Html.BeginForm(
-            "Edit",
-            "Profile",
-            FormMethod.Post,
-            new { @class = "form-horizontal", enctype = "multipart/form-data" }))
-    {
-        @Html.ValidationSummary(true)
-
-        <div class="control-group">
-            <div class="controls">
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="fileupload-new thumbnail .photo-frame">
-                        <img src="/Resources/Users/@Model.PhotoFileName"/>
-                    </div>
-                    <div class="fileupload-preview fileupload-exists thumbnail photo-frame" style="line-height: 20px;">
-                    </div>
-                    <div>
-                        <span class="btn btn-file">
-                            <span class="fileupload-new">Select image</span>
-                            <span class="fileupload-exists">Change</span>
-                            @Html.TextBoxFor(m => m.PostedPhoto, new { type = "file" })
-                        </span>
-                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="control-group">
-            @Html.LabelFor(
-                    model => model.Email,
-                    new { @class = "control-label" })
-            <div class="controls">
-                @Html.TextBoxFor(
-                        model => model.Email,
-                        new { @class = "input-over-date" })
-                @Html.ValidationMessageFor(model => model.Email)
-            </div>
-        </div>
-        <div class="control-group">
-            @Html.LabelFor(
-                    model => model.FirstName,
-                    new { @class = "control-label" })
-            <div class="controls">
-                @Html.TextBoxFor(
-                        model => model.FirstName,
-                        new { @class = "input-over-date" })
-                @Html.ValidationMessageFor(model => model.FirstName)
-            </div>
-        </div>
-        <div class="control-group">
-            @Html.LabelFor(
-                    model => model.LastName,
-                    new { @class = "control-label" })
-            <div class="controls">
-                @Html.TextBoxFor(
-                        model => model.LastName,
-                        new { @class = "input-over-date" })
-                @Html.ValidationMessageFor(model => model.LastName)
-            </div>
-        </div>
-        <div class="control-group">
-            @Html.LabelFor(
-                    model => model.University,
-                    new { @class = "control-label" })
-            <div class="controls">
-                @Html.TextBoxFor(
-                        model => model.University,
-                        new { @class = "input-over-date" })
-                @Html.ValidationMessageFor(model => model.University)
-            </div>
-        </div>
-        <div class="control-group">
-            @Html.LabelFor(
-                model => model.BirthDate,
-                new { @class = "control-label" })
-            <div class="controls">
-                @Html.DropDownListFor(
-                    m => m.BirthDate.Day,
-                    new SelectList(Date.Days),
-                    new { @class = "select-day" })
-                @Html.DropDownListFor(
-                    m => m.BirthDate.Month,
-                    new SelectList(Date.Months, "Number", "Name"),
-                    new { @class = "select-month" })
-                @Html.DropDownListFor(
-                    m => m.BirthDate.Year,
-                    new SelectList(Date.Years),
-                    new { @class = "select-year" })
-                @Html.ValidationMessageFor(model => model.BirthDate)
-            </div>
-        </div>
-        <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn pull-right" />
-       
-        TreeLoader<Discipline, int> loader = new TreeLoader<Discipline, int>(
-            x => x.DisciplineId,
-            x => x.Parent != null ? x.Parent.DisciplineId : 0);
-        @Html.Tree(loader.Load(Model.Disciplines.ToList()));
-    }
+<div class="container pull-right disciplines">
+    @{ Html.RenderPartial("DisciplinesSelect", Model); }
 </div>
 
 @section Scripts {
