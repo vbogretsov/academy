@@ -1,7 +1,0 @@
-*.pdb
-Academy*/obj/
-WebSite/obj/
-*/bin/
-*.suo
-_ReSharper.Academy/
-packages/
