@@ -31,12 +31,12 @@ namespace Academy.Test
         {
             using (AcademyEntities academyEntities = new AcademyEntities())
             {
-                TreeLoader<int, Discipline> loader = new TreeLoader<int, Discipline>(
-                    x => x.DisciplineId,
-                    x => x.Parent != null ? x.Parent.DisciplineId : 0);
+                //TreeLoader<int, Discipline> loader = new TreeLoader<int, Discipline>(
+                //    x => x.DisciplineId,
+                //    x => x.Parent != null ? x.Parent.DisciplineId : 0);
 
-                Node<Discipline> root = loader.Load(academyEntities.Users.Single(x => x.UserId == 1).Disciplines.ToList());
-                File.WriteAllText("d:\\tree.html", HtmlTree.Tree(root));
+                //Node<Discipline> root = loader.Load(academyEntities.Users.Single(x => x.UserId == 1).Disciplines.ToList());
+                //File.WriteAllText("d:\\tree.html", HtmlTree.Tree(root));
 
                 //Console.WriteLine("Creating database");
                 //if (academyEntities.Database.Exists())
@@ -50,13 +50,13 @@ namespace Academy.Test
                 //generator.GenerateDisciplines();
                 //Console.WriteLine("Generating test data compleeted");
 
-                //var user = academyEntities.Users.Single(x => x.UserId == 1);
+                var user = academyEntities.Users.Single(x => x.UserId == 1);
 
-                //foreach (Discipline discipline in academyEntities.Disciplines.ToList())
-                //{
-                //    user.Disciplines.Add(discipline);
-                //}
-                //academyEntities.SaveChanges();
+                foreach (Discipline discipline in academyEntities.Disciplines.Take(5).ToList())
+                {
+                    user.Disciplines.Add(discipline);
+                }
+                academyEntities.SaveChanges();
             }
         }
     }

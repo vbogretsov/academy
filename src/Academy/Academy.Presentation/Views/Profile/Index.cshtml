@@ -1,16 +1,15 @@
 ﻿@model Academy.Presentation.ViewModels.Profile
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Internal.cshtml";
 }
-
 @section UserName
 {
     @{ Html.RenderPartial("UserName", Model); }
 }
-
 @section Profile
 {
-    @{ Html.RenderPartial("Profile", Model); }
+    <div class="span3">
+        @{ Html.RenderPartial("Profile", Model); }
+    </div>
 }

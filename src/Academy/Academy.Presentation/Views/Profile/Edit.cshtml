@@ -1,35 +1,28 @@
 ﻿@using System.Web.Optimization
-
-
 @model Academy.Presentation.ViewModels.Profile
-
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/Internal.cshtml";
 }
-
 @section styles {
     @Styles.Render("~/Content/tree")
 }
-
 @section UserName
 {
     @{ Html.RenderPartial("UserName", Model); }
 }
-
 @section Profile
 {
-    @{ Html.RenderPartial("Profile", Model); }
+    <div class="span3">
+        @{ Html.RenderPartial("Profile", Model); }
+    </div>
 }
-
-<div class="pull-left">
+<div class="span6">
     @{ Html.RenderPartial("ProfileFieldsEditot", Model); }
 </div>
-
-<div class="container pull-right disciplines">
+<div class="span3">
     @{ Html.RenderPartial("DisciplinesSelect", Model); }
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")

@@ -9,7 +9,9 @@
     min-height: 100%;
 }
 
-
+.btn-set > button {
+    margin: 5px;
+}
 
 .title {
     text-decoration: none;

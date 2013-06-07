@@ -1,7 +1,7 @@
 ﻿@using Academy.Presentation.Utils
 @using Academy.Resources
+@using Academy.Presentation.Helpers;
 @model Academy.Presentation.ViewModels.Profile
-
 @using (Html.BeginForm(
         "Edit",
         "Profile",
@@ -65,18 +65,10 @@
                 model => model.BirthDate,
                 new { @class = "control-label" })
         <div class="controls">
-            @Html.DropDownListFor(
-                    m => m.BirthDate.Day,
-                    new SelectList(Date.Days),
-                    new { @class = "select-day" })
-            @Html.DropDownListFor(
-                    m => m.BirthDate.Month,
-                    new SelectList(Date.Months, "Number", "Name"),
-                    new { @class = "select-month" })
-            @Html.DropDownListFor(
-                    m => m.BirthDate.Year,
-                    new SelectList(Date.Years),
-                    new { @class = "select-year" })
+            @Html.DateTimePickerFor(
+                m => m.BirthDate.Day,
+                m => m.BirthDate.Month,
+                m => m.BirthDate.Year)
             @Html.ValidationMessageFor(model => model.BirthDate)
         </div>
     </div>

@@ -39,13 +39,17 @@
                 </ul>
             </div>
         </div>
-        <div id="body">
+        @*<div id="body">
             <div class="profile">
                 @RenderSection("Profile", false)
             </div>
             @RenderBody()
+        </div>*@
+        <div class="row">
+            @RenderSection("Profile", false)
+            @RenderBody()
         </div>
-            
+
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", false)
     </body>

@@ -1,5 +1,7 @@
 ﻿@using Academy.Presentation.Utils
 @using Academy.Resources
+@using Academy.Presentation.Helpers
+
 @model Academy.Presentation.ViewModels.HomeViewModel
 
 @using (Html.BeginForm(
@@ -68,25 +70,15 @@
                     @placeholder = @Html.DisplayNameFor(m => m.Registration.University),
                     @class = "input-over-date"
                 })
-        <p>
-            @Html.ValidationMessageFor(m => m.Registration.University)
-        </p>
+        @Html.ValidationMessageFor(m => m.Registration.University)
     </p>
     <p>
         @Html.LabelFor(m => m.Registration.BirthDate)
         <br />
-        @Html.DropDownListFor(
+        @Html.DateTimePickerFor(
             m => m.Registration.BirthDate.Day,
-            new SelectList(Date.Days),
-            new {@class = "select-day"})
-        @Html.DropDownListFor(
             m => m.Registration.BirthDate.Month,
-            new SelectList(Date.Months, "Number", "Name"),
-            new {@class = "select-month"})
-        @Html.DropDownListFor(
-            m => m.Registration.BirthDate.Year,
-            new SelectList(Date.Years),
-            new {@class = "select-year"})
+            m => m.Registration.BirthDate.Year)
     </p>
     <p>
         <input type="submit" value="@Localization.GetString("home.reg.btn.register")" class="btn" />
