@@ -1,0 +1,7 @@
+*.pdb
+*.dll
+*.exe
+*v11.suo
+obj/
+bin/
+_Resharper.Academy/
