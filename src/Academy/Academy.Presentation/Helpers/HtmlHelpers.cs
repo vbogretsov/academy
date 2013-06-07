@@ -60,7 +60,7 @@ namespace Academy.Presentation.Helpers
             ref int indent)
         {
             indent += IndentSize;
-            AppendHtml(tree, "<img src='tree-plus.png'>", indent);
+            AppendHtml(tree, "<img src='/Resources/Icons/tree-plus.png'>", indent);
             AppendHtml(tree, "<input type='checkbox' class='checkbox'/>", indent);
             AppendHtml(tree, "<span class='label'>{0}</span>", indent, node);
             AppendHtml(tree, "<ul>", indent);

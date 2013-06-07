@@ -149,6 +149,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\bootstrap-fileupload.css" />
     <Content Include="Content\tree.css" />
+    <Content Include="Resources\Icons\tree-minus.png" />
+    <Content Include="Resources\Icons\tree-plus.png" />
     <Content Include="Resources\Users\UnknownUser.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\site.css" />
@@ -184,6 +186,10 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\Languages.cshtml" />
     <Content Include="Views\Shared\Disciplines.cshtml" />
+    <Content Include="Views\Shared\DisciplinesTree.cshtml" />
+    <Content Include="Views\Profile\ProfilePhotoUpload.cshtml" />
+    <Content Include="Views\Shared\DisciplinesSelect.cshtml" />
+    <Content Include="Views\Profile\ProfileFieldsEditot.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,9 +274,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7000/</IISUrl>
+          <IISUrl>http://localhost:7001/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:7000/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:7001/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -36,6 +36,14 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             Property(x => x.PhotoFileName)
                 .IsOptional()
                 .HasColumnName("PhotoFileName");
+            HasMany(x => x.Disciplines)
+                .WithMany(x => x.Users)
+                .Map(x =>
+                    {
+                        x.ToTable("academy_User_Discipline");
+                        x.MapLeftKey("UserId");
+                        x.MapRightKey("DisciplineId");
+                    });
         }
     }
 }

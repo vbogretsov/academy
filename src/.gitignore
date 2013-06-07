@@ -3,5 +3,9 @@
 *.exe
 *v11.suo
 obj/
+<<<<<<< HEAD
 bin/
 _Resharper.Academy/
+=======
+bin/
+>>>>>>> 9d9f93a34556915124778f365d74b34e7c44575a

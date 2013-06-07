@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Objects", "Academy.Domain.Objects\Academy.Domain.Objects.csproj", "{A06F334C-5653-476A-B2F6-EB32CDC4ECA7}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Resources", "Academy.Resources\Academy.Resources.csproj", "{E833B308-161A-4DFA-9F95-C7DB0F34976E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Validation", "Academy.Validation\Academy.Validation.csproj", "{E7053069-1E36-4BD5-A9B8-CC070AA9E511}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Utils", "Academy.Utils\Academy.Utils.csproj", "{269CC71E-6571-440C-BEE6-126FB97CA7D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{E7053069-1E36-4BD5-A9B8-CC070AA9E511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7053069-1E36-4BD5-A9B8-CC070AA9E511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7053069-1E36-4BD5-A9B8-CC070AA9E511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269CC71E-6571-440C-BEE6-126FB97CA7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269CC71E-6571-440C-BEE6-126FB97CA7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269CC71E-6571-440C-BEE6-126FB97CA7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269CC71E-6571-440C-BEE6-126FB97CA7D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

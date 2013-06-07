@@ -1,35 +1,37 @@
 ﻿@using Academy.Resources
 @model Academy.Presentation.ViewModels.Profile
 
-<div class="control-group pull-left">
-    <div class="controls">
-        <ul class="thumbnails">
-            <li class="span4">
-                <div class="thumbnail .photo-frame-large">
-                    @if (String.IsNullOrEmpty(Model.PhotoFileName))
-                    {
-                        <img src="/Resources/Users/UnknownUser.jpg" />
-                    }
-                    else
-                    {
-                        <img src="/Resources/Users/@Model.PhotoFileName"/>
-                    }
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="well">
-        <button type="button" class="btn btn-block width-full">
-            @Localization.GetString("profile.myarticles")
-        </button>
-        <button type="button" class="btn btn-block width-full">
-            @Localization.GetString("profile.mycomment")
-        </button>
-        <button type="button" class="btn btn-block width-full">
-            @Localization.GetString("prifile.myquestions")
-        </button>
-        <button type="button" class="btn btn-block width-full">
-            @Localization.GetString("profile.myanswers")
-        </button>
+<div id="profile">
+    <div class="control-group pull-left">
+        <div class="controls">
+            <ul class="thumbnails">
+                <li class="span4">
+                    <div class="thumbnail .photo-frame-large">
+                        @if (String.IsNullOrEmpty(Model.PhotoFileName))
+                        {
+                            <img src="/Resources/Users/UnknownUser.jpg" />
+                        }
+                        else
+                        {
+                            <img src="/Resources/Users/@Model.PhotoFileName"/>
+                        }
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="well">
+            <button type="button" class="btn btn-block width-full">
+                @Localization.GetString("profile.myarticles")
+            </button>
+            <button type="button" class="btn btn-block width-full">
+                @Localization.GetString("profile.mycomment")
+            </button>
+            <button type="button" class="btn btn-block width-full">
+                @Localization.GetString("prifile.myquestions")
+            </button>
+            <button type="button" class="btn btn-block width-full">
+                @Localization.GetString("profile.myanswers")
+            </button>
+        </div>
     </div>
 </div>

@@ -4,12 +4,12 @@ using Academy.Utils.Trees;
 
 namespace Academy.Utils
 {
-    public class TreeLoader<TItem, TKey>
+    public class TreeLoader<TId, TItem>
     {
-        private readonly Func<TItem, TKey> getId;
-        private readonly Func<TItem, TKey> getParentId;
+        private readonly Func<TItem, TId> getId;
+        private readonly Func<TItem, TId> getParentId;
 
-        public TreeLoader(Func<TItem, TKey> getId, Func<TItem, TKey> getParentId)
+        public TreeLoader(Func<TItem, TId> getId, Func<TItem, TId> getParentId)
         {
             this.getId = getId;
             this.getParentId = getParentId;
@@ -17,31 +17,28 @@ namespace Academy.Utils
 
         public Node<TItem> Load(IEnumerable<TItem> linearCollection)
         {
-            var parents = new Dictionary<TKey, ICollection<TItem>>();
-            var items = new Dictionary<TKey, Node<TItem>>();
+            var parents = new Dictionary<TId, ICollection<TItem>>();
             foreach (var item in linearCollection)
             {
-                var key = getId(item);
-                items.Add(key, new Node<TItem>(item));
-                var parentKey = getParentId(item);
-                if (parents.ContainsKey(parentKey))
+                var parentId = getParentId(item);
+                if (parents.ContainsKey(parentId))
                 {
-                    parents[parentKey].Add(item);
+                    parents[parentId].Add(item);
                 }
                 else
                 {
-                    parents.Add(parentKey, new List<TItem> { item });
+                    parents.Add(parentId, new List<TItem> { item });
                 }
             }
-            Node<TItem> root = new Node<TItem>(default(TItem));
-            FillNode(root, default(TKey), parents);
+            var root = new Node<TItem>(default(TItem));
+            FillNode(default(TId), root, parents);
             return root;
         }
 
         private void FillNode(
+            TId id,
             Node<TItem> node,
-            TKey id,
-            IDictionary<TKey, ICollection<TItem>> items)
+            IDictionary<TId, ICollection<TItem>> items)
         {
             if (items.ContainsKey(id))
             {
@@ -51,7 +48,7 @@ namespace Academy.Utils
                     var childId = getId(child);
                     var childNode = new Node<TItem>(child);
                     node.Childs.Add(childNode);
-                    FillNode(childNode, childId, items);
+                    FillNode(childId, childNode, items);
                     items.Remove(childId);
                 }
             }

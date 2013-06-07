@@ -31,7 +31,7 @@ namespace Academy.Test
         {
             using (AcademyEntities academyEntities = new AcademyEntities())
             {
-                TreeLoader<Discipline, int> loader = new TreeLoader<Discipline, int>(
+                TreeLoader<int, Discipline> loader = new TreeLoader<int, Discipline>(
                     x => x.DisciplineId,
                     x => x.Parent != null ? x.Parent.DisciplineId : 0);
 

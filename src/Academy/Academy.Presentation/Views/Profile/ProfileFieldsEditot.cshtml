@@ -1,0 +1,84 @@
+﻿@using Academy.Presentation.Utils
+@using Academy.Resources
+@model Academy.Presentation.ViewModels.Profile
+
+@using (Html.BeginForm(
+        "Edit",
+        "Profile",
+        FormMethod.Post,
+        new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="control-group">
+        <div class="controls">
+            @{Html.RenderPartial("ProfilePhotoUpload", Model);}
+        </div>
+    </div>
+
+    <div class="control-group">
+        @Html.LabelFor(
+                model => model.Email,
+                new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(
+                    model => model.Email,
+                    new { @class = "input-over-date" })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(
+                model => model.FirstName,
+                new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(
+                    model => model.FirstName,
+                    new { @class = "input-over-date" })
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(
+                model => model.LastName,
+                new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(
+                    model => model.LastName,
+                    new { @class = "input-over-date" })
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(
+                model => model.University,
+                new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextBoxFor(
+                    model => model.University,
+                    new { @class = "input-over-date" })
+            @Html.ValidationMessageFor(model => model.University)
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(
+                model => model.BirthDate,
+                new { @class = "control-label" })
+        <div class="controls">
+            @Html.DropDownListFor(
+                    m => m.BirthDate.Day,
+                    new SelectList(Date.Days),
+                    new { @class = "select-day" })
+            @Html.DropDownListFor(
+                    m => m.BirthDate.Month,
+                    new SelectList(Date.Months, "Number", "Name"),
+                    new { @class = "select-month" })
+            @Html.DropDownListFor(
+                    m => m.BirthDate.Year,
+                    new SelectList(Date.Years),
+                    new { @class = "select-year" })
+            @Html.ValidationMessageFor(model => model.BirthDate)
+        </div>
+    </div>
+    <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn pull-right" />
+}
