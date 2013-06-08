@@ -10,5 +10,9 @@ namespace Academy.Domain.DataAccess
     public abstract class DisciplineStorage
     {
         public abstract IEnumerable<Discipline> GetDisciplines();
+
+        public abstract Discipline Get(int id);
+
+        public abstract Discipline Get(string name);
     }
 }

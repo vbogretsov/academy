@@ -18,7 +18,19 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public override IEnumerable<Discipline> GetDisciplines()
         {
-            return academyEntities.Disciplines.ToList();
+            return academyEntities.Disciplines;
+        }
+
+        public override Discipline Get(int id)
+        {
+            return academyEntities.Disciplines.SingleOrDefault(
+                x => x.DisciplineId == id);
+        }
+
+        public override Discipline Get(string name)
+        {
+            return academyEntities.Disciplines.SingleOrDefault(
+                x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
         }
     }
 }

@@ -133,8 +133,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BootstrapHtmlHelpers.cs" />
+    <Compile Include="Helpers\DisciplinesTreeHelper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Utils\AcademyEnvironment.cs" />
+    <Compile Include="Utils\Html\CheckboxesTreeBuilder.cs" />
+    <Compile Include="Utils\Html\HtmlTreeBuilder.cs" />
     <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\Profile.cs" />
     <Compile Include="Unity\ApplicationContainer.cs" />
@@ -223,6 +226,10 @@
     <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
       <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
       <Name>Academy.Domain.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Publication\Academy.Domain.Services.csproj">
+      <Project>{25155062-AE67-4A59-9F0D-1978642A48B0}</Project>
+      <Name>Academy.Domain.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Resources\Academy.Resources.csproj">
       <Project>{e833b308-161a-4dfa-9f95-c7db0f34976e}</Project>

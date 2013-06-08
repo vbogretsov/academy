@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.DataAccess.Ef.Storages;
 
 namespace Academy.Domain.DataAccess.Ef
 {
     public class EfStorageFactory : IStorageFactory
     {
-        private readonly AcademyEntities academyEntities;
-
-        public EfStorageFactory()
-        {
-            academyEntities = new AcademyEntities();
-        }
+        private static readonly AcademyEntities academyEntities = new AcademyEntities();
 
         public UserStorage CreateUserStorage()
         {

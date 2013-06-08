@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
+using Academy.Domain.Services;
 using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
 
@@ -17,18 +19,15 @@ namespace Academy.Presentation.Controllers
     {
         private const string UserPhotosFolder = "~/Resources/Users";
 
-        private readonly UserStorage userStorage;
-
         private readonly User currentUser;
 
         public ProfileController()
         {
-            userStorage = ApplicationContainer.Instance
-                .Resolve<IStorageFactory>().CreateUserStorage();
             MembershipUser membershipUser = Membership.GetUser();
             if (membershipUser != null)
             {
-                currentUser = userStorage.Get(membershipUser.UserName);
+                currentUser = ApplicationContainer.Instance.UserStorage.Get(
+                    membershipUser.UserName);
             }
         }
 
@@ -58,17 +57,16 @@ namespace Academy.Presentation.Controllers
         [HttpPost]
         public ActionResult SelectDisciplines(FormCollection collection)
         {
-            foreach (var item in collection)
-            {
-                var x = item;
-            }
-            return View("Index", new Profile(currentUser));
+            var disciplieIds = GetSelectedDisciplineIds(collection);
+            ApplicationContainer.Instance.Service
+                .Notification.AssigneDisciplines(currentUser, disciplieIds);
+            return View("Edit", new Profile(currentUser));
         }
 
         private void UpdateUser(Profile profile)
         {
             UpdateUserData(profile);
-            userStorage.Update();
+            ApplicationContainer.Instance.UserStorage.Update();
             SynchronizeProfile(profile);
         }
 
@@ -104,6 +102,12 @@ namespace Academy.Presentation.Controllers
         {
             string fileName = Path.GetFileName(photoFileName);
             return Path.Combine(Server.MapPath(UserPhotosFolder), fileName);
+        }
+
+        private static IEnumerable<int> GetSelectedDisciplineIds(
+            IEnumerable collection)
+        {
+            return from object item in collection select Convert.ToInt32(item.ToString());
         }
     }
 }

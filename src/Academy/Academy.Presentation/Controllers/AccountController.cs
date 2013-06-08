@@ -64,8 +64,7 @@ namespace Academy.Presentation.Controllers
 
         public AccountController()
         {
-            userStorage = ApplicationContainer.Instance
-                .Resolve<IStorageFactory>().CreateUserStorage();
+            userStorage = ApplicationContainer.Instance.UserStorage;
             accountManager = ApplicationContainer.Instance
                 .Resolve<AccountManager>();
             roleManager = ApplicationContainer.Instance
