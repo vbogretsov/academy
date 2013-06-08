@@ -1,12 +1,11 @@
-﻿@using Academy.Presentation.Utils
-@using Academy.Resources
+﻿@using Academy.Resources
 @using Academy.Presentation.Helpers;
 @model Academy.Presentation.ViewModels.Profile
 @using (Html.BeginForm(
         "Edit",
         "Profile",
         FormMethod.Post,
-        new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        new { @class = "form-horizontal", style="padding: 0", enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary(true)
 
@@ -55,15 +54,15 @@
                 new { @class = "control-label" })
         <div class="controls">
             @Html.TextBoxFor(
-                    model => model.University,
-                    new { @class = "input-over-date" })
+                model => model.University,
+                new { @class = "input-over-date" })
             @Html.ValidationMessageFor(model => model.University)
         </div>
     </div>
     <div class="control-group">
         @Html.LabelFor(
-                model => model.BirthDate,
-                new { @class = "control-label" })
+            model => model.BirthDate,
+            new { @class = "control-label" })
         <div class="controls">
             @Html.DateTimePickerFor(
                 m => m.BirthDate.Day,
@@ -72,5 +71,9 @@
             @Html.ValidationMessageFor(model => model.BirthDate)
         </div>
     </div>
-    <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn pull-right" />
+    <div class="control-group">
+        <div class="controls">
+            <input type="submit" value="@Localization.GetString("profile.edit.save")" class="btn" />
+        </div>
+    </div>
 }

@@ -9,41 +9,43 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
-<body>
-    <h1>
-        <a class="title" href="/">
-            @Localization.GetString("external.title")
-        </a>
-    </h1>
-    <div class="navbar">
-        <div class="navbar-inner">
-            <ul class="nav pull-right">
-                <li class="divider-vertical">
-                    @Html.ActionLink(
-                        Localization.GetString("external.menu.articles"), "Index", "Articles")
-                </li>
-                <li class="divider-vertical">
-                    @Html.ActionLink(
-                        Localization.GetString("external.menu.contacts"), "Contacts", "Home")
-                </li>
-                <li class="divider-vertical">
-                    @Html.ActionLink(
-                        Localization.GetString("external.menu.about"), "About", "Home")
-                </li>
-                <li class="divider-vertical dropdown">
-                    @{ Html.RenderPartial("Languages"); }
-                </li>
-            </ul>
+    <body>
+        <div class="row">
+        <h1>
+            <a class="title" href="/">
+                @Localization.GetString("external.title")
+            </a>
+        </h1>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav pull-right">
+                    <li class="divider-vertical">
+                        @Html.ActionLink(
+                            Localization.GetString("external.menu.articles"), "Index", "Articles")
+                    </li>
+                    <li class="divider-vertical">
+                        @Html.ActionLink(
+                            Localization.GetString("external.menu.contacts"), "Contacts", "Home")
+                    </li>
+                    <li class="divider-vertical">
+                        @Html.ActionLink(
+                            Localization.GetString("external.menu.about"), "About", "Home")
+                    </li>
+                    <li class="divider-vertical dropdown">
+                        @{ Html.RenderPartial("Languages"); }
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="row">
+    
         @RenderBody()
-    </div>@*
+        @*
     <div id="body">
         
     </div>*@
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap-dropdown")
-    @RenderSection("scripts", false)
-</body>
+            </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap-dropdown")
+        @RenderSection("scripts", false)
+    </body>
 </html>

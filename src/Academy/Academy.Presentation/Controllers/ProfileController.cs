@@ -21,8 +21,6 @@ namespace Academy.Presentation.Controllers
 
         private readonly User currentUser;
 
-        //private readonly Profile currentProfile;
-
         public ProfileController()
         {
             userStorage = ApplicationContainer.Instance
@@ -31,7 +29,6 @@ namespace Academy.Presentation.Controllers
             if (membershipUser != null)
             {
                 currentUser = userStorage.Get(membershipUser.UserName);
-                //currentProfile = new Profile(currentUser);
             }
         }
 
@@ -56,6 +53,16 @@ namespace Academy.Presentation.Controllers
                 UpdateUser(profile);
             }
             return View("Index", profile);
+        }
+
+        [HttpPost]
+        public ActionResult SelectDisciplines(FormCollection collection)
+        {
+            foreach (var item in collection)
+            {
+                var x = item;
+            }
+            return View("Index", new Profile(currentUser));
         }
 
         private void UpdateUser(Profile profile)

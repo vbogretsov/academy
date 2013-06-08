@@ -17,12 +17,15 @@
         @{ Html.RenderPartial("Profile", Model); }
     </div>
 }
+
+<div class="content">
 <div class="span6">
     @{ Html.RenderPartial("ProfileFieldsEditot", Model); }
 </div>
 <div class="span3">
     @{ Html.RenderPartial("DisciplinesSelect", Model); }
 </div>
+    </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")

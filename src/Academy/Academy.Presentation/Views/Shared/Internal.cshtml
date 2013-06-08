@@ -10,7 +10,7 @@
     @RenderSection("styles", false)
 </head>
     <body>
-        
+        <div class="row">
         <h1>
             <a class="title" href="/">
                 @Localization.GetString("internal.title")
@@ -45,11 +45,11 @@
             </div>
             @RenderBody()
         </div>*@
-        <div class="row">
+        
             @RenderSection("Profile", false)
             @RenderBody()
+        
         </div>
-
         @Scripts.Render("~/bundles/jquery")
         @RenderSection("scripts", false)
     </body>

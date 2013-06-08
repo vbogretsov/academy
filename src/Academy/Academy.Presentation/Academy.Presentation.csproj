@@ -135,6 +135,7 @@
     <Compile Include="Helpers\BootstrapHtmlHelpers.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Utils\AcademyEnvironment.cs" />
+    <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\Profile.cs" />
     <Compile Include="Unity\ApplicationContainer.cs" />
     <Compile Include="Utils\Date.cs" />
@@ -152,11 +153,11 @@
     <Content Include="Content\tree.css" />
     <Content Include="Resources\Icons\tree-minus.png" />
     <Content Include="Resources\Icons\tree-plus.png" />
-    <Content Include="Resources\Users\UnknownUser.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Resources\Users\0.jpg" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-fileupload.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -183,13 +184,12 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\UserName.cshtml" />
-    <Content Include="Views\Shared\Profile.cshtml" />
+    <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\Languages.cshtml" />
-    <Content Include="Views\Shared\Disciplines.cshtml" />
-    <Content Include="Views\Shared\DisciplinesTree.cshtml" />
+    <Content Include="Views\Profile\DisciplinesTree.cshtml" />
     <Content Include="Views\Profile\ProfilePhotoUpload.cshtml" />
-    <Content Include="Views\Shared\DisciplinesSelect.cshtml" />
+    <Content Include="Views\Profile\DisciplinesSelect.cshtml" />
     <Content Include="Views\Profile\ProfileFieldsEditot.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -275,9 +275,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7001/</IISUrl>
+          <IISUrl>http://localhost:7000/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:7001/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:7000/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
