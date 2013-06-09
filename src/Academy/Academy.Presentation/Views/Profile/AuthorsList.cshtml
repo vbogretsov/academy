@@ -5,7 +5,7 @@
         <div id="authors">
             @foreach (var author in Model.Authors)
             {
-                Html.RenderPartial("EditorTemplates/AuthorEditor", author);
+                Html.RenderPartial("EditorTemplates/AddAuthorEditor", author);
             }
         </div>
         @Html.ActionLink(
@@ -13,9 +13,6 @@
             "AddAuthor",
             "Profile",
             null,
-            new
-                {
-                    id = "addAuthor", @class = "btn"
-                })
+            new { id = "addAuthor", @class = "btn" })
     </div>
 </div>

@@ -133,6 +133,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
@@ -204,9 +205,9 @@
     <Content Include="Views\Profile\ProfileFieldsEditot.cshtml" />
     <Content Include="Views\Profile\Articles.cshtml" />
     <Content Include="Views\Profile\UserArticles.cshtml" />
-    <Content Include="Views\Profile\PublishArticle.cshtml" />
+    <Content Include="Views\Article\PublishArticle.cshtml" />
     <Content Include="Views\Profile\AuthorsList.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\AuthorEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AddAuthorEditor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

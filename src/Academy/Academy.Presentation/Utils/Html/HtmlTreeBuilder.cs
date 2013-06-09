@@ -49,7 +49,7 @@ namespace Academy.Presentation.Utils.Html
         private void AppendNode(Node<T> node)
         {
             indent += IndentSize;
-            AppendHtml("<img src='/Resources/Icons/tree-plus.png'>");
+            //AppendHtml("<img src='/Resources/Icons/tree-plus.png'>");
             AppendNodeConent(node.Value);
             AppendHtml("<ul>");
             foreach (var child in node.Childs)
@@ -63,7 +63,8 @@ namespace Academy.Presentation.Utils.Html
         private void AppendLeaf(Node<T> node)
         {
             indent += IndentSize;
-            AppendNodeConent(node.Value);
+            //AppendNodeConent(node.Value);
+            AppendLeafContent(node.Value);
             indent -= IndentSize;
         }
 
@@ -91,5 +92,7 @@ namespace Academy.Presentation.Utils.Html
         }
 
         protected abstract void AppendNodeConent(T value);
+
+        protected abstract void AppendLeafContent(T value);
     }
 }

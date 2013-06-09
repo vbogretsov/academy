@@ -11,11 +11,11 @@
     @Html.ModalButton("disciplines", "Select disciplines", "btn-block")
 
     @Html.ModalVindowFor(
-        Html.DisciplinesTreeFor("Disciplines", Model.Disciplines.ToList()),
-        "disciplines",
-        "Disciplines",
-        "Close",
-        "Save")
+        Html.DisciplinesTreeFor("disciplines", Model.Disciplines.ToList()),
+            "disciplines",
+            "Disciplines",
+            "Close",
+            "Save")
 }
 
 @Html.List(Model.Disciplines.ToList(), "Your disciplines", "list-flat", "text-hypenation")

@@ -26,8 +26,8 @@ namespace Academy.Presentation.Controllers
             MembershipUser membershipUser = Membership.GetUser();
             if (membershipUser != null)
             {
-                currentUser = ApplicationContainer.Instance.UserStorage.Get(
-                    membershipUser.UserName);
+                currentUser = ApplicationContainer.Instance
+                    .UserStorage.Get(membershipUser.UserName);
             }
         }
 
@@ -52,11 +52,10 @@ namespace Academy.Presentation.Controllers
         }
 
         [HttpPost]
-        public ActionResult SelectDisciplines(FormCollection collection)
+        public ActionResult SelectDisciplines(IEnumerable<int> disciplines)
         {
-            var disciplieIds = GetSelectedDisciplineIds(collection);
             ApplicationContainer.Instance.Service
-                .Notification.AssigneDisciplines(currentUser, disciplieIds);
+                .Notification.AssigneDisciplines(currentUser, disciplines);
             return View("Edit", new Profile(currentUser));
         }
 
@@ -66,14 +65,16 @@ namespace Academy.Presentation.Controllers
         }
 
         [HttpPost]
-        public ActionResult PublishArticle(ArticleViewModel article, IEnumerable<int> disciplines)
+        public ActionResult PublishArticle(
+            ArticleViewModel article,
+            IEnumerable<int> disciplines)
         {
             return View("Articles", new Profile(currentUser));
         }
 
         public ActionResult AddAuthor(ArticleViewModel article)
         {
-            return View("EditorTemplates/AuthorEditor", new AuthorViewModel());
+            return View("EditorTemplates/AddAuthorEditor", new AuthorViewModel());
         }
 
         private void UpdateUser(Profile profile)
@@ -115,12 +116,6 @@ namespace Academy.Presentation.Controllers
         {
             string fileName = Path.GetFileName(photoFileName);
             return Path.Combine(Server.MapPath(UserPhotosFolder), fileName);
-        }
-
-        private static IEnumerable<int> GetSelectedDisciplineIds(
-            IEnumerable collection)
-        {
-            return from object item in collection select Convert.ToInt32(item.ToString());
         }
     }
 }
