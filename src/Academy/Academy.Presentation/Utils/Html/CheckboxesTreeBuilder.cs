@@ -21,6 +21,7 @@ namespace Academy.Presentation.Utils.Html
         private readonly Func<T, string> getCheckbox;
 
         public CheckboxesTreeBuilder(
+            string collectionName, // TODO: add collection name using
             Func<T, object> getId,
             Func<T, string> getName,
             IEnumerable<T> checkedItesms = null)

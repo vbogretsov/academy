@@ -31,9 +31,6 @@ namespace Academy.Presentation.Controllers
             }
         }
 
-        //
-        // GET: /Profile/
-
         public ActionResult Index()
         {
             return View(new Profile(currentUser));
@@ -61,6 +58,22 @@ namespace Academy.Presentation.Controllers
             ApplicationContainer.Instance.Service
                 .Notification.AssigneDisciplines(currentUser, disciplieIds);
             return View("Edit", new Profile(currentUser));
+        }
+
+        public ActionResult GetArticles()
+        {
+            return View("Articles", new Profile(currentUser));
+        }
+
+        [HttpPost]
+        public ActionResult PublishArticle(ArticleViewModel article, IEnumerable<int> disciplines)
+        {
+            return View("Articles", new Profile(currentUser));
+        }
+
+        public ActionResult AddAuthor(ArticleViewModel article)
+        {
+            return View("EditorTemplates/AuthorEditor", new AuthorViewModel());
         }
 
         private void UpdateUser(Profile profile)

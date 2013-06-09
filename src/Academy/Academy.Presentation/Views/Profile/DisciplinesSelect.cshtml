@@ -1,4 +1,6 @@
-﻿@model Academy.Presentation.ViewModels.Profile
+﻿@using Academy.Presentation.Helpers;
+
+@model Academy.Presentation.ViewModels.Profile
 
 @using (Html.BeginForm(
         "SelectDisciplines",
@@ -6,41 +8,14 @@
         FormMethod.Post,
         new { enctype = "multipart/form-data" }))
 {
-    <a href="#myModal" role="button" class="btn btn-block" data-toggle="modal">Select disciplines</a>
+    @Html.ModalButton("disciplines", "Select disciplines", "btn-block")
 
-    <!-- Modal -->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Modal header</h3>
-        </div>
-        <div class="modal-body">
-            <p>@{ Html.RenderPartial("DisciplinesTree"); }</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <input type="submit" value="Save changes" class="btn btn-primary" />
-        </div>
-    </div>
+    @Html.ModalVindowFor(
+        Html.DisciplinesTreeFor("Disciplines", Model.Disciplines.ToList()),
+        "disciplines",
+        "Disciplines",
+        "Close",
+        "Save")
 }
 
-<div>
-    
-    <p>
-        <span class="label btn-block">Your disciplines</span>
-    </p>
-    @{
-        var disciplines = Model.Disciplines.ToList();
-        if (disciplines.Count > 0)
-        {
-            <ul class="list-flat">
-                @foreach (var discipline in Model.Disciplines)
-                {
-                    <li>
-                        <span class="badge text-hypenation btn-block">@discipline.Name</span>
-                    </li>
-                }
-            </ul>
-        }
-    }
-</div>
+@Html.List(Model.Disciplines.ToList(), "Your disciplines", "list-flat", "text-hypenation")

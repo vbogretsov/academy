@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="article.description" xml:space="preserve">
+    <value>Article description</value>
+  </data>
+  <data name="article.description.err.required" xml:space="preserve">
+    <value>Article description is required</value>
+  </data>
+  <data name="article.source" xml:space="preserve">
+    <value>Article pdf file name</value>
+  </data>
+  <data name="article.source.err.required" xml:space="preserve">
+    <value>Source file name is required</value>
+  </data>
+  <data name="article.title" xml:space="preserve">
+    <value>Artcile title</value>
+  </data>
+  <data name="article.title.err.required" xml:space="preserve">
+    <value>Article title is required</value>
+  </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>About</value>
   </data>

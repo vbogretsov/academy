@@ -27,6 +27,9 @@ namespace Academy.Presentation.App_Start
             bundles.Add(new ScriptBundle("~/bundles/tree").Include(
                 "~/Scripts/tree.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/add-author").Include(
+                "~/Scripts/add-author.js"));
+
             bundles.Add(new StyleBundle("~/Content/css")
                     .Include("~/Content/bootstrap*")
                     .Include("~/Content/site.css"));

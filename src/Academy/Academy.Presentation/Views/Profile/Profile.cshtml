@@ -2,30 +2,38 @@
 @model Academy.Presentation.ViewModels.Profile
 
 <div class="control-group">
-        <ul class="thumbnails">
-            <li class="span3">
-                <div class="thumbnail">
+    <ul class="thumbnails">
+        <li class="span3">
+            <div class="thumbnail">
                 @if (String.IsNullOrEmpty(Model.PhotoFileName))
                 {
-                    <img src="/Resources/Users/UnknownUser.jpg" />
+                    <img src="/Resources/Users/0.jpg" />
                 }
                 else
                 {
                     <img src="/Resources/Users/@Model.PhotoFileName"/>
                 }
-                    </div>
-            </li>
-        </ul>
-    <button type="button" class="btn btn-block">
-        @Localization.GetString("profile.myarticles")
-    </button>
-    <button type="button" class="btn btn-block">
-        @Localization.GetString("profile.mycomment")
-    </button>
-    <button type="button" class="btn btn-block">
-        @Localization.GetString("prifile.myquestions")
-    </button>
-    <button type="button" class="btn btn-block">
-        @Localization.GetString("profile.myanswers")
-    </button>
+            </div>
+        </li>
+    </ul>
+    @Html.ActionLink(
+        Localization.GetString("profile.myarticles"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("profile.mycomment"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("prifile.myquestions"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("profile.myanswers"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
 </div>
