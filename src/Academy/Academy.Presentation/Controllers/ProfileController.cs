@@ -8,8 +8,8 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
-using Academy.Domain.Services;
 using Academy.Presentation.Unity;
+using Academy.Presentation.Utils;
 using Academy.Presentation.ViewModels;
 
 namespace Academy.Presentation.Controllers
@@ -21,13 +21,15 @@ namespace Academy.Presentation.Controllers
 
         private readonly User currentUser;
 
+        private readonly ApplicationContainer container;
+
         public ProfileController()
         {
-            MembershipUser membershipUser = Membership.GetUser();
+            container = ApplicationContainer.Instance;
+            var membershipUser = Membership.GetUser();
             if (membershipUser != null)
             {
-                currentUser = ApplicationContainer.Instance
-                    .UserStorage.Get(membershipUser.UserName);
+                currentUser = container.UserStorage.Get(membershipUser.UserName);
             }
         }
 
@@ -54,8 +56,9 @@ namespace Academy.Presentation.Controllers
         [HttpPost]
         public ActionResult SelectDisciplines(IEnumerable<int> disciplines)
         {
-            ApplicationContainer.Instance.Service
-                .Notification.AssigneDisciplines(currentUser, disciplines);
+            container.Service.Notification.AssigneDisciplines(
+                currentUser,
+                disciplines);
             return View("Edit", new Profile(currentUser));
         }
 
@@ -77,10 +80,12 @@ namespace Academy.Presentation.Controllers
             return View("EditorTemplates/AddAuthorEditor", new AuthorViewModel());
         }
 
+        // TODO: refactor the code below
+
         private void UpdateUser(Profile profile)
         {
             UpdateUserData(profile);
-            ApplicationContainer.Instance.UserStorage.Update();
+            container.UserStorage.Update();
             SynchronizeProfile(profile);
         }
 

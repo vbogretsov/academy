@@ -112,8 +112,7 @@ namespace Academy.Presentation.Controllers
         [AllowAnonymous]
         public JsonResult CheckUserExists([Bind(Prefix = "Registration.Email")] string email)
         {
-            bool userExists = userStorage.Contains(email);
-            return Json(!userExists);
+            return Json(!userStorage.Contains(email));
         }
 
         private void Register(User user, Login login)

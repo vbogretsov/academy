@@ -6,6 +6,8 @@ using Academy.Resources;
 
 namespace Academy.Validation
 {
+    [AttributeUsage(AttributeTargets.Property |
+    AttributeTargets.Field, AllowMultiple = false)]
     public class LocalizedRequiredAttribute : RequiredAttribute, IClientValidatable
     {
         public LocalizedRequiredAttribute(string errorMessageTag)

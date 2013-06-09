@@ -6,6 +6,8 @@ using Academy.Resources;
 
 namespace Academy.Validation
 {
+    [AttributeUsage(AttributeTargets.Property |
+    AttributeTargets.Field, AllowMultiple = false)]
     public class LocalizedRegularExpressionAttribute : RegularExpressionAttribute, IClientValidatable
     {
         public LocalizedRegularExpressionAttribute(
