@@ -53,6 +53,7 @@ namespace Academy.Presentation.Controllers
             return View("Index", profile);
         }
 
+        // TODO: maby I should combine this action with Edit?
         [HttpPost]
         public ActionResult SelectDisciplines(IEnumerable<int> disciplines)
         {
@@ -62,25 +63,12 @@ namespace Academy.Presentation.Controllers
             return View("Edit", new Profile(currentUser));
         }
 
-        public ActionResult GetArticles()
+        public ActionResult GetUserArticles()
         {
-            return View("Articles", new Profile(currentUser));
+            return View("RenderTemplates/UserArticlesView", new Profile(currentUser));
         }
 
-        [HttpPost]
-        public ActionResult PublishArticle(
-            ArticleViewModel article,
-            IEnumerable<int> disciplines)
-        {
-            return View("Articles", new Profile(currentUser));
-        }
-
-        public ActionResult AddAuthor(ArticleViewModel article)
-        {
-            return View("EditorTemplates/AddAuthorEditor", new AuthorViewModel());
-        }
-
-        // TODO: refactor the code below
+        // TODO: refactor the code below using mapper
 
         private void UpdateUser(Profile profile)
         {

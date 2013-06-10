@@ -1,18 +1,27 @@
-﻿@model Academy.Presentation.ViewModels.Profile
+﻿@using Academy.Presentation.ViewModels
 
-<div class="control-group">
-    <p>
-        @Html.ActionLink(
-            "Add article",
-            "Create",
-            "Article",
-            null,
-            new { id = "addAuthor", @class = "btn" })
-    </p>
-    <div class="controls">
-        @foreach (var article in Model.Articles)
-        {
-            Html.RenderPartial("RenderTemplates/ArticleView", article);
-        }
+@model Academy.Presentation.ViewModels.Profile
+
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                Add new article
+            </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse">
+            <div class="accordion-inner">
+                @{Html.RenderPartial("../Article/Create", new ArticleViewModel());}
+            </div>
+        </div>
     </div>
 </div>
+
+
+    @foreach (var article in Model.Articles)
+    {
+        Html.RenderPartial("RenderTemplates/ArticleView", article);
+    }
+
+
+

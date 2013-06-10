@@ -5,15 +5,16 @@
     <ul class="thumbnails">
         <li class="span3">
             <div class="thumbnail">
-                <img src="/Resources/Users/@Model.PhotoFileName" alt="No photo provided"/>
+                <img src="/Resources/Users/@Model.PhotoFileName" alt="No photo available"/>
             </div>
         </li>
     </ul>
     @Html.ActionLink(
         Localization.GetString("profile.myarticles"),
-        "Create",
-        "Article",
-        new {@class = "btn btn-block"})
+        "GetUserArticles",
+        "Profile",
+        null,
+        new {@class = "btn btn-block", id = "myArticles"})
     @Html.ActionLink(
         Localization.GetString("profile.mycomment"),
         "GetArticles",

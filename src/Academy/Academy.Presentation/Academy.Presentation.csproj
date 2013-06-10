@@ -172,7 +172,7 @@
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <Content Include="Resources\Users\0.jpg" />
-    <Content Include="Scripts\add-author.js" />
+    <Content Include="Scripts\academy.js" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-fileupload.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -216,6 +216,9 @@
     <Content Include="Views\Shared\RenderTemplates\CommentView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\ProfileView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\UserArticlesView.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EditDisciplinesEditor.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
+    <Content Include="Views\Article\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,9 +307,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7011/</IISUrl>
+          <IISUrl>http://localhost:7014/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:7011/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:7014/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

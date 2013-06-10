@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Academy.Domain.Objects;
 using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
 
@@ -27,12 +28,11 @@ namespace Academy.Presentation.Controllers
             throw new NotImplementedException();
         }
 
-
-
-        public ActionResult Create()
-        {
-            return View("../Shared/EditorTemplates/CreateArticleEditor");
-        }
+        // Obsolete
+        //public ActionResult Create()
+        //{
+        //    return View(new ArticleViewModel());
+        //}
 
         public ActionResult AddAuthor()
         {

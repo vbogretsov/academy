@@ -22,7 +22,11 @@
                 <ul class="nav pull-right">
                     <li class="divider-vertical">
                         @Html.ActionLink(
-                            Localization.GetString("internal.menu.profile"), "Edit", "Profile")
+                            Localization.GetString("internal.menu.profile"),
+                            "Edit",
+                            "Profile",
+                            null,
+                            new { id = "editProfile" })
                     </li>
                     <li class="divider-vertical">
                         @Html.ActionLink(
@@ -39,13 +43,7 @@
                 </ul>
             </div>
         </div>
-        @*<div id="body">
-            <div class="profile">
-                @RenderSection("Profile", false)
-            </div>
-            @RenderBody()
-        </div>*@
-        
+
             @RenderSection("Profile", false)
             @RenderBody()
         

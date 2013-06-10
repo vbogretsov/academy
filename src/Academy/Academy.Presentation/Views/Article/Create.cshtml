@@ -1,0 +1,10 @@
+﻿@model Academy.Presentation.ViewModels.ArticleViewModel
+
+@using (Html.BeginForm(
+    "Publish",
+    "Article",
+    FormMethod.Post,
+    new {@class = "form-horizontal", style = "padding: 0", enctype = "multipart/form-data"}))
+{
+    @Html.EditorForModel("CreateArticleEditor")
+}

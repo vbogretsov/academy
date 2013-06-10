@@ -24,6 +24,7 @@ namespace Academy.Presentation.ViewModels
             BirthDate = new Date(user.BirthDate);
             PhotoFileName = user.PhotoFileName;
             Disciplines = user.Disciplines;
+            Articles = new ArticleViewModel[0];
         }
 
         [LocalizedDisplay("")]

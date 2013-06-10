@@ -1,7 +1,11 @@
-﻿@model Academy.Presentation.ViewModels.Profile
+﻿@using System.Web.Optimization
+@model Academy.Presentation.ViewModels.Profile
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Internal.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/tree")
 }
 @section UserName
 {
@@ -9,14 +13,19 @@
 }
 @section Profile
 {
-    <div class="span3">
+    <div id ="profile" class="span3">
         @{ Html.RenderPartial("../Shared/RenderTemplates/ProfileView", Model); }
     </div>
 }
 
-<div class="span10">
-    <div id="body">
-    </div>
+<div id="body" class="span9 content">
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/academy")
+    @*@Scripts.Render("~/bundles/tree")*@
+}
 
 

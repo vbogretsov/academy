@@ -1,4 +1,32 @@
-﻿@using System.Web.Optimization
+﻿@model Academy.Presentation.ViewModels.Profile
+
+<div class="span6">
+    @using (Html.BeginForm(
+        "Edit",
+        "Profile",
+        FormMethod.Post,
+        new {@class = "form-horizontal", style = "padding: 0", enctype = "multipart/form-data"}))
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.EditorForModel("EditUserEditor");
+    }
+</div>
+<div class="span3 pull-right">
+    @using (Html.BeginForm(
+        "SelectDisciplines",
+        "Profile",
+        FormMethod.Post,
+        new {enctype = "multipart/form-data"}))
+    {
+        @Html.EditorForModel("EditDisciplinesEditor");
+    }
+
+</div>
+
+@*
+@using System.Web.Optimization
+
 @model Academy.Presentation.ViewModels.Profile
 @{
     ViewBag.Title = "Edit";
@@ -30,4 +58,6 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/tree")
+    @Scripts.Render("~/bundles/academy")
 }
+*@

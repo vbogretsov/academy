@@ -13,9 +13,9 @@
     text-decoration: none;
 }
 
-    .title:hover {
-        text-decoration: none;
-    }
+.title:hover {
+    text-decoration: none;
+}
 
 .select-day {
     width: 60px;
@@ -106,4 +106,8 @@
 
 .input-normal-height {
     height: 30px;
+}
+
+.fixed-size {
+    resize: none;
 }

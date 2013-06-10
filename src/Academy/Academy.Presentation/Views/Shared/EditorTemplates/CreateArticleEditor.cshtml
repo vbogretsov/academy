@@ -2,8 +2,12 @@
 
 @model Academy.Presentation.ViewModels.ArticleViewModel
 
-@Html.ControlGroupFor(m => m.Title, e => Html.TextBoxFor(e, new { @class = "full-block" }))
-@Html.ControlGroupFor(m => m.Description, e => Html.TextAreaFor(e, new { @class = "full-block" }))
+@Html.ControlGroupFor(
+    m => m.Title,
+    e => Html.TextBoxFor(e, new { @class = "full-block" }))
+@Html.ControlGroupFor(
+    m => m.Description,
+    e => Html.TextAreaFor(e, new { @class = "full-block fixed-size pre-scrollable" }))
 
 <div class="control-group">
     <div class="controls">
@@ -46,7 +50,7 @@
          @Html.ActionLink(
             "Add author",
             "AddAuthor",
-            "Profile",
+            "Article",
             null,
             new { id = "addAuthor", @class = "btn" })
     </div>

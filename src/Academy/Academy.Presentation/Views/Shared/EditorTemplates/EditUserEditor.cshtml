@@ -1,2 +1,27 @@
-﻿@model Academy.Presentation.ViewModels.Profile
+﻿@using Academy.Presentation.Helpers
+@using Academy.Resources
+@model Academy.Presentation.ViewModels.Profile
 
+@Html.ControlGroupFor(
+        m => m.PostedPhoto,
+        e => Html.ImageUploadFor(
+            e,
+           "/Resources/Users/0.jpg",
+            String.Format("/Resources/Users/{0}", @Model.PhotoFileName),
+            "photo-fixed-size-preview",
+            "Select photo",
+            "Change",
+            "Remove"))
+
+@Html.ControlGroupFor(m => m.Email, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
+@Html.ControlGroupFor(m => m.FirstName, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
+@Html.ControlGroupFor(m => m.LastName, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
+@Html.ControlGroupFor(m => m.University, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
+
+@Html.ControlGroupFor(
+        m => m.BirthDate,
+        e => Html.DateTimePickerFor(
+            m => m.BirthDate.Day,
+            m => m.BirthDate.Month,
+            m => m.BirthDate.Year))
+@Html.ControlGroupSubmit(Localization.GetString("profile.edit.save"))
