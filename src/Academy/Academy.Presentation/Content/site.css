@@ -94,5 +94,8 @@
 
 .input-for-name {
     width: 120px;
+}
+
+.offset0 {
     margin-left: 5px;
 }
