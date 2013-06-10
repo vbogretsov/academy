@@ -1,0 +1,18 @@
+﻿@model Academy.Presentation.ViewModels.Profile
+
+<div class="control-group">
+    <p>
+        @Html.ActionLink(
+            "Add article",
+            "Create",
+            "Article",
+            null,
+            new { id = "addAuthor", @class = "btn" })
+    </p>
+    <div class="controls">
+        @foreach (var article in Model.Articles)
+        {
+            Html.RenderPartial("RenderTemplates/ArticleView", article);
+        }
+    </div>
+</div>

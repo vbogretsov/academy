@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.IO;
+using System.Linq;
 using System.Web;
 using Academy.Domain.Objects;
 using Academy.Presentation.Utils;
@@ -85,6 +85,12 @@ namespace Academy.Presentation.ViewModels
         }
 
         public IEnumerable<Discipline> Disciplines
+        {
+            get;
+            set;
+        }
+
+        public IEnumerable<ArticleViewModel> Articles
         {
             get;
             set;

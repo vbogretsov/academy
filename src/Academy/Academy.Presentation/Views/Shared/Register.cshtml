@@ -11,7 +11,9 @@
     new {@class = "form-inline pull-right"}))
 {
     @Html.AntiForgeryToken()
+
     <p>@Localization.GetString("home.reg.lbl.register")</p>
+    
     <p>
         @Html.TextBoxFor(
             m => m.Registration.Email,

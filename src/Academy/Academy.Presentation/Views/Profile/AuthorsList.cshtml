@@ -5,7 +5,10 @@
         <div id="authors">
             @foreach (var author in Model.Authors)
             {
-                Html.RenderPartial("EditorTemplates/AddAuthorEditor", author);
+                using (Html.BeginCollectionItem("Authors"))
+                {
+                     Html.RenderPartial("EditorTemplates/CreateAuthorEditor", author);
+                }
             }
         </div>
         @Html.ActionLink(

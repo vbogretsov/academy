@@ -3,25 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
 
 namespace Academy.Presentation.Controllers
 {
     public class ArticleController : Controller
     {
-        //
-        // GET: /Article/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         public ActionResult Publish(
             ArticleViewModel article,
             IEnumerable<int> disciplines)
         {
-            return View("../Profile/Articles");
+            if (ModelState.IsValid)
+            {
+                
+            }
+            //return View("../Profile/Articles");
+            throw new NotImplementedException();
+        }
+
+
+
+        public ActionResult Create()
+        {
+            return View("../Shared/EditorTemplates/CreateArticleEditor");
+        }
+
+        public ActionResult AddAuthor()
+        {
+            return View("../Shared/EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
         }
     }
 }

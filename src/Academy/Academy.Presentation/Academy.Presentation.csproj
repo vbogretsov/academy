@@ -150,6 +150,7 @@
     <Compile Include="Utils\Html\HtmlTreeBuilder.cs" />
     <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\AuthorViewModel.cs" />
+    <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\Profile.cs" />
     <Compile Include="Unity\ApplicationContainer.cs" />
@@ -207,7 +208,14 @@
     <Content Include="Views\Profile\UserArticles.cshtml" />
     <Content Include="Views\Article\PublishArticle.cshtml" />
     <Content Include="Views\Profile\AuthorsList.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\AddAuthorEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateAuthorEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateArticleEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EditUserEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateUserEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateCommentEditor.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\ArticleView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\CommentView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\ProfileView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,6 +9,8 @@
     new { @class = "form-horizontal", style = "padding: 0", enctype = "multipart/form-data" }))
 {
 
+    //OBSOLETE
+    
     @Html.ControlGroupFor(m => m.Title, e => Html.TextBoxFor(e, new { @class = "full-block" }))
     @Html.ControlGroupFor(m => m.Description, e => Html.TextAreaFor(e, new { @class = "full-block" }))
 

@@ -1,0 +1,32 @@
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.Profile
+
+<div class="control-group">
+    <ul class="thumbnails">
+        <li class="span3">
+            <div class="thumbnail">
+                <img src="/Resources/Users/@Model.PhotoFileName" alt="No photo provided"/>
+            </div>
+        </li>
+    </ul>
+    @Html.ActionLink(
+        Localization.GetString("profile.myarticles"),
+        "Create",
+        "Article",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("profile.mycomment"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("prifile.myquestions"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+    @Html.ActionLink(
+        Localization.GetString("profile.myanswers"),
+        "GetArticles",
+        "Profile",
+        new {@class = "btn btn-block"})
+</div>

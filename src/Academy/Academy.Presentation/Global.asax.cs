@@ -35,7 +35,14 @@ namespace Academy.Presentation
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            SetLanguage(Session);
+            try
+            {
+                SetLanguage(Session);
+            }
+            catch
+            {
+                
+            }
         }
 
         private static void SetLanguage(HttpSessionState session)
