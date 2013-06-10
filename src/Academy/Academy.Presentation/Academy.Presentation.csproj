@@ -296,9 +296,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>46047</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7012/</IISUrl>
+          <IISUrl>http://localhost:7011/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:7012/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:7011/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

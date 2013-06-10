@@ -58,21 +58,9 @@
     width: 250px;
 }
 
-/*.disciplines {
-    width: 200px;
-}*/
-
 .tree {
     border: 0;
 }
-
-/*.transparent {
-    background-color: transparent;
-}*/
-
-/*.profile img {
-    margin: 0 auto;
-}*/
 
 .photo-fixed-size-preview {
     width: 250px;
@@ -102,4 +90,9 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: content-box;
+}
+
+.input-for-name {
+    width: 120px;
+    margin-left: 5px;
 }

@@ -27,16 +27,14 @@
                         <input type="file" />
                     </span>
                     <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                    @Html.ModalButton("disciplines", "Select disciplines", "btn")
                 </div>
+                @Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")
             </div>
 
             @*@Html.ModalButton("disciplines", "Select disciplines", "btn")*@
         </div>
     </div>
 
-    
-    
     @Html.ModalVindowFor(
         Html.DisciplinesTreeFor("disciplines", Model.Disciplines.ToList()),
             "disciplines",

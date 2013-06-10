@@ -22,6 +22,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public override void Update(User user)
         {
+            // TODO: update single user or remove this method.
             academyEntities.SaveChanges();
         }
 
