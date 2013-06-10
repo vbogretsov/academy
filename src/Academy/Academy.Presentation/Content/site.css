@@ -85,17 +85,25 @@
 .full-block {
     display: block;
     width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    height: 30px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
 .input-for-name {
     width: 120px;
+    margin: 0 auto;
 }
 
 .offset0 {
     margin-left: 5px;
+}
+
+.font-large {
+    font-size: 14px;
+}
+
+.input-normal-height {
+    height: 30px;
 }

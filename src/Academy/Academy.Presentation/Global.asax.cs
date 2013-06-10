@@ -40,7 +40,7 @@ namespace Academy.Presentation
 
         private static void SetLanguage(HttpSessionState session)
         {
-            if (session["Language"] == null)
+            if (session != null && session["Language"] == null)
             {
                 session["Language"] = "lang.eng";
             }
