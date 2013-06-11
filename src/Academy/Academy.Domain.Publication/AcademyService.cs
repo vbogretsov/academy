@@ -12,10 +12,18 @@ namespace Academy.Domain.Services
         {
             var disciplineStorage = storageFactory.CreateDisciplineStorage();
             var userStorage = storageFactory.CreateUserStorage();
+            var articleStorage = storageFactory.CreateArticleStorage();
             Notification = new NotificationService(disciplineStorage, userStorage);
+            Publication = new PublicationService(articleStorage, disciplineStorage);
         }
 
         public NotificationService Notification
+        {
+            get;
+            private set;
+        }
+
+        public PublicationService Publication
         {
             get;
             private set;

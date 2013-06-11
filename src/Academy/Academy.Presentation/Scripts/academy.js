@@ -1,17 +1,16 @@
 ﻿$(function () {
+    // init main menu 
 
-    // main menu init
     $('#editProfile').click(function () {
-        $('#body').html('');
-        $.ajax({
-            url: this.href,
-            cache: false,
-            success: function (html) {
-                $('#body').append(html);
-            }
+        $('#profile a.btn').removeClass('btn-primary');
+        LoadView('#body', this.href, function () {
+            $('#body .tree li').hide();
+            $('#body .tree li.root').show();
         });
         return false;
     });
+
+    // init profile menu
 
     // init profile menu buttons
     $('#profile a.btn').on('click', function () {
@@ -21,15 +20,8 @@
 
     // init Add article form
     $('#myArticles').click(function () {
-        $('#body').html('');
-        $.ajax({
-            url: this.href,
-            cache: false,
-            success: function(html) {
-                $('#body').append(html);
-                $('#body .tree li').hide();
-                $('#body .tree li.root').show();
-            }
+        LoadView('#body', this.href, function () {
+            CollapseDisciplinesTree();
         });
         return false;
     });
@@ -39,8 +31,8 @@
         $.ajax({
             url: this.href,
             cache: false,
-            success: function(html) {
-                 $("#authors").append(html);
+            success: function (html) {
+                $('#authors').append(html);
             }
         });
         return false;
@@ -65,7 +57,42 @@
             UncheckParents($(this));
         }
     });
+
+    // init profile editor form
+    $('#body').on('submit', '#selectDisciplines', null, function (e) {
+        $.ajax({
+            url: this.action,
+            type: this.method,
+            data: $(this).serialize(),
+            success: function (html) {
+                $('#body').html('');
+                $('#body').append(html);
+                $('body .modal-backdrop').fadeOut(250);
+                CollapseDisciplinesTree();
+            }
+        });
+        return false;
+    });
 });
+
+function LoadView(divId, request, complete) {
+    $(divId).html('');
+    $.ajax({
+        url: request,
+        cache: false,
+        success: function (html) {
+            $(divId).append(html);
+            if (complete != null) {
+                complete();
+            }
+        }
+    });
+}
+
+function CollapseDisciplinesTree() {
+    $('#body .tree li').hide();
+    $('#body .tree li.root').show();
+}
 
 // tree functions
 function ToggleTree(e, node, img) {

@@ -111,3 +111,8 @@
 .fixed-size {
     resize: none;
 }
+
+.no-margin {
+    margin: 0;
+}
+

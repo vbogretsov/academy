@@ -12,17 +12,29 @@ namespace Academy.Domain.Services
     {
         private readonly ArticleStorage articleStorage;
 
+        private readonly DisciplineStorage disciplineStorage;
+
         public PublicationService(
-            UserStorage userStorage,
-            ArticleStorage articleStorage)
+            ArticleStorage articleStorage,
+            DisciplineStorage disciplineStorage)
         {
             this.articleStorage = articleStorage;
         }
 
-        public void PublishArticle(Article article)
+        public void PublishArticle(Article article, IEnumerable<int> disciplineIds)
         {
+            if (disciplineIds != null)
+            {
+                foreach (int disciplineId in disciplineIds)
+                {
+                    var discipline = disciplineStorage.Get(disciplineId);
+                    if (discipline != null)
+                    {
+                        article.Disciplines.Add(discipline);
+                    }
+                }
+            }
             articleStorage.Add(article);
-            // TODO: send notification
         }
     }
 }

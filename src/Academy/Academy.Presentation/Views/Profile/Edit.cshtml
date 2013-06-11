@@ -1,11 +1,11 @@
 ﻿@model Academy.Presentation.ViewModels.Profile
 
-<div class="span6">
+<div class="span6 no-margin">
     @using (Html.BeginForm(
         "Edit",
         "Profile",
         FormMethod.Post,
-        new {@class = "form-horizontal", style = "padding: 0", enctype = "multipart/form-data"}))
+        new { @class = "form-horizontal no-margin", style = "padding: 0", enctype = "multipart/form-data" }))
     {
         @Html.ValidationSummary(true)
 
@@ -17,47 +17,8 @@
         "SelectDisciplines",
         "Profile",
         FormMethod.Post,
-        new {enctype = "multipart/form-data"}))
+        new {enctype = "multipart/form-data", id = "selectDisciplines"}))
     {
-        @Html.EditorForModel("EditDisciplinesEditor");
+        @Html.EditorForModel("EditDisciplinesEditor")
     }
-
 </div>
-
-@*
-@using System.Web.Optimization
-
-@model Academy.Presentation.ViewModels.Profile
-@{
-    ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/Internal.cshtml";
-}
-@section styles {
-    @Styles.Render("~/Content/tree")
-}
-@section UserName
-{
-    @{ Html.RenderPartial("UserName", Model); }
-}
-@section Profile
-{
-    <div class="span3">
-        @{ Html.RenderPartial("Profile", Model); }
-    </div>
-}
-
-<div class="content">
-    <div class="span6">
-        @{ Html.RenderPartial("ProfileFieldsEditot", Model); }
-    </div>
-    <div class="span3">
-        @{ Html.RenderPartial("DisciplinesSelect", Model); }
-    </div>
-</div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/tree")
-    @Scripts.Render("~/bundles/academy")
-}
-*@

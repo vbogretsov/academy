@@ -16,16 +16,22 @@ namespace Academy.Presentation.Controllers
         //    return View();
         //}
 
+        private readonly ApplicationContainer container;
+
+        public ArticleController()
+        {
+            container = ApplicationContainer.Instance;
+        }
+
         public ActionResult Publish(
             ArticleViewModel article,
             IEnumerable<int> disciplines)
         {
             if (ModelState.IsValid)
             {
-                
+                container.Service.Publication.PublishArticle(null, disciplines);
             }
-            //return View("../Profile/Articles");
-            throw new NotImplementedException();
+            return View("../Profile/Articles");
         }
 
         // Obsolete
