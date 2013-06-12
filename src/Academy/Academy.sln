@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Objects", "Academy.Domain.Objects\Academy.Domain.Objects.csproj", "{A06F334C-5653-476A-B2F6-EB32CDC4ECA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.DataAccess", "Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj", "{FA81CA6F-6DD2-438E-A6A8-31138567E5F2}"
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Search", "Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Test", "Academy.Test\Academy.Test.csproj", "{D7D66191-8FEC-4071-8086-72B51A7EEFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Presentation", "Academy.Presentation\Academy.Presentation.csproj", "{8C079BAC-5951-4420-B27E-34E92FB10091}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Presentation.Views", "Academy.Presentation\Academy.Presentation.Views.csproj", "{8C079BAC-5951-4420-B27E-34E92FB10091}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Security", "Academy.Security\Academy.Security.csproj", "{3FDC5299-2D55-421F-AB6D-4494A279ACC1}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Utils", "Academy.Utils\Academy.Utils.csproj", "{269CC71E-6571-440C-BEE6-126FB97CA7D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Presentation.ViewModels", "Academy.Presentation.ViewModels\Academy.Presentation.ViewModels.csproj", "{350A4B0B-F023-4279-9D25-B5AEDB362827}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Utils.Html", "Academy.Utils.Html\Academy.Utils.Html.csproj", "{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{350A4B0B-F023-4279-9D25-B5AEDB362827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350A4B0B-F023-4279-9D25-B5AEDB362827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350A4B0B-F023-4279-9D25-B5AEDB362827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

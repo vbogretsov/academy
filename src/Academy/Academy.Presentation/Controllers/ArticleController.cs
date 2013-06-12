@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Academy.Domain.Objects;
-using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
+using Academy.Presentation.Views.Unity;
 
-namespace Academy.Presentation.Controllers
+namespace Academy.Presentation.Views.Controllers
 {
     public class ArticleController : Controller
     {

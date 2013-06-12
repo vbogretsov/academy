@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Academy.Presentation.Utils
+namespace Academy.Presentation.Views.Utils
 {
     public static class AcademyEnvironment
     {

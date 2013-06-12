@@ -135,6 +135,27 @@
   <data name="article.title.err.required" xml:space="preserve">
     <value>Article title is required</value>
   </data>
+  <data name="author.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="author.email.err.invalid" xml:space="preserve">
+    <value>Specified email is not an email address</value>
+  </data>
+  <data name="author.email.err.required" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="author.firstname" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="author.firstname.err.required" xml:space="preserve">
+    <value>First name is required</value>
+  </data>
+  <data name="author.lastname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="author.lastname.err.required" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>About</value>
   </data>
@@ -146,90 +167,6 @@
   </data>
   <data name="external.title" xml:space="preserve">
     <value>ACADEMY</value>
-  </data>
-  <data name="home.login.btn.login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="home.login.email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="home.login.er.email.invalid" xml:space="preserve">
-    <value>The specified address is not a valid email address</value>
-  </data>
-  <data name="home.login.er.email.required" xml:space="preserve">
-    <value>Specify email address to login</value>
-  </data>
-  <data name="home.login.er.pwd.required" xml:space="preserve">
-    <value>Specify password to login</value>
-  </data>
-  <data name="home.login.forgotpwd" xml:space="preserve">
-    <value>Forgot the password?</value>
-  </data>
-  <data name="home.login.lbl.signin" xml:space="preserve">
-    <value>Sign In</value>
-  </data>
-  <data name="home.login.pwd" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="home.login.remember" xml:space="preserve">
-    <value>Stay online</value>
-  </data>
-  <data name="home.reg.bidthdate" xml:space="preserve">
-    <value>Birth date</value>
-  </data>
-  <data name="home.reg.btn.register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="home.reg.email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="home.reg.er.email.exists" xml:space="preserve">
-    <value>User with specified email already exists</value>
-  </data>
-  <data name="home.reg.er.email.invalid" xml:space="preserve">
-    <value>The specified address is not a valid email address</value>
-  </data>
-  <data name="home.reg.er.email.required" xml:space="preserve">
-    <value>Email address is required</value>
-  </data>
-  <data name="home.reg.er.fname.required" xml:space="preserve">
-    <value>First name is required</value>
-  </data>
-  <data name="home.reg.er.lname.required" xml:space="preserve">
-    <value>Last name is required</value>
-  </data>
-  <data name="home.reg.er.pwd.length" xml:space="preserve">
-    <value>Password must have least 6 symbols</value>
-  </data>
-  <data name="home.reg.er.pwd.required" xml:space="preserve">
-    <value>Pssword is required</value>
-  </data>
-  <data name="home.reg.er.pwdconf.notmatch" xml:space="preserve">
-    <value>Password confirmation does not match the password</value>
-  </data>
-  <data name="home.reg.er.pwdconf.required" xml:space="preserve">
-    <value>Password confirmation is required</value>
-  </data>
-  <data name="home.reg.er.university.required" xml:space="preserve">
-    <value>University is required</value>
-  </data>
-  <data name="home.reg.fname" xml:space="preserve">
-    <value>First name</value>
-  </data>
-  <data name="home.reg.lbl.register" xml:space="preserve">
-    <value>Register if you do not have an account</value>
-  </data>
-  <data name="home.reg.lname" xml:space="preserve">
-    <value>Last name</value>
-  </data>
-  <data name="home.reg.pwd" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="home.reg.pwdconf" xml:space="preserve">
-    <value>Password confirmation</value>
-  </data>
-  <data name="home.reg.univercity" xml:space="preserve">
-    <value>Univercity</value>
   </data>
   <data name="internal.menu.articles" xml:space="preserve">
     <value>Articles</value>
@@ -254,6 +191,33 @@
   </data>
   <data name="lang.rus" xml:space="preserve">
     <value>Russian</value>
+  </data>
+  <data name="login.btn.login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="login.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="login.er.email.invalid" xml:space="preserve">
+    <value>The specified address is not a valid email address</value>
+  </data>
+  <data name="login.er.email.required" xml:space="preserve">
+    <value>Specify email address to login</value>
+  </data>
+  <data name="login.er.pwd.required" xml:space="preserve">
+    <value>Specify password to login</value>
+  </data>
+  <data name="login.forgotpwd" xml:space="preserve">
+    <value>Forgot the password?</value>
+  </data>
+  <data name="login.lbl.signin" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="login.pwd" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="login.remember" xml:space="preserve">
+    <value>Stay online</value>
   </data>
   <data name="prifile.myquestions" xml:space="preserve">
     <value>My questions</value>
@@ -290,5 +254,98 @@
   </data>
   <data name="profile.mycomment" xml:space="preserve">
     <value>My comment</value>
+  </data>
+  <data name="registration..btn.register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="registration.bidthdate" xml:space="preserve">
+    <value>Birth date</value>
+  </data>
+  <data name="registration.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="registration.er.email.exists" xml:space="preserve">
+    <value>User with specified email already exists</value>
+  </data>
+  <data name="registration.er.email.invalid" xml:space="preserve">
+    <value>The specified address is not a valid email address</value>
+  </data>
+  <data name="registration.er.email.required" xml:space="preserve">
+    <value>Email address is required</value>
+  </data>
+  <data name="registration.er.fname.required" xml:space="preserve">
+    <value>First name is required</value>
+  </data>
+  <data name="registration.er.lname.required" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
+  <data name="registration.er.pwd.length" xml:space="preserve">
+    <value>Password must have least 6 symbols</value>
+  </data>
+  <data name="registration.er.pwd.required" xml:space="preserve">
+    <value>Pssword is required</value>
+  </data>
+  <data name="registration.er.pwdconf.notmatch" xml:space="preserve">
+    <value>Password confirmation does not match the password</value>
+  </data>
+  <data name="registration.er.pwdconf.required" xml:space="preserve">
+    <value>Password confirmation is required</value>
+  </data>
+  <data name="registration.er.university.required" xml:space="preserve">
+    <value>University is required</value>
+  </data>
+  <data name="registration.fname" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="registration.lbl.register" xml:space="preserve">
+    <value>Register if you do not have an account</value>
+  </data>
+  <data name="registration.lname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="registration.pwd" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="registration.pwdconf" xml:space="preserve">
+    <value>Password confirmation</value>
+  </data>
+  <data name="registration.univercity" xml:space="preserve">
+    <value>Univercity</value>
+  </data>
+  <data name="user.birthdate" xml:space="preserve">
+    <value>Birth date</value>
+  </data>
+  <data name="user.birthdate.err.required" xml:space="preserve">
+    <value>Birth date is required</value>
+  </data>
+  <data name="user.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="user.email.err.invalid" xml:space="preserve">
+    <value>Specified email is not an email address</value>
+  </data>
+  <data name="user.email.err.required" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="user.firstname" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="user.firstname.err.requiered" xml:space="preserve">
+    <value>First name is required</value>
+  </data>
+  <data name="user.lastname" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="user.lastname.err.required" xml:space="preserve">
+    <value>Last name is required</value>
+  </data>
+  <data name="user.photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="user.university" xml:space="preserve">
+    <value>University</value>
+  </data>
+  <data name="user.university.err.required" xml:space="preserve">
+    <value>University is required</value>
   </data>
 </root>

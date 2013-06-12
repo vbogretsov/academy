@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using Academy.Presentation.Utils.Html;
+using Academy.Utils.Html;
 using Academy.Utils.Trees;
 
-namespace Academy.Presentation.Helpers
+namespace Academy.Presentation.Views.Helpers
 {
     public static class HtmlHelpers
     {

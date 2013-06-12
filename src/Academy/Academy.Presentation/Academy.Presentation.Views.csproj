@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Academy.Presentation</RootNamespace>
-    <AssemblyName>Academy.Presentation</AssemblyName>
+    <RootNamespace>Academy.Presentation.Views</RootNamespace>
+    <AssemblyName>Academy.Presentation.Views</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -137,7 +137,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Filter\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,20 +144,8 @@
     <Compile Include="Helpers\DisciplinesTreeHelper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Utils\AcademyEnvironment.cs" />
-    <Compile Include="Utils\Html\CheckboxesTreeBuilder.cs" />
-    <Compile Include="Utils\Html\HtmlTreeBuilder.cs" />
-    <Compile Include="ViewModels\ArticleViewModel.cs" />
-    <Compile Include="ViewModels\AuthorViewModel.cs" />
-    <Compile Include="ViewModels\CommentViewModel.cs" />
-    <Compile Include="ViewModels\DisciplineViewModel.cs" />
-    <Compile Include="ViewModels\Profile.cs" />
     <Compile Include="Unity\ApplicationContainer.cs" />
-    <Compile Include="Utils\Date.cs" />
-    <Compile Include="Utils\Month.cs" />
-    <Compile Include="ViewModels\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Registration.cs" />
-    <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -222,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -256,6 +242,14 @@
       <Project>{25155062-AE67-4A59-9F0D-1978642A48B0}</Project>
       <Name>Academy.Domain.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Search\Academy.Domain.Search.csproj">
+      <Project>{96353481-11F6-4C5F-A884-61EF98C796EA}</Project>
+      <Name>Academy.Domain.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Presentation.ViewModels\Academy.Presentation.ViewModels.csproj">
+      <Project>{350A4B0B-F023-4279-9D25-B5AEDB362827}</Project>
+      <Name>Academy.Presentation.ViewModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Academy.Resources\Academy.Resources.csproj">
       <Project>{e833b308-161a-4dfa-9f95-c7db0f34976e}</Project>
       <Name>Academy.Resources</Name>
@@ -267,6 +261,10 @@
     <ProjectReference Include="..\Academy.Security\Academy.Security.csproj">
       <Project>{3fdc5299-2d55-421f-ab6d-4494a279acc1}</Project>
       <Name>Academy.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Utils.Html\Academy.Utils.Html.csproj">
+      <Project>{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}</Project>
+      <Name>Academy.Utils.Html</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Utils\Academy.Utils.csproj">
       <Project>{269cc71e-6571-440c-bee6-126fb97ca7d3}</Project>

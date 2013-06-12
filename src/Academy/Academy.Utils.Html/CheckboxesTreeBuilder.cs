@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Academy.Utils.Html;
 
-namespace Academy.Presentation.Utils.Html
+namespace Academy.Utils.Html
 {
     public class CheckboxesTreeBuilder<T> : HtmlTreeBuilder<T>
     {

@@ -5,9 +5,10 @@ using System.Web.Mvc;
 using Academy.Domain.Objects;
 using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
+using Academy.Presentation.Views.Unity;
 using Academy.Utils;
 
-namespace Academy.Presentation.Helpers
+namespace Academy.Presentation.Views.Helpers
 {
     public static class DisciplinesTreeHelper
     {

@@ -4,13 +4,13 @@ namespace Academy.Presentation.ViewModels
 {
     public class HomeViewModel
     {
-        public Login Login
+        public LoginViewModel Login
         {
             get;
             set;
         }
 
-        public Registration Registration
+        public RegistrationViewModel Registration
         {
             get;
             set;

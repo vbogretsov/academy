@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Academy.Presentation
+namespace Academy.Presentation.Views
 {
     public class FilterConfig
     {

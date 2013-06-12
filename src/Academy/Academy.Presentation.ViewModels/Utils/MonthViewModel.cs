@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Academy.Presentation.Utils
+namespace Academy.Presentation.ViewModels.Utils
 {
-    public class Month
+    public class MonthViewModel
     {
-        public Month(string name, int number)
+         public MonthViewModel(string name, int number)
         {
             Name = name;
             Number = number;

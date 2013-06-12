@@ -9,7 +9,7 @@ using Academy.Security;
 using Academy.Security.Simple;
 using Microsoft.Practices.Unity;
 
-namespace Academy.Presentation.Unity
+namespace Academy.Presentation.Views.Unity
 {
     public class ApplicationContainer
     {

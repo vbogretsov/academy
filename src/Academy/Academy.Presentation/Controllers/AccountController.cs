@@ -10,12 +10,13 @@ using Academy.Domain.Objects;
 using Academy.Presentation.Filter;
 using Academy.Presentation.Unity;
 using Academy.Presentation.ViewModels;
+using Academy.Presentation.Views.Unity;
 using Academy.Security;
 
-namespace Academy.Presentation.Controllers
+namespace Academy.Presentation.Views.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
     public class AccountController : Controller
     {
@@ -73,7 +74,7 @@ namespace Academy.Presentation.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(Login login, string returnUrl)
+        public ActionResult Login(LoginViewModel login, string returnUrl)
         {
             if (ModelState.IsValid &&
                 accountManager.Login(login.Email, login.Password, login.RememberMe))
@@ -98,7 +99,7 @@ namespace Academy.Presentation.Controllers
 
         //[HttpPost]
         [AllowAnonymous]
-        public ActionResult Register(Registration registration)
+        public ActionResult Register(RegistrationViewModel registration)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +116,7 @@ namespace Academy.Presentation.Controllers
             return Json(!userStorage.Contains(email));
         }
 
-        private void Register(User user, Login login)
+        private void Register(User user, LoginViewModel login)
         {
             CreateUser(user);
             try
@@ -134,28 +135,28 @@ namespace Academy.Presentation.Controllers
             userStorage.Add(user);
         }
 
-        private void CreateLogin(Login login)
+        private void CreateLogin(LoginViewModel login)
         {
             roleManager.AddUserToRole(login.Email, "User");
             accountManager.CreateAccount(login.Email, login.Password);
             accountManager.Login(login.Email, login.Password);
         }
 
-        private ActionResult RetryRegister(Registration registration)
+        private ActionResult RetryRegister(RegistrationViewModel registration)
         {
             return View("../Home/Index", new HomeViewModel
             {
-                Login = new Login(),
+                Login = new LoginViewModel(),
                 Registration = registration
             });
         }
 
-        private ActionResult RetryLogin(Login login)
+        private ActionResult RetryLogin(LoginViewModel login)
         {
             return View("../Home/Index", new HomeViewModel
             {
                 Login = login,
-                Registration = new Registration()
+                Registration = new RegistrationViewModel()
             });
         }
 

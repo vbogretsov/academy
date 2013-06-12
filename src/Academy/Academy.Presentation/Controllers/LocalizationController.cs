@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace Academy.Presentation.Controllers
+namespace Academy.Presentation.Views.Controllers
 {
     public class LocalizationController : Controller
     {

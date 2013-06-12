@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class DisciplineViewModel
+    public class DisciplineViewModel : EntityViewModel
     {
         public string Name
-        {
-            get;
-            set;
-        }
-
-        public bool IsChecked
         {
             get;
             set;

@@ -3,7 +3,7 @@ using System.Text;
 using System.Web.Mvc;
 using Academy.Utils.Trees;
 
-namespace Academy.Presentation.Utils.Html
+namespace Academy.Utils.Html
 {
     public abstract class HtmlTreeBuilder<T>
     {

@@ -8,11 +8,11 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
-using Academy.Presentation.Unity;
 using Academy.Presentation.Utils;
 using Academy.Presentation.ViewModels;
+using Academy.Presentation.Views.Unity;
 
-namespace Academy.Presentation.Controllers
+namespace Academy.Presentation.Views.Controllers
 {
     [Authorize]
     public class ProfileController : Controller
@@ -57,6 +57,7 @@ namespace Academy.Presentation.Controllers
         [HttpPost]
         public ActionResult SelectDisciplines(IEnumerable<int> disciplines)
         {
+            AutoMapper.Mapper
             container.Service.Notification.AssigneDisciplines(
                 currentUser,
                 disciplines);

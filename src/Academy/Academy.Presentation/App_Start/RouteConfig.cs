@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Academy.Presentation
+namespace Academy.Presentation.Views
 {
     public class RouteConfig
     {

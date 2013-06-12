@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Academy.Presentation.ViewModels;
 
 
-namespace Academy.Presentation.Controllers
+namespace Academy.Presentation.Views.Controllers
 {
     public class HomeController : Controller
     {

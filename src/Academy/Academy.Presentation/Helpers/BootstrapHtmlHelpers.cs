@@ -8,7 +8,7 @@ using System.Web.Mvc.Html;
 using Academy.Presentation.Utils;
 using Academy.Resources;
 
-namespace Academy.Presentation.Helpers
+namespace Academy.Presentation.Views.Helpers
 {
     public static class BootstrapHtmlHelpers
     {

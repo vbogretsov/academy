@@ -5,11 +5,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.SessionState;
-using Academy.Presentatio;
-using Academy.Presentation.App_Start;
-using Academy.Presentation.Unity;
-using Academy.Presentation.Utils;
-using Academy.Resources;
+using Academy.Presentation.Views;
+using Academy.Presentation.Views.App_Start;
+using Academy.Presentation.Views.Unity;
 using Academy.Security;
 
 namespace Academy.Presentation
