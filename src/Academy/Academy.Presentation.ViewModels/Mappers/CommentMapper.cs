@@ -19,7 +19,10 @@ namespace Academy.Presentation.ViewModels.Mappers
 
         public static Comment Map(CommentViewModel viewModel)
         {
-            throw new NotImplementedException();
+            Comment comment = new Comment();
+            comment.CommentId = viewModel.Id;
+            comment.Text = viewModel.Text;
+            return comment;
         }
     }
 }

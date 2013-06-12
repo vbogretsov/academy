@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 using Academy.Utils.Collections;
 
@@ -21,12 +19,13 @@ namespace Academy.Presentation.ViewModels.Mappers
             return article;
         }
 
-        private static ArticleViewModel Map(Article article)
+        public static ArticleViewModel Map(Article article)
         {
             ArticleViewModel viewModel = new ArticleViewModel();
-            viewModel.Authors.Add(article.Authors.Select(AuthorMapper.Map));
-            viewModel.Comments.Add(article.Comments.Select(CommentMapper.Map));
-            throw new NotImplementedException();
+            viewModel.Id = article.ArticleId;
+            viewModel.Description = article.Description;
+            viewModel.Source = article.Source;
+            return viewModel;
         }
     }
 }

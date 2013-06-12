@@ -1,0 +1,4 @@
+﻿@using Academy.Presentation.Views.Helpers
+@model Academy.Presentation.ViewModels.UserViewModel
+
+@Html.List(Model.Disciplines.ToList(), "Your disciplines", "list-flat", "text-hypenation")

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using Academy.Domain.Objects;
 using Academy.Validation;
 using Academy.Presentation.ViewModels.Utils;
 
@@ -9,6 +8,15 @@ namespace Academy.Presentation.ViewModels
 {
     public class UserViewModel : EntityViewModel
     {
+        private HttpPostedFileBase photoFile;
+
+        public UserViewModel()
+        {
+            Disciplines = new List<DisciplineViewModel>();
+            Articles = new List<ArticleViewModel>();
+            Comments = new List<CommentViewModel>();
+        }
+
         [LocalizedDisplay("user.email")]
         [LocalizedRequired("user.email.err.required")]
         [LocalizedEmail("user.email.err.invalid")]
@@ -50,11 +58,27 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        [LocalizedDisplay("Photo")]
-        public HttpPostedFileBase PhotoFile
+        public string PhotoFileName
         {
             get;
             set;
+        }
+
+        [LocalizedDisplay("Photo")]
+        public HttpPostedFileBase PhotoFile
+        {
+            get
+            {
+                return photoFile;
+            }
+            set
+            {
+                photoFile = value;
+                if (photoFile != null)
+                {
+                    PhotoFileName = photoFile.FileName;
+                }
+            }
         }
 
         public IEnumerable<DisciplineViewModel> Disciplines

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Academy.Presentation.ViewModels.Utils
 {
@@ -30,6 +29,10 @@ namespace Academy.Presentation.ViewModels.Utils
                     new MonthViewModel("November", 11),
                     new MonthViewModel("December", 12)
                 };
+        }
+
+        public DateViewModel()
+        {
         }
 
         public DateViewModel(DateTime dateTime)

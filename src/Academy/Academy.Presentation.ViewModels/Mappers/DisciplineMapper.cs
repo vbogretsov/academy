@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Presentation.ViewModels.Mappers
@@ -20,6 +17,9 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             DisciplineViewModel viewModel = new DisciplineViewModel();
             viewModel.Id = discipline.DisciplineId;
+            viewModel.ParentId = discipline.Parent != null
+                ? discipline.Parent.DisciplineId
+                : 0;
             viewModel.Name = discipline.Name;
             return viewModel;
         }

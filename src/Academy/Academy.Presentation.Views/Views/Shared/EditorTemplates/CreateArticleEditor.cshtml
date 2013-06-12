@@ -1,0 +1,59 @@
+﻿@using Academy.Presentation.Views.Helpers
+
+@model Academy.Presentation.ViewModels.ArticleViewModel
+
+@Html.ControlGroupFor(
+    m => m.Title,
+    e => Html.TextBoxFor(e, new { @class = "full-block" }))
+@Html.ControlGroupFor(
+    m => m.Description,
+    e => Html.TextAreaFor(e, new { @class = "full-block fixed-size pre-scrollable" }))
+
+<div class="control-group">
+    <div class="controls">
+        @*@Html.FileUploadFor(m => m.File, "Select file", "Change", "Remove")*@
+        <div class="fileupload fileupload-new" data-provides="fileupload">
+            <div class="input-append">
+                <div class="uneditable-input span3">
+                    <i class="icon-file fileupload-exists"></i><span class="fileupload-preview"></span>
+                </div>
+                <span class="btn btn-file">
+                    <span class="fileupload-new">Select file</span>
+                    <span class="fileupload-exists">Change</span>
+                    <input type="file" />
+                </span>
+                <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+            </div>
+            @Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")
+        </div>
+    </div>
+</div>
+
+@Html.ModalVindowFor(
+        Html.DisciplinesTreeFor("disciplines", Model.Disciplines.ToList()),
+            "disciplines",
+            "Disciplines",
+            "Close",
+            "Save")
+
+<div class="control-group">
+    <div class="controls">
+        <div id="authors">
+            @foreach (var author in Model.Authors)
+            {
+                using (Html.BeginCollectionItem("Authors"))
+                {
+                    Html.RenderPartial("EditorTemplates/CreateAuthorEditor", author);
+                }
+            }
+        </div>
+         @Html.ActionLink(
+            "Add author",
+            "AddAuthor",
+            "Article",
+            null,
+            new { id = "addAuthor", @class = "btn" })
+    </div>
+</div>
+
+<input type="submit" value="Publish" class="btn pull-right" />

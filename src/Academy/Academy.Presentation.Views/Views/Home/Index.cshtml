@@ -1,0 +1,21 @@
+﻿@model HomeViewModel
+
+@using System.Web.Optimization
+@using Academy.Presentation.ViewModels
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/External.cshtml";
+}
+
+@{
+    Html.EnableClientValidation(true);
+}
+
+<div class="pull-right">
+    @{ Html.RenderPartial("Login", Model); }
+    @{ Html.RenderPartial("Register", Model); }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

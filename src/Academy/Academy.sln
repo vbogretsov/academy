@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Search", "Ac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Test", "Academy.Test\Academy.Test.csproj", "{D7D66191-8FEC-4071-8086-72B51A7EEFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Presentation.Views", "Academy.Presentation\Academy.Presentation.Views.csproj", "{8C079BAC-5951-4420-B27E-34E92FB10091}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Presentation.Views", "Academy.Presentation.Views\Academy.Presentation.Views.csproj", "{8C079BAC-5951-4420-B27E-34E92FB10091}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Security", "Academy.Security\Academy.Security.csproj", "{3FDC5299-2D55-421F-AB6D-4494A279ACC1}"
 EndProject

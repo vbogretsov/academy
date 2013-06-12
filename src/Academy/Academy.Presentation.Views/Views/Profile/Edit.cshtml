@@ -1,0 +1,24 @@
+﻿@model Academy.Presentation.ViewModels.UserViewModel
+
+<div class="span6 no-margin">
+    @using (Html.BeginForm(
+        "Edit",
+        "Profile",
+        FormMethod.Post,
+        new { @class = "form-horizontal no-margin", style = "padding: 0", enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+
+        @Html.EditorForModel("EditUserEditor");
+    }
+</div>
+<div class="span3 pull-right">
+    @using (Html.BeginForm(
+        "SelectDisciplines",
+        "Profile",
+        FormMethod.Post,
+        new {enctype = "multipart/form-data", id = "selectDisciplines"}))
+    {
+        @Html.EditorForModel("EditDisciplinesEditor")
+    }
+</div>

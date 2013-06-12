@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using Academy.Domain.Objects;
 using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
@@ -14,6 +13,7 @@ namespace Academy.Presentation.ViewModels
         {
             Authors = new List<AuthorViewModel>();
             Disciplines = new List<DisciplineViewModel>();
+            Comments = new List<CommentViewModel>();
         }
 
         [LocalizedDisplay("article.title")]
@@ -56,19 +56,19 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public ICollection<AuthorViewModel> Authors
+        public IEnumerable<AuthorViewModel> Authors
         {
             get;
             set;
         }
 
-        public ICollection<DisciplineViewModel> Disciplines
+        public IEnumerable<DisciplineViewModel> Disciplines
         {
             get;
             set;
         }
 
-        public ICollection<CommentViewModel> Comments
+        public IEnumerable<CommentViewModel> Comments
         {
             get;
             set;

@@ -13,6 +13,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static User Map(UserViewModel viewModel)
         {
             User user = new User();
+            user.UserId = viewModel.Id;
             user.Email = viewModel.Email;
             user.FirstName = viewModel.FirstName;
             user.LastName = viewModel.LastName;
@@ -27,7 +28,39 @@ namespace Academy.Presentation.ViewModels.Mappers
 
         public static UserViewModel Map(User user)
         {
-            throw new NotImplementedException();
+            UserViewModel viewModel = new UserViewModel();
+            viewModel.Email = user.Email;
+            viewModel.FirstName = user.FirstName;
+            viewModel.LastName = user.LastName;
+            viewModel.University = user.University;
+            viewModel.BirthDate = DateMapper.Map(user.BirthDate);
+            viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+            return viewModel;
+        }
+
+        public static User Map(RegistrationViewModel viewModel)
+        {
+            User user = new User();
+            user.Email = viewModel.Email;
+            user.FirstName = viewModel.FirstName;
+            user.LastName = viewModel.LastName;
+            user.University = viewModel.University;
+            return user;
+        }
+
+        public static void Sync(User user, UserViewModel viewModel)
+        {
+            user.PhotoFileName = viewModel.PhotoFileName ?? user.PhotoFileName;
+            user.Email = viewModel.Email;
+            user.FirstName = viewModel.FirstName;
+            user.LastName = viewModel.LastName;
+            user.University = viewModel.University;
+            user.BirthDate = DateMapper.Map(viewModel.BirthDate);
+        }
+
+        public static void Sync(UserViewModel viewModel, User user)
+        {
+            
         }
     }
 }
