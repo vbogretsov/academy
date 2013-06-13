@@ -331,6 +331,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The user name or password provided is incorrect..
+        /// </summary>
+        public static string login_err_failed {
+            get {
+                return ResourceManager.GetString("login.err.failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgot the password?.
         /// </summary>
         public static string login_forgotpwd {
@@ -363,6 +372,15 @@ namespace Academy.Validation.Dictionaries {
         public static string login_remember {
             get {
                 return ResourceManager.GetString("login.remember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string login_submit {
+            get {
+                return ResourceManager.GetString("login.submit", resourceCulture);
             }
         }
         
@@ -633,6 +651,15 @@ namespace Academy.Validation.Dictionaries {
         public static string registration_pwdconf {
             get {
                 return ResourceManager.GetString("registration.pwdconf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string registration_submit {
+            get {
+                return ResourceManager.GetString("registration.submit", resourceCulture);
             }
         }
         

@@ -207,6 +207,9 @@
   <data name="login.er.pwd.required" xml:space="preserve">
     <value>Specify password to login</value>
   </data>
+  <data name="login.err.failed" xml:space="preserve">
+    <value>The user name or password provided is incorrect.</value>
+  </data>
   <data name="login.forgotpwd" xml:space="preserve">
     <value>Forgot the password?</value>
   </data>
@@ -218,6 +221,9 @@
   </data>
   <data name="login.remember" xml:space="preserve">
     <value>Stay online</value>
+  </data>
+  <data name="login.submit" xml:space="preserve">
+    <value>Login</value>
   </data>
   <data name="prifile.myquestions" xml:space="preserve">
     <value>My questions</value>
@@ -308,6 +314,9 @@
   </data>
   <data name="registration.pwdconf" xml:space="preserve">
     <value>Password confirmation</value>
+  </data>
+  <data name="registration.submit" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="registration.univercity" xml:space="preserve">
     <value>Univercity</value>

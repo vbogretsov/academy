@@ -153,6 +153,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\bootstrap-fileupload.css" />
     <Content Include="Content\tree.css" />
+    <Content Include="Resources\Icons\glyphicons-halflings.png" />
     <Content Include="Resources\Icons\tree-minus.png" />
     <Content Include="Resources\Icons\tree-plus.png" />
     <Content Include="Content\bootstrap.css" />
@@ -184,15 +185,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\UserName.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\UserName.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Shared\Languages.cshtml" />
-    <Content Include="Views\Profile\DisciplinesSelect.cshtml" />
-    <Content Include="Views\Profile\ProfileFieldsEditot.cshtml" />
-    <Content Include="Views\Profile\Articles.cshtml" />
-    <Content Include="Views\Profile\UserArticles.cshtml" />
-    <Content Include="Views\Article\PublishArticle.cshtml" />
-    <Content Include="Views\Profile\AuthorsList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateAuthorEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateArticleEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EditUserEditor.cshtml" />
@@ -204,6 +199,8 @@
     <Content Include="Views\Shared\RenderTemplates\UserArticlesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EditDisciplinesEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
     <Content Include="Views\Article\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -220,9 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Academy.Domain.DataAccess.Ef\Academy.Domain.DataAccess.Ef.csproj">
@@ -279,9 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\About.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Profile\Index.cshtml" />

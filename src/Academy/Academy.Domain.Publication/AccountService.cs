@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Web.Security;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 using Academy.Security;
@@ -34,6 +29,8 @@ namespace Academy.Domain.Services
         {
             if (!userStorage.Contains(user.Email))
             {
+                user.LastAccessDate = DateTime.Now;
+                user.RegistrationDate = DateTime.Now;
                 userStorage.Add(user);
                 RegisterNewUser(user, password);
             }

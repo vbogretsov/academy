@@ -1,118 +1,143 @@
-﻿body {
+﻿body
+{
     margin-right: auto;
     margin-left: auto;
     max-width: 960px;
     height: 100%;
 }
 
-.content {
+.content
+{
     padding-right: 20px;
 }
 
-.title {
+.title
+{
     text-decoration: none;
 }
 
-.title:hover {
+.title:hover
+{
     text-decoration: none;
 }
 
-.select-day {
+.select-day
+{
     width: 60px;
 }
 
-.select-month {
+.select-month
+{
     width: 115px;
 }
 
-.select-year {
+.select-year
+{
     width: 80px;
 }
 
-.input-over-date {
+.input-over-date
+{
     width: 250px;
 }
 
-.with-for-date {
+.with-for-date
+{
     width: 400px;
 }
 
-.validation-summary-errors {
+.validation-summary-errors
+{
     color: red;
     font-size: 12px;
 }
 
-    .validation-summary-errors li {
-        list-style: none;
-        display: inline;
-    }
+.validation-summary-errors li
+{
+    list-style: none;
+    display: inline;
+}
 
-.field-validation-valid {
+.field-validation-valid
+{
     display: none;
 }
 
-.field-validation-error {
+.field-validation-error
+{
     color: red;
     font-size: 12px;
     display: block;
     width: 250px;
 }
 
-.tree {
+.tree
+{
     border: 0;
 }
 
-.photo-fixed-size-preview {
+.photo-fixed-size-preview
+{
     width: 250px;
     height: 250px;
     min-width: 250px;
     min-height: 250px;
 }
 
-.text-hypenation {
+.text-hypenation
+{
     white-space: pre-line;
     margin-top: 5px;
     vertical-align: middle;
     text-align: center;
 }
 
-.list-flat {
+.list-flat
+{
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.full-block {
+.full-block
+{
     display: block;
     width: 100%;
-    height: 30px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+    padding-right: 0;
+    padding-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.input-for-name {
+.input-for-name
+{
     width: 120px;
     margin: 0 auto;
 }
 
-.offset0 {
+.offset0
+{
     margin-left: 5px;
 }
 
-.font-large {
+.font-large
+{
     font-size: 14px;
 }
 
-.input-normal-height {
+.input-normal-height
+{
     height: 30px;
 }
 
-.fixed-size {
+.fixed-size
+{
     resize: none;
 }
 
-.no-margin {
+.no-margin
+{
     margin: 0;
 }
 

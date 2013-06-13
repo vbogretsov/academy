@@ -1,42 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Web.Routing;
-using System.Web.Security;
 using System.Web.UI;
-using Academy.Domain.DataAccess;
-using Academy.Domain.Objects;
-using Academy.Domain.Services;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
 using Academy.Presentation.Views.Unity;
+using Academy.Resources;
 using Academy.Security;
 
 namespace Academy.Presentation.Views.Controllers
 {
     [Authorize]
-    //[InitializeSimpleMembership]
     [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
     public class AccountController : Controller
     {
-        //private readonly UserStorage userStorage;
-
-        //private readonly AccountManager accountManager;
-
-        //private readonly RoleManager roleManager;
-
-        //private readonly AccountService accountService;
-
         private readonly ApplicationContainer container;
 
         public AccountController()
         {
-            //userStorage = ApplicationContainer.Instance.UserStorage;
-            //accountManager = ApplicationContainer.Instance
-            //    .Resolve<AccountManager>();
-            //roleManager = ApplicationContainer.Instance
-            //    .Resolve<RoleManager>();
             container = ApplicationContainer.Instance;
         }
 
@@ -48,13 +28,12 @@ namespace Academy.Presentation.Views.Controllers
             {
                 return RedirectToAction("Index", "Profile");
             }
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            ModelState.AddModelError("", Localization.GetString("login.err.failed"));
             return RetryLogin(login);
         }
 
         public ActionResult Logout()
         {
-            //accountManager.Logout();
             container.Service.Account.Logout();
             return RedirectToAction("Index", "Home");
         }
@@ -62,10 +41,11 @@ namespace Academy.Presentation.Views.Controllers
         [AllowAnonymous]
         public ActionResult RestorePassword()
         {
+            // TODO: add password restoring.
             throw new NotImplementedException();
         }
 
-        //[HttpPost]
+        [HttpPost]
         [AllowAnonymous]
         public ActionResult Register(RegistrationViewModel registration)
         {
@@ -97,27 +77,13 @@ namespace Academy.Presentation.Views.Controllers
                 container.Service.Account.Register(user, registration.Password);
                 container.Service.Account.Login(user.Email, registration.Password);
                 return RedirectToAction("Index", "Profile");
-                //CreateLogin(registration.Email, registration.Password);
             }
             catch (SecurityCreateUserException exception)
             {
                 ModelState.AddModelError("", exception.Message);
                 return RetryRegister(registration);
-                //userStorage.Delete(user);
             }
         }
-
-        //private void CreateUser(User user)
-        //{
-        //    userStorage.Add(user);
-        //}
-
-        //private void CreateLogin(string email, string password)
-        //{
-        //    roleManager.AddUserToRole(email, "User");
-        //    accountManager.CreateAccount(email, password);
-        //    accountManager.Login(email, password);
-        //}
 
         private ActionResult RetryRegister(RegistrationViewModel registration)
         {

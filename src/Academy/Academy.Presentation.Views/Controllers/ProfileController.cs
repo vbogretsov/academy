@@ -73,26 +73,8 @@ namespace Academy.Presentation.Views.Controllers
         private void UpdateUser(UserViewModel viewModel)
         {
             //upload photo
-            // update user
-            // commit
-
-
-
-
-            UpdateUserData(viewModel);
-            container.UserStorage.Update();
-            SynchronizeProfile(viewModel);
-        }
-
-        private void SynchronizeProfile(UserViewModel viewModel)
-        {
-            viewModel.PhotoFileName = currentUser.PhotoFileName;
-        }
-
-        private void UpdateUserData(UserViewModel viewModel)
-        {
-            UploadPhoto(viewModel);
             UserMapper.Sync(currentUser, viewModel);
+            container.UserStorage.Update();
         }
 
         private void UploadPhoto(UserViewModel viewModel)

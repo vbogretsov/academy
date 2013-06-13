@@ -34,7 +34,10 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.LastName = user.LastName;
             viewModel.University = user.University;
             viewModel.BirthDate = DateMapper.Map(user.BirthDate);
-            viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+            if (user.Disciplines != null)
+            {
+                viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+            }
             return viewModel;
         }
 
@@ -45,6 +48,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             user.FirstName = viewModel.FirstName;
             user.LastName = viewModel.LastName;
             user.University = viewModel.University;
+            user.BirthDate = DateMapper.Map(viewModel.BirthDate);
             return user;
         }
 

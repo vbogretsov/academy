@@ -5,9 +5,6 @@ namespace Academy.Presentation.Views.Controllers
 {
     public class LocalizationController : Controller
     {
-        //
-        // GET: /Localization/
-
         //[HttpPost]
         public ActionResult ChangeLanguage(string language, string returnUrl)
         {
