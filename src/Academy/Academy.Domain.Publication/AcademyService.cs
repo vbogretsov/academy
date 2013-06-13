@@ -20,6 +20,7 @@ namespace Academy.Domain.Services
             Notification = new NotificationService(disciplineStorage, userStorage);
             Publication = new PublicationService(articleStorage, disciplineStorage);
             Account = new AccountService(roleManager, accountManager, userStorage);
+            Files = new FilesStore();
         }
 
         public NotificationService Notification
@@ -35,6 +36,12 @@ namespace Academy.Domain.Services
         }
 
         public AccountService Account
+        {
+            get;
+            set;
+        }
+
+        public FilesStore Files
         {
             get;
             set;

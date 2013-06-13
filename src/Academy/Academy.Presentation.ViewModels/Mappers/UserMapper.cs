@@ -34,9 +34,18 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.LastName = user.LastName;
             viewModel.University = user.University;
             viewModel.BirthDate = DateMapper.Map(user.BirthDate);
+            viewModel.PhotoFileName = user.PhotoFileName;
             if (user.Disciplines != null)
             {
                 viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+            }
+            if (user.Articles != null)
+            {
+                viewModel.Articles = user.Articles.Select(ArticleMapper.Map);
+            }
+            if (user.Comments != null)
+            {
+                viewModel.Comments = user.Comments.Select(CommentMapper.Map);
             }
             return viewModel;
         }

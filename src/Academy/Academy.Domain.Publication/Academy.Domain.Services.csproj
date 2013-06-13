@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AcademyService.cs" />
     <Compile Include="AccountService.cs" />
+    <Compile Include="FilesStore.cs" />
     <Compile Include="NotificationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicationService.cs" />

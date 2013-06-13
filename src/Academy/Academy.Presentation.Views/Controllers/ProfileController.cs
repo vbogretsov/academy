@@ -68,29 +68,39 @@ namespace Academy.Presentation.Views.Controllers
             return View("RenderTemplates/UserArticlesView", UserMapper.Map(currentUser));
         }
 
-        // TODO: refactor the code below using mapper
+        public ActionResult AddAuthor()
+        {
+            return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Publish(
+            ArticleViewModel article,
+            IEnumerable<int> disciplines)
+        {
+            if (ModelState.IsValid)
+            {
+                //container.Service.Publication.PublishArticle(null, disciplines);
+            }
+            return View("RenderTemplates/UserArticlesView", UserMapper.Map(currentUser));
+        }
 
         private void UpdateUser(UserViewModel viewModel)
         {
-            //upload photo
+            UploadUserPhoto(viewModel);
             UserMapper.Sync(currentUser, viewModel);
             container.UserStorage.Update();
         }
 
-        private void UploadPhoto(UserViewModel viewModel)
+        private void UploadUserPhoto(UserViewModel viewModel)
         {
             if (viewModel.PhotoFile != null && viewModel.PhotoFile.ContentLength > 0)
             {
-                string photoPath = GetFullPhotoPath(viewModel.PhotoFile.FileName);
-                viewModel.PhotoFile.SaveAs(photoPath);
-                viewModel.PhotoFileName = Path.GetFileName(photoPath);
+                viewModel.PhotoFileName = container.Service.Files.Upload(
+                    viewModel.PhotoFile.InputStream,
+                    Server.MapPath(UserPhotosFolder),
+                    viewModel.PhotoFile.FileName);
             }
-        }
-
-        private string GetFullPhotoPath(string photoFileName)
-        {
-            string fileName = Path.GetFileName(photoFileName);
-            return Path.Combine(Server.MapPath(UserPhotosFolder), fileName);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿@using Academy.Presentation.ViewModels
 
-@model Academy.Presentation.ViewModels.UserViewModel
+@model UserViewModel
 
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
@@ -11,7 +11,11 @@
         </div>
         <div id="collapseOne" class="accordion-body collapse">
             <div class="accordion-inner">
-                @{Html.RenderPartial("../Article/Create", new ArticleViewModel());}
+                @{
+                    Html.RenderPartial(
+                        "PublishArticle",
+                        new ArticleViewModel());
+                }
             </div>
         </div>
     </div>

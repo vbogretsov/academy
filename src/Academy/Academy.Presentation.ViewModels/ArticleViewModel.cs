@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web;
 using Academy.Validation;
 
@@ -17,7 +18,8 @@ namespace Academy.Presentation.ViewModels
         }
 
         [LocalizedDisplay("article.title")]
-        [LocalizedRequired("article.title.err.required")]
+        //[LocalizedRequired("article.title.err.required")]
+        [Required(ErrorMessage = "Article title is required")]
         public string Title
         {
             get;

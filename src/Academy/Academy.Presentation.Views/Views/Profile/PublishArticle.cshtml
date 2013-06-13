@@ -1,0 +1,21 @@
+﻿@model Academy.Presentation.ViewModels.ArticleViewModel
+
+@{
+    Html.EnableClientValidation(true);
+}
+
+@using (Html.BeginForm(
+    "Publish",
+    "Profile",
+    FormMethod.Post,
+    new
+        {
+            id = "publishArticle",
+            @class = "form-horizontal",
+            style = "padding-bottom: 20px",
+            enctype = "multipart/form-data"
+        }))
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel("CreateArticleEditor")
+}

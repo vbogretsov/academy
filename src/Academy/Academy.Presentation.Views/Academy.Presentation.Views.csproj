@@ -201,10 +201,11 @@
     <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
-    <Content Include="Views\Article\Create.cshtml" />
+    <Content Include="Views\Profile\PublishArticle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -295,9 +296,9 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45001</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7015/</IISUrl>
+          <IISUrl>http://localhost:7017/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:7015/</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:7017/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -25,13 +25,14 @@ namespace Academy.Presentation.Views.Controllers
 
         public ActionResult Publish(
             ArticleViewModel article,
-            IEnumerable<int> disciplines)
+            IEnumerable<int> disciplines,
+            string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 container.Service.Publication.PublishArticle(null, disciplines);
             }
-            return View("../Profile/Articles");
+            return View(returnUrl, article);
         }
 
         // Obsolete
