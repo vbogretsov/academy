@@ -46,6 +46,8 @@
     width: 400px;
 }
 
+/* validation styles */
+
 .validation-summary-errors
 {
     color: red;
@@ -70,6 +72,8 @@
     display: block;
     width: 250px;
 }
+
+
 
 .tree
 {

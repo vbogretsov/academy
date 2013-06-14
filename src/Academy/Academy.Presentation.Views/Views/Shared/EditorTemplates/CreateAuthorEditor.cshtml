@@ -1,20 +1,30 @@
 ﻿@model Academy.Presentation.ViewModels.AuthorViewModel
-
 <p>
-    @Html.TextBoxFor(m => m.Email, new
-                    {
-                        @placeholder = @Html.DisplayNameFor(m => m.Email),
-                        @class = "input-for-name"
-                    })
-    @Html.TextBoxFor(m => m.FirstName, new
-                    {
-                        @placeholder = @Html.DisplayNameFor(m => m.FirstName),
-                        @class = "input-for-name offset0"
-                    })
-    @Html.TextBoxFor(m => m.LastName, new
-                    {
-                        @placeholder = @Html.DisplayNameFor(m => m.LastName),
-                        @class = "input-for-name offset0"
-                    })
-    <a href="#" class="label font-large author-delete">×</a>
+    @using (Html.BeginCollectionItem("Authors"))
+    {
+        @Html.TextBoxFor(m => m.Email, new
+        {
+            @placeholder = @Html.DisplayNameFor(m => m.Email),
+            @class = "input-for-name"
+        })
+    
+        @Html.TextBoxFor(m => m.FirstName, new
+        {
+            @placeholder = @Html.DisplayNameFor(m => m.FirstName),
+            @class = "input-for-name offset0"
+        })
+        @Html.TextBoxFor(m => m.LastName, new
+        {
+            @placeholder = @Html.DisplayNameFor(m => m.LastName),
+            @class = "input-for-name offset0"
+        })
+
+        <a href="#" class="label font-large author-delete">×</a>
+        
+        @Html.ValidationMessageFor(m => m.Email)
+
+        @Html.ValidationMessageFor(m => m.FirstName)
+
+        @Html.ValidationMessageFor(m => m.LastName)
+    }
 </p>

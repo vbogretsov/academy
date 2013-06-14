@@ -18,8 +18,7 @@ namespace Academy.Presentation.ViewModels
         }
 
         [LocalizedDisplay("article.title")]
-        //[LocalizedRequired("article.title.err.required")]
-        [Required(ErrorMessage = "Article title is required")]
+        [LocalizedRequired("article.title.err.required")]
         public string Title
         {
             get;

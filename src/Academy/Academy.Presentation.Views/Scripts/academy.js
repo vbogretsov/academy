@@ -73,21 +73,24 @@
         });
         return false;
     });
-    
+
     // init article editor form
     $('#body').on('submit', '#publishArticle', null, function (e) {
-        $.ajax({
-            url: this.action,
-            type: this.method,
-            data: $(this).serialize(),
-            success: function (html) {
-                $('#body').html('');
-                $('#body').append(html);
-                $.validator.unobtrusive.parse($("#publishArticle"));
-                //$('body .modal-backdrop').fadeOut(250);
-                CollapseDisciplinesTree();
-            }
-        });
+        $.validator.unobtrusive.parse($("#publishArticle"));
+        if ($('#publishArticle').valid()) {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (html) {
+                    $('#body').html('');
+                    $('#body').append(html);
+                    //$.validator.unobtrusive.parse($("#publishArticle"));
+                    //$('body .modal-backdrop').fadeOut(250);
+                    CollapseDisciplinesTree();
+                }
+            });
+        }
         return false;
     });
 });
