@@ -5,12 +5,13 @@
     Layout = "~/Views/Shared/Internal.cshtml";
 }
 @section styles {
+    @Styles.Render("~/Content/uploadify")
     @Styles.Render("~/Content/tree")
 }
 @section UserName
 {
     @{ Html.RenderPartial("../Shared/RenderTemplates/UserName", Model); }
-}
+}   
 @section Profile
 {
     <div id ="profile" class="span3">

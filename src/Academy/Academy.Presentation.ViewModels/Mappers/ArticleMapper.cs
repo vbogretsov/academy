@@ -13,9 +13,9 @@ namespace Academy.Presentation.ViewModels.Mappers
             article.Source = viewModel.Source;
             // TODO: article.Title
             article.Description = viewModel.Description;
-            article.Disciplines.Add(viewModel.Disciplines.Select(DisciplineMapper.Map));
-            article.Comments.Add(viewModel.Comments.Select(CommentMapper.Map));
-            article.Authors.Add(viewModel.Authors.Select(AuthorMapper.Map));
+            article.Disciplines = viewModel.Disciplines.Select(DisciplineMapper.Map).ToList();
+            article.Comments = viewModel.Comments.Select(CommentMapper.Map).ToList();
+            article.Authors = viewModel.Authors.Select(AuthorMapper.Map).ToList();
             return article;
         }
 

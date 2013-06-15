@@ -7,55 +7,64 @@
 
 @Html.ControlGroupFor(
         m => m.Title,
-        e => Html.TextBoxFor(e, new { @class = "full-block" , style = "height: 30px; font-size: 12pt"}))
-    @Html.ControlGroupFor(
+        e => Html.TextBoxFor(e, new { @class = "full-block", style = "height: 30px; font-size: 12pt" }))
+@Html.ControlGroupFor(
         m => m.Description,
         e => Html.TextAreaFor(e, new { @class = "full-block fixed-size pre-scrollable", style = "height: 100px; font-size:12pt" }))
-        
-
 
 <div class="control-group">
-        <div class="controls">
-            <div class="fileupload fileupload-new" data-provides="fileupload">
-                <div class="input-append">
-                    <div class="uneditable-input span2">
-                        <i class="icon-file fileupload-exists"></i><span class="fileupload-preview"></span>
-                    </div>
-                    <span class="btn btn-file">
-                        <span class="fileupload-new">Select file</span>
-                        <span class="fileupload-exists">Change</span>
-                        @Html.TextBoxFor(m => m.ArticleFile, new { type = "file" })
-                    </span>
-                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-                </div>
-                @Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")
-            </div>
-            @Html.ValidationMessageFor(m => m.ArticleFile)
-        </div>
+    <div class="controls">
+        @Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")
+        <input type="file" id="ArticleFile" name="ArticleFile"/>
+        <input type="text" id="Souce" name="Source" value="" style="display: none"/>
+        @Html.ValidationMessageFor(m => m.Source)
     </div>
+</div>
 
-    @Html.ModalVindowFor(
-        Html.DisciplinesTreeFor("disciplines", Model.Disciplines.ToList()),
+@Html.ModalVindowFor(
+        Html.DisciplinesTreeFor("Disciplines", Model.Disciplines.ToList()),
         "disciplines",
         "Disciplines",
         "Close",
         "Save")
 
-    <div class="control-group">
-        <div class="controls">
-            <div id="authors">
-                @foreach (var author in Model.Authors)
-                {
-                    Html.RenderPartial("EditorTemplates/CreateAuthorEditor", author);
-                }
-            </div>
-            @Html.ActionLink(
+<div class="control-group">
+    <div class="controls">
+        <div id="authors">
+            @foreach (var author in Model.Authors)
+            {
+                Html.RenderPartial("EditorTemplates/CreateAuthorEditor", author);
+            }
+        </div>
+        @Html.ActionLink(
                 "Add author",
                 "AddAuthor",
                 "Profile",
                 null,
                 new { id = "addAuthor", @class = "btn" })
-        </div>
     </div>
+</div>
 
-    <input type="submit" value="Publish" class="btn pull-right" />
+<input type="submit" value="Publish" id="publish" class="btn pull-right disabled" />
+
+<script type="text/javascript">
+    $(function () {
+        $('#ArticleFile').uploadify({
+            'height': 20,
+            'width': 65,
+            'removeCompleted': false,
+            'multi': false,
+            'fileTypeExts' : '*.pdf',
+            'buttonClass': 'btn',
+            'buttonText': 'Select file',
+            'fileObjName': 'file',
+            'hideButton': false,
+            'swf': "@Url.Content("~/Content/uploadify.swf")",
+            'uploader': "@Url.Action("Upload", "Profile")",
+            'onUploadSuccess': function (file, data, response) {
+                $('#publish').removeClass('disabled');
+                $('#Souce').val(file.name);
+            }
+        });
+    });
+</script>

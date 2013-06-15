@@ -18,6 +18,10 @@ namespace Academy.Domain.Services
         public string Upload(Stream fileStream, string folderName, string fileName)
         {
             string path = GetFileName(folderName, fileName);
+            if (!Directory.Exists(folderName))
+            {
+                Directory.CreateDirectory(folderName);
+            }
             using (FileStream target = File.Create(path))
             {
                 fileStream.CopyTo(target);

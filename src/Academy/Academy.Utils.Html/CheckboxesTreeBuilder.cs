@@ -6,14 +6,17 @@ namespace Academy.Utils.Html
 {
     public class CheckboxesTreeBuilder<T> : HtmlTreeBuilder<T>
     {
+        private const string HiddenFormat =
+            "<input type='hidden' name='{1}.index' autocomplete='off' value='{0}'>";
+
         private const string UncheckedCheckboxFormat =
-            "<input type='checkbox' class='checkbox' name='{1}' value='{0}'/>";
+            "<input type='checkbox' class='checkbox' id='{1}[{0}].Id' name='{1}[{0}].Id' value='{0}'/>";
 
         private const string CheckedCheckboxFormat =
-            "<input type='checkbox' class='checkbox' name='{1}' checked='checked' value='{0}'/>";
+            "<input type='checkbox' class='checkbox' id='{1}[{0}].Id' name='{1}[{0}].Id' checked='checked' value='{0}'/>";
 
         private const string SpanFormat =
-            "<span class='label'>{0}</span>";
+            "<span class='label' id='{1}[{0}].Name' name ='{1}[{0}].Name'>{2}</span>";
 
         private readonly Func<T, object> getId;
 
@@ -46,14 +49,16 @@ namespace Academy.Utils.Html
         protected override void AppendNodeConent(T value)
         {
             AppendHtml("<img src='/Resources/Icons/tree-plus.png'>");
+            AppendHtml(HiddenFormat, (int)getId(value) - 1, collectionName);
             AppendHtml(getCheckbox(value));
-            AppendHtml(SpanFormat, getName(value));
+            AppendHtml(SpanFormat, (int)getId(value) - 1, collectionName, getName(value));
         }
 
         protected override void AppendLeafContent(T value)
         {
+            AppendHtml(HiddenFormat, (int)getId(value) - 1, collectionName);
             AppendHtml(getCheckbox(value));
-            AppendHtml(SpanFormat, getName(value));
+            AppendHtml(SpanFormat, (int)getId(value) - 1, collectionName, getName(value));
         }
 
         private string GetCheckbox(T value, ICollection<T> selectedItems)
@@ -62,7 +67,7 @@ namespace Academy.Utils.Html
                 selectedItems.Contains(value)
                 ? CheckedCheckboxFormat
                 : UncheckedCheckboxFormat,
-                getId(value),
+                (int)getId(value) - 1,
                 collectionName);
         }
 
@@ -70,7 +75,7 @@ namespace Academy.Utils.Html
         {
             return String.Format(
                 UncheckedCheckboxFormat,
-                getId(value),
+                (int)getId(value) - 1,
                 collectionName);
         }
     }

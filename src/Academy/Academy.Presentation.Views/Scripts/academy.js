@@ -74,10 +74,12 @@
         return false;
     });
 
-    // init article editor form
+    // init article creation form
     $('#body').on('submit', '#publishArticle', null, function (e) {
-        $.validator.unobtrusive.parse($("#publishArticle"));
-        if ($('#publishArticle').valid()) {
+        $.validator.unobtrusive.parse("#publishArticle");
+        alert($('#publishArticle').valid());
+        if($('#publishArticle').valid())
+        {
             $.ajax({
                 url: this.action,
                 type: this.method,
@@ -85,8 +87,6 @@
                 success: function (html) {
                     $('#body').html('');
                     $('#body').append(html);
-                    //$.validator.unobtrusive.parse($("#publishArticle"));
-                    //$('body .modal-backdrop').fadeOut(250);
                     CollapseDisciplinesTree();
                 }
             });

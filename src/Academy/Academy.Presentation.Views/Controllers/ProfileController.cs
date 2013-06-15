@@ -74,15 +74,29 @@ namespace Academy.Presentation.Views.Controllers
         }
 
         [HttpPost]
-        public ActionResult Publish(
-            ArticleViewModel article,
-            IEnumerable<int> disciplines)
+        public ActionResult PublishArticle(
+            ArticleViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                //container.Service.Publication.PublishArticle(null, disciplines);
+                container.Service.Publication.PublishArticle(
+                    ArticleMapper.Map(viewModel),
+                    viewModel.Disciplines.Select(x => x.Id));
             }
             return View("RenderTemplates/UserArticlesView", UserMapper.Map(currentUser));
+        }
+
+        public string Upload(HttpPostedFileBase file)
+        {
+            string result = null;
+            if (file != null)
+            {
+                //result = container.Service.Files.Upload(
+                //    file.InputStream,
+                //    "Articles",
+                //    file.FileName);
+            }
+            return result;
         }
 
         private void UpdateUser(UserViewModel viewModel)
