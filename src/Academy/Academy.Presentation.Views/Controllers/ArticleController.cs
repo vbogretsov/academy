@@ -23,17 +23,17 @@ namespace Academy.Presentation.Views.Controllers
             container = ApplicationContainer.Instance;
         }
 
-        public ActionResult Publish(
-            ArticleViewModel article,
-            IEnumerable<int> disciplines,
-            string returnUrl)
-        {
-            if (ModelState.IsValid)
-            {
-                container.Service.Publication.PublishArticle(null, disciplines);
-            }
-            return View(returnUrl, article);
-        }
+        //public ActionResult Publish(
+        //    ArticleViewModel article,
+        //    IEnumerable<int> disciplines,
+        //    string returnUrl)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        container.Service.Publication.PublishArticle(null, disciplines);
+        //    }
+        //    return View(returnUrl, article);
+        //}
 
         // Obsolete
         //public ActionResult Create()
@@ -41,9 +41,9 @@ namespace Academy.Presentation.Views.Controllers
         //    return View(new ArticleViewModel());
         //}
 
-        public ActionResult AddAuthor()
-        {
-            return View("../Shared/EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
-        }
+        //public ActionResult AddAuthor()
+        //{
+        //    return View("../Shared/EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
+        //}
     }
 }

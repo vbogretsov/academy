@@ -38,25 +38,25 @@ namespace Academy.Test
                 //Node<Discipline> root = loader.Load(academyEntities.Users.Single(x => x.UserId == 1).Disciplines.ToList());
                 //File.WriteAllText("d:\\tree.html", HtmlTree.Tree(root));
 
-                //Console.WriteLine("Creating database");
+                Console.WriteLine("Creating database");
                 //if (academyEntities.Database.Exists())
                 //{
                 //    academyEntities.Database.Delete();
                 //}
-                //academyEntities.Database.Create();
-                //Console.WriteLine("Database created");
-                //Console.WriteLine("GEnerating test data...");
-                //TestDataGenerator generator = new TestDataGenerator(academyEntities);
-                //generator.GenerateDisciplines();
-                //Console.WriteLine("Generating test data compleeted");
+                academyEntities.Database.Create();
+                Console.WriteLine("Database created");
+                Console.WriteLine("GEnerating test data...");
+                TestDataGenerator generator = new TestDataGenerator(academyEntities);
+                generator.GenerateDisciplines();
+                Console.WriteLine("Generating test data compleeted");
 
-                var user = academyEntities.Users.Single(x => x.UserId == 1);
+                //var user = academyEntities.Users.Single(x => x.UserId == 1);
 
-                foreach (Discipline discipline in academyEntities.Disciplines.Take(5).ToList())
-                {
-                    user.Disciplines.Add(discipline);
-                }
-                academyEntities.SaveChanges();
+                //foreach (Discipline discipline in academyEntities.Disciplines.Take(5).ToList())
+                //{
+                //    user.Disciplines.Add(discipline);
+                //}
+                //academyEntities.SaveChanges();
             }
         }
     }

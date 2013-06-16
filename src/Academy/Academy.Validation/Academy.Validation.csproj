@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LocalizedCollectionLengthAttribute.cs" />
     <Compile Include="LocalizedCompareAttribute.cs" />
     <Compile Include="LocalizedDisplayAttribute.cs" />
     <Compile Include="LocalizedEmailAttribute.cs" />

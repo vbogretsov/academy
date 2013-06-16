@@ -73,7 +73,15 @@ namespace Academy.Presentation.ViewModels.Mappers
 
         public static void Sync(UserViewModel viewModel, User user)
         {
-            
+            viewModel.PhotoFileName = user.PhotoFileName;
+            viewModel.Email = user.Email;
+            viewModel.FirstName = user.FirstName;
+            viewModel.LastName = user.LastName;
+            viewModel.University = user.University;
+            if (user.Disciplines != null)
+            {
+                viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+            }
         }
     }
 }

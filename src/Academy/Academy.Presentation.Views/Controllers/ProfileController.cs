@@ -19,6 +19,8 @@ namespace Academy.Presentation.Views.Controllers
     {
         private const string UserPhotosFolder = "~/Resources/Users";
 
+        private const string ArticlesFolder = "~/Resources/Articles";
+
         private readonly User currentUser;
 
         private readonly ApplicationContainer container;
@@ -55,22 +57,27 @@ namespace Academy.Presentation.Views.Controllers
 
         // TODO: maby I should combine this action with Edit?
         [HttpPost]
-        public ActionResult SelectDisciplines(IEnumerable<int> disciplines)
+        public ActionResult UpdateDisciplines(
+            IEnumerable<DisciplineViewModel> disciplines)
         {
             container.Service.Notification.AssigneDisciplines(
                 currentUser,
-                disciplines);
+                disciplines.Select(x => x.Id));
             return View("Edit", UserMapper.Map(currentUser));
         }
 
         public ActionResult GetUserArticles()
         {
-            return View("RenderTemplates/UserArticlesView", UserMapper.Map(currentUser));
+            return View(
+                "RenderTemplates/UserArticlesView",
+                UserMapper.Map(currentUser));
         }
 
         public ActionResult AddAuthor()
         {
-            return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
+            return View(
+                "EditorTemplates/CreateAuthorEditor",
+                new AuthorViewModel());
         }
 
         [HttpPost]
@@ -80,10 +87,12 @@ namespace Academy.Presentation.Views.Controllers
             if (ModelState.IsValid)
             {
                 container.Service.Publication.PublishArticle(
-                    ArticleMapper.Map(viewModel),
-                    viewModel.Disciplines.Select(x => x.Id));
+                    currentUser,
+                    ArticleMapper.Map(viewModel));
             }
-            return View("RenderTemplates/UserArticlesView", UserMapper.Map(currentUser));
+            return View(
+                "RenderTemplates/UserArticlesView",
+                UserMapper.Map(currentUser));
         }
 
         public string Upload(HttpPostedFileBase file)
@@ -91,10 +100,10 @@ namespace Academy.Presentation.Views.Controllers
             string result = null;
             if (file != null)
             {
-                //result = container.Service.Files.Upload(
-                //    file.InputStream,
-                //    "Articles",
-                //    file.FileName);
+                result = container.Service.Files.Upload(
+                    file.InputStream,
+                    Server.MapPath(ArticlesFolder),
+                    file.FileName);
             }
             return result;
         }
@@ -108,7 +117,8 @@ namespace Academy.Presentation.Views.Controllers
 
         private void UploadUserPhoto(UserViewModel viewModel)
         {
-            if (viewModel.PhotoFile != null && viewModel.PhotoFile.ContentLength > 0)
+            if (viewModel.PhotoFile != null &&
+                viewModel.PhotoFile.ContentLength > 0)
             {
                 viewModel.PhotoFileName = container.Service.Files.Upload(
                     viewModel.PhotoFile.InputStream,

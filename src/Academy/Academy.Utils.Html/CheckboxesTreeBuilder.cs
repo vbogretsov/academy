@@ -49,16 +49,16 @@ namespace Academy.Utils.Html
         protected override void AppendNodeConent(T value)
         {
             AppendHtml("<img src='/Resources/Icons/tree-plus.png'>");
-            AppendHtml(HiddenFormat, (int)getId(value) - 1, collectionName);
+            AppendHtml(HiddenFormat, getId(value), collectionName);
             AppendHtml(getCheckbox(value));
-            AppendHtml(SpanFormat, (int)getId(value) - 1, collectionName, getName(value));
+            AppendHtml(SpanFormat, getId(value), collectionName, getName(value));
         }
 
         protected override void AppendLeafContent(T value)
         {
-            AppendHtml(HiddenFormat, (int)getId(value) - 1, collectionName);
+            AppendHtml(HiddenFormat, getId(value), collectionName);
             AppendHtml(getCheckbox(value));
-            AppendHtml(SpanFormat, (int)getId(value) - 1, collectionName, getName(value));
+            AppendHtml(SpanFormat, getId(value), collectionName, getName(value));
         }
 
         private string GetCheckbox(T value, ICollection<T> selectedItems)
@@ -67,7 +67,7 @@ namespace Academy.Utils.Html
                 selectedItems.Contains(value)
                 ? CheckedCheckboxFormat
                 : UncheckedCheckboxFormat,
-                (int)getId(value) - 1,
+                getId(value),
                 collectionName);
         }
 
@@ -75,7 +75,7 @@ namespace Academy.Utils.Html
         {
             return String.Format(
                 UncheckedCheckboxFormat,
-                (int)getId(value) - 1,
+                getId(value),
                 collectionName);
         }
     }

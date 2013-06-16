@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             Article article = new Article();
             article.Source = viewModel.Source;
-            // TODO: article.Title
+            article.Title = viewModel.Title;
             article.Description = viewModel.Description;
             article.Disciplines = viewModel.Disciplines.Select(DisciplineMapper.Map).ToList();
             article.Comments = viewModel.Comments.Select(CommentMapper.Map).ToList();
@@ -23,6 +23,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             ArticleViewModel viewModel = new ArticleViewModel();
             viewModel.Id = article.ArticleId;
+            viewModel.Title = article.Title;
             viewModel.Description = article.Description;
             viewModel.Source = article.Source;
             return viewModel;

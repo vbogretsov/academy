@@ -15,6 +15,9 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("ArticleId");
+            Property(x => x.Title)
+                .IsRequired()
+                .HasColumnName("Title");
             Property(x => x.Description)
                 .IsRequired()
                 .HasColumnName("Description");
@@ -26,8 +29,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .Map(x =>
                     {
                         x.ToTable("academy_User_Article");
-                        x.MapLeftKey("UserId");
-                        x.MapRightKey("ArticleId");
+                        x.MapLeftKey("ArticleId");
+                        x.MapRightKey("UserId");
                     });
         }
     }

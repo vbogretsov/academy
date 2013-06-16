@@ -13,6 +13,13 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Article title is required")]
+        public string Title
+        {
+            get;
+            set;
+        }
+
         [Required(ErrorMessage = "Article description is required")]
         public string Description
         {
@@ -33,6 +40,7 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Article should have at least one discipline")]
         public virtual ICollection<Discipline> Disciplines
         {
             get;
