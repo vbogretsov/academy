@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Academy.Domain.Objects;
@@ -54,6 +55,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         public override bool Contains(string email)
         {
             return Get(email) != null;
+        }
+
+        public override IEnumerable<User> Resolve(IEnumerable<string> emails)
+        {
+            return emails.Select(Get).Where(x => x != null);
         }
     }
 }

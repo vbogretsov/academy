@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
@@ -14,5 +11,7 @@ namespace Academy.Domain.DataAccess
         public abstract Discipline Get(int id);
 
         public abstract Discipline Get(string name);
+
+        public abstract IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds);
     }
 }

@@ -33,5 +33,10 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             academyEntities.Articles.Remove(article);
             academyEntities.SaveChanges();
         }
+
+        public override void Resolve(Article article)
+        {
+            
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 
@@ -20,15 +21,7 @@ namespace Academy.Domain.Services
 
         public void AssigneDisciplines(User user, IEnumerable<int> disciplineIds)
         {
-            user.Disciplines.Clear();
-            foreach (int disciplineId in disciplineIds)
-            {
-                var discipline = disciplineStorage.Get(disciplineId);
-                if (discipline != null)
-                {
-                    user.Disciplines.Add(discipline);
-                }
-            }
+            user.Disciplines = disciplineStorage.Resolve(disciplineIds).ToList();
             userStorage.Update();
         }
     }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 
@@ -30,55 +28,22 @@ namespace Academy.Domain.Services
         {
             try
             {
-                ResolveAuthors(author, article);
-                ResolveDisciplines(article);
+                Resolve(author, article);
                 articleStorage.Add(article);
             }
             catch (Exception e)
             {
                 var s = e.Message;
             }
-
         }
 
-        private void ResolveAuthors(User author, Article article)
+        private void Resolve(User author, Article article)
         {
-            if (article.Authors != null)
-            {
-                var authors = article.Authors.ToList();
-                article.Authors.Clear();
-                article.Authors.Add(author);
-                foreach (var resolvingAuthor in authors)
-                {
-                    var resolverAuthor = userStorage.Get(resolvingAuthor.Email);
-                    if (resolverAuthor != null)
-                    {
-                        article.Authors.Add(resolverAuthor);
-                    }
-                }
-            }
-            else
-            {
-                article.Authors = new List<User> {author};
-            }
-        }
-
-        private void ResolveDisciplines(Article article)
-        {
-            if (article.Disciplines != null)
-            {
-                var disciplines = article.Disciplines.ToList();
-                article.Disciplines.Clear();
-                foreach (var resolvingDiscipline in disciplines)
-                {
-                    var resolvedDiscipline = disciplineStorage.Get(
-                        resolvingDiscipline.DisciplineId);
-                    if (resolvedDiscipline != null)
-                    {
-                        article.Disciplines.Add(resolvedDiscipline);
-                    }
-                }
-            }
+            IEnumerable<User> users = userStorage.Resolve(
+                article.Authors.Select(x => x.Email));
+            article.Authors = (new[] {author}).Union(users).ToList();
+            article.Disciplines = disciplineStorage.Resolve(
+                    article.Disciplines.Select(x => x.DisciplineId)).ToList();
         }
     }
 }

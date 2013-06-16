@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
@@ -18,5 +19,7 @@ namespace Academy.Domain.DataAccess
         public abstract User Get(string emial);
 
         public abstract bool Contains(string email);
+
+        public abstract IEnumerable<User> Resolve(IEnumerable<string> emails);
     }
 }

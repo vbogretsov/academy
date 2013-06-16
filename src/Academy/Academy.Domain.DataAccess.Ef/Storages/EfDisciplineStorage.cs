@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
@@ -31,6 +29,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         {
             return academyEntities.Disciplines.SingleOrDefault(
                 x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
+        }
+
+        public override IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
+        {
+            return disciplineIds.Select(Get).Where(x => x != null);
         }
     }
 }
