@@ -1,2 +1,6 @@
 ﻿@model Academy.Presentation.ViewModels.CommentViewModel
 
+@Html.TextAreaFor(m => m.Text, new { @class = "full-block fixed-size pre-scrollable", style = "height: 80px; font-size:12pt" })
+<div>
+    <a href="#" class="btn btn-primary pull-right">Comment</a>
+</div>

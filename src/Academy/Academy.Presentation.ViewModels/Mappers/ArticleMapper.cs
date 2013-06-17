@@ -26,6 +26,8 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.Title = article.Title;
             viewModel.Description = article.Description;
             viewModel.Source = article.Source;
+            viewModel.Authors = article.Authors.Select(AuthorMapper.Map).ToList();
+            viewModel.Disciplines = article.Disciplines.Select(DisciplineMapper.Map).ToList();
             return viewModel;
         }
     }

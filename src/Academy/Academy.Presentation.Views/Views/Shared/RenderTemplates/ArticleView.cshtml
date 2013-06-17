@@ -1,6 +1,48 @@
-﻿@model Academy.Presentation.ViewModels.ArticleViewModel
-
-<div class="hero-unit">
-    <h3>@Model.Title</h3>
-    <p>@Model.Description</p>
+﻿@using Academy.Presentation.ViewModels
+@model Academy.Presentation.ViewModels.ArticleViewModel
+<div class="text-block ">
+    <div class="text-block-header">
+        <h4>@Model.Title</h4>
+    </div>
+    <div class="text-block-sub-header">
+        @foreach (var author in Model.Authors)
+        {
+            <h6>@String.Format("{0} {1} {2}", @author.Email, @author.FirstName, @author.LastName)</h6>
+        }
+    </div>
+    <div class="text-block-body">
+        @Model.Description
+    </div>
+    <div class="text-block-footer">
+        <b>Disciplines</b>:
+        @foreach (var discipline in Model.Disciplines)
+        {
+            <span class="label font-small">@discipline.Name</span>
+        }
+        <div class="pull-right">
+            <a href="#" class="btn btn-mini btn-primary" id="@String.Format("addCommentFor{0}", Model.Id)">Add comment</a>
+            <a href="#" class="btn btn-mini" id="@String.Format("showCommentsFor{0}", Model.Id)">Show comments</a>
+        </div>
+    </div>
 </div>
+<div id="@String.Format("newCommentFor{0}", Model.Id)" class="text-block hide">
+    <div class="text-block-body">
+        @{Html.RenderPartial("EditorTemplates/CreateCommentEditor", new CommentViewModel());}
+    </div>
+</div>
+<div id="@String.Format("commentsFor{0}", Model.Id)">
+    @foreach (var comment in Model.Comments)
+    {
+        @{Html.RenderPartial("RenderTemplates/CommentView", comment);}
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#@String.Format("addCommentFor{0}", Model.Id)').click(function () {
+            $('#@String.Format("newCommentFor{0}", Model.Id)').slideToggle('fast');
+        });
+        $('#@String.Format("showCommentsFor{0}", Model.Id)').click(function () {
+            $('#@String.Format("commentsFor{0}", Model.Id)').slideToggle('fast');
+        });
+    })
+</script>

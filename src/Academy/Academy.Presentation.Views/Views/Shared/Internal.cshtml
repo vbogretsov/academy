@@ -21,12 +21,13 @@
                 @RenderSection("UserName")
                 <ul class="nav pull-right">
                     <li class="divider-vertical">
-                        @Html.ActionLink(
+                        <a href="#/Edit" id="myArticles">@Localization.GetString("internal.menu.profile")</a>
+                        @*@Html.ActionLink(
                             Localization.GetString("internal.menu.profile"),
                             "Edit",
                             "Profile",
                             null,
-                            new { id = "editProfile" })
+                            new { id = "editProfile" })*@
                     </li>
                     <li class="divider-vertical">
                         @Html.ActionLink(

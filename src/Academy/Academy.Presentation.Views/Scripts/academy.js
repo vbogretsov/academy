@@ -1,14 +1,14 @@
 ﻿$(function () {
     // init main menu 
 
-    $('#editProfile').click(function () {
-        $('#profile a.btn').removeClass('btn-primary');
-        LoadView('#body', this.href, function () {
-            $('#body .tree li').hide();
-            $('#body .tree li.root').show();
-        });
-        return false;
-    });
+//    $('#editProfile').click(function () {
+//        $('#profile a.btn').removeClass('btn-primary');
+//        LoadView('#body', this.href, function () {
+//            $('#body .tree li').hide();
+//            $('#body .tree li.root').show();
+//        });
+//        return false;
+//    });
 
     // init profile menu
 
@@ -19,12 +19,37 @@
     });
 
     // init Add article form
-    $('#myArticles').click(function () {
-        LoadView('#body', this.href, function () {
-            CollapseDisciplinesTree();
+
+    var app = $.sammy('#body', function (context) {
+        
+        // init side menu
+        this.get('#/Articles', function () {
+            LoadView('#body', "Profile/GetUserArticles", function () {
+                CollapseDisciplinesTree();
+            });
         });
+
+        // init main menu
+        this.get('#/Edit', function () {
+            $('#profile a.btn').removeClass('btn-primary');
+            LoadView('#body', "Profile/Edit", function () {
+                CollapseDisciplinesTree();
+            });
+        });
+
         return false;
     });
+    
+    $(function () {
+        app.run('#/');
+    });
+
+//    $('#myArticles').click(function () {
+//        LoadView('#body', this.href, function () {
+//            CollapseDisciplinesTree();
+//        });
+//        return false;
+//    });
 
     // add author editor
     $('body').on('click', '#addAuthor', null, function () {

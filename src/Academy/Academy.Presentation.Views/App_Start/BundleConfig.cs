@@ -26,6 +26,9 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/tree").Include(
                 "~/Scripts/tree.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/sammy")
+                .Include("~/Scripts/sammy.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/academy").Include(
                 "~/Scripts/academy.js"));
 

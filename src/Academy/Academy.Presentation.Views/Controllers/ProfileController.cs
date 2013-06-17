@@ -80,6 +80,13 @@ namespace Academy.Presentation.Views.Controllers
                 new AuthorViewModel());
         }
 
+        public ActionResult AddComment()
+        {
+            return View(
+                "EditorTemplates/CreateCommentEditor",
+                new CommentViewModel());
+        }
+
         [HttpPost]
         public ActionResult PublishArticle(
             ArticleViewModel viewModel)
