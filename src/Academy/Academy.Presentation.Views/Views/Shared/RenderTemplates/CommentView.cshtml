@@ -1,2 +1,9 @@
 ﻿@model Academy.Presentation.ViewModels.CommentViewModel
 
+<div class="page-header">
+    <span class="label">
+        @String.Format("{0} {1} {2}", Model.Author.Email, Model.Author.FirstName, Model.Author.LastName)
+    </span>
+    <span class="label pull-right">@Model.CreationDate</span>
+    <p>@Model.Text</p>
+</div>

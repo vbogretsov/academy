@@ -5,6 +5,8 @@ namespace Academy.Domain.DataAccess
 {
     public abstract class ArticleStorage
     {
+        public abstract Article Get(int articleId);
+
         public abstract void Add(Article article);
 
         public abstract void Update(Article article);

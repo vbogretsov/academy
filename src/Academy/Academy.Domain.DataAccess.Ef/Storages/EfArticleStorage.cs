@@ -11,6 +11,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
     {
         private readonly AcademyEntities academyEntities;
 
+        public override Article Get(int articleId)
+        {
+            return academyEntities.Articles.SingleOrDefault(x => x.ArticleId == articleId);
+        }
+
         public EfArticleStorage(AcademyEntities academyEntities)
         {
             this.academyEntities = academyEntities;
@@ -24,7 +29,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public override void Update(Article article)
         {
-            academyEntities.Articles.Attach(article);
+            //academyEntities.Articles.Attach(article);
             academyEntities.SaveChanges();
         }
 

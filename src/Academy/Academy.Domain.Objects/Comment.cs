@@ -27,6 +27,13 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Creation date is required")]
+        public DateTime CreationDate
+        {
+            get;
+            set;
+        }
+
         public virtual User User
         {
             get;

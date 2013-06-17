@@ -159,6 +159,12 @@
   <data name="author.lastname.err.required" xml:space="preserve">
     <value>Last name is required</value>
   </data>
+  <data name="comment.text" xml:space="preserve">
+    <value>Comment...</value>
+  </data>
+  <data name="comment.text.err.required" xml:space="preserve">
+    <value>Comment text is required</value>
+  </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>About</value>
   </data>

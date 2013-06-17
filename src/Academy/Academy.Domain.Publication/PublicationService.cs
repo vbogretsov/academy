@@ -37,6 +37,19 @@ namespace Academy.Domain.Services
             }
         }
 
+        public void CommentArticle(User author, Article article, Comment comment)
+        {
+            var resolvedArticle = articleStorage.Get(article.ArticleId);
+            if (resolvedArticle != null)
+            {
+                comment.User = author;
+                comment.Article = resolvedArticle;
+                comment.CreationDate = DateTime.Now;
+                resolvedArticle.Comments.Add(comment);
+                articleStorage.Update(article);
+            }
+        }
+
         private void Resolve(User author, Article article)
         {
             IEnumerable<User> users = userStorage.Resolve(
