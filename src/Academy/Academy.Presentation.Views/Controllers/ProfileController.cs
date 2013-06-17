@@ -80,13 +80,6 @@ namespace Academy.Presentation.Views.Controllers
                 new AuthorViewModel());
         }
 
-        public ActionResult AddComment()
-        {
-            return View(
-                "EditorTemplates/CreateCommentEditor",
-                new CommentViewModel());
-        }
-
         [HttpPost]
         public ActionResult PublishArticle(
             ArticleViewModel viewModel)
@@ -100,6 +93,25 @@ namespace Academy.Presentation.Views.Controllers
             return View(
                 "RenderTemplates/UserArticlesView",
                 UserMapper.Map(currentUser));
+        }
+
+        [HttpPost]
+        public ActionResult CommentArticle(CommentViewModel viewModel)
+        {
+            var article = container.ArticleStorage.Get(viewModel.Article.Id);
+            //if (ModelState.IsValid)
+            //{
+                container.Service.Publication.CommentArticle(
+                    currentUser,
+                    article,
+                    CommentMapper.Map(viewModel));
+                return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
+            //}
+            //else
+            //{
+            //    var errors = ModelState.Where(x => x.Value.Errors.Count > 0).ToList();
+            //}
+            //return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
         }
 
         public string Upload(HttpPostedFileBase file)

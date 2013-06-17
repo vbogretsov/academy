@@ -9,12 +9,14 @@ namespace Academy.Presentation.Views.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/jquery-1.*",
-                "~/Scripts/jquery.uploadify.js"));
+                "~/Scripts/jquery-1.*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/upload")
+                .Include("~/Scripts/jquery.uploadify.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js")

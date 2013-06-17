@@ -5,5 +5,9 @@
         @String.Format("{0} {1} {2}", Model.Author.Email, Model.Author.FirstName, Model.Author.LastName)
     </span>
     <span class="label pull-right">@Model.CreationDate</span>
-    <p>@Model.Text</p>
+    <div class="text-block">
+        <div class="text-block-body">
+            @Model.Text
+        </div>
+    </div>
 </div>

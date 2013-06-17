@@ -209,6 +209,7 @@
     <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
     <Content Include="Views\Profile\PublishArticle.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\CommentsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,7 +305,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7025/</IISUrl>
+          <IISUrl>http://localhost:7026/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -78,5 +78,13 @@ namespace Academy.Presentation.Views.Unity
                 return unityContainer.Resolve<DisciplineStorage>();
             }
         }
+
+        public ArticleStorage ArticleStorage
+        {
+            get
+            {
+                return unityContainer.Resolve<ArticleStorage>();
+            }
+        }
     }
 }

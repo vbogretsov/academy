@@ -28,6 +28,8 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.Source = article.Source;
             viewModel.Authors = article.Authors.Select(AuthorMapper.Map).ToList();
             viewModel.Disciplines = article.Disciplines.Select(DisciplineMapper.Map).ToList();
+            // TODO: add paging for comments
+            viewModel.Comments = article.Comments.Select(CommentMapper.Map).ToList();
             return viewModel;
         }
     }

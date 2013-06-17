@@ -8,6 +8,15 @@ namespace Academy.Presentation.ViewModels
 {
     public class CommentViewModel : EntityViewModel
     {
+        public CommentViewModel()
+        {
+        }
+
+        public CommentViewModel(ArticleViewModel parentArticle)
+        {
+            Article = parentArticle;
+        }
+
         [LocalizedRequired("comment.text.err.required")]
         public string Text
         {
@@ -16,6 +25,12 @@ namespace Academy.Presentation.ViewModels
         }
 
         public AuthorViewModel Author
+        {
+            get;
+            set;
+        }
+
+        public ArticleViewModel Article
         {
             get;
             set;

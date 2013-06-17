@@ -1,6 +1,20 @@
 ﻿@model Academy.Presentation.ViewModels.CommentViewModel
 
-@Html.TextAreaFor(m => m.Text, new { @class = "full-block fixed-size pre-scrollable", style = "height: 80px; font-size:12pt" })
-<div>
-    <a href="#" class="btn btn-primary pull-right">Comment</a>
-</div>
+
+@Html.HiddenFor(m => m.Article.Id)
+@Html.TextAreaFor(
+    m => m.Text,
+    new
+        {
+            @class = "full-block fixed-size pre-scrollable",
+            style = "height: 80px; font-size:12pt"
+        })
+@Html.ValidationMessageFor(m => m.Text)
+<input type="submit" class="btn btn-primary pull-right" id="@String.Format("postCommentFor{0}", Model.Article.Id)"/>
+
+
+@*<script type="text/javascript">
+    $(function () {
+        
+    });
+</script>*@

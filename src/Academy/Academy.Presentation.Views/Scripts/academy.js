@@ -1,31 +1,13 @@
 ﻿$(function () {
-    // init main menu 
-
-//    $('#editProfile').click(function () {
-//        $('#profile a.btn').removeClass('btn-primary');
-//        LoadView('#body', this.href, function () {
-//            $('#body .tree li').hide();
-//            $('#body .tree li.root').show();
-//        });
-//        return false;
-//    });
-
-    // init profile menu
-
-    // init profile menu buttons
-    $('#profile a.btn').on('click', function () {
-        $('#profile a.btn').removeClass('btn-primary');
-        $(this).addClass('btn-primary');
-    });
-
     // init Add article form
 
     var app = $.sammy('#body', function (context) {
-        
+
         // init side menu
         this.get('#/Articles', function () {
             LoadView('#body', "Profile/GetUserArticles", function () {
                 CollapseDisciplinesTree();
+                InitArticleHandlers();
             });
         });
 
@@ -44,12 +26,14 @@
         app.run('#/');
     });
 
-//    $('#myArticles').click(function () {
-//        LoadView('#body', this.href, function () {
-//            CollapseDisciplinesTree();
-//        });
-//        return false;
-//    });
+    // init profile menu buttons
+    $('#profile a.btn').on('click', function () {
+        $('#profile a.btn').removeClass('btn-primary');
+        $(this).addClass('btn-primary');
+    });
+
+
+    $('.text-block .btn .btn-mini .btn-primary')
 
     // add author editor
     $('body').on('click', '#addAuthor', null, function () {
@@ -102,7 +86,6 @@
     // init article creation form
     $('#body').on('submit', '#publishArticle', null, function (e) {
         $.validator.unobtrusive.parse("#publishArticle");
-        alert($('#publishArticle').valid());
         if($('#publishArticle').valid())
         {
             $.ajax({
@@ -113,12 +96,45 @@
                     $('#body').html('');
                     $('#body').append(html);
                     CollapseDisciplinesTree();
+                    $('#publishArticle')[0].reset();
                 }
             });
         }
         return false;
     });
 });
+
+function InitArticleHandlers() {
+    $('button[id^="addCommentFor"]').each(function () {
+        var id = $(this).attr('id').substring(13);
+        var newCommentId = '#newCommentFor' + id;
+        $(this).click(function () {
+            $(newCommentId).slideToggle('fast');
+        });
+        var showCommentsId = '#showCommentsFor' + id;
+        var commentsId = "#commentsFor" + id;
+        $(showCommentsId).click(function () {
+            $(commentsId).slideToggle('fast');
+        });
+        var commentFormId = '#commentFormFor' + id;
+        $(commentFormId).on('submit', null, function (e) {
+            $.validator.unobtrusive.parse($(commentFormId));
+            if ($(commentFormId).valid()) {
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: $(this).serialize(),
+                    success: function (result) {
+                        $(commentsId).html('');
+                        $(commentsId).append(result);
+                        $(commentFormId)[0].reset();
+                    }
+                });
+            }
+            return false;
+        });
+    });
+}
 
 function LoadView(divId, request, complete) {
     $(divId).html('');
