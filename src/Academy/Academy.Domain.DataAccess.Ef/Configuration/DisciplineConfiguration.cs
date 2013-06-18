@@ -17,7 +17,7 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .HasColumnName("DisciplineId");
             HasOptional(x => x.Parent)
                 .WithMany()
-                .Map(x => x.MapKey("ParentId"));
+                .HasForeignKey(x => x.ParentId);
             Property(x => x.Name)
                 .IsRequired()
                 .HasColumnName("Name");

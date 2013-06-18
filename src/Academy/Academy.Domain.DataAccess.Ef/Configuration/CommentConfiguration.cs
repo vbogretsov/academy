@@ -21,13 +21,13 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             //Property(x => x.Rating) // not supported in .net 4.0
             //    .IsRequired()
             //    .HasColumnName("Rating");
-            Property(x => x.CreationDate)
+            Property(x => x.PostedDate)
                 .IsRequired()
                 .HasColumnName("CreationDate");
-            HasRequired(x => x.Article)
+            HasRequired(x => x.User)
                 .WithMany(x => x.Comments)
                 .Map(x => x.MapKey("UserId"));
-            HasRequired(x => x.User)
+            HasRequired(x => x.Article)
                 .WithMany(x => x.Comments)
                 .Map(x => x.MapKey("ArticleId"));
         }

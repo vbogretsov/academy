@@ -61,7 +61,8 @@ namespace Academy.Presentation
                     "AcademyEntities",
                     "academy_User",
                     "UserId",
-                    "Email", true);
+                    "Email",
+                    true);
             }
             catch (Exception exception)
             {

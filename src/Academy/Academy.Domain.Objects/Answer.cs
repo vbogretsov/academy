@@ -1,34 +1,28 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using Academy.Domain.Objects.Enums;
 
 namespace Academy.Domain.Objects
 {
-    public class Comment
+    public class Answer
     {
-        [Key]
-        public int CommentId
+        public int AnswerId
         {
             get;
             set;
         }
 
-        [Required(ErrorMessage = "Comment text is required")]
         public string Text
         {
             get;
             set;
         }
 
-        [Required(ErrorMessage = "Rating is required")]
-        public Rating Rating
+        public int QuestionId
         {
             get;
             set;
         }
 
-        [Required(ErrorMessage = "Creation date is required")]
-        public DateTime PostedDate
+        public virtual Question Question
         {
             get;
             set;
@@ -46,13 +40,7 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public int ArticleId
-        {
-            get;
-            set;
-        }
-
-        public virtual Article Article
+        public DateTime PostedDate
         {
             get;
             set;

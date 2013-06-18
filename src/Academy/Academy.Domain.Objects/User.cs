@@ -73,6 +73,24 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        public virtual ICollection<Note> Notes
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<Question> Questions
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<Answer> Answers
+        {
+            get;
+            set;
+        }
+
         public virtual ICollection<Article> Articles
         {
             get;

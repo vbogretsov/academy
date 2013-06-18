@@ -27,7 +27,19 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        public int UserId
+        {
+            get;
+            set;
+        }
+
         public virtual User User
+        {
+            get;
+            set;
+        }
+
+        public DateTime PostedDate
         {
             get;
             set;

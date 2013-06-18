@@ -14,19 +14,17 @@
         @Model.Description
     </div>
     <div class="text-block-footer">
-        
-            <b>Disciplines</b>:
-            @foreach (var discipline in Model.Disciplines)
-            {
-                <span class="label font-small">@discipline.Name</span>
-            }
-        
-        
-            <div class="pull-right">
-                <button class="btn btn-mini btn-primary" id="@String.Format("addCommentFor{0}", Model.Id)">Add comment</button>
-                <button class="btn btn-mini" id="@String.Format("showCommentsFor{0}", Model.Id)">Show comments</button>
-            </div>
-        
+        <b>Disciplines</b>:
+        @foreach (var discipline in Model.Disciplines)
+        {
+            <span class="label font-small">@discipline.Name</span>
+        }
+        <div class="pull-right">
+            <button class="btn btn-mini btn-primary" id="@String.Format("addCommentFor{0}", Model.Id)">
+                Add comment</button>
+            <button class="btn btn-mini" id="@String.Format("showCommentsFor{0}", Model.Id)">
+                Show comments</button>
+        </div>
     </div>
 </div>
 <div id="@String.Format("newCommentFor{0}", Model.Id)" class="text-block hide">
@@ -36,7 +34,7 @@
                 "CommentArticle",
                 "Profile",
                 FormMethod.Post,
-                new {id = String.Format("commentFormFor{0}", Model.Id)}))
+                new { id = String.Format("commentFormFor{0}", Model.Id) }))
             {
                 Html.RenderPartial(
                     "EditorTemplates/CreateCommentEditor",

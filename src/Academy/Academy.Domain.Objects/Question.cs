@@ -1,48 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
 
 namespace Academy.Domain.Objects
 {
-    public class Discipline
+    public class Question
     {
-        public override string ToString()
-        {
-            return Name;
-        }
-
-        [Key]
-        public int DisciplineId
+        public int QuestionId
         {
             get;
             set;
         }
 
-        public string Name
+        public string Text
         {
             get;
             set;
         }
 
-        public int ParentId
+        public int UserId
         {
             get;
             set;
         }
 
-        public virtual Discipline Parent
+        public virtual User User
         {
             get;
             set;
         }
 
-        public virtual ICollection<Article> Articles
+        public ICollection<Answer> Answers
         {
             get;
             set;
         }
 
-        public virtual ICollection<User> Users
+        public ICollection<Discipline> Disciplines
+        {
+            get;
+            set;
+        }
+
+        public DateTime PostedDate
         {
             get;
             set;

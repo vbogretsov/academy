@@ -44,7 +44,7 @@ namespace Academy.Domain.Services
             {
                 comment.User = author;
                 comment.Article = resolvedArticle;
-                comment.CreationDate = DateTime.Now;
+                comment.PostedDate = DateTime.Now;
                 resolvedArticle.Comments.Add(comment);
                 articleStorage.Update(article);
             }
