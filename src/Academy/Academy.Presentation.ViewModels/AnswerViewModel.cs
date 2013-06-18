@@ -6,16 +6,10 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class CommentViewModel : EntityViewModel
+    public class AnswerViewModel : EntityViewModel
     {
-        [LocalizedRequired("comment.text.err.required")]
+        [LocalizedRequired("answer.text.err.required")]
         public string Text
-        {
-            get;
-            set;
-        }
-
-        public DateTime PostedDate
         {
             get;
             set;
@@ -27,19 +21,13 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public AuthorViewModel Author
+        public UserViewModel Author
         {
             get;
             set;
         }
 
-        public int ArticleId
-        {
-            get;
-            set;
-        }
-
-        public ArticleViewModel Article
+        public DateTime PostedDate
         {
             get;
             set;

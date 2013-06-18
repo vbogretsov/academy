@@ -2,32 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Academy.Validation;
 
-namespace Academy.Presentation.ViewModels
+namespace Academy.Domain.Objects
 {
-    public class CommentViewModel : EntityViewModel
+    public class ArticleNews
     {
-        [LocalizedRequired("comment.text.err.required")]
-        public string Text
+        public int ArticleNewsId
         {
             get;
             set;
         }
 
-        public DateTime PostedDate
+        public int UserId
         {
             get;
             set;
         }
 
-        public int AuthorId
-        {
-            get;
-            set;
-        }
-
-        public AuthorViewModel Author
+        public virtual User User
         {
             get;
             set;
@@ -39,7 +31,13 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public ArticleViewModel Article
+        public virtual Article Article
+        {
+            get;
+            set;
+        }
+
+        public bool Read
         {
             get;
             set;

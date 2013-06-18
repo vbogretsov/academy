@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Academy.Domain.DataAccess;
+using Academy.Domain.Interface;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.Services
 {
-    public class PublicationService
+    public class PublicationService : IPublicationService
     {
         private readonly UserStorage userStorage;
 
@@ -24,6 +25,27 @@ namespace Academy.Domain.Services
             this.disciplineStorage = disciplineStorage;
         }
 
+        public void Publish(Article article)
+        {
+            
+        }
+
+        public void Comment(Comment comment)
+        {
+            
+        }
+
+        public IEnumerable<Article> GetArticles(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Comment> GetComments(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        // OLD CODE TO BE REMOVED!!!
         public void PublishArticle(User author, Article article)
         {
             try

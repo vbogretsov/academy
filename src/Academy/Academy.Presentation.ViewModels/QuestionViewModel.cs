@@ -6,16 +6,10 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class CommentViewModel : EntityViewModel
+    public class QuestionViewModel : EntityViewModel
     {
-        [LocalizedRequired("comment.text.err.required")]
+        [LocalizedRequired("question.text.err.required")]
         public string Text
-        {
-            get;
-            set;
-        }
-
-        public DateTime PostedDate
         {
             get;
             set;
@@ -27,19 +21,26 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public AuthorViewModel Author
+        public UserViewModel Author
         {
             get;
             set;
         }
 
-        public int ArticleId
+        public DateTime PostedDate
         {
             get;
             set;
         }
 
-        public ArticleViewModel Article
+        public IEnumerable<DisciplineViewModel> Disciplines
+        {
+            get;
+            set;
+        }
+
+        //TODO: add paging
+        public IEnumerable<AnswerViewModel> Answers
         {
             get;
             set;

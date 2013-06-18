@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Academy.Domain.DataAccess;
+using Academy.Domain.Interface;
 using Academy.Security;
 
 namespace Academy.Domain.Services
 {
-    public class AcademyService
+    public class AcademyService : IAcademyService
     {
         public AcademyService(
             IStorageFactory storageFactory,
@@ -17,19 +18,31 @@ namespace Academy.Domain.Services
             var disciplineStorage = storageFactory.CreateDisciplineStorage();
             var userStorage = storageFactory.CreateUserStorage();
             var articleStorage = storageFactory.CreateArticleStorage();
-            Notification = new NotificationService(disciplineStorage, userStorage);
-            Publication = new PublicationService(userStorage, articleStorage, disciplineStorage);
+            Notifications = new NotificationService(disciplineStorage, userStorage);
+            Publications = new PublicationService(userStorage, articleStorage, disciplineStorage);
             Account = new AccountService(roleManager, accountManager, userStorage);
             Files = new FilesStore();
         }
 
-        public NotificationService Notification
+        public IQuestionService QuestionServices
         {
             get;
             private set;
         }
 
-        public PublicationService Publication
+        public INotificationService Notifications
+        {
+            get;
+            private set;
+        }
+
+        public INoteService Notes
+        {
+            get;
+            private set;
+        }
+
+        public IPublicationService Publications
         {
             get;
             private set;

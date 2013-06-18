@@ -87,13 +87,22 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
+        //TODO: add paging
         public IEnumerable<ArticleViewModel> Articles
         {
             get;
             set;
         }
 
+        //TODO: add paging
         public IEnumerable<CommentViewModel> Comments
+        {
+            get;
+            set;
+        }
+
+        //TODO: add paging
+        public IEnumerable<NoteViewModel> Notes
         {
             get;
             set;

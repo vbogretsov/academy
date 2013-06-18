@@ -14,7 +14,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.Id = comment.CommentId;
             viewModel.Text = comment.Text;
             viewModel.Author = AuthorMapper.Map(comment.User);
-            viewModel.CreationDate = comment.PostedDate;
+            viewModel.PostedDate = comment.PostedDate;
             return viewModel;
         }
 

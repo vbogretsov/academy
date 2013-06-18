@@ -108,5 +108,29 @@ namespace Academy.Domain.Objects
             get;
             set;
         }
+
+        public virtual ICollection<ArticleNews> ArticleNewses
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<CommentNews> CommentNewses
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<QuestionNews> QuestionNewses
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<AnswerNews> AnswerNewses
+        {
+            get;
+            set;
+        }
     }
 }

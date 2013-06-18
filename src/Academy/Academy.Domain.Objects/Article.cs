@@ -52,5 +52,11 @@ namespace Academy.Domain.Objects
             get;
             set;
         }
+
+        public virtual ICollection<ArticleNews> ArticleNewses
+        {
+            get;
+            set;
+        }
     }
 }

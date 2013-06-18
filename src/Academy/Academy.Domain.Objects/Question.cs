@@ -31,13 +31,19 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public ICollection<Answer> Answers
+        public virtual ICollection<Answer> Answers
         {
             get;
             set;
         }
 
-        public ICollection<Discipline> Disciplines
+        public virtual ICollection<Discipline> Disciplines
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<QuestionNews> QuestionNewses
         {
             get;
             set;

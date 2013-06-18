@@ -30,9 +30,10 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             //Property(x => x.QuestionId)
             //    .IsRequired()
             //    .HasColumnName("QuestionId");
-            HasRequired(x => x.Question)
-                .WithMany(x => x.Answers)
-                .Map(x => x.MapKey("QuestionId"));
+            //HasRequired(x => x.Question)
+            //    .WithMany(x => x.Answers)
+            //    .HasForeignKey(x => x.AnswerId);
+            //.Map(x => x.MapKey("QuestionId"));
         }
     }
 }

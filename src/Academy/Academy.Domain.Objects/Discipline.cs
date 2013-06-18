@@ -24,7 +24,7 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public int ParentId
+        public int? ParentId
         {
             get;
             set;
@@ -43,6 +43,12 @@ namespace Academy.Domain.Objects
         }
 
         public virtual ICollection<User> Users
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<Question> Questions
         {
             get;
             set;

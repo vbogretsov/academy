@@ -23,13 +23,17 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             //    .HasColumnName("Rating");
             Property(x => x.PostedDate)
                 .IsRequired()
-                .HasColumnName("CreationDate");
+                .HasColumnName("PostedDate");
             HasRequired(x => x.User)
                 .WithMany(x => x.Comments)
-                .Map(x => x.MapKey("UserId"));
+                .HasForeignKey(x => x.UserId);
             HasRequired(x => x.Article)
                 .WithMany(x => x.Comments)
-                .Map(x => x.MapKey("ArticleId"));
+                .HasForeignKey(x => x.ArticleId);
+            //.Map(x => x.MapKey("UserId"));
+            //HasRequired(x => x.Article)
+            //    .WithMany(x => x.Comments)
+            //    .Map(x => x.MapKey("ArticleId"));
         }
     }
 }

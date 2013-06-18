@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Academy.Domain.Objects.Enums;
 
@@ -53,6 +54,12 @@ namespace Academy.Domain.Objects
         }
 
         public virtual Article Article
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<CommentNews> CommentNewses
         {
             get;
             set;

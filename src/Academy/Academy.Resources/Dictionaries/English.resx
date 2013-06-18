@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="answer.text.err.required" xml:space="preserve">
+    <value>Answer text is required</value>
+  </data>
   <data name="article.description" xml:space="preserve">
     <value>Article description</value>
   </data>
@@ -269,6 +272,9 @@
   </data>
   <data name="profile.mycomment" xml:space="preserve">
     <value>My comment</value>
+  </data>
+  <data name="question.text.err.required" xml:space="preserve">
+    <value>Question text is required</value>
   </data>
   <data name="registration..btn.register" xml:space="preserve">
     <value>Register</value>

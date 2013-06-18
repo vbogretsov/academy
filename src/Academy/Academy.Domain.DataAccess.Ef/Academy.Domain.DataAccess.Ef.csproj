@@ -47,11 +47,15 @@
   <ItemGroup>
     <Compile Include="AcademyEntities.cs" />
     <Compile Include="Configuration\AnswerConfiguration.cs" />
+    <Compile Include="Configuration\AnswerNewsConfiguration.cs" />
     <Compile Include="Configuration\ArticleConfiguration.cs" />
+    <Compile Include="Configuration\ArticleNewsConfiguration.cs" />
     <Compile Include="Configuration\CommentConfiguration.cs" />
+    <Compile Include="Configuration\CommentNewsConfiguration.cs" />
     <Compile Include="Configuration\DisciplineConfiguration.cs" />
     <Compile Include="Configuration\NoteConfiguration.cs" />
     <Compile Include="Configuration\QuestionConfiguration.cs" />
+    <Compile Include="Configuration\QuestionNewsConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="EfStorageFactory.cs" />
     <Compile Include="Storages\EfArticleStorage.cs" />

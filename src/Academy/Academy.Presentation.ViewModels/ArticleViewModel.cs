@@ -51,6 +51,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
+        //TODO: add paging
         public IEnumerable<CommentViewModel> Comments
         {
             get;

@@ -38,7 +38,7 @@
             {
                 Html.RenderPartial(
                     "EditorTemplates/CreateCommentEditor",
-                    new CommentViewModel(Model));
+                    new CommentViewModel(){ArticleId =  Model.Id});
             }
         }
     </div>

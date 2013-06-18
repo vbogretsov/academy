@@ -86,7 +86,7 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                container.Service.Publication.PublishArticle(
+                container.Service.Publications.PublishArticle(
                     currentUser,
                     ArticleMapper.Map(viewModel));
             }
@@ -101,7 +101,7 @@ namespace Academy.Presentation.Views.Controllers
             var article = container.ArticleStorage.Get(viewModel.Article.Id);
             //if (ModelState.IsValid)
             //{
-                container.Service.Publication.CommentArticle(
+                container.Service.Publications.CommentArticle(
                     currentUser,
                     article,
                     CommentMapper.Map(viewModel));

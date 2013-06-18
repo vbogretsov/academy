@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Academy.Domain.Objects
 {
@@ -41,6 +42,12 @@ namespace Academy.Domain.Objects
         }
 
         public DateTime PostedDate
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<AnswerNews> AnswerNewses
         {
             get;
             set;

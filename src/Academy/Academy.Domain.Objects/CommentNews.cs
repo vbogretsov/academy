@@ -2,44 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Academy.Validation;
 
-namespace Academy.Presentation.ViewModels
+namespace Academy.Domain.Objects
 {
-    public class CommentViewModel : EntityViewModel
+    public class CommentNews
     {
-        [LocalizedRequired("comment.text.err.required")]
-        public string Text
+        public int CommentNewsId
         {
             get;
             set;
         }
 
-        public DateTime PostedDate
+        public int UserId
         {
             get;
             set;
         }
 
-        public int AuthorId
+        public virtual User User
         {
             get;
             set;
         }
 
-        public AuthorViewModel Author
+        public int CommentId
         {
             get;
             set;
         }
 
-        public int ArticleId
+        public virtual Comment Comment
         {
             get;
             set;
         }
 
-        public ArticleViewModel Article
+        public bool Read
         {
             get;
             set;
