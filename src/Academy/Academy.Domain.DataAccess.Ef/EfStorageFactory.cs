@@ -33,5 +33,10 @@ namespace Academy.Domain.DataAccess.Ef
         {
             return new EfDisciplineStorage(academyEntities);
         }
+
+        public QuestionStorage CreateQuestionStorage()
+        {
+            return new EfQuestionStorage(academyEntities);
+        }
     }
 }

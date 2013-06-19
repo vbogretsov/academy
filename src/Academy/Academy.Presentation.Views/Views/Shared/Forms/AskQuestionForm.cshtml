@@ -1,0 +1,17 @@
+﻿@model Academy.Presentation.ViewModels.QuestionViewModel
+
+@using (Html.BeginForm(
+    "Ask",
+    "Question",
+    FormMethod.Post,
+    new
+        {
+            id = "askQuestion",
+            @class = "form-horizontal",
+            style = "padding-bottom: 20px",
+            enctype = "multipart/mixed"
+        })) 
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel("CreateQuestionEditor")
+}

@@ -13,6 +13,12 @@ namespace Academy.Presentation.ViewModels
             Comments = new List<CommentViewModel>();
         }
 
+        public int UploaderId
+        {
+            get;
+            set;
+        }
+
         [LocalizedDisplay("article.title")]
         [LocalizedRequired("article.title.err.required")]
         public string Title

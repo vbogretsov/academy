@@ -14,7 +14,7 @@
                 @{
                     Html.RenderPartial(
                         "PublishArticle",
-                        new ArticleViewModel());
+                        new ArticleViewModel{UploaderId = Model.Id});
                 }
             </div>
         </div>
@@ -24,5 +24,13 @@
 
 @foreach (var article in Model.Articles)
 {
-    Html.RenderPartial("RenderTemplates/ArticleView", article);
+    try
+    {
+        Html.RenderPartial("RenderTemplates/ArticleView", article);
+    }
+    catch (Exception exception)
+    {
+        <p>@exception.Message</p>
+        <p>@exception.StackTrace</p>
+    }
 }

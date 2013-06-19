@@ -16,16 +16,17 @@
         null,
         new {@class = "btn btn-block", id = "myArticles"})*@
     <a href="#/Articles" id="myArticles" class="btn btn-block">@Localization.GetString("profile.myarticles")</a>
+    <a href="#/Questions" id="myQuestions" class="btn btn-block">@Localization.GetString("prifile.myquestions")</a>
     @Html.ActionLink(
         Localization.GetString("profile.mycomment"),
         "GetArticles",
         "Profile",
         new {@class = "btn btn-block"})
-    @Html.ActionLink(
+    @*@Html.ActionLink(
         Localization.GetString("prifile.myquestions"),
-        "GetArticles",
-        "Profile",
-        new {@class = "btn btn-block"})
+        "Ask",
+        "Question",
+        new {@class = "btn btn-block"})*@
     @Html.ActionLink(
         Localization.GetString("profile.myanswers"),
         "GetArticles",

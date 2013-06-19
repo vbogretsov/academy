@@ -18,6 +18,8 @@ namespace Academy.Domain.DataAccess
 
         public abstract User Get(string emial);
 
+        public abstract User Get(int id);
+
         public abstract bool Contains(string email);
 
         public abstract IEnumerable<User> Resolve(IEnumerable<string> emails);

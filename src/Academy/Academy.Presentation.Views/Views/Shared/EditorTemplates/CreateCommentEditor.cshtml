@@ -2,6 +2,7 @@
 
 
 @Html.HiddenFor(m => m.ArticleId)
+@Html.HiddenFor(m => m.AuthorId)
 @Html.TextAreaFor(
     m => m.Text,
     new
@@ -10,7 +11,7 @@
             style = "height: 80px; font-size:12pt"
         })
 @Html.ValidationMessageFor(m => m.Text)
-<input type="submit" class="btn btn-primary pull-right" id="@String.Format("postCommentFor{0}", Model.Article.Id)"/>
+<input type="submit" class="btn btn-primary pull-right" id="@String.Format("postCommentFor{0}", Model.ArticleId)"/>
 
 
 @*<script type="text/javascript">

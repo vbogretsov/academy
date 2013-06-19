@@ -10,6 +10,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Article Map(ArticleViewModel viewModel)
         {
             Article article = new Article();
+            article.ArticleId = viewModel.Id;
             article.Source = viewModel.Source;
             article.Title = viewModel.Title;
             article.Description = viewModel.Description;

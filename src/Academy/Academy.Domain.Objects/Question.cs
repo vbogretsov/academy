@@ -13,6 +13,12 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        public string Title
+        {
+            get;
+            set;
+        }
+
         public string Text
         {
             get;

@@ -107,5 +107,12 @@ namespace Academy.Presentation.ViewModels
             get;
             set;
         }
+
+        //TODO: add paging
+        public IEnumerable<QuestionViewModel> Questions
+        {
+            get;
+            set;
+        }
     }
 }

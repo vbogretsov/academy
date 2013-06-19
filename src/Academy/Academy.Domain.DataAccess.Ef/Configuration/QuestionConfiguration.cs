@@ -18,6 +18,9 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("QuestionId");
+            Property(x => x.Title)
+                .IsRequired()
+                .HasColumnName("Title");
             Property(x => x.Text)
                 .IsRequired()
                 .HasColumnName("Text");

@@ -11,6 +11,12 @@
             });
         });
 
+        this.get('#/Questions', function() {
+            LoadView('#body', "Question/GetUserQuestions", function() {
+                CollapseDisciplinesTree();
+            });
+        });
+
         // init main menu
         this.get('#/Edit', function () {
             $('#profile a.btn').removeClass('btn-primary');
@@ -86,8 +92,8 @@
     // init article creation form
     $('#body').on('submit', '#publishArticle', null, function (e) {
         $.validator.unobtrusive.parse("#publishArticle");
-        if($('#publishArticle').valid())
-        {
+        if($('#publishArticle').valid()) {
+            alert(this.method);
             $.ajax({
                 url: this.action,
                 type: this.method,
@@ -97,6 +103,26 @@
                     $('#body').append(html);
                     CollapseDisciplinesTree();
                     $('#publishArticle')[0].reset();
+                }
+            });
+        }
+        return false;
+    });
+
+    // init question creation form
+    $('#body').on('submit', '#askQuestion', null, function (e) {
+        $.validator.unobtrusive.parse('#askQuestion');
+        if ($('#askQuestion').valid()) {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (html) {
+                    $('#body').html('');
+                    $('#body').append(html);
+                    CollapseDisciplinesTree();
+                    $('#askQuestion')[0].reset();
+                    alert('xxx');
                 }
             });
         }

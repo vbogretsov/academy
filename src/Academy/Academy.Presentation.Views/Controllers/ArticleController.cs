@@ -68,7 +68,7 @@ namespace Academy.Presentation.Views.Controllers
         private ActionResult GetUserArticles(User user)
         {
             var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map).ToList();
+            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
             return View("RenderTemplates/UserArticlesView", UserMapper.Map(user));
         }
     }

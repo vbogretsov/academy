@@ -8,6 +8,15 @@ namespace Academy.Presentation.ViewModels
 {
     public class QuestionViewModel : EntityViewModel
     {
+        [LocalizedDisplay("question.title")]
+        [LocalizedRequired("question.title.err.required")]
+        public string Title
+        {
+            get;
+            set;
+        }
+
+        [LocalizedDisplay("question.text")]
         [LocalizedRequired("question.text.err.required")]
         public string Text
         {
@@ -21,7 +30,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public UserViewModel Author
+        public AuthorViewModel Author
         {
             get;
             set;

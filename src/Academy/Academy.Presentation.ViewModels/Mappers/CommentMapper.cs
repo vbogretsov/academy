@@ -22,6 +22,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             Comment comment = new Comment();
             comment.CommentId = viewModel.Id;
+            comment.ArticleId = viewModel.ArticleId;
             comment.Text = viewModel.Text;
             return comment;
         }

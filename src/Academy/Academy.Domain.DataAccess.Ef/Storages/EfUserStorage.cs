@@ -56,6 +56,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return academyEntities.Users.SingleOrDefault(x => x.Email == emial);
         }
 
+        public override User Get(int id)
+        {
+            return academyEntities.Users.SingleOrDefault(x => x.UserId == id);
+        }
+
         public override bool Contains(string email)
         {
             return Get(email) != null;

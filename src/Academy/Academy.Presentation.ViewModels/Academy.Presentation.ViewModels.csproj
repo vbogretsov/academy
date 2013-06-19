@@ -53,11 +53,13 @@
     <Compile Include="EntityViewModel.cs" />
     <Compile Include="HomeViewModel.cs" />
     <Compile Include="LoginViewModel.cs" />
+    <Compile Include="Mappers\AnswerMapper.cs" />
     <Compile Include="Mappers\ArticleMapper.cs" />
     <Compile Include="Mappers\AuthorMapper.cs" />
     <Compile Include="Mappers\CommentMapper.cs" />
     <Compile Include="Mappers\DateMapper.cs" />
     <Compile Include="Mappers\DisciplineMapper.cs" />
+    <Compile Include="Mappers\QuestionMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="NoteViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

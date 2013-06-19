@@ -529,11 +529,38 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Question text.
+        /// </summary>
+        public static string question_text {
+            get {
+                return ResourceManager.GetString("question.text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Question text is required.
         /// </summary>
         public static string question_text_err_required {
             get {
                 return ResourceManager.GetString("question.text.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question title.
+        /// </summary>
+        public static string question_title {
+            get {
+                return ResourceManager.GetString("question.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question title is required.
+        /// </summary>
+        public static string question_title_err_required {
+            get {
+                return ResourceManager.GetString("question.title.err.required", resourceCulture);
             }
         }
         

@@ -61,6 +61,7 @@
     <Compile Include="Storages\EfArticleStorage.cs" />
     <Compile Include="Storages\EfCommentStorage.cs" />
     <Compile Include="Storages\EfDisciplineStorage.cs" />
+    <Compile Include="Storages\EfQuestionStorage.cs" />
     <Compile Include="Storages\EfUserStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

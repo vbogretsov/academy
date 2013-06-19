@@ -29,6 +29,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static UserViewModel Map(User user)
         {
             UserViewModel viewModel = new UserViewModel();
+            viewModel.Id = user.UserId;
             viewModel.Email = user.Email;
             viewModel.FirstName = user.FirstName;
             viewModel.LastName = user.LastName;
@@ -47,6 +48,10 @@ namespace Academy.Presentation.ViewModels.Mappers
             {
                 viewModel.Comments = user.Comments.Select(CommentMapper.Map);
             }
+            if (user.Questions != null)
+            {
+                viewModel.Questions = user.Questions.Select(QuestionMapper.Map);
+            }
             return viewModel;
         }
 
@@ -61,27 +66,27 @@ namespace Academy.Presentation.ViewModels.Mappers
             return user;
         }
 
-        public static void Sync(User user, UserViewModel viewModel)
-        {
-            user.PhotoFileName = viewModel.PhotoFileName ?? user.PhotoFileName;
-            user.Email = viewModel.Email;
-            user.FirstName = viewModel.FirstName;
-            user.LastName = viewModel.LastName;
-            user.University = viewModel.University;
-            user.BirthDate = DateMapper.Map(viewModel.BirthDate);
-        }
+        //public static void Sync(User user, UserViewModel viewModel)
+        //{
+        //    user.PhotoFileName = viewModel.PhotoFileName ?? user.PhotoFileName;
+        //    user.Email = viewModel.Email;
+        //    user.FirstName = viewModel.FirstName;
+        //    user.LastName = viewModel.LastName;
+        //    user.University = viewModel.University;
+        //    user.BirthDate = DateMapper.Map(viewModel.BirthDate);
+        //}
 
-        public static void Sync(UserViewModel viewModel, User user)
-        {
-            viewModel.PhotoFileName = user.PhotoFileName;
-            viewModel.Email = user.Email;
-            viewModel.FirstName = user.FirstName;
-            viewModel.LastName = user.LastName;
-            viewModel.University = user.University;
-            if (user.Disciplines != null)
-            {
-                viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
-            }
-        }
+        //public static void Sync(UserViewModel viewModel, User user)
+        //{
+        //    viewModel.PhotoFileName = user.PhotoFileName;
+        //    viewModel.Email = user.Email;
+        //    viewModel.FirstName = user.FirstName;
+        //    viewModel.LastName = user.LastName;
+        //    viewModel.University = user.University;
+        //    if (user.Disciplines != null)
+        //    {
+        //        viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
+        //    }
+        //}
     }
 }

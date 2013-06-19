@@ -139,6 +139,7 @@
     <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +213,13 @@
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
     <Content Include="Views\Article\PublishArticle.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentsView.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateQuestionEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateAnswerEditor.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\QuestionView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\AnswerView.cshtml" />
+    <Content Include="Views\Question\GetUserQuestions.cshtml" />
+    <Content Include="Views\Question\GetUserAnswers.cshtml" />
+    <Content Include="Views\Shared\Forms\AskQuestionForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

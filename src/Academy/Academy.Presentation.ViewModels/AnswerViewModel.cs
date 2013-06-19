@@ -21,7 +21,13 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public UserViewModel Author
+        public AuthorViewModel Author
+        {
+            get;
+            set;
+        }
+
+        public int QuestionId
         {
             get;
             set;

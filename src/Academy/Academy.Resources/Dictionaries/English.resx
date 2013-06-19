@@ -273,8 +273,17 @@
   <data name="profile.mycomment" xml:space="preserve">
     <value>My comment</value>
   </data>
+  <data name="question.text" xml:space="preserve">
+    <value>Question text</value>
+  </data>
   <data name="question.text.err.required" xml:space="preserve">
     <value>Question text is required</value>
+  </data>
+  <data name="question.title" xml:space="preserve">
+    <value>Question title</value>
+  </data>
+  <data name="question.title.err.required" xml:space="preserve">
+    <value>Question title is required</value>
   </data>
   <data name="registration..btn.register" xml:space="preserve">
     <value>Register</value>
