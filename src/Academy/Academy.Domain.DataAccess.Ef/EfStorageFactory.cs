@@ -5,7 +5,14 @@ namespace Academy.Domain.DataAccess.Ef
 {
     public class EfStorageFactory : IStorageFactory
     {
-        private static readonly AcademyEntities academyEntities = new AcademyEntities();
+        //private static readonly AcademyEntities academyEntities = new AcademyEntities();
+
+        private readonly AcademyEntities academyEntities;
+
+        public EfStorageFactory(AcademyEntities academyEntities)
+        {
+            this.academyEntities = academyEntities;
+        }
 
         public UserStorage CreateUserStorage()
         {

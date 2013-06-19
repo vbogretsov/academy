@@ -5,7 +5,7 @@
 
         // init side menu
         this.get('#/Articles', function () {
-            LoadView('#body', "Profile/GetUserArticles", function () {
+            LoadView('#body', "Article/GetUserArticles", function () {
                 CollapseDisciplinesTree();
                 InitArticleHandlers();
             });
@@ -74,8 +74,8 @@
             type: this.method,
             data: $(this).serialize(),
             success: function (html) {
-                $('#body').html('');
-                $('#body').append(html);
+                $('#editDisciplines').html('');
+                $('#editDisciplines').append(html);
                 $('body .modal-backdrop').fadeOut(250);
                 CollapseDisciplinesTree();
             }

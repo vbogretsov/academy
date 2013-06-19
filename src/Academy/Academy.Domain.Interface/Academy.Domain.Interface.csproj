@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAcademyService.cs" />
+    <Compile Include="IFileService.cs" />
     <Compile Include="INoteService.cs" />
     <Compile Include="INotificationService.cs" />
     <Compile Include="IPublicationService.cs" />

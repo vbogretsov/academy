@@ -10,18 +10,15 @@ namespace Academy.Domain.Services
 {
     public class AcademyService : IAcademyService
     {
-        public AcademyService(
-            IStorageFactory storageFactory,
-            RoleManager roleManager,
-            AccountManager accountManager)
+        public AcademyService(IStorageFactory storageFactory)
         {
             var disciplineStorage = storageFactory.CreateDisciplineStorage();
             var userStorage = storageFactory.CreateUserStorage();
             var articleStorage = storageFactory.CreateArticleStorage();
             Notifications = new NotificationService(disciplineStorage, userStorage);
             Publications = new PublicationService(userStorage, articleStorage, disciplineStorage);
-            Account = new AccountService(roleManager, accountManager, userStorage);
-            Files = new FilesStore();
+            //Account = new AccountService(roleManager, accountManager, userStorage);
+            //Files = new FilesStore();
         }
 
         public IQuestionService QuestionServices
@@ -48,16 +45,16 @@ namespace Academy.Domain.Services
             private set;
         }
 
-        public AccountService Account
-        {
-            get;
-            set;
-        }
+        //public AccountService Account
+        //{
+        //    get;
+        //    set;
+        //}
 
-        public FilesStore Files
-        {
-            get;
-            set;
-        }
+        //public FilesStore Files
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }

@@ -1,38 +1,24 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
-using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
-using Academy.Presentation.Views.Unity;
 
 namespace Academy.Presentation.Views.Controllers
 {
     [Authorize]
-    public class ProfileController : Controller
+    public class ProfileController : AcademyController
     {
         private const string UserPhotosFolder = "~/Resources/Users";
 
-        private const string ArticlesFolder = "~/Resources/Articles";
+        //private const string ArticlesFolder = "~/Resources/Articles";
 
         private readonly User currentUser;
 
-        private readonly ApplicationContainer container;
-
         public ProfileController()
         {
-            container = ApplicationContainer.Instance;
-            var membershipUser = Membership.GetUser();
-            if (membershipUser != null)
-            {
-                currentUser = container.UserStorage.Get(membershipUser.UserName);
-            }
+            currentUser = AcademyContext.Account.GetCurrentUser();
         }
 
         public ActionResult Index()
@@ -42,6 +28,8 @@ namespace Academy.Presentation.Views.Controllers
 
         public ActionResult Edit()
         {
+            var disciplines = AcademyContext.NotificationService.GetDisciplines();
+            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
             return View(UserMapper.Map(currentUser));
         }
 
@@ -50,88 +38,10 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                UpdateUser(viewModel);
+                UploadUserPhoto(viewModel);
+                AcademyContext.Account.Update(UserMapper.Map(viewModel));
             }
             return View("Index", viewModel);
-        }
-
-        // TODO: maby I should combine this action with Edit?
-        [HttpPost]
-        public ActionResult UpdateDisciplines(
-            IEnumerable<DisciplineViewModel> disciplines)
-        {
-            container.Service.Notification.AssigneDisciplines(
-                currentUser,
-                disciplines.Select(x => x.Id));
-            return View("Edit", UserMapper.Map(currentUser));
-        }
-
-        public ActionResult GetUserArticles()
-        {
-            return View(
-                "RenderTemplates/UserArticlesView",
-                UserMapper.Map(currentUser));
-        }
-
-        public ActionResult AddAuthor()
-        {
-            return View(
-                "EditorTemplates/CreateAuthorEditor",
-                new AuthorViewModel());
-        }
-
-        [HttpPost]
-        public ActionResult PublishArticle(
-            ArticleViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                container.Service.Publications.PublishArticle(
-                    currentUser,
-                    ArticleMapper.Map(viewModel));
-            }
-            return View(
-                "RenderTemplates/UserArticlesView",
-                UserMapper.Map(currentUser));
-        }
-
-        [HttpPost]
-        public ActionResult CommentArticle(CommentViewModel viewModel)
-        {
-            var article = container.ArticleStorage.Get(viewModel.Article.Id);
-            //if (ModelState.IsValid)
-            //{
-                container.Service.Publications.CommentArticle(
-                    currentUser,
-                    article,
-                    CommentMapper.Map(viewModel));
-                return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
-            //}
-            //else
-            //{
-            //    var errors = ModelState.Where(x => x.Value.Errors.Count > 0).ToList();
-            //}
-            //return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
-        }
-
-        public string Upload(HttpPostedFileBase file)
-        {
-            string result = null;
-            if (file != null)
-            {
-                result = container.Service.Files.Upload(
-                    file.InputStream,
-                    Server.MapPath(ArticlesFolder),
-                    file.FileName);
-            }
-            return result;
-        }
-
-        private void UpdateUser(UserViewModel viewModel)
-        {
-            UploadUserPhoto(viewModel);
-            UserMapper.Sync(currentUser, viewModel);
-            container.UserStorage.Update();
         }
 
         private void UploadUserPhoto(UserViewModel viewModel)
@@ -139,11 +49,83 @@ namespace Academy.Presentation.Views.Controllers
             if (viewModel.PhotoFile != null &&
                 viewModel.PhotoFile.ContentLength > 0)
             {
-                viewModel.PhotoFileName = container.Service.Files.Upload(
+                viewModel.PhotoFileName = AcademyContext.FileService.Upload(
                     viewModel.PhotoFile.InputStream,
                     Server.MapPath(UserPhotosFolder),
                     viewModel.PhotoFile.FileName);
             }
         }
+
+        // TODO: maby I should combine this action with Edit?
+        //[HttpPost]
+        //public ActionResult UpdateDisciplines(
+        //    IEnumerable<DisciplineViewModel> disciplines)
+        //{
+        //    container.Service.Notification.AssigneDisciplines(
+        //        currentUser,
+        //        disciplines.Select(x => x.Id));
+        //    return View("Edit", UserMapper.Map(currentUser));
+        //}
+
+        //public ActionResult GetUserArticles()
+        //{
+        //    return View(
+        //        "RenderTemplates/UserArticlesView",
+        //        UserMapper.Map(currentUser));
+        //}
+
+        //public ActionResult AddAuthor()
+        //{
+        //    return View(
+        //        "EditorTemplates/CreateAuthorEditor",
+        //        new AuthorViewModel());
+        //}
+
+        //[HttpPost]
+        //public ActionResult PublishArticle(
+        //    ArticleViewModel viewModel)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        container.Service.Publications.PublishArticle(
+        //            currentUser,
+        //            ArticleMapper.Map(viewModel));
+        //    }
+        //    return View(
+        //        "RenderTemplates/UserArticlesView",
+        //        UserMapper.Map(currentUser));
+        //}
+
+        //[HttpPost]
+        //public ActionResult CommentArticle(CommentViewModel viewModel)
+        //{
+        //    var article = container.ArticleStorage.Get(viewModel.Article.Id);
+        //    //if (ModelState.IsValid)
+        //    //{
+        //        container.Service.Publications.CommentArticle(
+        //            currentUser,
+        //            article,
+        //            CommentMapper.Map(viewModel));
+        //        return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
+        //    //}
+        //    //else
+        //    //{
+        //    //    var errors = ModelState.Where(x => x.Value.Errors.Count > 0).ToList();
+        //    //}
+        //    //return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
+        //}
+
+        //public string Upload(HttpPostedFileBase file)
+        //{
+        //    string result = null;
+        //    if (file != null)
+        //    {
+        //        result = AcademyContext.FileService.Upload(
+        //            file.InputStream,
+        //            Server.MapPath(ArticlesFolder),
+        //            file.FileName);
+        //    }
+        //    return result;
+        //}
     }
 }

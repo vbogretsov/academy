@@ -1,9 +1,10 @@
-﻿@using Academy.Presentation.Views.Helpers
+﻿@using System.Collections
+@using Academy.Presentation.ViewModels
+@using Academy.Presentation.Views.Helpers
 
 @model Academy.Presentation.ViewModels.ArticleViewModel
 
 @*TODO: refactor hardcoded style*@
-
 
 @Html.ControlGroupFor(
         m => m.Title,
@@ -22,11 +23,13 @@
 </div>
 
 @Html.ModalVindowFor(
-        Html.DisciplinesTreeFor("Disciplines", Model.Disciplines.ToList()),
-        "disciplines",
+    Html.DisciplinesTreeFor(
         "Disciplines",
-        "Close",
-        "Save")
+        (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines),
+    "disciplines",
+    "Disciplines",
+    "Close",
+    "Save")
 
 <div class="control-group">
     <div class="controls">
@@ -39,7 +42,7 @@
         @Html.ActionLink(
                 "Add author",
                 "AddAuthor",
-                "Profile",
+                "Article",
                 null,
                 new { id = "addAuthor", @class = "btn" })
     </div>
@@ -60,7 +63,7 @@
             'fileObjName': 'file',
             'hideButton': false,
             'swf': "@Url.Content("~/Content/uploadify.swf")",
-            'uploader': "@Url.Action("Upload", "Profile")",
+            'uploader': "@Url.Action("Upload", "Article")",
             'onUploadSuccess': function (file, data, response) {
                 $('#publish').removeClass('disabled');
                 $('#Souce').val(file.name);

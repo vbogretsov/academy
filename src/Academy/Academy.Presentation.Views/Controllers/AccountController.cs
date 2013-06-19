@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using System.Web.UI;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
-using Academy.Presentation.Views.Unity;
 using Academy.Resources;
 using Academy.Security;
 
@@ -11,15 +10,8 @@ namespace Academy.Presentation.Views.Controllers
 {
     [Authorize]
     [OutputCache(Location = OutputCacheLocation.None, NoStore = true)]
-    public class AccountController : Controller
+    public class AccountController : AcademyController
     {
-        private readonly ApplicationContainer container;
-
-        public AccountController()
-        {
-            container = ApplicationContainer.Instance;
-        }
-
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel login, string returnUrl)
@@ -34,7 +26,7 @@ namespace Academy.Presentation.Views.Controllers
 
         public ActionResult Logout()
         {
-            container.Service.Account.Logout();
+            AcademyContext.Account.Logout();
             return RedirectToAction("Index", "Home");
         }
 
@@ -58,12 +50,12 @@ namespace Academy.Presentation.Views.Controllers
         [AllowAnonymous]
         public JsonResult CheckUserExists([Bind(Prefix = "Registration.Email")] string email)
         {
-            return Json(!container.UserStorage.Contains(email));
+            return Json(!AcademyContext.Account.IsUserExists(email));
         }
 
         private bool Login(LoginViewModel login)
         {
-            return container.Service.Account.Login(
+            return AcademyContext.Account.Login(
                 login.Email,
                 login.Password,
                 login.RememberMe);
@@ -74,8 +66,8 @@ namespace Academy.Presentation.Views.Controllers
             var user = UserMapper.Map(registration);
             try
             {
-                container.Service.Account.Register(user, registration.Password);
-                container.Service.Account.Login(user.Email, registration.Password);
+                AcademyContext.Account.Register(user, registration.Password);
+                AcademyContext.Account.Login(user.Email, registration.Password);
                 return RedirectToAction("Index", "Profile");
             }
             catch (SecurityCreateUserException exception)

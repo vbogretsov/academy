@@ -13,6 +13,8 @@ namespace Academy.Domain.Interface
 
         void Comment(Comment comment);
 
+        Article GetArticle(int articleId);
+
         //TODO: add paging
         IEnumerable<Article> GetArticles(User user);
 

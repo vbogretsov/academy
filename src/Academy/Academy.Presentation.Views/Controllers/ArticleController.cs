@@ -5,45 +5,71 @@ using System.Web;
 using System.Web.Mvc;
 using Academy.Domain.Objects;
 using Academy.Presentation.ViewModels;
-using Academy.Presentation.Views.Unity;
+using Academy.Presentation.ViewModels.Mappers;
 
 namespace Academy.Presentation.Views.Controllers
 {
-    public class ArticleController : Controller
+    [Authorize]
+    public class ArticleController : AcademyController
     {
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        private const string ArticlesFolder = "~/Resources/Articles";
 
-        private readonly ApplicationContainer container;
-
-        public ArticleController()
+        public ActionResult GetUserArticles()
         {
-            container = ApplicationContainer.Instance;
+            var user = AcademyContext.Account.GetCurrentUser();
+            return GetUserArticles(user);
         }
 
-        //public ActionResult Publish(
-        //    ArticleViewModel article,
-        //    IEnumerable<int> disciplines,
-        //    string returnUrl)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        container.Service.Publication.PublishArticle(null, disciplines);
-        //    }
-        //    return View(returnUrl, article);
-        //}
+        public ActionResult AddAuthor()
+        {
+            return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
+        }
 
-        // Obsolete
-        //public ActionResult Create()
-        //{
-        //    return View(new ArticleViewModel());
-        //}
+        [HttpPost]
+        public ActionResult PublishArticle(ArticleViewModel viewModel)
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            if (ModelState.IsValid)
+            {
+                var article = ArticleMapper.Map(viewModel);
+                article.Authors.Add(user);
+                AcademyContext.PublicationService.Publish(article);
+            }
+            return GetUserArticles(user);
+        }
 
-        //public ActionResult AddAuthor()
-        //{
-        //    return View("../Shared/EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
-        //}
+        [HttpPost]
+        public ActionResult CommentArticle(CommentViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var comment = CommentMapper.Map(viewModel);
+                comment.User = AcademyContext.Account.GetCurrentUser();
+                AcademyContext.PublicationService.Comment(comment);
+            }
+            var article = AcademyContext.PublicationService.GetArticle(viewModel.ArticleId);
+            return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
+        }
+
+        [HttpPost]
+        public string Upload(HttpPostedFileBase file)
+        {
+            string result = null;
+            if (file != null)
+            {
+                result = AcademyContext.FileService.Upload(
+                    file.InputStream,
+                    Server.MapPath(ArticlesFolder),
+                    file.FileName);
+            }
+            return result;
+        }
+
+        private ActionResult GetUserArticles(User user)
+        {
+            var disciplines = AcademyContext.NotificationService.GetDisciplines();
+            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map).ToList();
+            return View("RenderTemplates/UserArticlesView", UserMapper.Map(user));
+        }
     }
 }

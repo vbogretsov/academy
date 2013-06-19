@@ -12,6 +12,12 @@ namespace Academy.Domain.Services
         private readonly DisciplineStorage disciplineStorage;
         private readonly UserStorage userStorage;
 
+        public NotificationService(IStorageFactory storageFactory)
+        {
+            disciplineStorage = storageFactory.CreateDisciplineStorage();
+            userStorage = storageFactory.CreateUserStorage();
+        }
+
         public NotificationService(
             DisciplineStorage disciplineStorage,
             UserStorage userStorage)
@@ -20,15 +26,16 @@ namespace Academy.Domain.Services
             this.userStorage = userStorage;
         }
 
-        public void AssigneDisciplines(User user, IEnumerable<int> disciplineIds)
-        {
-            user.Disciplines = disciplineStorage.Resolve(disciplineIds).ToList();
-            userStorage.Update();
-        }
-
         public void Subscribe(User user)
         {
-            throw new NotImplementedException();
+            user.Disciplines = disciplineStorage.Resolve(
+                user.Disciplines.Select(x => x.DisciplineId)).ToList();
+            userStorage.Update(user);
+        }
+
+        public IEnumerable<Discipline> GetDisciplines()
+        {
+            return disciplineStorage.GetDisciplines();
         }
 
         public IEnumerable<ArticleNews> GetArticleNews(User user)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 using Academy.Security;
@@ -23,6 +24,28 @@ namespace Academy.Domain.Services
             this.roleManager = roleManager;
             this.accountManager = accountManager;
             this.userStorage = userStorage;
+        }
+
+        //TODO: move to separate class
+        public void Update(User user)
+        {
+            userStorage.Update(user);
+        }
+
+        public User GetCurrentUser()
+        {
+            User user = null;
+            var membershipUser = accountManager.GetUser();
+            if (membershipUser != null)
+            {
+                user = userStorage.Get(membershipUser.UserName);
+            }
+            return user;
+        }
+
+        public bool IsUserExists(string userName)
+        {
+            return userStorage.Contains(userName);
         }
 
         public void Register(User user, string password)

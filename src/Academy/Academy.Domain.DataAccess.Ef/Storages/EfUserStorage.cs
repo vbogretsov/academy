@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
+using Academy.Utils.Collections;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
@@ -23,7 +26,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public override void Update(User user)
         {
-            // TODO: update single user or remove this method.
+            academyEntities.Users.Attach(user);
+            academyEntities.Entry(user).State = EntityState.Modified;
             academyEntities.SaveChanges();
         }
 

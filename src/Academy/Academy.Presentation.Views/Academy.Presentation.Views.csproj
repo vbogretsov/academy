@@ -132,19 +132,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\AcademyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BootstrapHtmlHelpers.cs" />
+    <Compile Include="Helpers\DisciplinesCheckboxesTreeBuilder.cs" />
+    <Compile Include="Helpers\DisciplinesTreeBuilder.cs" />
     <Compile Include="Helpers\DisciplinesTreeHelper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Utils\AcademyEnvironment.cs" />
-    <Compile Include="Unity\ApplicationContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -208,13 +210,12 @@
     <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
-    <Content Include="Views\Profile\PublishArticle.cshtml" />
+    <Content Include="Views\Article\PublishArticle.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Resources\Articles\" />
-    <Folder Include="Views\Article\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -236,6 +237,10 @@
     <ProjectReference Include="..\Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj">
       <Project>{fa81ca6f-6dd2-438e-a6a8-31138567e5f2}</Project>
       <Name>Academy.Domain.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Interface\Academy.Domain.Interface.csproj">
+      <Project>{26E5FACD-6992-4106-962E-EBF697542705}</Project>
+      <Name>Academy.Domain.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
       <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
@@ -277,6 +282,10 @@
       <Project>{E7053069-1E36-4BD5-A9B8-CC070AA9E511}</Project>
       <Name>Academy.Validation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Academy.Web.Services\Academy.Web.Services.csproj">
+      <Project>{EBAD12B8-D16B-41F1-8BB3-90F3B5BCB9A1}</Project>
+      <Name>Academy.Web.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Contacts.cshtml" />
@@ -305,7 +314,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7027/</IISUrl>
+          <IISUrl>http://localhost:7025/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

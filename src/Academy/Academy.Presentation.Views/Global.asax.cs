@@ -7,8 +7,8 @@ using System.Web.Routing;
 using System.Web.SessionState;
 using Academy.Presentation.Views;
 using Academy.Presentation.Views.App_Start;
-using Academy.Presentation.Views.Unity;
 using Academy.Security;
+using Academy.Web.Services;
 
 namespace Academy.Presentation
 {
@@ -26,7 +26,6 @@ namespace Academy.Presentation
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ApplicationContainer.Instance.RegisterComponents();
             InitializeSecurity();
             InitializeRoles();
         }
@@ -39,7 +38,7 @@ namespace Academy.Presentation
             }
             catch
             {
-                
+                //TODO: add something :)
             }
         }
 
@@ -53,8 +52,7 @@ namespace Academy.Presentation
 
         private static void InitializeSecurity()
         {
-            AccountManager accountManager = ApplicationContainer
-                .Instance.Resolve<AccountManager>();
+            var accountManager = Container.Instance.Resolve<AccountManager>();
             try
             {
                 accountManager.InitializeDatabaseConnection(
@@ -74,8 +72,7 @@ namespace Academy.Presentation
 
         private static void InitializeRoles()
         {
-            RoleManager roleManager = ApplicationContainer.Instance
-                .Resolve<RoleManager>();
+            var roleManager = Container.Instance.Resolve<RoleManager>();
             if (!roleManager.RoleExists("User"))
             {
                 roleManager.CreateRole("User");

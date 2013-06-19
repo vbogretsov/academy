@@ -11,6 +11,8 @@ namespace Academy.Domain.Interface
     {
         void Subscribe(User user);
 
+        IEnumerable<Discipline> GetDisciplines();
+
         //TODO: add paging
         IEnumerable<ArticleNews> GetArticleNews(User user);
 

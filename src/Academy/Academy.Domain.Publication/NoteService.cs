@@ -8,29 +8,19 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.Services
 {
-    public class QuestionService : IQuestionService
+    public class NoteService : INoteService
     {
-        public QuestionService(IStorageFactory storageFactory)
+        public NoteService(IStorageFactory storageFactory)
         {
             
         }
 
-        public void Ask(Question question)
-        {
-            
-        }
-
-        public void Answer(Answer answer)
-        {
-            
-        }
-
-        public IEnumerable<Question> GetQuestions(User user)
+        public void Add(Note note)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Answer> GetAnswers(User user)
+        public IEnumerable<Note> GetNotes(User user)
         {
             throw new NotImplementedException();
         }

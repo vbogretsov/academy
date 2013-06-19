@@ -15,6 +15,16 @@ namespace Academy.Domain.Services
 
         private readonly DisciplineStorage disciplineStorage;
 
+        private readonly CommentStorage commentStorage;
+
+        public PublicationService(IStorageFactory storageFactory)
+        {
+            articleStorage = storageFactory.CreateArticleStorage();
+            disciplineStorage = storageFactory.CreateDisciplineStorage();
+            userStorage = storageFactory.CreateUserStorage();
+            commentStorage = storageFactory.CreateCommentStorage();
+        }
+
         public PublicationService(
             UserStorage userStorage,
             ArticleStorage articleStorage,
@@ -27,12 +37,23 @@ namespace Academy.Domain.Services
 
         public void Publish(Article article)
         {
-            
+            article.Disciplines = disciplineStorage.Resolve(
+                    article.Disciplines.Select(x => x.DisciplineId)).ToList();
+            article.Authors = userStorage.Resolve(
+                article.Authors.Select(x => x.Email)).ToList();
+            articleStorage.Add(article);
         }
 
         public void Comment(Comment comment)
         {
-            
+            comment.PostedDate = DateTime.Now;
+            comment.Article = articleStorage.Get(comment.ArticleId);
+            commentStorage.Add(comment);
+        }
+
+        public Article GetArticle(int articleId)
+        {
+            return articleStorage.Get(articleId);
         }
 
         public IEnumerable<Article> GetArticles(User user)

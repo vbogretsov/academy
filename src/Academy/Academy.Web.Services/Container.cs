@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Academy.Domain.DataAccess;
-using Academy.Domain.DataAccess.Ef;
+using Academy.Security;
+using Academy.Security.Simple;
 using Microsoft.Practices.Unity;
 
 namespace Academy.Web.Services
@@ -26,8 +22,13 @@ namespace Academy.Web.Services
         private Container()
         {
             unityContainer = new UnityContainer();
-            unityContainer.RegisterType<IStorageFactory, EfStorageFactory>();
-            
+            unityContainer.RegisterType<AccountManager, WebMatrixAccountManager>();
+            unityContainer.RegisterType<RoleManager, WebMatrixRoleManager>();
+        }
+
+        public T Resolve<T>()
+        {
+            return unityContainer.Resolve<T>();
         }
     }
 }

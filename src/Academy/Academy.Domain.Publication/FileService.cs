@@ -1,16 +1,17 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Academy.Domain.Interface;
 
 namespace Academy.Domain.Services
 {
-    public class FilesStore
+    public class FileService : IFileService
     {
         private const int SoltSize = 10;
 
         private static readonly Random random;
 
-        static FilesStore()
+        static FileService()
         {
             random = new Random();
         }

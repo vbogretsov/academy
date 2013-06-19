@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Academy.Presentation.ViewModels;
-using Academy.Presentation.ViewModels.Mappers;
-using Academy.Presentation.Views.Unity;
 using Academy.Utils;
 
 namespace Academy.Presentation.Views.Helpers
@@ -14,19 +12,25 @@ namespace Academy.Presentation.Views.Helpers
         public static MvcHtmlString DisciplinesTreeFor<TModel>(
             this HtmlHelper<TModel> html,
             string collectionName,
-            IEnumerable<DisciplineViewModel> selectedDisciplines = null)
+            IEnumerable<DisciplineViewModel> all,
+            IEnumerable<DisciplineViewModel> selected = null)
         {
-            var allDisciplines = ApplicationContainer.Instance.
-                DisciplineStorage.GetDisciplines().Select(DisciplineMapper.Map).ToList();
+            //var allDisciplines = ApplicationContainer.Instance.
+            //    DisciplineStorage.GetDisciplines().Select(DisciplineMapper.Map).ToList();
             var treeLoader = new TreeLoader<int, DisciplineViewModel>(
                 x => x.Id,
                 x => x.ParentId);
-            return html.CheckboxesTree(
+            var treeBuilder = new DisciplinesCheckboxesTreeBuilder(
                 collectionName,
-                treeLoader.Load(allDisciplines),
-                x => x.Id,
-                x => x.Name,
-                selectedDisciplines);
+                selected);
+            return treeBuilder.BuildHtmlTree(treeLoader.Load(all));
+
+            //return html.CheckboxesTree(
+            //    collectionName,
+            //    treeLoader.Load(allDisciplines),
+            //    x => x.Id,
+            //    x => x.Name,
+            //    selectedDisciplines);
         }
     }
 }

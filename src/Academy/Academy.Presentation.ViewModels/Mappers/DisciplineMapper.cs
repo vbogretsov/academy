@@ -10,6 +10,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             Discipline discipline = new Discipline();
             discipline.DisciplineId = viewModel.Id;
             discipline.Name = viewModel.Name;
+            discipline.ParentId = viewModel.ParentId;
             return discipline;
         }
 
