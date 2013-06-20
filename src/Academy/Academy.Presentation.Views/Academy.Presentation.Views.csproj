@@ -220,6 +220,7 @@
     <Content Include="Views\Question\GetUserQuestions.cshtml" />
     <Content Include="Views\Question\GetUserAnswers.cshtml" />
     <Content Include="Views\Shared\Forms\AskQuestionForm.cshtml" />
+    <Content Include="Views\Shared\Forms\AddAnswerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -322,7 +323,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7025/</IISUrl>
+          <IISUrl>http://localhost:7020/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

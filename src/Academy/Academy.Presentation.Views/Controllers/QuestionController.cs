@@ -17,6 +17,8 @@ namespace Academy.Presentation.Views.Controllers
             {
                 AcademyContext.QuestionService.Ask(QuestionMapper.Map(viewModel));
             }
+            var disciplines = AcademyContext.NotificationService.GetDisciplines();
+            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
             var user = AcademyContext.Account.GetCurrentUser();
             return View("GetUserQuestions", UserMapper.Map(user));
         }

@@ -1,0 +1,20 @@
+﻿@model Academy.Presentation.ViewModels.AnswerViewModel
+
+@{
+    string postAsnwerFormId = String.Format("postAnswerForm{0}", Model.QuestionId);
+    
+}
+
+@using (Html.BeginForm("Answer", "Question", FormMethod.Post, new { id = postAsnwerFormId }))
+{
+    Html.RenderPartial("EditorTemplates/CreateAnswerEditor", Model);
+    <input type="submit" class="btn btn-primary pull-right"/>
+}
+
+<script type="text/javascript">
+    $('#@postAsnwerFormId').submit(function () {
+        
+        $.validator.unobtrusive.parse('#@postAsnwerFormId');
+        
+    });
+</script>

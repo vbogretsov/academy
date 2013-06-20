@@ -1,27 +1,44 @@
 ﻿@model Academy.Presentation.ViewModels.QuestionViewModel
 
-<div class="page-header">
+@{
+    var addAnswerId = String.Format("addAnswerFor{0}", Model.Id);
+    var showAnswersId = String.Format("showAnswersFor{0}", Model.Id);
+    var fullUserName = String.Format(
+        "{0} {1} {2}",
+        Model.Author.Email,
+        Model.Author.FirstName,
+        Model.Author.LastName);
+}
+
+<div class="text-block">
+    <div class="page-header">
+        <span class="label">
+            @fullUserName
+        </span>
+        <span class="label pull-right">@Model.PostedDate</span>
+    </div>
     <div class="text-block-header">
         <h4>@Model.Title</h4>
     </div>
-    <span class="label">
-        @String.Format("{0} {1} {2}", Model.Author.Email, Model.Author.FirstName, Model.Author.LastName)
-    </span>
-    <span class="label pull-right">@Model.PostedDate</span>
-    <div class="text-block">
-        <div class="text-block-body">
-            @Model.Text
-        </div>
-        <div class="text-block-footer">
+    <div class="text-block-body">
+        @Model.Text
+    </div>
+    <div class="text-block-footer">
         <b>Disciplines</b>:
         @foreach (var discipline in Model.Disciplines)
         {
             <span class="label font-small">@discipline.Name</span>
         }
         <div class="pull-right">
-            <button class="btn btn-mini btn-primary" id="@String.Format("addAnswerFor{0}", Model.Id)">Add answer</button>
-            <button class="btn btn-mini" id="@String.Format("showAnswersFor{0}", Model.Id)">Show answers</button>
+            <button class="btn btn-mini btn-primary" id="@addAnswerId">Add answer</button>
+            <button class="btn btn-mini" id="@showAnswersId">Show answers</button>
         </div>
     </div>
-    </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $('#@addAnswerId').click(function () {
+            
+        });
+    })
+</script>

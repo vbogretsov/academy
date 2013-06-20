@@ -1,2 +1,9 @@
 ﻿@model Academy.Presentation.ViewModels.AnswerViewModel
 
+@{
+    const string answerTextClass = "full-block fixed-size pre-scrollable";
+    const string answerTextStyle = "height: 80px; font-size:12pt";
+}
+
+@Html.HiddenFor(m => m.QuestionId)
+@Html.TextAreaFor(m => m.Text, new {@class = answerTextClass, style = answerTextStyle})
