@@ -2,7 +2,7 @@
 
 @{
     string postAsnwerFormId = String.Format("postAnswerForm{0}", Model.QuestionId);
-    
+    string answersId = String.Format("answersFor{0}", Model.QuestionId);
 }
 
 @using (Html.BeginForm("Answer", "Question", FormMethod.Post, new { id = postAsnwerFormId }))
@@ -13,8 +13,17 @@
 
 <script type="text/javascript">
     $('#@postAsnwerFormId').submit(function () {
-        
+        var form = $('#@postAsnwerFormId');
         $.validator.unobtrusive.parse('#@postAsnwerFormId');
-        
+        if (form.valid()) {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    $('#@answersId').appendChild(result);
+                }
+            });
+        }
     });
 </script>
