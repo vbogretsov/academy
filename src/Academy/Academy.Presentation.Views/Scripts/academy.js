@@ -7,14 +7,22 @@
         this.get('#/Articles', function () {
             LoadView('#body', "Article/GetUserArticles", function () {
                 CollapseDisciplinesTree();
-                InitArticleHandlers();
+                //InitArticleHandlers();
             });
+        });
+
+        this.get('#Comments', function() {
+            LoadView('#body', "Article/GetUserComments");
         });
 
         this.get('#/Questions', function() {
             LoadView('#body', "Question/GetUserQuestions", function() {
                 CollapseDisciplinesTree();
             });
+        });
+
+        this.get('#/Answers', function() {
+            LoadView('#body', "Question/GetUserAnswers");
         });
 
         // init main menu
@@ -25,6 +33,10 @@
             });
         });
 
+        this.get('#/ContactAdministration', function() {
+            // TODO: contact administration
+        });
+
         return false;
     });
     
@@ -33,31 +45,28 @@
     });
 
     // init profile menu buttons
-    $('#profile a.btn').on('click', function () {
-        $('#profile a.btn').removeClass('btn-primary');
-        $(this).addClass('btn-primary');
-    });
+    //$('#profile a.btn').on('click', function () {
+    //    $('#profile a.btn').removeClass('btn-primary');
+    //    $(this).addClass('btn-primary');
+    //});
 
-
-    $('.text-block .btn .btn-mini .btn-primary')
-
-    // add author editor
-    $('body').on('click', '#addAuthor', null, function () {
-        $.ajax({
-            url: this.href,
-            cache: false,
-            success: function (html) {
-                $('#authors').append(html);
-            }
-        });
-        return false;
-    });
+    //// add author editor
+    //$('body').on('click', '#addAuthor', null, function () {
+    //    $.ajax({
+    //        url: this.href,
+    //        cache: false,
+    //        success: function (html) {
+    //            $('#authors').append(html);
+    //        }
+    //    });
+    //    return false;
+    //});
 
     // delete author editor
-    $('body').on('click', 'a.author-delete', null, function () {
-        $(this).parents('p').remove();
-        return false;
-    });
+    //$('body').on('click', 'a.author-delete', null, function () {
+    //    $(this).parents('p').remove();
+    //    return false;
+    //});
 
     // tree initializing
     $('#body').on('click', '.tree span', null, function (e) {
@@ -122,7 +131,6 @@
                     $('#body').append(html);
                     CollapseDisciplinesTree();
                     $('#askQuestion')[0].reset();
-                    alert('xxx');
                 }
             });
         }
@@ -130,37 +138,37 @@
     });
 });
 
-function InitArticleHandlers() {
-    $('button[id^="addCommentFor"]').each(function () {
-        var id = $(this).attr('id').substring(13);
-        var newCommentId = '#newCommentFor' + id;
-        $(this).click(function () {
-            $(newCommentId).slideToggle('fast');
-        });
-        var showCommentsId = '#showCommentsFor' + id;
-        var commentsId = "#commentsFor" + id;
-        $(showCommentsId).click(function () {
-            $(commentsId).slideToggle('fast');
-        });
-        var commentFormId = '#commentFormFor' + id;
-        $(commentFormId).on('submit', null, function (e) {
-            $.validator.unobtrusive.parse($(commentFormId));
-            if ($(commentFormId).valid()) {
-                $.ajax({
-                    type: this.method,
-                    url: this.action,
-                    data: $(this).serialize(),
-                    success: function (result) {
-                        $(commentsId).html('');
-                        $(commentsId).append(result);
-                        $(commentFormId)[0].reset();
-                    }
-                });
-            }
-            return false;
-        });
-    });
-}
+//function InitArticleHandlers() {
+//    $('button[id^="addCommentFor"]').each(function () {
+//        var id = $(this).attr('id').substring(13);
+//        var newCommentId = '#newCommentFor' + id;
+//        $(this).click(function () {
+//            $(newCommentId).slideToggle('fast');
+//        });
+//        var showCommentsId = '#showCommentsFor' + id;
+//        var commentsId = "#commentsFor" + id;
+//        $(showCommentsId).click(function () {
+//            $(commentsId).slideToggle('fast');
+//        });
+//        var commentFormId = '#commentFormFor' + id;
+//        $(commentFormId).on('submit', null, function (e) {
+//            $.validator.unobtrusive.parse($(commentFormId));
+//            if ($(commentFormId).valid()) {
+//                $.ajax({
+//                    type: this.method,
+//                    url: this.action,
+//                    data: $(this).serialize(),
+//                    success: function (result) {
+//                        $(commentsId).html('');
+//                        $(commentsId).append(result);
+//                        $(commentFormId)[0].reset();
+//                    }
+//                });
+//            }
+//            return false;
+//        });
+//    });
+//}
 
 function LoadView(divId, request, complete) {
     $(divId).html('');

@@ -6,6 +6,12 @@
 
 @*TODO: refactor hardcoded style*@
 
+@{
+    const string selectDisciplinesText = "Select disciplines";
+    const string selectDisciplinesHeader = "Select disciplines for article";
+    const string addAuthorText = "Add author";
+}
+
 @Html.ControlGroupFor(
         m => m.Title,
         e => Html.TextBoxFor(e, new { @class = "full-block", style = "height: 30px; font-size: 12pt" }))
@@ -15,21 +21,26 @@
 
 <div class="control-group">
     <div class="controls">
-        @Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")
+        @*@Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")*@
+        <a href="#selectDisciplines" role="button" class="btn pull-right" data-toggle="modal">@selectDisciplinesText</a>
         <input type="file" id="ArticleFile" name="ArticleFile"/>
         <input type="text" id="Souce" name="Source" value="" style="display: none"/>
         @Html.ValidationMessageFor(m => m.Source)
     </div>
 </div>
 
-@Html.ModalVindowFor(
-    Html.DisciplinesTreeFor(
-        "Disciplines",
-        (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines),
-    "disciplines",
-    "Disciplines",
-    "Close",
-    "Save")
+<div id="selectDisciplines" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">@selectDisciplinesHeader</h3>
+    </div>
+    <div class="modal-body">
+        @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Select</button>
+    </div>
+</div>
 
 <div class="control-group">
     <div class="controls">
@@ -39,12 +50,13 @@
                 Html.RenderPartial("EditorTemplates/CreateAuthorEditor", author);
             }
         </div>
-        @Html.ActionLink(
+        <a href="@Url.Action("AddAuthor", "Article")" id="addAuthor" class="btn">@addAuthorText</a>
+        @*@Html.ActionLink(
                 "Add author",
                 "AddAuthor",
                 "Article",
                 null,
-                new { id = "addAuthor", @class = "btn" })
+                new { id = "addAuthor", @class = "btn" })*@
     </div>
 </div>
 
@@ -68,6 +80,20 @@
                 $('#publish').removeClass('disabled');
                 $('#Souce').val(file.name);
             }
+        });
+        $('#addAuthor').click(function() {
+            $.ajax({
+                url: this.href,
+                cache: false,
+                success: function (html) {
+                    $('#authors').append(html);
+                }
+            });
+            return false;
+        });
+        $('body').on('click', 'a.author-delete', null, function () {
+            $(this).parents('p').remove();
+            return false;
         });
     });
 </script>

@@ -5,8 +5,6 @@ namespace Academy.Domain.DataAccess.Ef
 {
     public class EfStorageFactory : IStorageFactory
     {
-        //private static readonly AcademyEntities academyEntities = new AcademyEntities();
-
         private readonly AcademyEntities academyEntities;
 
         public EfStorageFactory(AcademyEntities academyEntities)
@@ -37,6 +35,11 @@ namespace Academy.Domain.DataAccess.Ef
         public QuestionStorage CreateQuestionStorage()
         {
             return new EfQuestionStorage(academyEntities);
+        }
+
+        public AnswerStorage CreateAnswerStorage()
+        {
+            return new EfAnswerStorage(academyEntities);
         }
     }
 }

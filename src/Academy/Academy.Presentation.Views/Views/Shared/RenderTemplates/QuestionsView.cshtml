@@ -1,0 +1,9 @@
+﻿@model Academy.Presentation.ViewModels.UserViewModel
+
+@if (Model.Questions != null)
+{
+    foreach (var question in Model.Questions)
+    {
+        Html.RenderPartial("RenderTemplates/QuestionView", question);
+    }
+}

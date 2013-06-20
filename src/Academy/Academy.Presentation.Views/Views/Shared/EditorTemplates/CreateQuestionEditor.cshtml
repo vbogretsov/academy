@@ -8,6 +8,10 @@
 
     const string questionTitleClass = "full-block";
     const string questionTitleStyle = "height: 30px; font-size: 12pt";
+
+    const string selectDisciplinesHeader = "Select disciplines for question";
+    const string selectDisciplinesText = "Select disciplines";
+    
 }
 
 @Html.HiddenFor(m => m.AuthorId)
@@ -18,22 +22,21 @@
 <div class="control-group">
     @Html.TextAreaFor(m => m.Text, new {@class = questionTextClass, style = questionTextStyle})
     @Html.ValidationMessageFor(m => m.Text)
+    @Html.ValidationMessageFor(m => m.Disciplines)
 </div>
 
 <div class="pull-right">
     <input type="submit" value="Ask" id="askQuestion" class="btn btn-primary pull-right" />
-    <a href="#selectDisciplines" role="button" class="btn pull-right" data-toggle="modal">Select disciplines</a>
+    <a href="#selectDisciplines" role="button" class="btn pull-right" data-toggle="modal">@selectDisciplinesText</a>
 </div>
 
 <div id="selectDisciplines" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Select disciplines for question</h3>
+        <h3 id="myModalLabel">@selectDisciplinesHeader</h3>
     </div>
     <div class="modal-body">
-        @Html.DisciplinesTreeFor(
-            "Disciplines",
-            (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
+        @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Select</button>

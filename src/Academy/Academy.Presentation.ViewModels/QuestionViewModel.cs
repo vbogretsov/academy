@@ -42,6 +42,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
+        [LocalizedRequired("question.disciplines.err.required")]
         public IEnumerable<DisciplineViewModel> Disciplines
         {
             get;

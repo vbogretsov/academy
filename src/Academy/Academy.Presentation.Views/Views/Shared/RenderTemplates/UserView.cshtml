@@ -1,35 +1,27 @@
 ﻿@using Academy.Resources
 @model Academy.Presentation.ViewModels.UserViewModel
 
-<div class="control-group">
-    <ul class="thumbnails">
-        <li class="span3">
-            <div class="thumbnail">
-                <img src="/Resources/Users/@Model.PhotoFileName" alt="No photo available"/>
-            </div>
-        </li>
-    </ul>
-    @*@Html.ActionLink(
-        Localization.GetString("profile.myarticles"),
-        "GetUserArticles",
-        "Profile",
-        null,
-        new {@class = "btn btn-block", id = "myArticles"})*@
-    <a href="#/Articles" id="myArticles" class="btn btn-block">@Localization.GetString("profile.myarticles")</a>
-    <a href="#/Questions" id="myQuestions" class="btn btn-block">@Localization.GetString("prifile.myquestions")</a>
-    @Html.ActionLink(
-        Localization.GetString("profile.mycomment"),
-        "GetArticles",
-        "Profile",
-        new {@class = "btn btn-block"})
-    @*@Html.ActionLink(
-        Localization.GetString("prifile.myquestions"),
-        "Ask",
-        "Question",
-        new {@class = "btn btn-block"})*@
-    @Html.ActionLink(
-        Localization.GetString("profile.myanswers"),
-        "GetArticles",
-        "Profile",
-        new {@class = "btn btn-block"})
+<div id="user">
+    <div class="control-group">
+        <ul class="thumbnails">
+            <li class="span3">
+                <div class="thumbnail">
+                    <img src="/Resources/Users/@Model.PhotoFileName" alt="No photo available"/>
+                </div>
+            </li>
+        </ul>
+        <a href="#/Articles" id="myArticles" class="btn btn-block">@Localization.GetString("profile.myarticles")</a>
+        <a href="#/Questions" id="myQuestions" class="btn btn-block">@Localization.GetString("prifile.myquestions")</a>
+        <a href="#/Comments" id="myComments" class="btn btn-block">@Localization.GetString("profile.mycomment")</a>
+        <a href="#/Answers" id="myAnswers" class="btn btn-block">@Localization.GetString("profile.myanswers")</a>
+    </div>
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#user > a.btn').on('click', function () {
+            $('#user a.btn').removeClass('btn-primary');
+            $(this).addClass('btn-primary');
+        });
+    });
+</script>

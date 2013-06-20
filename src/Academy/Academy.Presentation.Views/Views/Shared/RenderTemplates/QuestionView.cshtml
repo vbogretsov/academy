@@ -1,13 +1,22 @@
-﻿@model Academy.Presentation.ViewModels.QuestionViewModel
+﻿@using Academy.Presentation.ViewModels
+@model Academy.Presentation.ViewModels.QuestionViewModel
 
 @{
+    var answersId = String.Format("answersFor{0}", Model.Id);
+    var newAnswerId = String.Format("newAnswerFor{0}", Model.Id);
+    const string addAnswerText = "Add answer";
     var addAnswerId = String.Format("addAnswerFor{0}", Model.Id);
     var showAnswersId = String.Format("showAnswersFor{0}", Model.Id);
+    const string showAnswersText = "Show answers";
     var fullUserName = String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
         Model.Author.FirstName,
         Model.Author.LastName);
+    var answerTemplate = new AnswerViewModel()
+        {
+            QuestionId = Model.Id
+        };
 }
 
 <div class="text-block">
@@ -30,15 +39,27 @@
             <span class="label font-small">@discipline.Name</span>
         }
         <div class="pull-right">
-            <button class="btn btn-mini btn-primary" id="@addAnswerId">Add answer</button>
-            <button class="btn btn-mini" id="@showAnswersId">Show answers</button>
+            <button class="btn btn-mini btn-primary" id="@addAnswerId">@addAnswerText</button>
+            <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
         </div>
     </div>
 </div>
+<div id="@newAnswerId" class="text-block hide">
+    <div class="text-block-body">
+        @{ Html.RenderPartial("Forms/AddAnswerForm", answerTemplate); }
+    </div>
+</div>
+<div id="@answersId" class="hide">
+    @{Html.RenderPartial("RenderTemplates/AnswersView", Model);}
+</div>
+
 <script type="text/javascript">
     $(function () {
         $('#@addAnswerId').click(function () {
-            
+           $('#@newAnswerId').slideToggle('fast');
+        });
+        $('#@showAnswersId').click(function() {
+            $('#@answersId').slideToggle('fast');
         });
     })
 </script>

@@ -13,5 +13,7 @@ namespace Academy.Domain.DataAccess
         DisciplineStorage CreateDisciplineStorage();
 
         QuestionStorage CreateQuestionStorage();
+
+        AnswerStorage CreateAnswerStorage();
     }
 }

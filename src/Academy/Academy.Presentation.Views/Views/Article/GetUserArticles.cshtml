@@ -1,27 +1,27 @@
 ﻿@using Academy.Presentation.ViewModels
-@model UserViewModel
+@model Academy.Presentation.ViewModels.UserViewModel
 
 @{
-    const string askQuestionText = "Ask Question";
-    var questionTemplate = new QuestionViewModel {AuthorId = Model.Id};
+    const string addArticleText = "Add new article";
+    var articleTemplate = new ArticleViewModel();
 }
 
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                @askQuestionText
+                @addArticleText
             </a>
         </div>
         <div id="collapseOne" class="accordion-body collapse">
             <div class="accordion-inner">
                 @{
-                    Html.RenderPartial("Forms/AskQuestionForm", questionTemplate);
+                    Html.RenderPartial("Forms/PublishArticleForm", articleTemplate);
                 }
             </div>
         </div>
     </div>
 </div>
-<div id="userQuestions">
-    @{Html.RenderPartial("RenderTemplates/QuestionsView", Model);}
+<div id="userArticles">
+    @{Html.RenderPartial("RenderTemplates/ArticlesView", Model);}
 </div>

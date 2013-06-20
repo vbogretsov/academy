@@ -1,17 +1,39 @@
 ﻿@model Academy.Presentation.ViewModels.QuestionViewModel
 
-@using (Html.BeginForm(
-    "Ask",
-    "Question",
-    FormMethod.Post,
-    new
+@{
+    var formSettings = new
         {
             id = "askQuestion",
             @class = "form-horizontal",
             style = "padding-bottom: 20px",
             enctype = "multipart/mixed"
-        })) 
+        };
+}
+
+@using (Html.BeginForm("Ask", "Question", FormMethod.Post, formSettings))
 {
     @Html.ValidationSummary(true)
     @Html.EditorForModel("CreateQuestionEditor")
 }
+
+<script type="text/javascript">
+    $(function() {
+        $('#askQuestion').submit(function() {
+            $.validator.unobtrusive.parse('#askQuestion');
+            if ($('#askQuestion').valid()) {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function(html) {
+                        $('#body').html('');
+                        $('#body').append(html);
+                        //CollapseDisciplinesTree();
+                        $('#askQuestion')[0].reset();
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>

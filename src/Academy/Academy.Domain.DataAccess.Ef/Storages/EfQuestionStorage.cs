@@ -15,6 +15,12 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
+        public override Question Get(int questionId)
+        {
+            return academyEntities.Questions.SingleOrDefault(
+                x => x.QuestionId == questionId);
+        }
+
         public override void Add(Question question)
         {
             try

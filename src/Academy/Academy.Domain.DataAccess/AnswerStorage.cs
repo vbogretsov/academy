@@ -6,10 +6,8 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
 {
-    public abstract class QuestionStorage
+    public abstract class AnswerStorage
     {
-        public abstract Question Get(int questionId);
-
-        public abstract void Add(Question question);
+        public abstract void Add(Answer answer);
     }
 }

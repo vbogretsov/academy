@@ -16,11 +16,14 @@ namespace Academy.Domain.Services
 
         private readonly QuestionStorage questionStorage;
 
+        private readonly AnswerStorage answerStorage;
+
         public QuestionService(IStorageFactory storageFactory)
         {
             userStorage = storageFactory.CreateUserStorage();
             disciplineStorage = storageFactory.CreateDisciplineStorage();
             questionStorage = storageFactory.CreateQuestionStorage();
+            answerStorage = storageFactory.CreateAnswerStorage();
         }
 
         public void Ask(Question question)
@@ -34,14 +37,24 @@ namespace Academy.Domain.Services
 
         public void Answer(Answer answer)
         {
-            
+            answer.User = userStorage.Get(answer.UserId);
+            answer.Question = questionStorage.Get(answer.QuestionId);
+            answer.PostedDate = DateTime.Now;
+            answerStorage.Add(answer);
         }
 
+        public Question GetQuestion(int questionId)
+        {
+            return questionStorage.Get(questionId);
+        }
+
+        //TODO: add paging
         public IEnumerable<Question> GetQuestions(User user)
         {
             throw new NotImplementedException();
         }
 
+        //TODO: add paging
         public IEnumerable<Answer> GetAnswers(User user)
         {
             throw new NotImplementedException();

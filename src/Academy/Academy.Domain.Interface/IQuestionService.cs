@@ -13,6 +13,8 @@ namespace Academy.Domain.Interface
 
         void Answer(Answer answer);
 
+        Question GetQuestion(int questionId);
+
         //TODO: add paging
         IEnumerable<Question> GetQuestions(User user);
 

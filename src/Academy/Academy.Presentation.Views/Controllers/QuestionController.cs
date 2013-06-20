@@ -17,10 +17,7 @@ namespace Academy.Presentation.Views.Controllers
             {
                 AcademyContext.QuestionService.Ask(QuestionMapper.Map(viewModel));
             }
-            var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View("GetUserQuestions", UserMapper.Map(user));
+            return GetUserQuestionsResult();
         }
 
         [HttpPost]
@@ -28,25 +25,31 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
+                viewModel.AuthorId = AcademyContext.Account.GetCurrentUser().UserId;
                 AcademyContext.QuestionService.Answer(AnswerMapper.Map(viewModel));
-                // return
+                var question = AcademyContext.QuestionService.GetQuestion(viewModel.QuestionId);
+                return View("RenderTemplates/AnswersView", QuestionMapper.Map(question));
             }
-            // return
-            throw new NotImplementedException();
+            return GetUserQuestionsResult(); //TODO: add error handling
         }
 
         public ActionResult GetUserQuestions()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            return View(UserMapper.Map(user));
+            return GetUserQuestionsResult();
         }
 
         public ActionResult GetUserAnswers()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
+        }
+
+        private ActionResult GetUserQuestionsResult()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            var disciplines = AcademyContext.NotificationService.GetDisciplines();
+            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
+            return View("GetUserQuestions", UserMapper.Map(user));
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             Answer answer = new Answer();
             answer.AnswerId = viewModel.Id;
+            answer.UserId = viewModel.AuthorId;
             answer.QuestionId = viewModel.QuestionId;
             answer.Text = viewModel.Text;
             answer.PostedDate = viewModel.PostedDate;

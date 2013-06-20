@@ -1,2 +1,21 @@
 ﻿@model Academy.Presentation.ViewModels.AnswerViewModel
 
+@{
+    var authorFullName = String.Format(
+        "{0} {1} {2}",
+        Model.Author.Email,
+        Model.Author.FirstName,
+        Model.Author.LastName);
+}
+
+<div class="page-header">
+    <span class="label">
+        @authorFullName
+    </span>
+    <span class="label pull-right">@Model.PostedDate</span>
+    <div class="text-block">
+        <div class="text-block-body">
+            @Model.Text
+        </div>
+    </div>
+</div>

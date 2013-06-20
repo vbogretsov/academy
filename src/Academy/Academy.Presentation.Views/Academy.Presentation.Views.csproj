@@ -201,7 +201,6 @@
     <Content Include="Views\Shared\EditorTemplates\CreateAuthorEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateArticleEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EditUserEditor.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\CreateUserEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateCommentEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\ArticleView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentView.cshtml" />
@@ -221,6 +220,13 @@
     <Content Include="Views\Question\GetUserAnswers.cshtml" />
     <Content Include="Views\Shared\Forms\AskQuestionForm.cshtml" />
     <Content Include="Views\Shared\Forms\AddAnswerForm.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\AnswersView.cshtml" />
+    <Content Include="Views\Article\GetUserArticles.cshtml" />
+    <Content Include="Views\Shared\Forms\PublishArticleForm.cshtml" />
+    <Content Include="Views\Shared\Forms\CommentArticleForm.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\ArticlesView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\QuestionsView.cshtml" />
+    <Content Include="Views\Article\GetUserComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

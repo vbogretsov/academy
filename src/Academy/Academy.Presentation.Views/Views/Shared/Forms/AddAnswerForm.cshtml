@@ -13,17 +13,19 @@
 
 <script type="text/javascript">
     $('#@postAsnwerFormId').submit(function () {
-        var form = $('#@postAsnwerFormId');
         $.validator.unobtrusive.parse('#@postAsnwerFormId');
-        if (form.valid()) {
+        if ($('#@postAsnwerFormId').valid()) {
             $.ajax({
                 url: this.action,
                 type: this.method,
                 data: $(this).serialize(),
                 success: function (result) {
-                    $('#@answersId').appendChild(result);
+                    $('#@answersId').html('');
+                    $('#@answersId').append(result);
+                    $('#@postAsnwerFormId')[0].reset();
                 }
             });
         }
+        return false;
     });
 </script>

@@ -273,6 +273,9 @@
   <data name="profile.mycomment" xml:space="preserve">
     <value>My comment</value>
   </data>
+  <data name="question.disciplines.err.required" xml:space="preserve">
+    <value>At least one discipline should be selected</value>
+  </data>
   <data name="question.text" xml:space="preserve">
     <value>Question text</value>
   </data>

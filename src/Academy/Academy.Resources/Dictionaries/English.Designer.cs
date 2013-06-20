@@ -529,6 +529,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to At least one discipline should be selected.
+        /// </summary>
+        public static string question_disciplines_err_required {
+            get {
+                return ResourceManager.GetString("question.disciplines.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Question text.
         /// </summary>
         public static string question_text {

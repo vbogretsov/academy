@@ -1,0 +1,10 @@
+﻿@using Academy.Presentation.ViewModels
+@model Academy.Presentation.ViewModels.UserViewModel
+
+@if (Model.Articles != null)
+{
+    foreach (var article in Model.Articles)
+    {
+        Html.RenderPartial("RenderTemplates/ArticleView", article);
+    }
+}

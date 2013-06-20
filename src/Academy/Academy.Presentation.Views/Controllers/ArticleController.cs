@@ -20,6 +20,12 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserArticles(user);
         }
 
+        public ActionResult GetUserComments()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            return View(UserMapper.Map(user));
+        }
+
         public ActionResult AddAuthor()
         {
             return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());
@@ -69,7 +75,7 @@ namespace Academy.Presentation.Views.Controllers
         {
             var disciplines = AcademyContext.NotificationService.GetDisciplines();
             ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            return View("RenderTemplates/UserArticlesView", UserMapper.Map(user));
+            return View("GetUserArticles", UserMapper.Map(user));
         }
     }
 }
