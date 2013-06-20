@@ -11,7 +11,7 @@
             });
         });
 
-        this.get('#Comments', function() {
+        this.get('#/Comments', function() {
             LoadView('#body', "Article/GetUserComments");
         });
 
@@ -45,10 +45,10 @@
     });
 
     // init profile menu buttons
-    //$('#profile a.btn').on('click', function () {
-    //    $('#profile a.btn').removeClass('btn-primary');
-    //    $(this).addClass('btn-primary');
-    //});
+    $('#profile a.btn').on('click', function () {
+        $('#profile a.btn').removeClass('btn-primary');
+        $(this).addClass('btn-primary');
+    });
 
     //// add author editor
     //$('body').on('click', '#addAuthor', null, function () {

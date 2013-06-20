@@ -10,18 +10,14 @@
                 </div>
             </li>
         </ul>
+        <a href="#/NewArticles" id="newArticles" class="btn btn-block">New Articles</a>
+        <a href="#/NewComments" id="newComments" class="btn btn-block">New Comments</a>
+        <a href="#/NewQuestions" id="newQuestions" class="btn btn-block">New Questions</a>
+        <a href="#/NewAnswers" id="newAnswers" class="btn btn-block">New Answers</a>
+
         <a href="#/Articles" id="myArticles" class="btn btn-block">@Localization.GetString("profile.myarticles")</a>
         <a href="#/Questions" id="myQuestions" class="btn btn-block">@Localization.GetString("prifile.myquestions")</a>
         <a href="#/Comments" id="myComments" class="btn btn-block">@Localization.GetString("profile.mycomment")</a>
         <a href="#/Answers" id="myAnswers" class="btn btn-block">@Localization.GetString("profile.myanswers")</a>
     </div>
 </div>
-
-<script type="text/javascript">
-    $(function() {
-        $('#user > a.btn').on('click', function () {
-            $('#user a.btn').removeClass('btn-primary');
-            $(this).addClass('btn-primary');
-        });
-    });
-</script>
