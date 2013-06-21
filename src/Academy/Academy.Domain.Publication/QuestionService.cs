@@ -10,13 +10,13 @@ namespace Academy.Domain.Services
 {
     public class QuestionService : IQuestionService
     {
-        private readonly UserStorage userStorage;
+        private readonly IUserStorage userStorage;
 
-        private readonly DisciplineStorage disciplineStorage;
+        private readonly IDisciplineStorage disciplineStorage;
 
-        private readonly QuestionStorage questionStorage;
+        private readonly IQuestionStorage questionStorage;
 
-        private readonly AnswerStorage answerStorage;
+        private readonly IAnswerStorage answerStorage;
 
         public QuestionService(IStorageFactory storageFactory)
         {

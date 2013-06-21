@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
 {
-    public abstract class AnswerStorage
+    public interface ICommentStorage
     {
-        public abstract void Add(Answer answer);
+        void Add(Comment comment);
+
+        void Remove(Comment comment);
     }
 }

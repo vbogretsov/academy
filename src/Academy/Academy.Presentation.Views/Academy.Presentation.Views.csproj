@@ -205,12 +205,10 @@
     <Content Include="Views\Shared\RenderTemplates\ArticleView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\UserView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\UserArticlesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EditDisciplinesEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
-    <Content Include="Views\Article\PublishArticle.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentsView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateQuestionEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateAnswerEditor.cshtml" />

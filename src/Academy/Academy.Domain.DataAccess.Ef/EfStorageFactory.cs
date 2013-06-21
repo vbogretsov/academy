@@ -12,32 +12,32 @@ namespace Academy.Domain.DataAccess.Ef
             this.academyEntities = academyEntities;
         }
 
-        public UserStorage CreateUserStorage()
+        public IUserStorage CreateUserStorage()
         {
             return new EfUserStorage(academyEntities);
         }
 
-        public CommentStorage CreateCommentStorage()
+        public ICommentStorage CreateCommentStorage()
         {
             return new EfCommentStorage(academyEntities);
         }
 
-        public ArticleStorage CreateArticleStorage()
+        public IArticleStorage CreateArticleStorage()
         {
             return new EfArticleStorage(academyEntities);
         }
 
-        public DisciplineStorage CreateDisciplineStorage()
+        public IDisciplineStorage CreateDisciplineStorage()
         {
             return new EfDisciplineStorage(academyEntities);
         }
 
-        public QuestionStorage CreateQuestionStorage()
+        public IQuestionStorage CreateQuestionStorage()
         {
             return new EfQuestionStorage(academyEntities);
         }
 
-        public AnswerStorage CreateAnswerStorage()
+        public IAnswerStorage CreateAnswerStorage()
         {
             return new EfAnswerStorage(academyEntities);
         }

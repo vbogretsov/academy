@@ -9,7 +9,7 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfUserStorage : UserStorage
+    internal class EfUserStorage : IUserStorage
     {
         private readonly AcademyEntities academyEntities;
 
@@ -18,36 +18,36 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
-        public override void Add(User user)
+        public void Add(User user)
         {
             academyEntities.Users.Add(user);
             academyEntities.SaveChanges();
         }
 
-        public override void Update(User user)
+        public void Update(User user)
         {
             academyEntities.Users.Attach(user);
             academyEntities.Entry(user).State = EntityState.Modified;
             academyEntities.SaveChanges();
         }
 
-        public override void Update()
+        public void Update()
         {
             academyEntities.SaveChanges();
         }
 
-        public override void Delete(User user)
+        public void Delete(User user)
         {
             academyEntities.Users.Remove(user);
             academyEntities.SaveChanges();
         }
 
-        public override void Delete(string email)
+        public void Delete(string email)
         {
             throw new NotImplementedException();
         }
 
-        public override User Get(string emial)
+        public User Get(string emial)
         {
             if (String.IsNullOrEmpty(emial))
             {
@@ -56,17 +56,17 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return academyEntities.Users.SingleOrDefault(x => x.Email == emial);
         }
 
-        public override User Get(int id)
+        public User Get(int id)
         {
             return academyEntities.Users.SingleOrDefault(x => x.UserId == id);
         }
 
-        public override bool Contains(string email)
+        public bool Contains(string email)
         {
             return Get(email) != null;
         }
 
-        public override IEnumerable<User> Resolve(IEnumerable<string> emails)
+        public IEnumerable<User> Resolve(IEnumerable<string> emails)
         {
             return emails.Select(Get).Where(x => x != null);
         }

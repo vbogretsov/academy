@@ -1,6 +1,17 @@
 ﻿@using Academy.Resources
 @model Academy.Presentation.ViewModels.UserViewModel
 
+@{
+    const string newArticlesText = "New Articles";
+    const string newCommentsText = "New Comments";
+    const string newQuestionsText = "New Questions";
+    const string newAnswersText = "New Answers";
+    var myArticlesText = Localization.GetString("profile.myarticles");
+    var myQuestionsText = Localization.GetString("prifile.myquestions");
+    var myCommentsText = Localization.GetString("profile.mycomment");
+    var myAnswersText = Localization.GetString("profile.myanswers");
+}
+
 <div id="user">
     <div class="control-group">
         <ul class="thumbnails">
@@ -10,14 +21,15 @@
                 </div>
             </li>
         </ul>
-        <a href="#/NewArticles" id="newArticles" class="btn btn-block">New Articles</a>
-        <a href="#/NewComments" id="newComments" class="btn btn-block">New Comments</a>
-        <a href="#/NewQuestions" id="newQuestions" class="btn btn-block">New Questions</a>
-        <a href="#/NewAnswers" id="newAnswers" class="btn btn-block">New Answers</a>
-
-        <a href="#/Articles" id="myArticles" class="btn btn-block">@Localization.GetString("profile.myarticles")</a>
-        <a href="#/Questions" id="myQuestions" class="btn btn-block">@Localization.GetString("prifile.myquestions")</a>
-        <a href="#/Comments" id="myComments" class="btn btn-block">@Localization.GetString("profile.mycomment")</a>
-        <a href="#/Answers" id="myAnswers" class="btn btn-block">@Localization.GetString("profile.myanswers")</a>
+        <a href="#/NewArticles" id="newArticles" class="btn btn-block">@newArticlesText</a>
+        <a href="#/NewComments" id="newComments" class="btn btn-block">@newCommentsText</a>
+        <a href="#/NewQuestions" id="newQuestions" class="btn btn-block">@newQuestionsText</a>
+        <a href="#/NewAnswers" id="newAnswers" class="btn btn-block">@newAnswersText</a>
+        <div class="page-header">
+        </div>
+        <a href="#/Articles" id="myArticles" class="btn btn-block">@myArticlesText</a>
+        <a href="#/Questions" id="myQuestions" class="btn btn-block">@myQuestionsText</a>
+        <a href="#/Comments" id="myComments" class="btn btn-block">@myCommentsText</a>
+        <a href="#/Answers" id="myAnswers" class="btn btn-block">@myAnswersText</a>
     </div>
 </div>

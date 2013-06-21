@@ -7,7 +7,7 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfCommentStorage : CommentStorage
+    internal class EfCommentStorage : ICommentStorage
     {
         private readonly AcademyEntities academyEntities;
 
@@ -16,13 +16,13 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
-        public override void Add(Comment comment)
+        public void Add(Comment comment)
         {
             academyEntities.Comments.Add(comment);
             academyEntities.SaveChanges();
         }
 
-        public override void Remove(Comment comment)
+        public void Remove(Comment comment)
         {
             academyEntities.Comments.Remove(comment);
         }

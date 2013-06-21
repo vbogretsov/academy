@@ -14,12 +14,12 @@ namespace Academy.Domain.Services
 
         private readonly AccountManager accountManager;
 
-        private readonly UserStorage userStorage;
+        private readonly IUserStorage userStorage;
 
         public AccountService(
             RoleManager roleManager,
             AccountManager accountManager,
-            UserStorage userStorage)
+            IUserStorage userStorage)
         {
             this.roleManager = roleManager;
             this.accountManager = accountManager;

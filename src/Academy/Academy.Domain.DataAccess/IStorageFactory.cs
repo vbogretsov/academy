@@ -4,16 +4,16 @@ namespace Academy.Domain.DataAccess
 {
     public interface IStorageFactory
     {
-        UserStorage CreateUserStorage();
+        IUserStorage CreateUserStorage();
 
-        CommentStorage CreateCommentStorage();
+        ICommentStorage CreateCommentStorage();
 
-        ArticleStorage CreateArticleStorage();
+        IArticleStorage CreateArticleStorage();
 
-        DisciplineStorage CreateDisciplineStorage();
+        IDisciplineStorage CreateDisciplineStorage();
 
-        QuestionStorage CreateQuestionStorage();
+        IQuestionStorage CreateQuestionStorage();
 
-        AnswerStorage CreateAnswerStorage();
+        IAnswerStorage CreateAnswerStorage();
     }
 }

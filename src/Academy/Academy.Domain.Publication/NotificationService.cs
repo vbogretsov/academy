@@ -9,8 +9,8 @@ namespace Academy.Domain.Services
 {
     public class NotificationService : INotificationService
     {
-        private readonly DisciplineStorage disciplineStorage;
-        private readonly UserStorage userStorage;
+        private readonly IDisciplineStorage disciplineStorage;
+        private readonly IUserStorage userStorage;
 
         public NotificationService(IStorageFactory storageFactory)
         {
@@ -19,8 +19,8 @@ namespace Academy.Domain.Services
         }
 
         public NotificationService(
-            DisciplineStorage disciplineStorage,
-            UserStorage userStorage)
+            IDisciplineStorage disciplineStorage,
+            IUserStorage userStorage)
         {
             this.disciplineStorage = disciplineStorage;
             this.userStorage = userStorage;

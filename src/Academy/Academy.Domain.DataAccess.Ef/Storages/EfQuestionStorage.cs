@@ -6,7 +6,7 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfQuestionStorage : QuestionStorage
+    internal class EfQuestionStorage : IQuestionStorage
     {
         private readonly AcademyEntities academyEntities;
 
@@ -15,13 +15,13 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
-        public override Question Get(int questionId)
+        public Question Get(int questionId)
         {
             return academyEntities.Questions.SingleOrDefault(
                 x => x.QuestionId == questionId);
         }
 
-        public override void Add(Question question)
+        public void Add(Question question)
         {
             try
             {

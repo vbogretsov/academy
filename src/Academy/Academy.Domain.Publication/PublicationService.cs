@@ -9,13 +9,13 @@ namespace Academy.Domain.Services
 {
     public class PublicationService : IPublicationService
     {
-        private readonly UserStorage userStorage;
+        private readonly IUserStorage userStorage;
 
-        private readonly ArticleStorage articleStorage;
+        private readonly IArticleStorage articleStorage;
 
-        private readonly DisciplineStorage disciplineStorage;
+        private readonly IDisciplineStorage disciplineStorage;
 
-        private readonly CommentStorage commentStorage;
+        private readonly ICommentStorage commentStorage;
 
         public PublicationService(IStorageFactory storageFactory)
         {
@@ -26,9 +26,9 @@ namespace Academy.Domain.Services
         }
 
         public PublicationService(
-            UserStorage userStorage,
-            ArticleStorage articleStorage,
-            DisciplineStorage disciplineStorage)
+            IUserStorage userStorage,
+            IArticleStorage articleStorage,
+            IDisciplineStorage disciplineStorage)
         {
             this.userStorage = userStorage;
             this.articleStorage = articleStorage;

@@ -5,7 +5,7 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfDisciplineStorage : DisciplineStorage
+    internal class EfDisciplineStorage : IDisciplineStorage
     {
         private readonly AcademyEntities academyEntities;
 
@@ -14,24 +14,24 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
-        public override IEnumerable<Discipline> GetDisciplines()
+        public IEnumerable<Discipline> GetDisciplines()
         {
             return academyEntities.Disciplines;
         }
 
-        public override Discipline Get(int id)
+        public Discipline Get(int id)
         {
             return academyEntities.Disciplines.SingleOrDefault(
                 x => x.DisciplineId == id);
         }
 
-        public override Discipline Get(string name)
+        public Discipline Get(string name)
         {
             return academyEntities.Disciplines.SingleOrDefault(
                 x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
         }
 
-        public override IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
+        public IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
         {
             return disciplineIds.Select(Get).Where(x => x != null);
         }

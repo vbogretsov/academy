@@ -3,7 +3,7 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfAnswerStorage : AnswerStorage
+    internal class EfAnswerStorage : IAnswerStorage
     {
         private readonly AcademyEntities academyEntities;
 
@@ -12,7 +12,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             this.academyEntities = academyEntities;
         }
 
-        public override void Add(Answer answer)
+        public void Add(Answer answer)
         {
             academyEntities.Answers.Add(answer);
             academyEntities.SaveChanges();
