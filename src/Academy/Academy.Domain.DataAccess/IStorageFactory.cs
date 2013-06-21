@@ -15,5 +15,7 @@ namespace Academy.Domain.DataAccess
         IQuestionStorage CreateQuestionStorage();
 
         IAnswerStorage CreateAnswerStorage();
+
+        INoteStorage CreateNoteStorage();
     }
 }

@@ -9,6 +9,7 @@
     var commentTemplate = new CommentViewModel {ArticleId = Model.Id};
     var newCommentId = String.Format("newCommentFor{0}", Model.Id);
     var commentsId = String.Format("commentsFor{0}", Model.Id);
+    var articleFileText = "Article file: ";
 }
 
 <div class="text-block">
@@ -30,27 +31,18 @@
         {
             <span class="label font-small">@discipline.Name</span>
         }
-        <div class="pull-right">
-            <button class="btn btn-mini btn-primary" id="@addCommentId">@addCommentText</button>
-            <button class="btn btn-mini" id="@showCommentsId">@showCommentsText</button>
+        <div>
+            <span><b>@articleFileText</b><a href="@Model.Source">@Model.Source</a></span>
+            <div class="pull-right">
+                <button class="btn btn-mini btn-primary" id="@addCommentId">@addCommentText</button>
+                <button class="btn btn-mini" id="@showCommentsId">@showCommentsText</button>
+            </div>
         </div>
     </div>
 </div>
 <div id="@newCommentId" class="text-block hide">
     <div class="text-block-body">
         @{Html.RenderPartial("Forms/CommentArticleForm", commentTemplate);}
-        @*@{
-            using (Html.BeginForm(
-                "CommentArticle",
-                "Article",
-                FormMethod.Post,
-                new { id = String.Format("commentFormFor{0}", Model.Id) }))
-            {
-                Html.RenderPartial(
-                    "EditorTemplates/CreateCommentEditor",
-                    commentTemplate);
-            }
-        }*@
     </div>
 </div>
 <div id="@commentsId" class="hide">

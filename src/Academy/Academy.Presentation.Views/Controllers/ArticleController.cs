@@ -26,6 +26,12 @@ namespace Academy.Presentation.Views.Controllers
             return View(UserMapper.Map(user));
         }
 
+        public ActionResult GetArticle(int articleId)
+        {
+            var article = AcademyContext.PublicationService.GetArticle(articleId);
+            return View("RenderTemplates/ArticleView", ArticleMapper.Map(article));
+        }
+
         public ActionResult AddAuthor()
         {
             return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());

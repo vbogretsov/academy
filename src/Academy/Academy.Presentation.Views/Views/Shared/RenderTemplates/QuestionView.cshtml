@@ -8,6 +8,7 @@
     var addAnswerId = String.Format("addAnswerFor{0}", Model.Id);
     var showAnswersId = String.Format("showAnswersFor{0}", Model.Id);
     const string showAnswersText = "Show answers";
+    const string postedText = "Posted: ";
     var fullUserName = String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
@@ -24,7 +25,6 @@
         <span class="label">
             @fullUserName
         </span>
-        <span class="label pull-right">@Model.PostedDate</span>
     </div>
     <div class="text-block-header">
         <h4>@Model.Title</h4>
@@ -38,9 +38,15 @@
         {
             <span class="label font-small">@discipline.Name</span>
         }
-        <div class="pull-right">
+        <div>
+            <span>
+                <b>@postedText</b>
+                @Model.PostedDate
+            </span>
+            <div class="pull-right">
             <button class="btn btn-mini btn-primary" id="@addAnswerId">@addAnswerText</button>
-            <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
+                <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
+            </div>
         </div>
     </div>
 </div>

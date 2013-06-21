@@ -55,11 +55,16 @@
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="Mappers\AnswerMapper.cs" />
     <Compile Include="Mappers\ArticleMapper.cs" />
+    <Compile Include="Mappers\ArticleSmallMapper.cs" />
     <Compile Include="Mappers\AuthorMapper.cs" />
     <Compile Include="Mappers\CommentMapper.cs" />
     <Compile Include="Mappers\DateMapper.cs" />
     <Compile Include="Mappers\DisciplineMapper.cs" />
+    <Compile Include="Mappers\NoteMapper.cs" />
     <Compile Include="Mappers\QuestionMapper.cs" />
+    <Compile Include="Mappers\QuestionSmallMapper.cs" />
+    <Compile Include="Mappers\SingleAnswerMapper.cs" />
+    <Compile Include="Mappers\SingleCommentMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="NoteViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

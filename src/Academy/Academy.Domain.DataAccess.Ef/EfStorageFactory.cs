@@ -41,5 +41,10 @@ namespace Academy.Domain.DataAccess.Ef
         {
             return new EfAnswerStorage(academyEntities);
         }
+
+        public INoteStorage CreateNoteStorage()
+        {
+            return new EfNoteStorage(academyEntities);
+        }
     }
 }

@@ -33,6 +33,12 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserQuestionsResult(); //TODO: add error handling
         }
 
+        public ActionResult GetQuestion(int questionId)
+        {
+            var question = AcademyContext.QuestionService.GetQuestion(questionId);
+            return View("RenderTemplates/QuestionView", QuestionMapper.Map(question));
+        }
+
         public ActionResult GetUserQuestions()
         {
             return GetUserQuestionsResult();

@@ -225,6 +225,8 @@
     <Content Include="Views\Shared\RenderTemplates\ArticlesView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\QuestionsView.cshtml" />
     <Content Include="Views\Article\GetUserComments.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\SingleCommentView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\SingleAnswerView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

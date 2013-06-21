@@ -1,0 +1,48 @@
+﻿@model Academy.Presentation.ViewModels.CommentViewModel
+
+@{
+    const string showArticleText = "Show article";
+    var showArticleId = String.Format("showArticleFor{0}", Model.Id);
+    var parentArticleId = String.Format("articleFor{0}", Model.Id);
+    var authorFullName = String.Format(
+        "{0} {1} {2}",
+        Model.Author.Email,
+        Model.Author.FirstName,
+        Model.Author.LastName);
+}
+
+<div class="page-header">
+    <span class="label">
+        @authorFullName
+    </span>
+    <span class="label pull-right">@Model.PostedDate</span>
+    <div class="text-block">
+        <div class="text-block-body">
+            @Model.Text
+        </div>
+        <div class="text-block-footer">
+            <span class="label">@Model.Article.Title</span>
+            <div class="pull-right">
+                <button class="btn btn-mini btn-primary" id="@showArticleId">@showArticleText</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="@parentArticleId" class="hide" />
+
+<script type="text/javascript">
+    $(function () {
+        $('#@showArticleId').click(function () {
+            if ($('#@parentArticleId').is(':empty')) {
+                $.ajax({
+                    url: '@Url.Action("GetArticle", "Article", new {articleId = Model.ArticleId})',
+                    cache: false,
+                    success: function (result) {
+                        $('#@parentArticleId').append(result);
+                        $('#@parentArticleId').slideToggle('fast');
+                    }
+                });
+            }
+        });
+    });
+</script>

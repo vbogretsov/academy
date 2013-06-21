@@ -43,6 +43,7 @@
     <Compile Include="IArticleStorage.cs" />
     <Compile Include="ICommentStorage.cs" />
     <Compile Include="IDisciplineStorage.cs" />
+    <Compile Include="INoteStorage.cs" />
     <Compile Include="IStorageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IQuestionStorage.cs" />

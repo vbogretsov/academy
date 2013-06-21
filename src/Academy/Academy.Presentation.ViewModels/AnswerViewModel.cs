@@ -33,6 +33,12 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
+        public QuestionViewModel Question
+        {
+            get;
+            set;
+        }
+
         public DateTime PostedDate
         {
             get;

@@ -46,7 +46,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             }
             if (user.Comments != null)
             {
-                viewModel.Comments = user.Comments.Select(CommentMapper.Map);
+                viewModel.Comments = user.Comments.Select(SingleCommentMapper.Map);
             }
             if (user.Questions != null)
             {
@@ -54,7 +54,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             }
             if (user.Answers != null)
             {
-                viewModel.Answers = user.Answers.Select(AnswerMapper.Map);
+                viewModel.Answers = user.Answers.Select(SingleAnswerMapper.Map);
             }
             return viewModel;
         }
