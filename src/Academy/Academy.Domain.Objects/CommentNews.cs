@@ -5,19 +5,19 @@ using System.Text;
 
 namespace Academy.Domain.Objects
 {
-    public class CommentNews
+    public class CommentNews : News
     {
-        public int CommentNewsId
-        {
-            get;
-            set;
-        }
+        //public int CommentNewsId
+        //{
+        //    get;
+        //    set;
+        //}
 
-        public int UserId
-        {
-            get;
-            set;
-        }
+        //public int UserId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public virtual User User
         {
@@ -25,11 +25,11 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public int CommentId
-        {
-            get;
-            set;
-        }
+        //public int CommentId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public virtual Comment Comment
         {
@@ -37,10 +37,10 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public bool Read
-        {
-            get;
-            set;
-        }
+        //public bool Read
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }

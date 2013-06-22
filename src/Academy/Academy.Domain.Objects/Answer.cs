@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace Academy.Domain.Objects
 {
-    public class Answer
+    public class Answer : Entity
     {
-        public int AnswerId
-        {
-            get;
-            set;
-        }
+        //public int AnswerId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public string Text
         {

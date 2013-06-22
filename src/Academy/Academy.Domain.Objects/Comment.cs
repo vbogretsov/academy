@@ -5,14 +5,14 @@ using Academy.Domain.Objects.Enums;
 
 namespace Academy.Domain.Objects
 {
-    public class Comment
+    public class Comment : Entity
     {
-        [Key]
-        public int CommentId
-        {
-            get;
-            set;
-        }
+        //[Key]
+        //public int CommentId
+        //{
+        //    get;
+        //    set;
+        //}
 
         [Required(ErrorMessage = "Comment text is required")]
         public string Text

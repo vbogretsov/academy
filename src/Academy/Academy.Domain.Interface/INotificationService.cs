@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.Interface
 {
     public interface INotificationService
     {
-        void Subscribe(User user);
+        void Subscribe(int userId, IEnumerable<int> disciplineIds);
+
+        void NotifyAboutNewArticle(Article article);
+
+        void NotifyAboutNewQuestion(Question question);
+
+        void NotifyAboutNewComment(Comment comment);
+
+        void NotifyAboutNewAnswer(Answer answer);
 
         IEnumerable<Discipline> GetDisciplines();
 

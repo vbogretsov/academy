@@ -6,31 +6,31 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfNoteStorage : INoteStorage
+    internal class EfNoteStorage : EfEntityStorage, INoteStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfNoteStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public void Add(Note note)
         {
-            academyEntities.Notes.Add(note);
-            academyEntities.SaveChanges();
+            //Entities.Notes.Add(note);
+            //Entities.SaveChanges();
+            Add(note, Entities.Notes);
         }
 
-        public void Remove(Note note)
+        public void Remove(int noteId)
         {
-            academyEntities.Notes.Attach(note);
-            academyEntities.Notes.Remove(note);
-            academyEntities.SaveChanges();
+            //Entities.Notes.Attach(note);
+            //Entities.Notes.Remove(note);
+            //Entities.SaveChanges();
+            Remove(noteId, Entities.Notes);
         }
 
-        public IEnumerable<Note> GetUserNotes(User user)
+        public IEnumerable<Note> GetUserNotes(int userId)
         {
-            return user.Notes;
+            return Entities.Notes.Where(x => x.UserId == userId);
         }
     }
 }

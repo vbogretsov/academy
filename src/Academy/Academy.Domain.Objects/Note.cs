@@ -6,14 +6,14 @@ using System.Text;
 
 namespace Academy.Domain.Objects
 {
-    public class Note
+    public class Note : Entity
     {
-        [Key]
-        public int NoteId
-        {
-            get;
-            set;
-        }
+        //[Key]
+        //public int NoteId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public string Title
         {

@@ -8,12 +8,12 @@ namespace Academy.Domain.DataAccess
     {
         IEnumerable<Discipline> Get();
 
-        IEnumerable<Discipline> Get(IEnumerable<Discipline> disciplines);
+        IEnumerable<Discipline> Get(IEnumerable<int> disciplinesIds);
 
         Discipline Get(int id);
 
         Discipline Get(string name);
 
-        IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds);
+        //IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds);
     }
 }

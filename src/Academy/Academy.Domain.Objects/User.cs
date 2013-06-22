@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academy.Domain.Objects
 {
-    public class User
+    public class User : Entity
     {
-        [Key]
-        public int UserId
-        {
-            get;
-            set;
-        }
+        //[Key]
+        //public int UserId
+        //{
+        //    get;
+        //    set;
+        //}
 
         [Required(ErrorMessage = "Email is requaried")]
         [StringLength(128)]

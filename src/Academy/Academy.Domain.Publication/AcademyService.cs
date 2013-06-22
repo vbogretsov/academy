@@ -15,8 +15,8 @@ namespace Academy.Domain.Services
             var disciplineStorage = storageFactory.CreateDisciplineStorage();
             var userStorage = storageFactory.CreateUserStorage();
             var articleStorage = storageFactory.CreateArticleStorage();
-            Notifications = new NotificationService(disciplineStorage, userStorage);
-            Publications = new PublicationService(userStorage, articleStorage, disciplineStorage);
+            //Notifications = new NotificationService(disciplineStorage, userStorage);
+            //Publications = new PublicationService(userStorage, articleStorage, disciplineStorage);
             //Account = new AccountService(roleManager, accountManager, userStorage);
             //Files = new FilesStore();
         }

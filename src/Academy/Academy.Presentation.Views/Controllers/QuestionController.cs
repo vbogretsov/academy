@@ -15,7 +15,9 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                AcademyContext.QuestionService.Ask(QuestionMapper.Map(viewModel));
+                var question = QuestionMapper.Map(viewModel);
+                AcademyContext.QuestionService.Ask(question);
+                AcademyContext.NotificationService.NotifyAboutNewQuestion(question);
             }
             return GetUserQuestionsResult();
         }
@@ -25,8 +27,10 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                viewModel.AuthorId = AcademyContext.Account.GetCurrentUser().UserId;
-                AcademyContext.QuestionService.Answer(AnswerMapper.Map(viewModel));
+                var answer = AnswerMapper.Map(viewModel);
+                answer.UserId = AcademyContext.Account.GetCurrentUser().Id;
+                AcademyContext.QuestionService.Answer(answer);
+                AcademyContext.NotificationService.NotifyAboutNewAnswer(answer);
                 var question = AcademyContext.QuestionService.GetQuestion(viewModel.QuestionId);
                 return View("RenderTemplates/AnswersView", QuestionMapper.Map(question));
             }

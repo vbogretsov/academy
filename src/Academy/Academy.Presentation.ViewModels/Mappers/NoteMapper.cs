@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static NoteViewModel Map(Note note)
         {
             NoteViewModel viewModel = new NoteViewModel();
-            viewModel.Id = note.NoteId;
+            viewModel.Id = note.Id;
             viewModel.Title = note.Title;
             viewModel.Text = note.Text;
             return viewModel;
@@ -20,7 +20,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Note Map(NoteViewModel viewModel)
         {
             Note note = new Note();
-            note.NoteId = viewModel.Id;
+            note.Id = viewModel.Id;
             note.Title = viewModel.Title;
             note.Text = viewModel.Text;
             return note;

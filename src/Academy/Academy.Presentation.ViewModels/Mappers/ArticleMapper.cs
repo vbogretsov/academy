@@ -10,7 +10,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Article Map(ArticleViewModel viewModel)
         {
             Article article = new Article();
-            article.ArticleId = viewModel.Id;
+            article.Id = viewModel.Id;
             article.Source = viewModel.Source;
             article.Title = viewModel.Title;
             article.Description = viewModel.Description;
@@ -23,7 +23,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static ArticleViewModel Map(Article article)
         {
             ArticleViewModel viewModel = new ArticleViewModel();
-            viewModel.Id = article.ArticleId;
+            viewModel.Id = article.Id;
             viewModel.Title = article.Title;
             viewModel.Description = article.Description;
             viewModel.Source = article.Source;

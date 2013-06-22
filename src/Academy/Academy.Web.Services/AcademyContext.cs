@@ -24,9 +24,7 @@ namespace Academy.Web.Services
             roleManager = new WebMatrixRoleManager();
         }
 
-        private readonly AcademyEntities academyEntities;
-
-        private readonly IStorageFactory storageFactory;
+        private readonly IDataContext context;
 
         private AccountService accountService;
 
@@ -42,8 +40,7 @@ namespace Academy.Web.Services
 
         public AcademyContext()
         {
-            academyEntities = new AcademyEntities();
-            storageFactory = new EfStorageFactory(academyEntities);
+            context = new EfDataContext();
         }
 
         public AccountService Account
@@ -55,7 +52,7 @@ namespace Academy.Web.Services
                     accountService = new AccountService(
                         roleManager,
                         accountManager,
-                        storageFactory.CreateUserStorage());
+                        context);
                 }
                 return accountService;
             }
@@ -67,7 +64,7 @@ namespace Academy.Web.Services
             {
                 if (publicationService == null)
                 {
-                    publicationService = new PublicationService(storageFactory);
+                    publicationService = new PublicationService(context);
                 }
                 return publicationService;
             }
@@ -79,7 +76,7 @@ namespace Academy.Web.Services
             {
                 if (notificationService == null)
                 {
-                    notificationService = new NotificationService(storageFactory);
+                    notificationService = new NotificationService(context);
                 }
                 return notificationService;
             }
@@ -91,7 +88,7 @@ namespace Academy.Web.Services
             {
                 if (noteService == null)
                 {
-                    noteService = new NoteService(storageFactory);
+                    noteService = new NoteService(context);
                 }
                 return noteService;
             }
@@ -103,7 +100,7 @@ namespace Academy.Web.Services
             {
                 if (questionService == null)
                 {
-                    questionService = new QuestionService(storageFactory);
+                    questionService = new QuestionService(context);
                 }
                 return questionService;
             }
@@ -123,7 +120,7 @@ namespace Academy.Web.Services
 
         public void Dispose()
         {
-            academyEntities.Dispose();
+            context.Dispose();
         }
     }
 }

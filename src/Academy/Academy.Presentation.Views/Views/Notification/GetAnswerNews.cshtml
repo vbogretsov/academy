@@ -1,0 +1,9 @@
+﻿@model Academy.Presentation.ViewModels.UserViewModel
+
+@if (Model.AnswerNews != null)
+{
+    foreach (var viewModel in Model.AnswerNews)
+    {
+        Html.RenderPartial("RenderTemplates/AnswerNewsView", viewModel);
+    }
+}

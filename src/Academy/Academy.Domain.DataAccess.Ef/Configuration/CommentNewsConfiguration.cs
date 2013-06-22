@@ -13,8 +13,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public CommentNewsConfiguration()
         {
             ToTable("academy_CommentNews");
-            HasKey(x => x.CommentNewsId);
-            Property(x => x.CommentNewsId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Read)
@@ -26,7 +26,7 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .WillCascadeOnDelete(false);
             HasRequired(x => x.Comment)
                 .WithMany(x => x.CommentNewses)
-                .HasForeignKey(x => x.CommentId)
+                .HasForeignKey(x => x.EntityId)
                 .WillCascadeOnDelete(false);
         }
     }

@@ -1,21 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfAnswerStorage : IAnswerStorage
+    internal class EfAnswerStorage : EfEntityStorage, IAnswerStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfAnswerStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public void Add(Answer answer)
         {
-            academyEntities.Answers.Add(answer);
-            academyEntities.SaveChanges();
+            //Entities.Answers.Add(answer);
+            //Entities.SaveChanges();
+            Add(answer, Entities.Answers);
+        }
+
+        public IEnumerable<Answer> GetUserAnswers(int userId)
+        {
+            return Entities.Answers.Where(x => x.UserId == userId);
         }
     }
 }

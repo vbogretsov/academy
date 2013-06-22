@@ -6,32 +6,36 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfQuestionStorage : IQuestionStorage
+    internal class EfQuestionStorage : EfEntityStorage, IQuestionStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfQuestionStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public Question Get(int questionId)
         {
-            return academyEntities.Questions.SingleOrDefault(
-                x => x.QuestionId == questionId);
+            //return Entities.Questions.SingleOrDefault(x => x.Id == questionId);
+            return Get(questionId, Entities.Questions);
         }
 
         public void Add(Question question)
         {
-            try
-            {
-                academyEntities.Questions.Add(question);
-                academyEntities.SaveChanges();
-            }
-            catch (Exception exception)
-            {
-                var s = exception.Message;
-            }
+            Add(question, Entities.Questions);
+            //try
+            //{
+            //    Entities.Questions.Add(question);
+            //    Entities.SaveChanges();
+            //}
+            //catch (Exception exception)
+            //{
+            //    var s = exception.Message;
+            //}
+        }
+
+        public IEnumerable<Question> GetUserQuestions(int userId)
+        {
+            return Entities.Questions.Where(x => x.UserId == userId);
         }
     }
 }

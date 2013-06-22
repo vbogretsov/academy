@@ -5,19 +5,19 @@ using System.Text;
 
 namespace Academy.Domain.Objects
 {
-    public class AnswerNews
+    public class AnswerNews : News
     {
-        public int AnswerNewsId
-        {
-            get;
-            set;
-        }
+        //public int AnswerNewsId
+        //{
+        //    get;
+        //    set;
+        //}
 
-        public int UserId
-        {
-            get;
-            set;
-        }
+        //public int UserId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public virtual User User
         {
@@ -25,11 +25,11 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public int AnswerId
-        {
-            get;
-            set;
-        }
+        //public int AnswerId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public virtual Answer Answer
         {
@@ -37,10 +37,10 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public bool Read
-        {
-            get;
-            set;
-        }
+        //public bool Read
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }

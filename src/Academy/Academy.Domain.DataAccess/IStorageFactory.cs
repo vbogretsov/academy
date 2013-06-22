@@ -1,4 +1,5 @@
 ﻿using System;
+using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
 {
@@ -17,5 +18,13 @@ namespace Academy.Domain.DataAccess
         IAnswerStorage CreateAnswerStorage();
 
         INoteStorage CreateNoteStorage();
+
+        INewsStorage<ArticleNews> CreateArticleNewsStorage();
+
+        INewsStorage<QuestionNews> CreateQuestionNewsStorage();
+
+        INewsStorage<CommentNews> CreateCommentNewsStorage();
+
+        INewsStorage<AnswerNews> CreateAnswerNewsStorage();
     }
 }

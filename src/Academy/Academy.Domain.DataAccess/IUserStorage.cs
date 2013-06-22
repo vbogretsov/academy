@@ -10,18 +10,18 @@ namespace Academy.Domain.DataAccess
 
         void Update(User user);
 
-        void Update();
+        void UpdateDisciplines(int userId, IEnumerable<int> disciplineIds);
 
-        void Delete(User user);
+        void Remove(int userId);
 
-        void Delete(string email);
+        void Remove(string email);
 
         User Get(string emial);
 
         User Get(int id);
 
-        bool Contains(string email);
+        IEnumerable<User> GetByDiscipline(int disciplineId);
 
-        IEnumerable<User> Resolve(IEnumerable<string> emails);
+        bool Exists(string email);
     }
 }

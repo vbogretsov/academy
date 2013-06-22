@@ -8,7 +8,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static User Map(AuthorViewModel viewModel)
         {
             User user = new User();
-            user.UserId = viewModel.Id;
+            user.Id = viewModel.Id;
             user.Email = viewModel.Email;
             user.FirstName = viewModel.FirstName;
             user.LastName = viewModel.LastName;
@@ -18,7 +18,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static AuthorViewModel Map(User user)
         {
             AuthorViewModel viewModel = new AuthorViewModel();
-            viewModel.Id = user.UserId;
+            viewModel.Id = user.Id;
             viewModel.Email = user.Email;
             viewModel.FirstName = user.FirstName;
             viewModel.LastName = user.LastName;

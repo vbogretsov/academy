@@ -10,35 +10,29 @@ namespace Academy.Domain.Services
 {
     public class QuestionService : IQuestionService
     {
-        private readonly IUserStorage userStorage;
-
         private readonly IDisciplineStorage disciplineStorage;
 
         private readonly IQuestionStorage questionStorage;
 
         private readonly IAnswerStorage answerStorage;
 
-        public QuestionService(IStorageFactory storageFactory)
+        public QuestionService(IDataContext context)
         {
-            userStorage = storageFactory.CreateUserStorage();
-            disciplineStorage = storageFactory.CreateDisciplineStorage();
-            questionStorage = storageFactory.CreateQuestionStorage();
-            answerStorage = storageFactory.CreateAnswerStorage();
+            disciplineStorage = context.DisciplineStorage;
+            questionStorage = context.QuestionStorage;
+            answerStorage = context.AnswerStorage;
         }
 
         public void Ask(Question question)
         {
-            question.Disciplines = disciplineStorage.Resolve(
-                question.Disciplines.Select(x => x.DisciplineId)).ToList();
-            question.User = userStorage.Get(question.UserId);
+            question.Disciplines = disciplineStorage.Get(
+                question.Disciplines.Select(x => x.Id)).ToList();
             question.PostedDate = DateTime.Now;
             questionStorage.Add(question);
         }
 
         public void Answer(Answer answer)
         {
-            answer.User = userStorage.Get(answer.UserId);
-            answer.Question = questionStorage.Get(answer.QuestionId);
             answer.PostedDate = DateTime.Now;
             answerStorage.Add(answer);
         }

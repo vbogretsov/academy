@@ -9,5 +9,7 @@ namespace Academy.Domain.DataAccess
     public interface IAnswerStorage
     {
         void Add(Answer answer);
+
+        IEnumerable<Answer> GetUserAnswers(int userId);
     }
 }

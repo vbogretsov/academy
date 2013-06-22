@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academy.Domain.Objects
 {
-    public class Article
+    public class Article : Entity, IByDisciplinesNotifiable
     {
-        [Key]
-        public int ArticleId
-        {
-            get;
-            set;
-        }
+        //[Key]
+        //public int ArticleId
+        //{
+        //    get;
+        //    set;
+        //}
 
         [Required(ErrorMessage = "Article title is required")]
         public string Title

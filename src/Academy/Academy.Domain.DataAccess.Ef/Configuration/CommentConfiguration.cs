@@ -10,8 +10,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public CommentConfiguration()
         {
             ToTable("academy_Comment");
-            HasKey(x => x.CommentId);
-            Property(x => x.CommentId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("CommentId");

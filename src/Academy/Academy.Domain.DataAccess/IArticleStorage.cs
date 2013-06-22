@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
@@ -9,10 +10,8 @@ namespace Academy.Domain.DataAccess
 
         void Add(Article article);
 
-        void Update(Article article);
+        void Remove(int articleId);
 
-        void Remove(Article article);
-
-        void Resolve(Article article);
+        IEnumerable<Article> GetUserArticles(int userId);
     }
 }

@@ -47,7 +47,11 @@
     <Compile Include="Comment.cs" />
     <Compile Include="CommentNews.cs" />
     <Compile Include="Discipline.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Enums\Rating.cs" />
+    <Compile Include="IByDisciplinesNotifiable.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="News.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />

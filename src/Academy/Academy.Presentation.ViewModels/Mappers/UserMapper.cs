@@ -13,29 +13,32 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static User Map(UserViewModel viewModel)
         {
             User user = new User();
-            user.UserId = viewModel.Id;
+            user.Id = viewModel.Id;
             user.Email = viewModel.Email;
             user.FirstName = viewModel.FirstName;
             user.LastName = viewModel.LastName;
             user.BirthDate = DateMapper.Map(viewModel.BirthDate);
             user.PhotoFileName = viewModel.PhotoFile.FileName;
             user.University = viewModel.University;
+            // <excess>
             user.Comments.Add(viewModel.Comments.Select(CommentMapper.Map));
             user.Articles.Add(viewModel.Articles.Select(ArticleMapper.Map));
             user.Disciplines.Add(viewModel.Disciplines.Select(DisciplineMapper.Map));
+            // </excess>
             return user;
         }
 
         public static UserViewModel Map(User user)
         {
             UserViewModel viewModel = new UserViewModel();
-            viewModel.Id = user.UserId;
+            viewModel.Id = user.Id;
             viewModel.Email = user.Email;
             viewModel.FirstName = user.FirstName;
             viewModel.LastName = user.LastName;
             viewModel.University = user.University;
             viewModel.BirthDate = DateMapper.Map(user.BirthDate);
             viewModel.PhotoFileName = user.PhotoFileName;
+            // <refactor>
             if (user.Disciplines != null)
             {
                 viewModel.Disciplines = user.Disciplines.Select(DisciplineMapper.Map);
@@ -56,6 +59,23 @@ namespace Academy.Presentation.ViewModels.Mappers
             {
                 viewModel.Answers = user.Answers.Select(SingleAnswerMapper.Map);
             }
+            if (user.ArticleNewses != null)
+            {
+                viewModel.ArticleNews = user.ArticleNewses.Select(ArticleNewsMapper.Map);
+            }
+            if (user.QuestionNewses != null)
+            {
+                viewModel.QuestionNews = user.QuestionNewses.Select(QuestionNewsMapper.Map);
+            }
+            if (user.CommentNewses != null)
+            {
+                viewModel.CommentNews = user.CommentNewses.Select(CommentNewsMapper.Map);
+            }
+            if (user.AnswerNewses != null)
+            {
+                viewModel.AnswerNews = user.AnswerNewses.Select(AnswerNewsMapper.Map);
+            }
+            // </refactor>
             return viewModel;
         }
 

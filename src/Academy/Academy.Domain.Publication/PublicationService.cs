@@ -9,20 +9,17 @@ namespace Academy.Domain.Services
 {
     public class PublicationService : IPublicationService
     {
-        private readonly IUserStorage userStorage;
-
         private readonly IArticleStorage articleStorage;
 
         private readonly IDisciplineStorage disciplineStorage;
 
         private readonly ICommentStorage commentStorage;
 
-        public PublicationService(IStorageFactory storageFactory)
+        public PublicationService(IDataContext dataContext)
         {
-            articleStorage = storageFactory.CreateArticleStorage();
-            disciplineStorage = storageFactory.CreateDisciplineStorage();
-            userStorage = storageFactory.CreateUserStorage();
-            commentStorage = storageFactory.CreateCommentStorage();
+            articleStorage = dataContext.ArticleStorage;
+            disciplineStorage = dataContext.DisciplineStorage;
+            commentStorage = dataContext.CommentStorage;
         }
 
         public PublicationService(
@@ -30,24 +27,20 @@ namespace Academy.Domain.Services
             IArticleStorage articleStorage,
             IDisciplineStorage disciplineStorage)
         {
-            this.userStorage = userStorage;
             this.articleStorage = articleStorage;
             this.disciplineStorage = disciplineStorage;
         }
 
         public void Publish(Article article)
         {
-            article.Disciplines = disciplineStorage.Resolve(
-                    article.Disciplines.Select(x => x.DisciplineId)).ToList();
-            article.Authors = userStorage.Resolve(
-                article.Authors.Select(x => x.Email)).ToList();
+            article.Disciplines = disciplineStorage.Get(
+                article.Disciplines.Select(x => x.Id)).ToList();
             articleStorage.Add(article);
         }
 
         public void Comment(Comment comment)
         {
             comment.PostedDate = DateTime.Now;
-            comment.Article = articleStorage.Get(comment.ArticleId);
             commentStorage.Add(comment);
         }
 
@@ -64,42 +57,6 @@ namespace Academy.Domain.Services
         public IEnumerable<Comment> GetComments(User user)
         {
             throw new NotImplementedException();
-        }
-
-        // OLD CODE TO BE REMOVED!!!
-        public void PublishArticle(User author, Article article)
-        {
-            try
-            {
-                Resolve(author, article);
-                articleStorage.Add(article);
-            }
-            catch (Exception e)
-            {
-                var s = e.Message;
-            }
-        }
-
-        public void CommentArticle(User author, Article article, Comment comment)
-        {
-            var resolvedArticle = articleStorage.Get(article.ArticleId);
-            if (resolvedArticle != null)
-            {
-                comment.User = author;
-                comment.Article = resolvedArticle;
-                comment.PostedDate = DateTime.Now;
-                resolvedArticle.Comments.Add(comment);
-                articleStorage.Update(article);
-            }
-        }
-
-        private void Resolve(User author, Article article)
-        {
-            IEnumerable<User> users = userStorage.Resolve(
-                article.Authors.Select(x => x.Email));
-            article.Authors = (new[] {author}).Union(users).ToList();
-            article.Disciplines = disciplineStorage.Resolve(
-                    article.Disciplines.Select(x => x.DisciplineId)).ToList();
         }
     }
 }

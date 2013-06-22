@@ -10,7 +10,7 @@ namespace Academy.Domain.Services
 {
     public class NoteService : INoteService
     {
-        public NoteService(IStorageFactory storageFactory)
+        public NoteService(IDataContext context)
         {
             
         }

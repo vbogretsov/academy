@@ -11,6 +11,9 @@ namespace Academy.Domain.DataAccess
     {
         void Add(Comment comment);
 
-        void Remove(Comment comment);
+        void Remove(int commentId);
+
+        //TODO: add paging
+        IEnumerable<Comment> GetUserComments(int userId);
     }
 }

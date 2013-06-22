@@ -13,8 +13,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public AnswerNewsConfiguration()
         {
             ToTable("academy_AnswerNews");
-            HasKey(x => x.AnswerNewsId);
-            Property(x => x.AnswerNewsId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Read)
@@ -26,7 +26,7 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .WillCascadeOnDelete(false);
             HasRequired(x => x.Answer)
                 .WithMany(x => x.AnswerNewses)
-                .HasForeignKey(x => x.AnswerId)
+                .HasForeignKey(x => x.EntityId)
                 .WillCascadeOnDelete(false);
         }
     }

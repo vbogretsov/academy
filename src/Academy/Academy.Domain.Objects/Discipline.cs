@@ -4,19 +4,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academy.Domain.Objects
 {
-    public class Discipline
+    public class Discipline : Entity
     {
         public override string ToString()
         {
             return Name;
         }
 
-        [Key]
-        public int DisciplineId
-        {
-            get;
-            set;
-        }
+        //[Key]
+        //public int DisciplineId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public string Name
         {

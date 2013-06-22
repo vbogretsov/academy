@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static AnswerViewModel Map(Answer answer)
         {
             AnswerViewModel viewModel = new AnswerViewModel();
-            viewModel.Id = answer.AnswerId;
+            viewModel.Id = answer.Id;
             viewModel.QuestionId = answer.QuestionId;
             viewModel.Text = answer.Text;
             viewModel.PostedDate = answer.PostedDate;
@@ -22,7 +22,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Answer Map(AnswerViewModel viewModel)
         {
             Answer answer = new Answer();
-            answer.AnswerId = viewModel.Id;
+            answer.Id = viewModel.Id;
             answer.UserId = viewModel.AuthorId;
             answer.QuestionId = viewModel.QuestionId;
             answer.Text = viewModel.Text;

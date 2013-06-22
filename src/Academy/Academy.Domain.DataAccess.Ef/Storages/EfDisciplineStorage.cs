@@ -6,43 +6,41 @@ using Academy.Utils.Trees;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfDisciplineStorage : IDisciplineStorage
+    internal class EfDisciplineStorage : EfEntityStorage, IDisciplineStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfDisciplineStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public IEnumerable<Discipline> Get()
         {
-            return academyEntities.Disciplines;
+            return Entities.Disciplines;
         }
 
-        public IEnumerable<Discipline> Get(IEnumerable<Discipline> disciplines)
+        public IEnumerable<Discipline> Get(IEnumerable<int> disciplineIds)
         {
             var treeHelper = GetHelper();
-            var roots = treeHelper.GetRoots(disciplines);
-            return GetAllChildren(roots);
+            var roots = treeHelper.GetRoots(disciplineIds.Select(Get));
+            return GetAllChildren(roots).ToList();
         }
 
         public Discipline Get(int id)
         {
-            return academyEntities.Disciplines.SingleOrDefault(
-                x => x.DisciplineId == id);
+            //return Entities.Disciplines.SingleOrDefault(x => x.Id == id);
+            return Get(id, Entities.Disciplines);
         }
 
         public Discipline Get(string name)
         {
-            return academyEntities.Disciplines.SingleOrDefault(
+            return Entities.Disciplines.SingleOrDefault(
                 x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
         }
 
-        public IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
-        {
-            return disciplineIds.Select(Get).Where(x => x != null);
-        }
+        //public IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
+        //{
+        //    return disciplineIds.Select(Get).Where(x => x != null);
+        //}
 
         private IEnumerable<Discipline> GetAllChildren(IEnumerable<Discipline> roots)
         {
@@ -61,10 +59,10 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return children;
         }
 
-        private void AddChildren(Discipline node, List<Discipline> children)
+        private void AddChildren(Entity node, List<Discipline> children)
         {
-            var childDisciplines = academyEntities.Disciplines.Where(
-                x => x.ParentId == node.DisciplineId).ToList();
+            var childDisciplines = Entities.Disciplines.Where(
+                x => x.ParentId == node.Id).ToList();
             if (childDisciplines.Count > 0)
             {
                 children.AddRange(childDisciplines);
@@ -78,7 +76,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         private static TreeHelper<int, Discipline> GetHelper()
         {
             return new TreeHelper<int, Discipline>(
-                x => x.DisciplineId,
+                x => x.Id,
                 x => x.ParentId != null ? x.ParentId.Value : 0);
         }
     }

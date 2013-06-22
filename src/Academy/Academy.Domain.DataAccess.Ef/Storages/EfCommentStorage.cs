@@ -1,30 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfCommentStorage : ICommentStorage
+    internal class EfCommentStorage : EfEntityStorage, ICommentStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfCommentStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public void Add(Comment comment)
         {
-            academyEntities.Comments.Add(comment);
-            academyEntities.SaveChanges();
+            //Entities.Comments.Add(comment);
+            //Entities.SaveChanges();
+
+            //comment.Article = articleStorage.Get(comment.ArticleId);
+
+            Add(comment, Entities.Comments);
         }
 
-        public void Remove(Comment comment)
+        public void Remove(int commentId)
         {
-            academyEntities.Comments.Remove(comment);
+            Remove(commentId, Entities.Comments);
         }
+
+        public IEnumerable<Comment> GetUserComments(int userId)
+        {
+            return Entities.Comments.Where(x => x.UserId == userId);
+        }
+
+        //public void Remove(Comment comment)
+        //{
+        //    Entities.Comments.Remove(comment);
+        //}
     }
 }

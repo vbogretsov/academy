@@ -10,8 +10,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public UserConfiguration()
         {
             ToTable("academy_User");
-            HasKey(x => x.UserId);
-            Property(x => x.UserId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("UserId");

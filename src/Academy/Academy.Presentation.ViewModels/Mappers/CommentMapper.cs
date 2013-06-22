@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static CommentViewModel Map(Comment comment)
         {
             CommentViewModel viewModel = new CommentViewModel();
-            viewModel.Id = comment.CommentId;
+            viewModel.Id = comment.Id;
             viewModel.Text = comment.Text;
             viewModel.Author = AuthorMapper.Map(comment.User);
             viewModel.PostedDate = comment.PostedDate;
@@ -22,9 +22,10 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Comment Map(CommentViewModel viewModel)
         {
             Comment comment = new Comment();
-            comment.CommentId = viewModel.Id;
+            comment.Id = viewModel.Id;
             comment.ArticleId = viewModel.ArticleId;
             comment.Text = viewModel.Text;
+            comment.UserId = viewModel.AuthorId;
             return comment;
         }
     }

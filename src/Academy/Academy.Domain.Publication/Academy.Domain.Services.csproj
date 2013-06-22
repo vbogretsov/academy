@@ -45,6 +45,11 @@
     <Compile Include="FileService.cs" />
     <Compile Include="NoteService.cs" />
     <Compile Include="NotificationService.cs" />
+    <Compile Include="Notifications\AnswerNotification.cs" />
+    <Compile Include="Notifications\ArticleNotification.cs" />
+    <Compile Include="Notifications\ByDisciplinesNotification.cs" />
+    <Compile Include="Notifications\CommentNotification.cs" />
+    <Compile Include="Notifications\QuestionNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicationService.cs" />
     <Compile Include="QuestionService.cs" />

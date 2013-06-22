@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Academy.Domain.Objects
 {
-    public class Question
+    public class Question : Entity, IByDisciplinesNotifiable
     {
-        public int QuestionId
-        {
-            get;
-            set;
-        }
+        //public int QuestionId
+        //{
+        //    get;
+        //    set;
+        //}
 
         public string Title
         {

@@ -1,47 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfArticleStorage : IArticleStorage
+    internal class EfArticleStorage : EfEntityStorage, IArticleStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfArticleStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public Article Get(int articleId)
         {
-            return academyEntities.Articles.SingleOrDefault(x => x.ArticleId == articleId);
+            return Get(articleId, Entities.Articles);
         }
 
         public void Add(Article article)
         {
-            academyEntities.Articles.Add(article);
-            academyEntities.SaveChanges();
+            Resolve(article); // TODO: try avoid resolving
+            Add(article, Entities.Articles);
         }
 
-        public void Update(Article article)
+        public void Remove(int articleId)
         {
-            //academyEntities.Articles.Attach(article);
-            academyEntities.SaveChanges();
+            Remove(articleId, Entities.Articles);
         }
 
-        public void Remove(Article article)
+        public IEnumerable<Article> GetUserArticles(int userId)
         {
-            academyEntities.Articles.Remove(article);
-            academyEntities.SaveChanges();
+            return Entities.Articles.Where(x => x.Authors.Any(u => u.Id == userId));
         }
 
-        public void Resolve(Article article)
+        private void Resolve(Article article)
         {
-            
+            try
+            {
+                article.Authors = Entities.Users.Where(
+                    u => article.Authors.Any(a => a.Email == u.Email)).ToList();
+            }
+            catch (Exception exception)
+            {
+                var s = exception.Message;
+            }
         }
     }
 }

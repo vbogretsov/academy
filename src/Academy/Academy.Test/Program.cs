@@ -30,17 +30,17 @@ namespace Academy.Test
 
         private static void Start(string[] args)
         {
-            TestChildDisciplines();
+            CreateDatabase();
+            //TestChildDisciplines();
         }
 
         private static void TestChildDisciplines()
         {
-            using (AcademyEntities academyEntities = new AcademyEntities())
+            using (IDataContext context = new EfDataContext())
             {
-                var factory = new EfStorageFactory(academyEntities);
-                var storage = factory.CreateDisciplineStorage();
+                var storage = context.DisciplineStorage;
                 var disciplines = SelectDisciplines(storage);
-                var allChildren = storage.Get(disciplines);
+                var allChildren = storage.Get(disciplines.Select(x => x.Id));
                 foreach (var discipline in allChildren)
                 {
                     Console.WriteLine(discipline.Name);

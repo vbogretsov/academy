@@ -13,8 +13,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public NoteConfiguration()
         {
             ToTable("academy_Note");
-            HasKey(x => x.NoteId);
-            Property(x => x.NoteId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("NoteId");

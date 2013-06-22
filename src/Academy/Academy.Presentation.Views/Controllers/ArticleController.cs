@@ -46,6 +46,7 @@ namespace Academy.Presentation.Views.Controllers
                 var article = ArticleMapper.Map(viewModel);
                 article.Authors.Add(user);
                 AcademyContext.PublicationService.Publish(article);
+                AcademyContext.NotificationService.NotifyAboutNewArticle(article);
             }
             return GetUserArticles(user);
         }
@@ -56,8 +57,9 @@ namespace Academy.Presentation.Views.Controllers
             if (ModelState.IsValid)
             {
                 var comment = CommentMapper.Map(viewModel);
-                comment.User = AcademyContext.Account.GetCurrentUser();
+                comment.UserId = AcademyContext.Account.GetCurrentUser().Id;
                 AcademyContext.PublicationService.Comment(comment);
+                AcademyContext.NotificationService.NotifyAboutNewComment(comment);
             }
             var article = AcademyContext.PublicationService.GetArticle(viewModel.ArticleId);
             return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));

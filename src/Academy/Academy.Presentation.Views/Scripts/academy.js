@@ -4,6 +4,11 @@
     var app = $.sammy('#body', function (context) {
 
         // init side menu
+
+        this.get("#/NewArticles", function () {
+            LoadView('#body', "Notification/GetArticleNews");
+        });
+
         this.get('#/Articles', function () {
             LoadView('#body', "Article/GetUserArticles", function () {
                 CollapseDisciplinesTree();

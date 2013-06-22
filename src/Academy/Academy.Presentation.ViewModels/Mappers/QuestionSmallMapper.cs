@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static QuestionViewModel Map(Question question)
         {
             QuestionViewModel viewModel = new QuestionViewModel();
-            viewModel.Id = question.QuestionId;
+            viewModel.Id = question.Id;
             viewModel.Title = question.Title;
             return viewModel;
         }

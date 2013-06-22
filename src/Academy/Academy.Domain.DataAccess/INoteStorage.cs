@@ -8,8 +8,8 @@ namespace Academy.Domain.DataAccess
     {
         void Add(Note note);
 
-        void Remove(Note note);
+        void Remove(int noteId);
 
-        IEnumerable<Note> GetUserNotes(User user);
+        IEnumerable<Note> GetUserNotes(int userId);
     }
 }

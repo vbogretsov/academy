@@ -10,8 +10,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public DisciplineConfiguration()
         {
             ToTable("academy_Discipline");
-            HasKey(x => x.DisciplineId);
-            Property(x => x.DisciplineId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("DisciplineId");

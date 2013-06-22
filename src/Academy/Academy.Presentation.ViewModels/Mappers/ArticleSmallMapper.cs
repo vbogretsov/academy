@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static ArticleViewModel Map(Article article)
         {
             ArticleViewModel viewModel = new ArticleViewModel();
-            viewModel.Id = article.ArticleId;
+            viewModel.Id = article.Id;
             viewModel.Title = article.Title;
             return viewModel;
         }

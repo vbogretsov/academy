@@ -9,42 +9,54 @@ using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
-    internal class EfUserStorage : IUserStorage
+    internal class EfUserStorage : EfEntityStorage, IUserStorage
     {
-        private readonly AcademyEntities academyEntities;
-
         public EfUserStorage(AcademyEntities academyEntities)
+            :base(academyEntities)
         {
-            this.academyEntities = academyEntities;
         }
 
         public void Add(User user)
         {
-            academyEntities.Users.Add(user);
-            academyEntities.SaveChanges();
+            Add(user, Entities.Users);
         }
 
         public void Update(User user)
         {
-            academyEntities.Users.Attach(user);
-            academyEntities.Entry(user).State = EntityState.Modified;
-            academyEntities.SaveChanges();
+            Entities.Users.Attach(user);
+            Entities.Entry(user).State = EntityState.Modified;
+            Entities.SaveChanges();
+        }
+
+        public void UpdateDisciplines(int userId, IEnumerable<int> disciplineIds)
+        {
+            var user = Get(userId);
+            user.Disciplines = new List<Discipline>();
+            foreach (var disciplineId in disciplineIds)
+            {
+                var discipline = Entities.Disciplines.Single(x => x.Id == disciplineId);
+                user.Disciplines.Add(discipline);
+            }
         }
 
         public void Update()
         {
-            academyEntities.SaveChanges();
+            Entities.SaveChanges();
         }
 
-        public void Delete(User user)
+        public void Remove(int userId)
         {
-            academyEntities.Users.Remove(user);
-            academyEntities.SaveChanges();
+            Remove(userId, Entities.Users);
         }
 
-        public void Delete(string email)
+        public void Remove(string email)
         {
             throw new NotImplementedException();
+        }
+
+        public User Get(int userId)
+        {
+            return Get(userId, Entities.Users);
         }
 
         public User Get(string emial)
@@ -53,22 +65,23 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             {
                 throw new ArgumentNullException("emial");
             }
-            return academyEntities.Users.SingleOrDefault(x => x.Email == emial);
+            return Entities.Users.SingleOrDefault(x => x.Email.Equals(emial));
         }
 
-        public User Get(int id)
+        public IEnumerable<User> GetByDiscipline(int disciplineId)
         {
-            return academyEntities.Users.SingleOrDefault(x => x.UserId == id);
+            return Entities.Users.Where(
+                u => u.Disciplines.Any(d => d.Id == disciplineId));
         }
 
-        public bool Contains(string email)
+        public bool Exists(string email)
         {
-            return Get(email) != null;
+            return Entities.Users.Any(x => x.Email.Equals(email));
         }
 
-        public IEnumerable<User> Resolve(IEnumerable<string> emails)
-        {
-            return emails.Select(Get).Where(x => x != null);
-        }
+        //public IEnumerable<User> Resolve(IEnumerable<string> emails)
+        //{
+        //    return emails.Select(Get).Where(x => x != null);
+        //}
     }
 }

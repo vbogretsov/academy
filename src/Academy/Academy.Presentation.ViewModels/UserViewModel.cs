@@ -121,5 +121,33 @@ namespace Academy.Presentation.ViewModels
             get;
             set;
         }
+
+        //TODO: add paging
+        public IEnumerable<ArticleNewsViewModel> ArticleNews
+        {
+            get;
+            set;
+        }
+
+        //TODO: add paging
+        public IEnumerable<QuestionNewsViewModel> QuestionNews
+        {
+            get;
+            set;
+        }
+
+        //TODO: add paging
+        public IEnumerable<CommentNewsViewModel> CommentNews
+        {
+            get;
+            set;
+        }
+
+        //TODO: add paging
+        public IEnumerable<AnswerNewsViewModel> AnswerNews
+        {
+            get;
+            set;
+        }
     }
 }

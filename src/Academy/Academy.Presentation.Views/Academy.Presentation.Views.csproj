@@ -227,6 +227,14 @@
     <Content Include="Views\Article\GetUserComments.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleCommentView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleAnswerView.cshtml" />
+    <Content Include="Views\Notification\GetArticleNews.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\ArticleNewsView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\QuestionNewsView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\CommentNewsView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\AnswerNewsView.cshtml" />
+    <Content Include="Views\Notification\GetQuestionNews.cshtml" />
+    <Content Include="Views\Notification\GetCommentNews.cshtml" />
+    <Content Include="Views\Notification\GetAnswerNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,7 +337,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7020/</IISUrl>
+          <IISUrl>http://localhost:7021/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

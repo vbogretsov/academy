@@ -14,22 +14,22 @@ namespace Academy.Domain.Services
 
         private readonly AccountManager accountManager;
 
-        private readonly IUserStorage userStorage;
+        private readonly IDataContext dataContext;
 
         public AccountService(
             RoleManager roleManager,
             AccountManager accountManager,
-            IUserStorage userStorage)
+            IDataContext dataContext)
         {
             this.roleManager = roleManager;
             this.accountManager = accountManager;
-            this.userStorage = userStorage;
+            this.dataContext = dataContext;
         }
 
         //TODO: move to separate class
         public void Update(User user)
         {
-            userStorage.Update(user);
+            dataContext.UserStorage.Update(user);
         }
 
         public User GetCurrentUser()
@@ -38,23 +38,23 @@ namespace Academy.Domain.Services
             var membershipUser = accountManager.GetUser();
             if (membershipUser != null)
             {
-                user = userStorage.Get(membershipUser.UserName);
+                user = dataContext.UserStorage.Get(membershipUser.UserName);
             }
             return user;
         }
 
         public bool IsUserExists(string userName)
         {
-            return userStorage.Contains(userName);
+            return dataContext.UserStorage.Exists(userName);
         }
 
         public void Register(User user, string password)
         {
-            if (!userStorage.Contains(user.Email))
+            if (!dataContext.UserStorage.Exists(user.Email))
             {
                 user.LastAccessDate = DateTime.Now;
                 user.RegistrationDate = DateTime.Now;
-                userStorage.Add(user);
+                dataContext.UserStorage.Add(user);
                 RegisterNewUser(user, password);
             }
         }
@@ -78,7 +78,7 @@ namespace Academy.Domain.Services
             }
             catch (SecurityCreateUserException)
             {
-                userStorage.Delete(user);
+                dataContext.UserStorage.Remove(user.Email);
                 throw;
             }
         }

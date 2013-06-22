@@ -12,22 +12,48 @@ namespace Academy.Presentation.Views.Controllers
     [Authorize]
     public class NotificationController : AcademyController
     {
-        private readonly User subscriber;
-
-        public NotificationController()
-        {
-            subscriber = AcademyContext.Account.GetCurrentUser();
-        }
 
         [HttpPost]
         public ActionResult Subscribe(IEnumerable<DisciplineViewModel> disciplines)
         {
-            subscriber.Disciplines.Clear(); // TODO: try to avoid clear (minor)
-            subscriber.Disciplines = disciplines.Select(DisciplineMapper.Map).ToList();
-            AcademyContext.NotificationService.Subscribe(subscriber);
+            var user = AcademyContext.Account.GetCurrentUser();
+            AcademyContext.NotificationService.Subscribe(
+                user.Id,
+                disciplines.Select(x => x.Id));
+            return GetDisciplinesEditor(user);
+        }
+
+        public ActionResult GetArticleNews()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            return View(UserMapper.Map(user));
+        }
+
+        public ActionResult GetQuestionNews()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            return View(UserMapper.Map(user));
+        }
+
+        public ActionResult GetCommentNews()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            return View(UserMapper.Map(user));
+        }
+
+        public ActionResult GetAnswerNews()
+        {
+            var user = AcademyContext.Account.GetCurrentUser();
+            return View(UserMapper.Map(user));
+        }
+
+        private ActionResult GetDisciplinesEditor(User user)
+        {
             var all = AcademyContext.NotificationService.GetDisciplines();
             ViewBag.Disciplines = all.Select(DisciplineMapper.Map);
-            return View("EditorTemplates/EditDisciplinesEditor", UserMapper.Map(subscriber));
+            return View(
+                "EditorTemplates/EditDisciplinesEditor",
+                UserMapper.Map(user));
         }
     }
 }

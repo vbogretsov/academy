@@ -11,5 +11,7 @@ namespace Academy.Domain.DataAccess
         Question Get(int questionId);
 
         void Add(Question question);
+
+        IEnumerable<Question> GetUserQuestions(int userId);
     }
 }

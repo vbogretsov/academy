@@ -8,7 +8,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static Discipline Map(DisciplineViewModel viewModel)
         {
             Discipline discipline = new Discipline();
-            discipline.DisciplineId = viewModel.Id;
+            discipline.Id = viewModel.Id;
             discipline.Name = viewModel.Name;
             discipline.ParentId = viewModel.ParentId;
             return discipline;
@@ -17,9 +17,9 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static DisciplineViewModel Map(Discipline discipline)
         {
             DisciplineViewModel viewModel = new DisciplineViewModel();
-            viewModel.Id = discipline.DisciplineId;
+            viewModel.Id = discipline.Id;
             viewModel.ParentId = discipline.Parent != null
-                ? discipline.Parent.DisciplineId
+                ? discipline.Parent.Id
                 : 0;
             viewModel.Name = discipline.Name;
             return viewModel;

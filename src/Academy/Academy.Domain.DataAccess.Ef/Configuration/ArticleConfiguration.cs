@@ -10,8 +10,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
         public ArticleConfiguration()
         {
             ToTable("academy_Article");
-            HasKey(x => x.ArticleId);
-            Property(x => x.ArticleId)
+            HasKey(x => x.Id);
+            Property(x => x.Id)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .HasColumnName("ArticleId");
