@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Academy.Domain.DataAccess;
 using Academy.Domain.DataAccess.Ef;
 using Academy.Domain.Objects;
 using Academy.Utils;
@@ -29,34 +30,51 @@ namespace Academy.Test
 
         private static void Start(string[] args)
         {
+            TestChildDisciplines();
+        }
+
+        private static void TestChildDisciplines()
+        {
             using (AcademyEntities academyEntities = new AcademyEntities())
             {
-                //TreeLoader<int, Discipline> loader = new TreeLoader<int, Discipline>(
-                //    x => x.DisciplineId,
-                //    x => x.Parent != null ? x.Parent.DisciplineId : 0);
+                var factory = new EfStorageFactory(academyEntities);
+                var storage = factory.CreateDisciplineStorage();
+                var disciplines = SelectDisciplines(storage);
+                var allChildren = storage.Get(disciplines);
+                foreach (var discipline in allChildren)
+                {
+                    Console.WriteLine(discipline.Name);
+                }
+            }
+        }
 
-                //Node<Discipline> root = loader.Load(academyEntities.Users.Single(x => x.UserId == 1).Disciplines.ToList());
-                //File.WriteAllText("d:\\tree.html", HtmlTree.Tree(root));
+        private static IEnumerable<Discipline> SelectDisciplines(
+            IDisciplineStorage storage)
+        {
+            yield return storage.Get(2);
+            yield return storage.Get(5);
+            yield return storage.Get(3);
+            yield return storage.Get(8);
+            yield return storage.Get(4);
+            yield return storage.Get(11);
+            yield return storage.Get(14);
+        }
 
+        private static void CreateDatabase()
+        {
+            using (AcademyEntities academyEntities = new AcademyEntities())
+            {
                 Console.WriteLine("Creating database");
-                //if (academyEntities.Database.Exists())
-                //{
-                //    academyEntities.Database.Delete();
-                //}
+                if (academyEntities.Database.Exists())
+                {
+                    academyEntities.Database.Delete();
+                }
                 academyEntities.Database.Create();
                 Console.WriteLine("Database created");
                 Console.WriteLine("GEnerating test data...");
                 TestDataGenerator generator = new TestDataGenerator(academyEntities);
                 generator.GenerateDisciplines();
                 Console.WriteLine("Generating test data compleeted");
-
-                //var user = academyEntities.Users.Single(x => x.UserId == 1);
-
-                //foreach (Discipline discipline in academyEntities.Disciplines.Take(5).ToList())
-                //{
-                //    user.Disciplines.Add(discipline);
-                //}
-                //academyEntities.SaveChanges();
             }
         }
     }

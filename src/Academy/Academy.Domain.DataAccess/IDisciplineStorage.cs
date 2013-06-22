@@ -6,7 +6,9 @@ namespace Academy.Domain.DataAccess
 {
     public interface IDisciplineStorage
     {
-        IEnumerable<Discipline> GetDisciplines();
+        IEnumerable<Discipline> Get();
+
+        IEnumerable<Discipline> Get(IEnumerable<Discipline> disciplines);
 
         Discipline Get(int id);
 

@@ -43,7 +43,8 @@
     <Compile Include="Collections\CollectionExtensions.cs" />
     <Compile Include="Collections\EnumerableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TreeLoader.cs" />
+    <Compile Include="Trees\TreeHelper.cs" />
+    <Compile Include="Trees\TreeLoader.cs" />
     <Compile Include="Trees\Node.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

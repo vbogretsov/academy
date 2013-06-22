@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Academy.Utils.Trees;
 
-namespace Academy.Utils
+namespace Academy.Utils.Trees
 {
     public class TreeLoader<TId, TItem>
     {

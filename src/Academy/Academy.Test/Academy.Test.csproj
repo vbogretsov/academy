@@ -60,6 +60,10 @@
       <Project>{189df691-6cc4-42e2-a69c-49b3ca9bbf72}</Project>
       <Name>Academy.Domain.DataAccess.Ef</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj">
+      <Project>{fa81ca6f-6dd2-438e-a6a8-31138567e5f2}</Project>
+      <Name>Academy.Domain.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
       <Project>{A06F334C-5653-476A-B2F6-EB32CDC4ECA7}</Project>
       <Name>Academy.Domain.Objects</Name>

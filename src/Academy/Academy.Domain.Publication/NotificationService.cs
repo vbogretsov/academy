@@ -35,7 +35,7 @@ namespace Academy.Domain.Services
 
         public IEnumerable<Discipline> GetDisciplines()
         {
-            return disciplineStorage.GetDisciplines();
+            return disciplineStorage.Get();
         }
 
         public IEnumerable<ArticleNews> GetArticleNews(User user)
