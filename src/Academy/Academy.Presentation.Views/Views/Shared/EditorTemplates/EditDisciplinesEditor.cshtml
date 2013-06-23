@@ -1,12 +1,12 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
-@model Academy.Presentation.ViewModels.UserViewModel
+@model UserViewModel
 
 <div id="editDisciplines">
 
-@Html.ModalButton("disciplines", "Select disciplines", "btn-block")
+    @Html.ModalButton("disciplines", "Select disciplines", "btn-block")
 
-@Html.ModalVindowFor(
+    @Html.ModalVindowFor(
         Html.DisciplinesTreeFor(
             "disciplines",
             (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines,
@@ -16,6 +16,10 @@
         "Close",
         "Save")
 
-@{Html.RenderPartial("RenderTemplates/DisciplinesView", Model);}
+    @{ Html.RenderPartial("RenderTemplates/DisciplinesView", Model); }
 
 </div>
+
+<script type="text/javascript">
+    CollapseDisciplinesTree();
+</script>

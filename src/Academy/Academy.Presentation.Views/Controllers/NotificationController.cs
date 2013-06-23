@@ -17,6 +17,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult Subscribe(IEnumerable<DisciplineViewModel> disciplines)
         {
             var user = AcademyContext.Account.GetCurrentUser();
+            user.Disciplines.Clear();
             AcademyContext.NotificationService.Subscribe(
                 user.Id,
                 disciplines.Select(x => x.Id));

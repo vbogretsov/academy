@@ -1,0 +1,8 @@
+﻿@model Academy.Presentation.ViewModels.ArticleSearchResultViewModel
+
+
+@foreach (var article in Model.Articles)
+{
+    Html.RenderPartial("RenderTemplates/ArticleView", article);
+}
+

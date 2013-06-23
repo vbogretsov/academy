@@ -56,6 +56,10 @@
       <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
       <Name>Academy.Domain.Objects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Search\Academy.Domain.Search.csproj">
+      <Project>{96353481-11f6-4c5f-a884-61ef98c796ea}</Project>
+      <Name>Academy.Domain.Search</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

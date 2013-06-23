@@ -34,6 +34,8 @@ namespace Academy.Web.Services
 
         private INotificationService notificationService;
 
+        private ISearchService searchService;
+
         private IQuestionService questionService;
 
         private IFileService fileService;
@@ -79,6 +81,18 @@ namespace Academy.Web.Services
                     notificationService = new NotificationService(context);
                 }
                 return notificationService;
+            }
+        }
+
+        public ISearchService SearchService
+        {
+            get
+            {
+                if (searchService == null)
+                {
+                    searchService = new SearchService(context);
+                }
+                return searchService;
             }
         }
 

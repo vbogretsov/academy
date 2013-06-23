@@ -83,6 +83,10 @@
       <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
       <Name>Academy.Domain.Objects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Search\Academy.Domain.Search.csproj">
+      <Project>{96353481-11f6-4c5f-a884-61ef98c796ea}</Project>
+      <Name>Academy.Domain.Search</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Academy.Utils\Academy.Utils.csproj">
       <Project>{269CC71E-6571-440C-BEE6-126FB97CA7D3}</Project>
       <Name>Academy.Utils</Name>

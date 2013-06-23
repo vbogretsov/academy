@@ -44,7 +44,10 @@
                 @Model.PostedDate
             </span>
             <div class="pull-right">
-            <button class="btn btn-mini btn-primary" id="@addAnswerId">@addAnswerText</button>
+                @if (Request.IsAuthenticated)
+                {
+                    <button class="btn btn-mini btn-primary" id="@addAnswerId">@addAnswerText</button>
+                }
                 <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
             </div>
         </div>

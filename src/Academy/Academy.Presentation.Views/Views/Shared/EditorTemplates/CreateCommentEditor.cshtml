@@ -8,15 +8,3 @@
 @Html.HiddenFor(m => m.ArticleId)
 @Html.TextAreaFor(m => m.Text, new{ @class = commentTextClass, style = commentTextStyle })
 @Html.ValidationMessageFor(m => m.Text)
-
-
-
-
-@*<input type="submit" class="btn btn-primary pull-right" id="@String.Format("postCommentFor{0}", Model.ArticleId)"/>*@
-
-
-@*<script type="text/javascript">
-    $(function () {
-        
-    });
-</script>*@

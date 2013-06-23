@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/sammy")
+    @Scripts.Render("~/bundles/UserNavigation")
     @RenderSection("styles", false)
 </head>
-    <body>
-        <div class="row">
+<body>
+    <div class="row">
         <h1>
             <a class="title" href="/">
                 @Localization.GetString("internal.title")
@@ -18,38 +21,27 @@
         </h1>
         <div class="navbar">
             <div class="navbar-inner">
-                @RenderSection("UserName")
+                @RenderSection("UserName", false)
                 <ul class="nav pull-right">
                     <li class="divider-vertical">
-                        <a href="#/Edit" id="myArticles">@Localization.GetString("internal.menu.profile")</a>
-                        @*@Html.ActionLink(
-                            Localization.GetString("internal.menu.profile"),
-                            "Edit",
-                            "Profile",
-                            null,
-                            new { id = "editProfile" })*@
+                        <a href="#/Edit">@Localization.GetString("internal.menu.profile")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("internal.menu.people"), "People", "Profile")
+                        <a href="#/SearchArticles">@Localization.GetString("internal.menu.articles")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("internal.menu.articles"), "Index", "Articles")
+                        <a href="#/SearchQuestions">@Localization.GetString("internal.menu.questions")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("internal.menu.exit"), "Logout", "Account")
+                        @Html.ActionLink(Localization.GetString("internal.menu.exit"), "Logout", "Account")
                     </li>
                 </ul>
             </div>
         </div>
-
-            @RenderSection("Profile", false)
+        <div id="body" class="content">
             @RenderBody()
-        
         </div>
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", false)
-    </body>
+    </div>
+    @RenderSection("scripts", false)
+</body>
 </html>

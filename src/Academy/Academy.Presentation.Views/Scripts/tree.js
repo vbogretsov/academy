@@ -1,33 +1,11 @@
-//$(function () {
-//    $('.tree li').hide();
-//    $('.tree li.root').show();
-//    $('.tree span').on('click', function (e) {
-//        ToggleTree(e, $(this), $(this).siblings('img'));
-//    });
-//    $('.tree img').on('click', function (e) {
-//        ToggleTree(e, $(this), $(this));
-//    });
-//});
-
-
-//$('.tree input:checkbox').on('change', function () {
-//    $(this).siblings('ul').find('input:checkbox').prop('checked', $(this).prop('checked'));
-//    if (!$(this).prop('checked')) {
-//        UncheckParents($(this));
-//    }
-//});
-
-$(function() {
+﻿$(function () {
     $('#body').on('click', '.tree span', null, function (e) {
-        //alert('xxx');
         ToggleTree(e, $(this), $(this).siblings('img'));
     });
     $('#body').on('click', '.tree img', null, function (e) {
-        //alert('xxx');
         ToggleTree(e, $(this), $(this));
     });
     $('#body').on('change', '.tree input:checkbox', null, function (e) {
-        //alert('xxx');
         $(this).siblings('ul').find('input:checkbox').prop('checked', $(this).prop('checked'));
         if (!$(this).prop('checked')) {
             UncheckParents($(this));
@@ -35,6 +13,10 @@ $(function() {
     });
 });
 
+function CollapseDisciplinesTree() {
+    $('#body .tree li').hide();
+    $('#body .tree li.root').show();
+}
 
 function ToggleTree(e, node, img) {
     var children = node.parent().find('> ul > li');

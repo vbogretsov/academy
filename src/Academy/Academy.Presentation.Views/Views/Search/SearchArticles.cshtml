@@ -1,0 +1,11 @@
+﻿@model Academy.Presentation.ViewModels.ArticleSearchViewModel
+
+<div class="span3 side-bar" id="articleCriteria">
+    @{
+        Html.RenderPartial("Forms/ArticleSearchForm", Model);
+    }
+</div>
+
+<div class="span8 content pull-right" id="articleResult">
+
+</div>

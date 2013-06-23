@@ -46,12 +46,17 @@
     <Compile Include="INotificationService.cs" />
     <Compile Include="IPublicationService.cs" />
     <Compile Include="IQuestionService.cs" />
+    <Compile Include="ISearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
       <Project>{A06F334C-5653-476A-B2F6-EB32CDC4ECA7}</Project>
       <Name>Academy.Domain.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Search\Academy.Domain.Search.csproj">
+      <Project>{96353481-11F6-4C5F-A884-61EF98C796EA}</Project>
+      <Name>Academy.Domain.Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

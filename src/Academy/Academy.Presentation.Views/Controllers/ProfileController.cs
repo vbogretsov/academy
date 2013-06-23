@@ -41,7 +41,7 @@ namespace Academy.Presentation.Views.Controllers
                 UploadUserPhoto(viewModel);
                 AcademyContext.Account.Update(UserMapper.Map(viewModel));
             }
-            return View("Index", viewModel);
+            return RedirectToAction("Index");
         }
 
         private void UploadUserPhoto(UserViewModel viewModel)

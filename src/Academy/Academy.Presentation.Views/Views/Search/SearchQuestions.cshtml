@@ -1,0 +1,13 @@
+﻿@using System.Web.Optimization
+
+@model Academy.Presentation.ViewModels.QuestionSearchViewModel
+
+<div class="span3 side-bar" id="questionCriteria">
+    @{
+        Html.RenderPartial("Forms/QuestionSearchForm", Model);
+    }
+</div>
+
+<div class="span8 pull-right content" id="questionResult">
+    
+</div>

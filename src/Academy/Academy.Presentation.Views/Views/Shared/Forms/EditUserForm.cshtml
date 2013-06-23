@@ -1,0 +1,16 @@
+﻿@model Academy.Presentation.ViewModels.UserViewModel
+
+@{
+    var editUserFormSettings = new
+        {
+            @class = "form-horizontal no-margin",
+            style = "padding: 0", enctype = "multipart/form-data",
+            id = "editUser"
+        };
+}
+
+@using (Html.BeginForm("Edit", "Profile", FormMethod.Post, editUserFormSettings))
+    {
+        @Html.ValidationSummary(true)
+        @Html.EditorForModel("EditUserEditor");
+    }

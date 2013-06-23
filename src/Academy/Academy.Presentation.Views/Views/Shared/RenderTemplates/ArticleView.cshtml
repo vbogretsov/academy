@@ -9,7 +9,7 @@
     var commentTemplate = new CommentViewModel {ArticleId = Model.Id};
     var newCommentId = String.Format("newCommentFor{0}", Model.Id);
     var commentsId = String.Format("commentsFor{0}", Model.Id);
-    var articleFileText = "Article file: ";
+    const string articleFileText = "Article file: ";
 }
 
 <div class="text-block">
@@ -34,7 +34,10 @@
         <div>
             <span><b>@articleFileText</b><a href="@Model.Source">@Model.Source</a></span>
             <div class="pull-right">
-                <button class="btn btn-mini btn-primary" id="@addCommentId">@addCommentText</button>
+                @if (Request.IsAuthenticated)
+                {
+                    <button class="btn btn-mini btn-primary" id="@addCommentId">@addCommentText</button>
+                }
                 <button class="btn btn-mini" id="@showCommentsId">@showCommentsText</button>
             </div>
         </div>

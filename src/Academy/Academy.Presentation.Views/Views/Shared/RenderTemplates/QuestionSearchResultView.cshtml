@@ -1,0 +1,6 @@
+﻿@model Academy.Presentation.ViewModels.QuestionSearchResultViewModel
+
+@foreach (var question in Model.Questions)
+{
+    Html.RenderPartial("RenderTemplates/QuestionView", question);
+}

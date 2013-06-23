@@ -9,7 +9,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             var viewModel = new CommentNewsViewModel();
             viewModel.Id = model.Id;
-            viewModel.Comment = CommentMapper.Map(model.Comment);
+            viewModel.Comment = SingleCommentMapper.Map(model.Comment);
             viewModel.Read = model.Read;
             return viewModel;
         }

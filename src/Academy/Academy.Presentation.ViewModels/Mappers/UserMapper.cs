@@ -18,13 +18,10 @@ namespace Academy.Presentation.ViewModels.Mappers
             user.FirstName = viewModel.FirstName;
             user.LastName = viewModel.LastName;
             user.BirthDate = DateMapper.Map(viewModel.BirthDate);
-            user.PhotoFileName = viewModel.PhotoFile.FileName;
+            user.PhotoFileName = viewModel.PhotoFile != null
+                ? viewModel.PhotoFile.FileName
+                : viewModel.PhotoFileName;
             user.University = viewModel.University;
-            // <excess>
-            user.Comments.Add(viewModel.Comments.Select(CommentMapper.Map));
-            user.Articles.Add(viewModel.Articles.Select(ArticleMapper.Map));
-            user.Disciplines.Add(viewModel.Disciplines.Select(DisciplineMapper.Map));
-            // </excess>
             return user;
         }
 

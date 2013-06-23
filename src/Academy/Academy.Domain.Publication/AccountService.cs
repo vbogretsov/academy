@@ -29,6 +29,7 @@ namespace Academy.Domain.Services
         //TODO: move to separate class
         public void Update(User user)
         {
+            user.LastAccessDate = DateTime.Now;
             dataContext.UserStorage.Update(user);
         }
 

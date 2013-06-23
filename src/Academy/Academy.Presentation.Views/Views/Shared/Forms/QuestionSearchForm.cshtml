@@ -1,0 +1,29 @@
+﻿@model Academy.Presentation.ViewModels.QuestionSearchViewModel
+
+@{
+    const string formId = "questionSearch";
+    var formSettings = new { id = formId };
+}
+
+@using (Html.BeginForm("FindQuestions", "Search", FormMethod.Post, formSettings))
+{
+    Html.RenderPartial("EditorTemplates/QuestionSearchEditor", Model);
+
+    <input type="submit" class="btn btn-primary pull-right" value="Find" style="margin-top: 20px"/>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#@formId').submit(function () {
+            $.ajax({
+                type: this.method,
+                url: this.action,
+                data: $(this).serialize(),
+                success: function (result) {
+                    $('#questionResult').html(result);
+                }
+            });
+            return false;
+        });
+    });
+</script>

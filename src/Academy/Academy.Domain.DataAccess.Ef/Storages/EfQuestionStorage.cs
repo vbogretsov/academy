@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Academy.Domain.Objects;
+using Academy.Domain.Search;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
@@ -15,27 +16,22 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public Question Get(int questionId)
         {
-            //return Entities.Questions.SingleOrDefault(x => x.Id == questionId);
             return Get(questionId, Entities.Questions);
         }
 
         public void Add(Question question)
         {
             Add(question, Entities.Questions);
-            //try
-            //{
-            //    Entities.Questions.Add(question);
-            //    Entities.SaveChanges();
-            //}
-            //catch (Exception exception)
-            //{
-            //    var s = exception.Message;
-            //}
         }
 
         public IEnumerable<Question> GetUserQuestions(int userId)
         {
             return Entities.Questions.Where(x => x.UserId == userId);
+        }
+
+        public IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria)
+        {
+            return Entities.Questions;
         }
     }
 }

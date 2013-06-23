@@ -9,8 +9,8 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
-    <body>
-        <div class="row">
+<body>
+    <div class="row">
         <h1>
             <a class="title" href="/">
                 @Localization.GetString("external.title")
@@ -21,7 +21,11 @@
                 <ul class="nav pull-right">
                     <li class="divider-vertical">
                         @Html.ActionLink(
-                            Localization.GetString("external.menu.articles"), "Index", "Articles")
+                            Localization.GetString("external.menu.articles"), "SearchQuestions", "Search")
+                    </li>
+                    <li class="divider-vertical">
+                        @Html.ActionLink(
+                            Localization.GetString("external.menu.questions"), "SearchArticles", "Search")
                     </li>
                     <li class="divider-vertical">
                         @Html.ActionLink(
@@ -37,15 +41,12 @@
                 </ul>
             </div>
         </div>
-    
-        @RenderBody()
-        @*
-    <div id="body">
-        
-    </div>*@
-            </div>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap-dropdown")
-        @RenderSection("scripts", false)
-    </body>
+        <div id="body" class="content">
+            @RenderBody()
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap-dropdown")
+    @RenderSection("scripts", false)
+</body>
 </html>

@@ -11,6 +11,21 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 {
     internal class EfUserStorage : EfEntityStorage, IUserStorage
     {
+        private const string UpdateUserQuery =
+            @"
+                update academy_User
+                    set
+                        Email = {0},
+                        FirstName = {1},
+                        LastName = {2},
+                        University = {3},
+                        BirthDate = {4},
+                        LastAccessDate = {5},
+                        PhotoFileName = {6}
+                    where UserId = {7}
+            ";
+
+
         public EfUserStorage(AcademyEntities academyEntities)
             :base(academyEntities)
         {
@@ -23,20 +38,28 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public void Update(User user)
         {
-            Entities.Users.Attach(user);
-            Entities.Entry(user).State = EntityState.Modified;
-            Entities.SaveChanges();
+            Entities.Database.ExecuteSqlCommand(
+                UpdateUserQuery,
+                user.Email,
+                user.FirstName,
+                user.LastName,
+                user.University,
+                user.BirthDate,
+                user.LastAccessDate,
+                user.PhotoFileName,
+                user.Id);
         }
 
         public void UpdateDisciplines(int userId, IEnumerable<int> disciplineIds)
         {
-            var user = Get(userId);
+            var user = Entities.Users.Find(userId);
             user.Disciplines = new List<Discipline>();
             foreach (var disciplineId in disciplineIds)
             {
-                var discipline = Entities.Disciplines.Single(x => x.Id == disciplineId);
+                var discipline = Entities.Disciplines.Find(disciplineId);
                 user.Disciplines.Add(discipline);
             }
+            Commit();
         }
 
         public void Update()
@@ -78,10 +101,5 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         {
             return Entities.Users.Any(x => x.Email.Equals(email));
         }
-
-        //public IEnumerable<User> Resolve(IEnumerable<string> emails)
-        //{
-        //    return emails.Select(Get).Where(x => x != null);
-        //}
     }
 }

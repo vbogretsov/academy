@@ -177,6 +177,9 @@
   <data name="external.menu.contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
+  <data name="external.menu.questions" xml:space="preserve">
+    <value>Questions</value>
+  </data>
   <data name="external.title" xml:space="preserve">
     <value>ACADEMY</value>
   </data>
@@ -186,11 +189,11 @@
   <data name="internal.menu.exit" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="internal.menu.people" xml:space="preserve">
-    <value>People</value>
-  </data>
   <data name="internal.menu.profile" xml:space="preserve">
     <value>Profile</value>
+  </data>
+  <data name="internal.menu.questions" xml:space="preserve">
+    <value>Questions</value>
   </data>
   <data name="internal.title" xml:space="preserve">
     <value>ACADEMY</value>

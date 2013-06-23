@@ -9,7 +9,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             var viewModel = new AnswerNewsViewModel();
             viewModel.Id = model.Id;
-            viewModel.Answer = AnswerMapper.Map(model.Answer);
+            viewModel.Answer = SingleAnswerMapper.Map(model.Answer);
             viewModel.Read = model.Read;
             return viewModel;
         }

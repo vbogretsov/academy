@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Academy.Domain.Objects;
+using Academy.Domain.Search;
 
 namespace Academy.Domain.DataAccess
 {
@@ -13,5 +14,7 @@ namespace Academy.Domain.DataAccess
         void Add(Question question);
 
         IEnumerable<Question> GetUserQuestions(int userId);
+
+        IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria);
     }
 }

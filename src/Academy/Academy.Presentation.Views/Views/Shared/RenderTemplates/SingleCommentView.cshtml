@@ -37,11 +37,13 @@
                 $.ajax({
                     url: '@Url.Action("GetArticle", "Article", new {articleId = Model.ArticleId})',
                     cache: false,
-                    success: function (result) {
+                    success: function(result) {
                         $('#@parentArticleId').append(result);
                         $('#@parentArticleId').slideToggle('fast');
                     }
                 });
+            } else {
+                $('#@parentArticleId').slideToggle('fast');
             }
         });
     });

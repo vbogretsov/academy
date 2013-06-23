@@ -134,6 +134,24 @@
     border: 0;
 }
 
+.tree span {
+    cursor: default;
+}
+
+.tree li {
+    list-style-type: none;
+}
+
+.scrollable-horizontal {
+    overflow-x: scroll;
+}
+
+.side-bar {
+    height: 100%;
+    border-right: 1px solid black;
+    padding-right: 20px
+}
+
 .photo-fixed-size-preview
 {
     width: 250px;

@@ -140,6 +140,7 @@
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,6 +170,8 @@
     <Content Include="Global.asax" />
     <Content Include="Resources\Users\0.jpg" />
     <Content Include="Scripts\academy.js" />
+    <Content Include="Scripts\AdminNavigation.js" />
+    <Content Include="Scripts\AnonymousNavigation.js" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-fileupload.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -183,8 +186,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\navigation.js" />
     <Content Include="Scripts\sammy.js" />
     <Content Include="Scripts\tree.js" />
+    <Content Include="Scripts\UserNavigation.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -235,6 +240,16 @@
     <Content Include="Views\Notification\GetQuestionNews.cshtml" />
     <Content Include="Views\Notification\GetCommentNews.cshtml" />
     <Content Include="Views\Notification\GetAnswerNews.cshtml" />
+    <Content Include="Views\Shared\Forms\EditUserForm.cshtml" />
+    <Content Include="Views\Shared\Forms\SelectDisciplinesForm.cshtml" />
+    <Content Include="Views\Search\SearchArticles.cshtml" />
+    <Content Include="Views\Search\SearchQuestions.cshtml" />
+    <Content Include="Views\Shared\Forms\ArticleSearchForm.cshtml" />
+    <Content Include="Views\Shared\Forms\QuestionSearchForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AerticleSearchEditor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\QuestionSearchEditor.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\ArticleSearchResultView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\QuestionSearchResultView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,7 +352,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7021/</IISUrl>
+          <IISUrl>http://localhost:7041/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

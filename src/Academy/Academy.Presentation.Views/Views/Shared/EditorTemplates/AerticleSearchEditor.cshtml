@@ -1,0 +1,50 @@
+﻿@using Academy.Presentation.ViewModels
+@using Academy.Presentation.Views.Helpers
+
+@model ArticleSearchViewModel
+
+@{
+    const string textFieldClass = "search-query full-block";
+    const string textFieldStyle = "height: 30px";
+}
+
+<div class="page-header">
+    Questions saerch
+</div>
+<div class="control-group">
+    @Html.TextBoxFor(m => m.Title, new
+        {
+            @class = textFieldClass,
+            placeholder = Html.DisplayFor(m => m.Title),
+            style = textFieldStyle
+        })
+</div>
+<div class="control-group">
+    @Html.TextBoxFor(m => m.Description, new
+        {
+            @class = textFieldClass,
+            placeholder = Html.DisplayFor(m => m.Title),
+            style = textFieldStyle
+        })
+</div>
+<div class="control-group">
+    @Html.TextBoxFor(m => m.Author, new
+        {
+            @class = textFieldClass,
+            placeholder = Html.DisplayFor(m => m.Title),
+            style = textFieldStyle
+        })
+</div>
+<div class="page-header">
+    Select disciplines
+</div>
+<div class="control-group scrollable-horizontal">
+    @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.tree li').hide();
+        $('.tree li.root').show();
+    });
+</script>

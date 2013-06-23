@@ -34,6 +34,15 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/academy").Include(
                 "~/Scripts/academy.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/UserNavigation").Include(
+                "~/Scripts/UserNavigation.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/AnonymousNavigation").Include(
+                "~/Scripts/AnonymousNavigation.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/AdminNavigation").Include(
+                "~/Scripts/AdminNavigation.js"));
+
             bundles.Add(new StyleBundle("~/Content/css")
                     .Include("~/Content/bootstrap*")
                     .Include("~/Content/site.css"));

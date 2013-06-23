@@ -11,22 +11,18 @@
 @section UserName
 {
     @{ Html.RenderPartial("../Shared/RenderTemplates/UserName", Model); }
-}   
-@section Profile
-{
-    <div id ="profile" class="span3">
-        @{ Html.RenderPartial("../Shared/RenderTemplates/UserView", Model); }
-    </div>
 }
 
-<div id="body" class="span9 content">
-    
+<div id ="profile" class="span3">
+    @{ Html.RenderPartial("../Shared/RenderTemplates/UserView", Model); }
+</div>
+<div id="data" class="span9">
+
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/upload")
-    @Scripts.Render("~/bundles/sammy")
-    @Scripts.Render("~/bundles/academy")
+    @Scripts.Render("~/bundles/tree")
 }

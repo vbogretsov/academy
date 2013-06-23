@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicationService.cs" />
     <Compile Include="QuestionService.cs" />
+    <Compile Include="SearchService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj">
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
       <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
       <Name>Academy.Domain.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Search\Academy.Domain.Search.csproj">
+      <Project>{96353481-11F6-4C5F-A884-61EF98C796EA}</Project>
+      <Name>Academy.Domain.Search</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Security\Academy.Security.csproj">
       <Project>{3FDC5299-2D55-421F-AB6D-4494A279ACC1}</Project>

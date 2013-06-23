@@ -1,0 +1,32 @@
+﻿@model Academy.Presentation.ViewModels.UserViewModel
+
+@{
+    var editDisciplinesFormSettings = new
+    {
+        enctype = "multipart/form-data",
+        id = "selectDisciplines"
+    };
+}
+
+@using (Html.BeginForm("Subscribe", "Notification", FormMethod.Post, editDisciplinesFormSettings))
+{
+    @Html.EditorForModel("EditDisciplinesEditor")
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#selectDisciplines').submit(function () {
+            $.ajax({
+                url: this.action,
+                type: this.method,
+                data: $(this).serialize(),
+                success: function (result) {
+                    $('#editDisciplines').html(result);
+                    $('body .modal-backdrop').fadeOut(250);
+                    CollapseDisciplinesTree();
+                }
+            });
+            return false;
+        });
+    });
+</script>

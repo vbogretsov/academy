@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using Academy.Domain.Objects;
+using Academy.Domain.Search;
 
 namespace Academy.Domain.DataAccess.Ef.Storages
 {
     internal class EfArticleStorage : EfEntityStorage, IArticleStorage
     {
         public EfArticleStorage(AcademyEntities academyEntities)
-            :base(academyEntities)
+            : base(academyEntities)
         {
         }
 
@@ -33,17 +34,15 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return Entities.Articles.Where(x => x.Authors.Any(u => u.Id == userId));
         }
 
+        public IEnumerable<Article> FindArticles(ArticleSearchCriteria criteria)
+        {
+            return Entities.Articles;
+        }
+
         private void Resolve(Article article)
         {
-            try
-            {
-                article.Authors = Entities.Users.Where(
-                    u => article.Authors.Any(a => a.Email == u.Email)).ToList();
-            }
-            catch (Exception exception)
-            {
-                var s = exception.Message;
-            }
+            article.Authors = article.Authors.Select(
+                a => Entities.Users.Single(x => x.Email.Equals(a.Email))).ToList();
         }
     }
 }

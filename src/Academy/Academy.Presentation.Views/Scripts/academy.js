@@ -1,39 +1,52 @@
 ﻿$(function () {
     // init Add article form
+    var dataId = "#data";
 
     var app = $.sammy('#body', function (context) {
 
         // init side menu
 
         this.get("#/NewArticles", function () {
-            LoadView('#body', "Notification/GetArticleNews");
+            LoadView(dataId, "Notification/GetArticleNews");
+        });
+
+        this.get("#/NewComments", function () {
+            LoadView(dataId, "Notification/GetCommentNews");
+        });
+
+        this.get("#/NewQuestions", function () {
+            LoadView(dataId, "Notification/GetQuestionNews");
+        });
+
+        this.get("#/NewAnswers", function () {
+            LoadView(dataId, "Notification/GetAnswerNews");
         });
 
         this.get('#/Articles', function () {
-            LoadView('#body', "Article/GetUserArticles", function () {
+            LoadView(dataId, "Article/GetUserArticles", function () {
                 CollapseDisciplinesTree();
                 //InitArticleHandlers();
             });
         });
 
         this.get('#/Comments', function() {
-            LoadView('#body', "Article/GetUserComments");
+            LoadView(dataId, "Article/GetUserComments");
         });
 
         this.get('#/Questions', function() {
-            LoadView('#body', "Question/GetUserQuestions", function() {
+            LoadView(dataId, "Question/GetUserQuestions", function() {
                 CollapseDisciplinesTree();
             });
         });
 
         this.get('#/Answers', function() {
-            LoadView('#body', "Question/GetUserAnswers");
+            LoadView(dataId, "Question/GetUserAnswers");
         });
 
         // init main menu
         this.get('#/Edit', function () {
             $('#profile a.btn').removeClass('btn-primary');
-            LoadView('#body', "Profile/Edit", function () {
+            LoadView(dataId, "Profile/Edit", function () {
                 CollapseDisciplinesTree();
             });
         });
@@ -54,24 +67,6 @@
         $('#profile a.btn').removeClass('btn-primary');
         $(this).addClass('btn-primary');
     });
-
-    //// add author editor
-    //$('body').on('click', '#addAuthor', null, function () {
-    //    $.ajax({
-    //        url: this.href,
-    //        cache: false,
-    //        success: function (html) {
-    //            $('#authors').append(html);
-    //        }
-    //    });
-    //    return false;
-    //});
-
-    // delete author editor
-    //$('body').on('click', 'a.author-delete', null, function () {
-    //    $(this).parents('p').remove();
-    //    return false;
-    //});
 
     // tree initializing
     $('#body').on('click', '.tree span', null, function (e) {
@@ -142,38 +137,6 @@
         return false;
     });
 });
-
-//function InitArticleHandlers() {
-//    $('button[id^="addCommentFor"]').each(function () {
-//        var id = $(this).attr('id').substring(13);
-//        var newCommentId = '#newCommentFor' + id;
-//        $(this).click(function () {
-//            $(newCommentId).slideToggle('fast');
-//        });
-//        var showCommentsId = '#showCommentsFor' + id;
-//        var commentsId = "#commentsFor" + id;
-//        $(showCommentsId).click(function () {
-//            $(commentsId).slideToggle('fast');
-//        });
-//        var commentFormId = '#commentFormFor' + id;
-//        $(commentFormId).on('submit', null, function (e) {
-//            $.validator.unobtrusive.parse($(commentFormId));
-//            if ($(commentFormId).valid()) {
-//                $.ajax({
-//                    type: this.method,
-//                    url: this.action,
-//                    data: $(this).serialize(),
-//                    success: function (result) {
-//                        $(commentsId).html('');
-//                        $(commentsId).append(result);
-//                        $(commentFormId)[0].reset();
-//                    }
-//                });
-//            }
-//            return false;
-//        });
-//    });
-//}
 
 function LoadView(divId, request, complete) {
     $(divId).html('');
