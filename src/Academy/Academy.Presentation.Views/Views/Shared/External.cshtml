@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/sammy")
+    @Styles.Render("~/bundles/AnonymousNavigation")
 </head>
 <body>
     <div class="row">
@@ -20,20 +23,16 @@
             <div class="navbar-inner">
                 <ul class="nav pull-right">
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("external.menu.articles"), "SearchQuestions", "Search")
+                        <a href="#/SearchArticles">@Localization.GetString("external.menu.articles")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("external.menu.questions"), "SearchArticles", "Search")
+                        <a href="#/SearchQuestions">@Localization.GetString("external.menu.questions")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("external.menu.contacts"), "Contacts", "Home")
+                        <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a>
                     </li>
                     <li class="divider-vertical">
-                        @Html.ActionLink(
-                            Localization.GetString("external.menu.about"), "About", "Home")
+                        <a href="#/About">@Localization.GetString("external.menu.about")</a>
                     </li>
                     <li class="divider-vertical dropdown">
                         @{ Html.RenderPartial("Languages"); }

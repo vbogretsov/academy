@@ -26,9 +26,9 @@
                     type: this.method,
                     data: $(this).serialize(),
                     success: function(html) {
-                        $('#body').html('');
-                        $('#body').append(html);
-                        //CollapseDisciplinesTree();
+                        $('#data').html('');
+                        $('#data').append(html);
+                        CollapseDisciplinesTree();
                         $('#askQuestion')[0].reset();
                     }
                 });
