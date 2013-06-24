@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Academy.Domain.DataAccess.Ef.Search;
 using Academy.Domain.Objects;
 using Academy.Domain.Search;
 
@@ -31,7 +32,9 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria)
         {
-            return Entities.Questions;
+            var predicates = QuestionPredicateBuilder.Build(criteria);
+            return Entities.Questions.Where(
+                question => PredicatesComputer.Compute(predicates, question));
         }
     }
 }

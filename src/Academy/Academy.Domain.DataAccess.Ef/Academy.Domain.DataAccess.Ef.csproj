@@ -59,6 +59,8 @@
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="EfDataContext.cs" />
     <Compile Include="EfStorageFactory.cs" />
+    <Compile Include="Search\ArticlePredicateBuilder.cs" />
+    <Compile Include="Search\QuestionPredicateBuilder.cs" />
     <Compile Include="Storages\EfAnswerNewsStorage.cs" />
     <Compile Include="Storages\EfAnswerStorage.cs" />
     <Compile Include="Storages\EfArticleNewsStorage.cs" />

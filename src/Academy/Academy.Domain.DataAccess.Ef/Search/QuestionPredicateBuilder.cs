@@ -7,9 +7,9 @@ using Academy.Domain.Search;
 
 namespace Academy.Domain.DataAccess.Ef.Search
 {
-    internal class QuestionPredicateBuilder
+    internal static class QuestionPredicateBuilder
     {
-        public IEnumerable<Predicate<Question>> Build(QuestionSearchCriteria criteria)
+        public static IEnumerable<Predicate<Question>> Build(QuestionSearchCriteria criteria)
         {
             if (criteria.Title != null)
             {
