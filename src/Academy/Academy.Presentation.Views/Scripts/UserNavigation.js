@@ -43,10 +43,10 @@
 
         // init top menu
         this.get('#/Edit', function () {
-            LoadView(dataId, "Profile/Edit"); //todo: load to other id
+            LoadView(bodyId, "Profile/Edit"); //todo: load to other id
         });
 
-        this.get('#/SearchArticles', function() {
+        this.get('#/SearchArticles', function () {
             LoadView(bodyId, "Search/SearchArticles");
         });
 

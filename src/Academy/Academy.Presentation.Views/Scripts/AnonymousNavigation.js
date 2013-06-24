@@ -5,12 +5,10 @@
     var app = $.sammy('#body', function (context) {
 
         this.get('#/Contacts', function () {
-            alert('contacts');
             LoadView(bodyId, "Home/Contacts");
         });
 
         this.get('#/About', function () {
-            alert('about');
             LoadView(bodyId, "Home/About");
         });
 
@@ -30,7 +28,7 @@
     });
 });
 
-function LoadView(divId, request, complete) {
+function LoadView(divId, request) {
     $.ajax({
         url: request,
         cache: false,

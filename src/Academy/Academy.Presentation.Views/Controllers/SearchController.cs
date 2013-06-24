@@ -10,6 +10,7 @@ namespace Academy.Presentation.Views.Controllers
 {
     public class SearchController : AcademyController
     {
+        [AllowAnonymous]
         public ActionResult SearchArticles()
         {
             ViewBag.Disciplines = AcademyContext.NotificationService
@@ -17,6 +18,7 @@ namespace Academy.Presentation.Views.Controllers
             return View(new ArticleSearchViewModel());
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult FindArticles(ArticleSearchViewModel viewModel)
         {
@@ -27,6 +29,7 @@ namespace Academy.Presentation.Views.Controllers
                 ArticleSearchResultMapper.Map(result));
         }
 
+        [AllowAnonymous]
         public ActionResult SearchQuestions()
         {
             ViewBag.Disciplines = AcademyContext.NotificationService
@@ -34,6 +37,7 @@ namespace Academy.Presentation.Views.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult FindQuestions(QuestionSearchViewModel viewModel)
         {
