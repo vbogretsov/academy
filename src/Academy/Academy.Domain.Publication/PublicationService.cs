@@ -22,15 +22,6 @@ namespace Academy.Domain.Services
             commentStorage = dataContext.CommentStorage;
         }
 
-        public PublicationService(
-            IUserStorage userStorage,
-            IArticleStorage articleStorage,
-            IDisciplineStorage disciplineStorage)
-        {
-            this.articleStorage = articleStorage;
-            this.disciplineStorage = disciplineStorage;
-        }
-
         public void Publish(Article article)
         {
             article.Disciplines = disciplineStorage.Get(

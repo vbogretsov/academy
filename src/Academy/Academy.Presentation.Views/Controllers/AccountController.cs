@@ -24,6 +24,7 @@ namespace Academy.Presentation.Views.Controllers
             return RetryLogin(login);
         }
 
+        [HttpGet]
         public ActionResult Logout()
         {
             AcademyContext.Account.Logout();

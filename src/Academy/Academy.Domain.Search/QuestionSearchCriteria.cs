@@ -7,7 +7,7 @@ namespace Academy.Domain.Search
     {
         private IEnumerable<int> disciplines;
 
-        public string Title
+        public string Keyword
         {
             get;
             set;

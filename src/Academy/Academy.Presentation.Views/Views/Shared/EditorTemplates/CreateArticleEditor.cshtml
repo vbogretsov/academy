@@ -1,8 +1,7 @@
-﻿@using System.Collections
-@using Academy.Presentation.ViewModels
+﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
 
-@model Academy.Presentation.ViewModels.ArticleViewModel
+@model ArticleViewModel
 
 @*TODO: refactor hardcoded style*@
 
@@ -14,14 +13,21 @@
 
 @Html.ControlGroupFor(
         m => m.Title,
-        e => Html.TextBoxFor(e, new { @class = "full-block", style = "height: 30px; font-size: 12pt" }))
+        e => Html.TextBoxFor(e, new
+            {
+                @class = "full-block",
+                style = "height: 30px; font-size: 12pt"
+            }))
 @Html.ControlGroupFor(
         m => m.Description,
-        e => Html.TextAreaFor(e, new { @class = "full-block fixed-size pre-scrollable", style = "height: 100px; font-size:12pt" }))
+        e => Html.TextAreaFor(e, new
+            {
+                @class = "full-block fixed-size pre-scrollable",
+                style = "height: 100px; font-size:12pt"
+            }))
 
 <div class="control-group">
     <div class="controls">
-        @*@Html.ModalButton("disciplines", "Select disciplines", "btn pull-right")*@
         <a href="#selectDisciplines" role="button" class="btn pull-right" data-toggle="modal">@selectDisciplinesText</a>
         <input type="file" id="ArticleFile" name="ArticleFile"/>
         <input type="text" id="Souce" name="Source" value="" style="display: none"/>
@@ -51,12 +57,6 @@
             }
         </div>
         <a href="@Url.Action("AddAuthor", "Article")" id="addAuthor" class="btn">@addAuthorText</a>
-        @*@Html.ActionLink(
-                "Add author",
-                "AddAuthor",
-                "Article",
-                null,
-                new { id = "addAuthor", @class = "btn" })*@
     </div>
 </div>
 

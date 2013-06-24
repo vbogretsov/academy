@@ -10,7 +10,11 @@
 }
 
 @using (Html.BeginForm("Edit", "Profile", FormMethod.Post, editUserFormSettings))
-    {
-        @Html.ValidationSummary(true)
-        @Html.EditorForModel("EditUserEditor");
-    }
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel("EditUserEditor");
+}
+<p>
+    Disciplines description
+</p>
+

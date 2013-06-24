@@ -61,6 +61,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Answer text.
+        /// </summary>
+        public static string answer_text {
+            get {
+                return ResourceManager.GetString("answer.text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Answer text is required.
         /// </summary>
         public static string answer_text_err_required {
@@ -93,6 +102,33 @@ namespace Academy.Validation.Dictionaries {
         public static string article_disciplines_err_required {
             get {
                 return ResourceManager.GetString("article.disciplines.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string article_search_author {
+            get {
+                return ResourceManager.GetString("article.search.author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article description.
+        /// </summary>
+        public static string article_search_description {
+            get {
+                return ResourceManager.GetString("article.search.description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Article title.
+        /// </summary>
+        public static string article_search_title {
+            get {
+                return ResourceManager.GetString("article.search.title", resourceCulture);
             }
         }
         
@@ -196,7 +232,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Comment....
+        ///   Looks up a localized string similar to Comment text.
         /// </summary>
         public static string comment_text {
             get {
@@ -579,6 +615,15 @@ namespace Academy.Validation.Dictionaries {
         public static string question_disciplines_err_required {
             get {
                 return ResourceManager.GetString("question.disciplines.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search keywords.
+        /// </summary>
+        public static string question_search_keyword {
+            get {
+                return ResourceManager.GetString("question.search.keyword", resourceCulture);
             }
         }
         

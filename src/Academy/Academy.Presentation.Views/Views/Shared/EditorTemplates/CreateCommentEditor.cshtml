@@ -6,5 +6,10 @@
 }
 
 @Html.HiddenFor(m => m.ArticleId)
-@Html.TextAreaFor(m => m.Text, new{ @class = commentTextClass, style = commentTextStyle })
+@Html.TextAreaFor(m => m.Text, new
+    {
+        @class = commentTextClass,
+        style = commentTextStyle,
+        placeholder = Html.DisplayNameFor(m => m.Text)
+    })
 @Html.ValidationMessageFor(m => m.Text)

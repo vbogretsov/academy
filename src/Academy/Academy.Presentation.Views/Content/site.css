@@ -6,6 +6,20 @@
     height: 100%;
 }
 
+.wrapper {
+    min-height: 800px;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -1px;
+}
+.footer, .push {
+    border-top: 1px solid #eee;
+    height: 100px;
+    padding: 10px;
+    clear: both;
+    margin-left: 20px;
+}
+
 .content
 {
     padding-right: 20px;
@@ -148,7 +162,7 @@
 
 .side-bar {
     height: 100%;
-    border-right: 1px solid black;
+    border-right: 1px solid #eee;
     padding-right: 20px
 }
 

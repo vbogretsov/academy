@@ -37,23 +37,27 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserQuestionsResult(); //TODO: add error handling
         }
 
+        [HttpGet]
         public ActionResult GetQuestion(int questionId)
         {
             var question = AcademyContext.QuestionService.GetQuestion(questionId);
             return View("RenderTemplates/QuestionView", QuestionMapper.Map(question));
         }
 
+        [HttpGet]
         public ActionResult GetUserQuestions()
         {
             return GetUserQuestionsResult();
         }
 
+        [HttpGet]
         public ActionResult GetUserAnswers()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         private ActionResult GetUserQuestionsResult()
         {
             var user = AcademyContext.Account.GetCurrentUser();

@@ -14,24 +14,28 @@ namespace Academy.Presentation.Views.Controllers
     {
         private const string ArticlesFolder = "~/Resources/Articles";
 
+        [HttpGet]
         public ActionResult GetUserArticles()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return GetUserArticles(user);
         }
 
+        [HttpGet]
         public ActionResult GetUserComments()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         public ActionResult GetArticle(int articleId)
         {
             var article = AcademyContext.PublicationService.GetArticle(articleId);
             return View("RenderTemplates/ArticleView", ArticleMapper.Map(article));
         }
 
+        [HttpGet]
         public ActionResult AddAuthor()
         {
             return View("EditorTemplates/CreateAuthorEditor", new AuthorViewModel());

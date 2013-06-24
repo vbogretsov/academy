@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
     public class CommentViewModel : EntityViewModel
     {
+        [LocalizedDisplay("comment.text")]
         [LocalizedRequired("comment.text.err.required")]
         public string Text
         {

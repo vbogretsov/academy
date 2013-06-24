@@ -12,7 +12,6 @@ namespace Academy.Presentation.Views.Controllers
     [Authorize]
     public class NotificationController : AcademyController
     {
-
         [HttpPost]
         public ActionResult Subscribe(IEnumerable<DisciplineViewModel> disciplines)
         {
@@ -24,30 +23,35 @@ namespace Academy.Presentation.Views.Controllers
             return GetDisciplinesEditor(user);
         }
 
+        [HttpGet]
         public ActionResult GetArticleNews()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         public ActionResult GetQuestionNews()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         public ActionResult GetCommentNews()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         public ActionResult GetAnswerNews()
         {
             var user = AcademyContext.Account.GetCurrentUser();
             return View(UserMapper.Map(user));
         }
 
+        [HttpGet]
         private ActionResult GetDisciplinesEditor(User user)
         {
             var all = AcademyContext.NotificationService.GetDisciplines();

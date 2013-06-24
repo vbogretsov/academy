@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
     public class QuestionSearchViewModel
     {
-        public string Title
+        [LocalizedDisplay("question.search.keyword")]
+        public string Keyword
         {
             get;
             set;

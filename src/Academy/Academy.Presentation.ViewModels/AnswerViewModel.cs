@@ -8,6 +8,7 @@ namespace Academy.Presentation.ViewModels
 {
     public class AnswerViewModel : EntityViewModel
     {
+        [LocalizedDisplay("answer.text")]
         [LocalizedRequired("answer.text.err.required")]
         public string Text
         {

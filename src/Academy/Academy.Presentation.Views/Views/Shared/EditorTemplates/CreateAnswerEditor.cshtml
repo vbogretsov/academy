@@ -6,5 +6,10 @@
 }
 
 @Html.HiddenFor(m => m.QuestionId)
-@Html.TextAreaFor(m => m.Text, new {@class = answerTextClass, style = answerTextStyle})
+@Html.TextAreaFor(m => m.Text, new
+    {
+        @class = answerTextClass,
+        style = answerTextStyle,
+        placeholder = Html.DisplayNameFor(m => m.Text)
+    })
 @Html.ValidationMessageFor(m => m.Text)

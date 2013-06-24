@@ -15,7 +15,7 @@
     @Html.TextBoxFor(m => m.Title, new
         {
             @class = textFieldClass,
-            placeholder = Html.DisplayFor(m => m.Title),
+            placeholder = Html.DisplayNameFor(m => m.Title),
             style = textFieldStyle
         })
 </div>
@@ -23,7 +23,7 @@
     @Html.TextBoxFor(m => m.Description, new
         {
             @class = textFieldClass,
-            placeholder = Html.DisplayFor(m => m.Title),
+            placeholder = Html.DisplayNameFor(m => m.Description),
             style = textFieldStyle
         })
 </div>
@@ -31,7 +31,7 @@
     @Html.TextBoxFor(m => m.Author, new
         {
             @class = textFieldClass,
-            placeholder = Html.DisplayFor(m => m.Title),
+            placeholder = Html.DisplayNameFor(m => m.Author),
             style = textFieldStyle
         })
 </div>

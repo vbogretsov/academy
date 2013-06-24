@@ -16,11 +16,21 @@
 
 @Html.HiddenFor(m => m.AuthorId)
 <div class="control-group">
-    @Html.TextBoxFor(m => m.Title, new {@class = questionTitleClass, style = questionTitleStyle})
+    @Html.TextBoxFor(m => m.Title, new
+        {
+            @class = questionTitleClass,
+            style = questionTitleStyle,
+            placeholder = Html.DisplayNameFor(m => m.Title)
+        })
     @Html.ValidationMessageFor(m => m.Title)
 </div>
 <div class="control-group">
-    @Html.TextAreaFor(m => m.Text, new {@class = questionTextClass, style = questionTextStyle})
+    @Html.TextAreaFor(m => m.Text, new
+        {
+            @class = questionTextClass,
+            style = questionTextStyle,
+            placeholder = Html.DisplayNameFor(m => m.Text)
+        })
     @Html.ValidationMessageFor(m => m.Text)
     @Html.ValidationMessageFor(m => m.Disciplines)
 </div>

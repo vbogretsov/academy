@@ -12,39 +12,44 @@
     @Scripts.Render("~/bundles/sammy")
     @Scripts.Render("~/bundles/AnonymousNavigation")
 </head>
-<body>
-    <div class="row">
-        <h1>
-            <a class="title" href="/">
-                @Localization.GetString("external.title")
-            </a>
-        </h1>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav pull-right">
-                    <li class="divider-vertical">
-                        <a href="#/SearchArticles">@Localization.GetString("external.menu.articles")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        <a href="#/SearchQuestions">@Localization.GetString("external.menu.questions")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        <a href="#/About">@Localization.GetString("external.menu.about")</a>
-                    </li>
-                    <li class="divider-vertical dropdown">
-                        @{ Html.RenderPartial("Languages"); }
-                    </li>
-                </ul>
+    <body>
+        <div class="wrapper">
+            <div class="row">
+                <h1>
+                    <a class="title" href="/">
+                        @Localization.GetString("external.title")
+                    </a>
+                </h1>
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical">
+                                <a href="#/SearchArticles">@Localization.GetString("external.menu.articles")</a>
+                            </li>
+                            <li class="divider-vertical">
+                                <a href="#/SearchQuestions">@Localization.GetString("external.menu.questions")</a>
+                            </li>
+                            <li class="divider-vertical">
+                                <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a>
+                            </li>
+                            <li class="divider-vertical">
+                                <a href="#/About">@Localization.GetString("external.menu.about")</a>
+                            </li>
+                            <li class="divider-vertical dropdown">
+                                @{ Html.RenderPartial("Languages"); }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="body" class="content">
+                    @RenderBody()
+                </div>
             </div>
         </div>
-        <div id="body" class="content">
-            @RenderBody()
+        <div class="footer">
+            <p>Copyright 2013</p>
         </div>
-    </div>
-    @Scripts.Render("~/bundles/bootstrap-dropdown")
-    @RenderSection("scripts", false)
-</body>
+        @Scripts.Render("~/bundles/bootstrap-dropdown")
+        @RenderSection("scripts", false)
+    </body>
 </html>

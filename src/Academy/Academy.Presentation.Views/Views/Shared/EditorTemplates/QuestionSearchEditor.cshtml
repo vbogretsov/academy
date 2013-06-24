@@ -12,10 +12,10 @@
     Articles saerch
 </div>
 <div class="control-group">
-    @Html.TextBoxFor(m => m.Title, new
+    @Html.TextBoxFor(m => m.Keyword, new
         {
             @class = textFieldClass,
-            placeholder = Html.DisplayFor(m => m.Title),
+            placeholder = Html.DisplayNameFor(m => m.Keyword),
             style = textFieldStyle
         })
 </div>

@@ -10,13 +10,12 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static ArticleSearchCriteria Map(ArticleSearchViewModel viewModel)
         {
             var model = new ArticleSearchCriteria();
-            model.Title = viewModel.Title;
-            model.Description = viewModel.Description;
-            model.Author = viewModel.Author;
-            if (viewModel.Disciplines != null)
-            {
-                model.Disciplines = viewModel.Disciplines.Select(x => x.Id);
-            }
+            model.Title = viewModel.Title ?? String.Empty;
+            model.Description = viewModel.Description ?? String.Empty;
+            model.Author = viewModel.Author ?? String.Empty;
+            model.Disciplines = viewModel.Disciplines != null
+                ? viewModel.Disciplines.Select(x => x.Id)
+                : new int[0];
             return model;
         }
     }

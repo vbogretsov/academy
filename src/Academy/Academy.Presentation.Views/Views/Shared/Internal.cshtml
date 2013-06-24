@@ -13,34 +13,37 @@
     @RenderSection("styles", false)
 </head>
 <body>
-    <div class="row">
-        <h1>
-            <a class="title" href="/">
-                @Localization.GetString("internal.title")
-            </a>
-        </h1>
-        <div class="navbar">
-            <div class="navbar-inner">
-                @RenderSection("UserName", false)
-                <ul class="nav pull-right">
-                    <li class="divider-vertical">
-                        <a href="#/Edit">@Localization.GetString("internal.menu.profile")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        <a href="#/SearchArticles">@Localization.GetString("internal.menu.articles")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        <a href="#/SearchQuestions">@Localization.GetString("internal.menu.questions")</a>
-                    </li>
-                    <li class="divider-vertical">
-                        @Html.ActionLink(Localization.GetString("internal.menu.exit"), "Logout", "Account")
-                    </li>
-                </ul>
+    <div class="wrapper">
+        <div class="row">
+            <h1>
+               @Localization.GetString("internal.title")
+            </h1>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    @RenderSection("UserName", false)
+                    <ul class="nav pull-right">
+                        <li class="divider-vertical">
+                            <a href="#/Edit">@Localization.GetString("internal.menu.profile")</a>
+                        </li>
+                        <li class="divider-vertical">
+                            <a href="#/SearchArticles">@Localization.GetString("internal.menu.articles")</a>
+                        </li>
+                        <li class="divider-vertical">
+                            <a href="#/SearchQuestions">@Localization.GetString("internal.menu.questions")</a>
+                        </li>
+                        <li class="divider-vertical">
+                            @Html.ActionLink(Localization.GetString("internal.menu.exit"), "Logout", "Account")
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="body" class="content">
+                @RenderBody()
             </div>
         </div>
-        <div id="body" class="content">
-            @RenderBody()
-        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright 2013</p>
     </div>
     @RenderSection("scripts", false)
 </body>
