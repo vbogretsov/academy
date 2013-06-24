@@ -5,6 +5,8 @@ namespace Academy.Domain.Search
 {
     public class QuestionSearchCriteria
     {
+        private IEnumerable<int> disciplines;
+
         public string Title
         {
             get;
@@ -13,8 +15,14 @@ namespace Academy.Domain.Search
 
         public IEnumerable<int> Disciplines
         {
-            get;
-            set;
+            get
+            {
+                return disciplines;
+            }
+            set
+            {
+                disciplines = value != null ? new HashSet<int>(value) : null;
+            }
         }
     }
 }
