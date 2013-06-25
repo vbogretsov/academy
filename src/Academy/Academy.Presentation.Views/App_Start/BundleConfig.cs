@@ -40,6 +40,9 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/AnonymousNavigation").Include(
                 "~/Scripts/AnonymousNavigation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/flash").Include(
+                "~/Scripts/swfobject.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/AdminNavigation").Include(
                 "~/Scripts/AdminNavigation.js"));
 

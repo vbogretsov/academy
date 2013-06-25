@@ -232,6 +232,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3eng.swf.
+        /// </summary>
+        public static string banner {
+            get {
+                return ResourceManager.GetString("banner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Comment text.
         /// </summary>
         public static string comment_text {
@@ -246,6 +255,15 @@ namespace Academy.Validation.Dictionaries {
         public static string comment_text_err_required {
             get {
                 return ResourceManager.GetString("comment.text.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to © 2013 Academy.
+        /// </summary>
+        public static string copyright {
+            get {
+                return ResourceManager.GetString("copyright", resourceCulture);
             }
         }
         
@@ -462,6 +480,15 @@ namespace Academy.Validation.Dictionaries {
         public static string login_submit {
             get {
                 return ResourceManager.GetString("login.submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to logo_eng.png.
+        /// </summary>
+        public static string logo {
+            get {
+                return ResourceManager.GetString("logo", resourceCulture);
             }
         }
         

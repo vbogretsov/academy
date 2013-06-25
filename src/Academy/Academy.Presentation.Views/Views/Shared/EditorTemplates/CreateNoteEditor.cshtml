@@ -1,0 +1,29 @@
+﻿@model Academy.Presentation.ViewModels.NoteViewModel
+
+@{
+    const string noteTitleClass = "full-block";
+    const string noteTitleStyle = "height: 30px; font-size: 12pt";
+
+    const string noteTextClass = "full-block fixed-size pre-scrollable";
+    const string noteTextStyle = "height: 100px; font-size:12pt";
+}
+
+@Html.HiddenFor(m => m.UserId)
+<div class="control-group">
+    @Html.TextBoxFor(m => m.Title, new
+        {
+            @class = noteTitleClass,
+            style = noteTitleStyle,
+            placeholder = Html.DisplayNameFor(m => m.Title)
+        })
+    @Html.ValidationMessageFor(m => m.Title)
+</div>
+<div class="control-group">
+    @Html.TextBoxFor(m => m.Text, new
+        {
+            @class = noteTextClass,
+            style = noteTextStyle,
+            placeholder = Html.DisplayNameFor(m => m.Text)
+        })
+    @Html.ValidationMessageFor(m => m.Text)
+</div>

@@ -11,13 +11,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/sammy")
     @Scripts.Render("~/bundles/AnonymousNavigation")
+    @RenderSection("headScripts", false)
 </head>
     <body>
         <div class="wrapper">
             <div class="row">
                 <h1>
                     <a class="title" href="/">
-                        @Localization.GetString("external.title")
+                        <img src="../../Content/images/@Localization.GetString("logo")"/>
                     </a>
                 </h1>
                 <div class="navbar">
@@ -46,8 +47,12 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <p>Copyright 2013</p>
+        <div class="footer" style="text-align: center; font-size: 10pt">
+            <p>
+                <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a> | 
+                <a href="#/About">@Localization.GetString("external.menu.about")</a> | 
+                @Localization.GetString("copyright")
+            </p>
         </div>
         @Scripts.Render("~/bundles/bootstrap-dropdown")
         @RenderSection("scripts", false)

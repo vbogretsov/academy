@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using Academy.Resources
 
 @model Academy.Presentation.ViewModels.HomeViewModel
 
@@ -9,6 +10,15 @@
 @{
     Html.EnableClientValidation(true);
 }
+
+<div class="span7">
+    <div style="height: 100px;">
+        <h1>Welcome to the Academy!</h1>
+    </div>
+    <div id="flash">
+    </div>
+</div>
+
 <div class="pull-right">
     @using (Html.BeginForm(
         "Login",
@@ -29,6 +39,15 @@
         @Html.EditorForModel("RegistrationEditor")
     }
 </div>
+
+@section headScripts
+{
+    @Scripts.Render("~/bundles/flash")
+    <script type="text/javascript">
+        swfobject.embedSWF('../../Content/images/@Localization.GetString("banner")', 'flash', '500', '400', '9.0.0')
+    </script>
+}
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/tree")

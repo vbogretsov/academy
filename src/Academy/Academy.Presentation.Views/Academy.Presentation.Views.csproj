@@ -137,6 +137,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -156,8 +157,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\bootstrap-fileupload.css" />
+    <Content Include="Content\images\3eng.swf" />
+    <Content Include="Content\images\3rus.swf" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\logo_eng.png" />
+    <Content Include="Content\images\logo_rus.png" />
     <Content Include="Content\tree.css" />
     <Content Include="Content\uploadify-cancel.png" />
     <Content Include="Content\uploadify.css" />
@@ -188,6 +193,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\navigation.js" />
     <Content Include="Scripts\sammy.js" />
+    <Content Include="Scripts\swfobject.js" />
     <Content Include="Scripts\tree.js" />
     <Content Include="Scripts\UserNavigation.js" />
     <Content Include="Web.config">
@@ -250,10 +256,16 @@
     <Content Include="Views\Shared\EditorTemplates\QuestionSearchEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\ArticleSearchResultView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\QuestionSearchResultView.cshtml" />
+    <Content Include="Views\Shared\Forms\AddNoteForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CreateNoteEditor.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\NoteView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\NotesView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\UserNotesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Resources\Articles\" />
+    <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

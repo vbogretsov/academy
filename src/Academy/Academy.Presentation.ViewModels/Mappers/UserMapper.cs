@@ -72,6 +72,10 @@ namespace Academy.Presentation.ViewModels.Mappers
             {
                 viewModel.AnswerNews = user.AnswerNewses.Select(AnswerNewsMapper.Map);
             }
+            if (user.Notes != null)
+            {
+                viewModel.Notes = user.Notes.Select(NoteMapper.Map);
+            }
             // </refactor>
             return viewModel;
         }

@@ -25,7 +25,6 @@
         this.get('#/Articles', function () {
             LoadView(dataId, "Article/GetUserArticles", function () {
                 CollapseDisciplinesTree();
-                //InitArticleHandlers();
             });
         });
 

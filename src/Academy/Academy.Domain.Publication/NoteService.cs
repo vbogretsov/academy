@@ -10,17 +10,26 @@ namespace Academy.Domain.Services
 {
     public class NoteService : INoteService
     {
+        private readonly IDataContext context;
+
         public NoteService(IDataContext context)
         {
-            
+            this.context = context;
         }
 
         public void Add(Note note)
         {
-            throw new NotImplementedException();
+            note.PostedDate = DateTime.Now;
+            context.NoteStorage.Add(note);
         }
 
-        public IEnumerable<Note> GetNotes(User user)
+        public void Remove(int noteId)
+        {
+            context.NoteStorage.Remove(noteId);
+        }
+
+        // TODO: add paging
+        public IEnumerable<Note> GetNotes(int userId)
         {
             throw new NotImplementedException();
         }

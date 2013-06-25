@@ -15,16 +15,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public void Add(Note note)
         {
-            //Entities.Notes.Add(note);
-            //Entities.SaveChanges();
             Add(note, Entities.Notes);
         }
 
         public void Remove(int noteId)
         {
-            //Entities.Notes.Attach(note);
-            //Entities.Notes.Remove(note);
-            //Entities.SaveChanges();
             Remove(noteId, Entities.Notes);
         }
 

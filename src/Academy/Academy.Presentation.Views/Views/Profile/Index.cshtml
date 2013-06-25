@@ -14,10 +14,14 @@
 }
 
 <div id ="profile" class="span3">
-    @{ Html.RenderPartial("../Shared/RenderTemplates/UserView", Model); }
+    @{
+        Html.RenderPartial("../Shared/RenderTemplates/UserView", Model);
+    }
 </div>
 <div id="data" class="span9">
-
+    @{
+        Html.RenderPartial("RenderTemplates/UserNotesView", Model);
+    }
 </div>
 
 @section Scripts {

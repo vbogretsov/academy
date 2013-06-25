@@ -11,7 +11,9 @@ namespace Academy.Domain.Interface
     {
         void Add(Note note);
 
+        void Remove(int noteId);
+
         //TODO: add paging
-        IEnumerable<Note> GetNotes(User user);
+        IEnumerable<Note> GetNotes(int userId);
     }
 }

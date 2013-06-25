@@ -1,0 +1,37 @@
+﻿@model Academy.Presentation.ViewModels.NoteViewModel
+
+@{
+    const string formId = "addNote";
+    var formSettings = new
+        {
+            id = formId,
+            style = "padding-bottom: 20px",
+            enctype = "multipart/mixed"
+        };
+}
+
+@using (Html.BeginForm("AddNote", "Note", FormMethod.Post, formSettings))
+{
+    Html.RenderPartial("EditorTemplates/CreateNoteEditor", Model);
+
+    <input type="submit" value="Add note" class="btn btn-primary pull-right"/>
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#@formId').submit(function() {
+            $.validator.unobtrusive.parse('#@formId');
+            if ($('#@formId').valid()) {
+                $.ajax({
+                    url: this.action,
+                    type: this.method,
+                    data: $(this).serialize(),
+                    success: function(result) {
+                        $('#data').html(result);
+                    }
+                });
+            }
+            return false;
+        });
+    })
+</script>

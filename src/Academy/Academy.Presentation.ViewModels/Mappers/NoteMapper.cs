@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Presentation.ViewModels.Mappers
@@ -12,8 +9,10 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             NoteViewModel viewModel = new NoteViewModel();
             viewModel.Id = note.Id;
+            viewModel.UserId = note.UserId;
             viewModel.Title = note.Title;
             viewModel.Text = note.Text;
+            viewModel.PostedDate = note.PostedDate;
             return viewModel;
         }
 
@@ -21,8 +20,10 @@ namespace Academy.Presentation.ViewModels.Mappers
         {
             Note note = new Note();
             note.Id = viewModel.Id;
+            note.UserId = viewModel.UserId;
             note.Title = viewModel.Title;
             note.Text = viewModel.Text;
+            note.PostedDate = viewModel.PostedDate;
             return note;
         }
     }

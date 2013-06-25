@@ -8,6 +8,8 @@ namespace Academy.Domain.DataAccess.Ef
     {
         private readonly AcademyEntities academyEntities;
 
+        private INoteStorage noteStorage;
+
         private IUserStorage userStorage;
 
         private IArticleStorage articleStorage;
@@ -52,6 +54,18 @@ namespace Academy.Domain.DataAccess.Ef
                     userStorage = new EfUserStorage(academyEntities);
                 }
                 return userStorage;
+            }
+        }
+
+        public INoteStorage NoteStorage
+        {
+            get
+            {
+                if (noteStorage == null)
+                {
+                    noteStorage = new EfNoteStorage(academyEntities);
+                }
+                return noteStorage;
             }
         }
 

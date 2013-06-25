@@ -1,0 +1,27 @@
+﻿@using Academy.Presentation.ViewModels
+@model UserViewModel
+
+@{
+    const string addNoteText = "Add new note";
+    var noteTemlate = new NoteViewModel {UserId = Model.Id};
+}
+
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                @addNoteText
+            </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse">
+            <div class="accordion-inner">
+                @{
+                    Html.RenderPartial("Forms/AddNoteForm", @noteTemlate);
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("RenderTemplates/NotesView", Model);
+}

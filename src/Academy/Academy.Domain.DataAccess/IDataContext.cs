@@ -12,6 +12,11 @@ namespace Academy.Domain.DataAccess
             get;
         }
 
+        INoteStorage NoteStorage
+        {
+            get;
+        }
+
         IDisciplineStorage DisciplineStorage
         {
             get;
