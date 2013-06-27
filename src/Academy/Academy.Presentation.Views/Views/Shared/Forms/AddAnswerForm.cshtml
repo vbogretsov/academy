@@ -8,7 +8,7 @@
 @using (Html.BeginForm("Answer", "Question", FormMethod.Post, new { id = postAsnwerFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateAnswerEditor", Model);
-    <input type="submit" class="btn btn-primary pull-right"/>
+    <input type="submit" class="btn btn-primary pull-right" value="Answer"/>
 }
 
 <script type="text/javascript">

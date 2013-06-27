@@ -2,10 +2,10 @@
 @model Academy.Presentation.ViewModels.UserViewModel
 
 @{
-    const string newArticlesText = "New Articles";
-    const string newCommentsText = "New Comments";
-    const string newQuestionsText = "New Questions";
-    const string newAnswersText = "New Answers";
+    var newArticlesText = Localization.GetString("profile.newarticles");
+    var newCommentsText = Localization.GetString("profile.newcomments");
+    var newQuestionsText = Localization.GetString("profile.newquestions");
+    var newAnswersText = Localization.GetString("profile.newanswers");
     var myArticlesText = Localization.GetString("profile.myarticles");
     var myQuestionsText = Localization.GetString("prifile.myquestions");
     var myCommentsText = Localization.GetString("profile.mycomment");
@@ -21,15 +21,15 @@
                 </div>
             </li>
         </ul>
-        <a href="#/NewArticles" id="newArticles" class="btn btn-block">@newArticlesText</a>
-        <a href="#/NewComments" id="newComments" class="btn btn-block">@newCommentsText</a>
-        <a href="#/NewQuestions" id="newQuestions" class="btn btn-block">@newQuestionsText</a>
-        <a href="#/NewAnswers" id="newAnswers" class="btn btn-block">@newAnswersText</a>
+        <a href="#/NewArticles" id="newArticlesSideMenu" class="btn btn-block">@newArticlesText</a>
+        <a href="#/NewComments" id="newCommentsSideMenu" class="btn btn-block">@newCommentsText</a>
+        <a href="#/NewQuestions" id="newQuestionsSideMenu" class="btn btn-block">@newQuestionsText</a>
+        <a href="#/NewAnswers" id="newAnswersSideMenu" class="btn btn-block">@newAnswersText</a>
         <div class="page-header">
         </div>
-        <a href="#/Articles" id="myArticles" class="btn btn-block">@myArticlesText</a>
-        <a href="#/Questions" id="myQuestions" class="btn btn-block">@myQuestionsText</a>
-        <a href="#/Comments" id="myComments" class="btn btn-block">@myCommentsText</a>
-        <a href="#/Answers" id="myAnswers" class="btn btn-block">@myAnswersText</a>
+        <a href="#/Articles" id="myArticlesSideMenu" class="btn btn-block">@myArticlesText</a>
+        <a href="#/Comments" id="myCommentsSideMenu" class="btn btn-block">@myCommentsText</a>
+        <a href="#/Questions" id="myQuestionsSideMenu" class="btn btn-block">@myQuestionsText</a>
+        <a href="#/Answers" id="myAnswersSideMenu" class="btn btn-block">@myAnswersText</a>
     </div>
 </div>

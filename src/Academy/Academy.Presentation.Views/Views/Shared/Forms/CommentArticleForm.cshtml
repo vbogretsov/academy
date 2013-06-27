@@ -9,7 +9,7 @@
 @using (Html.BeginForm("CommentArticle", "Article", FormMethod.Post, new { id = postCommentFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateCommentEditor", Model);
-    <input type="submit" class="btn btn-primary pull-right" />
+    <input type="submit" class="btn btn-primary pull-right" value="Comment"/>
 }
 
 <script type="text/javascript">

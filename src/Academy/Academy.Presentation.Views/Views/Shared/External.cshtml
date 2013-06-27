@@ -23,18 +23,18 @@
                 </h1>
                 <div class="navbar">
                     <div class="navbar-inner">
-                        <ul class="nav pull-right">
+                        <ul class="nav pull-right" id="mainMenu">
                             <li class="divider-vertical">
-                                <a href="#/SearchArticles">@Localization.GetString("external.menu.articles")</a>
+                                <a href="#/SearchArticles">@Localization.GetString("mainmenu.articles")</a>
                             </li>
                             <li class="divider-vertical">
-                                <a href="#/SearchQuestions">@Localization.GetString("external.menu.questions")</a>
+                                <a href="#/SearchQuestions">@Localization.GetString("mainmenu.questions")</a>
                             </li>
                             <li class="divider-vertical">
-                                <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a>
+                                <a href="#/Contacts">@Localization.GetString("mainmenu.contacts")</a>
                             </li>
                             <li class="divider-vertical">
-                                <a href="#/About">@Localization.GetString("external.menu.about")</a>
+                                <a href="#/About">@Localization.GetString("mainmenu.about")</a>
                             </li>
                             <li class="divider-vertical dropdown">
                                 @{ Html.RenderPartial("Languages"); }
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer" style="text-align: center; font-size: 10pt">
+        <div class="footer">
             <p>
                 <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a> | 
                 <a href="#/About">@Localization.GetString("external.menu.about")</a> | 
@@ -55,6 +55,7 @@
             </p>
         </div>
         @Scripts.Render("~/bundles/bootstrap-dropdown")
+        @Scripts.Render("~/bundles/MainMenu")
         @RenderSection("scripts", false)
     </body>
 </html>

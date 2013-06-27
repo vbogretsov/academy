@@ -18,6 +18,8 @@
     padding: 10px;
     clear: both;
     margin-left: 20px;
+    text-align: center;
+    font-size: 10pt
 }
 
 .content
@@ -156,11 +158,16 @@
     list-style-type: none;
 }
 
+.tree-editor {
+    min-height: 300px;
+}
+
 .scrollable-horizontal {
     overflow-x: scroll;
 }
 
 .side-bar {
+    min-height: 650px;
     height: 100%;
     border-right: 1px solid #eee;
     padding-right: 20px

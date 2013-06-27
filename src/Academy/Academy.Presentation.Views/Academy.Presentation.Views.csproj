@@ -163,7 +163,6 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\images\logo_eng.png" />
     <Content Include="Content\images\logo_rus.png" />
-    <Content Include="Content\tree.css" />
     <Content Include="Content\uploadify-cancel.png" />
     <Content Include="Content\uploadify.css" />
     <Content Include="Content\uploadify.swf" />
@@ -174,7 +173,6 @@
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <Content Include="Resources\Users\0.jpg" />
-    <Content Include="Scripts\academy.js" />
     <Content Include="Scripts\AdminNavigation.js" />
     <Content Include="Scripts\AnonymousNavigation.js" />
     <Content Include="Scripts\bootstrap-dropdown.js" />
@@ -191,8 +189,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\navigation.js" />
+    <Content Include="Scripts\MainMenu.js" />
     <Content Include="Scripts\sammy.js" />
+    <Content Include="Scripts\SideMenu.js" />
     <Content Include="Scripts\swfobject.js" />
     <Content Include="Scripts\tree.js" />
     <Content Include="Scripts\UserNavigation.js" />
@@ -364,7 +363,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7020/</IISUrl>
+          <IISUrl>http://localhost:7010/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

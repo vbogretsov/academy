@@ -40,6 +40,12 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/AnonymousNavigation").Include(
                 "~/Scripts/AnonymousNavigation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/MainMenu").Include(
+                "~/Scripts/MainMenu.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/SideMenu").Include(
+                "~/Scripts/SideMenu.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/flash").Include(
                 "~/Scripts/swfobject.js"));
 
@@ -49,9 +55,6 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new StyleBundle("~/Content/css")
                     .Include("~/Content/bootstrap*")
                     .Include("~/Content/site.css"));
-
-            bundles.Add(new ScriptBundle("~/Content/tree")
-                .Include("~/Content/tree.css"));
 
             bundles.Add(new ScriptBundle("~/Content/uploadify")
                 .Include("~/Content/uploadify.css"));

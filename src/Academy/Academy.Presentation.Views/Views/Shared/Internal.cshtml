@@ -16,12 +16,12 @@
     <div class="wrapper">
         <div class="row">
             <h1>
-               @Localization.GetString("internal.title")
+                @Localization.GetString("internal.title")
             </h1>
             <div class="navbar">
                 <div class="navbar-inner">
                     @RenderSection("UserName", false)
-                    <ul class="nav pull-right">
+                    <ul class="nav pull-right" id="mainMenu">
                         <li class="divider-vertical">
                             <a href="#/Edit">@Localization.GetString("internal.menu.profile")</a>
                         </li>
@@ -43,8 +43,14 @@
         </div>
     </div>
     <div class="footer">
-        <p>Copyright 2013</p>
+        <p>
+            <a href="#/Contacts">@Localization.GetString("external.menu.contacts")</a> | 
+            <a href="#/About">@Localization.GetString("external.menu.about")</a> | 
+            @Localization.GetString("copyright")
+        </p>
     </div>
+    @Scripts.Render("~/bundles/MainMenu")
+    @Scripts.Render("~/bundles/SideMenu")
     @RenderSection("scripts", false)
 </body>
 </html>

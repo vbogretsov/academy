@@ -313,7 +313,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Articles.
+        ///   Looks up a localized string similar to Find articles.
         /// </summary>
         public static string internal_menu_articles {
             get {
@@ -331,7 +331,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Profile.
+        ///   Looks up a localized string similar to Profile settings.
         /// </summary>
         public static string internal_menu_profile {
             get {
@@ -340,7 +340,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Questions.
+        ///   Looks up a localized string similar to Questions and answers.
         /// </summary>
         public static string internal_menu_questions {
             get {
@@ -493,6 +493,42 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string mainmenu_about {
+            get {
+                return ResourceManager.GetString("mainmenu.about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find articles.
+        /// </summary>
+        public static string mainmenu_articles {
+            get {
+                return ResourceManager.GetString("mainmenu.articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string mainmenu_contacts {
+            get {
+                return ResourceManager.GetString("mainmenu.contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Questions and answers.
+        /// </summary>
+        public static string mainmenu_questions {
+            get {
+                return ResourceManager.GetString("mainmenu.questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note text.
         /// </summary>
         public static string note_text {
@@ -628,11 +664,47 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My comment.
+        ///   Looks up a localized string similar to My comments.
         /// </summary>
         public static string profile_mycomment {
             get {
                 return ResourceManager.GetString("profile.mycomment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New answers.
+        /// </summary>
+        public static string profile_newanswers {
+            get {
+                return ResourceManager.GetString("profile.newanswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New articles.
+        /// </summary>
+        public static string profile_newarticles {
+            get {
+                return ResourceManager.GetString("profile.newarticles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New comments.
+        /// </summary>
+        public static string profile_newcomments {
+            get {
+                return ResourceManager.GetString("profile.newcomments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New questions.
+        /// </summary>
+        public static string profile_newquestions {
+            get {
+                return ResourceManager.GetString("profile.newquestions", resourceCulture);
             }
         }
         
