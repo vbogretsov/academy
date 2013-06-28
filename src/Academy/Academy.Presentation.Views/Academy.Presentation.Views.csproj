@@ -147,7 +147,6 @@
     </Compile>
     <Compile Include="Helpers\BootstrapHtmlHelpers.cs" />
     <Compile Include="Helpers\DisciplinesCheckboxesTreeBuilder.cs" />
-    <Compile Include="Helpers\DisciplinesTreeBuilder.cs" />
     <Compile Include="Helpers\DisciplinesTreeHelper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,18 +156,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\bootstrap-fileupload.css" />
-    <Content Include="Content\images\3eng.swf" />
-    <Content Include="Content\images\3rus.swf" />
-    <Content Include="Content\images\glyphicons-halflings-white.png" />
-    <Content Include="Content\images\glyphicons-halflings.png" />
-    <Content Include="Content\images\logo_eng.png" />
-    <Content Include="Content\images\logo_rus.png" />
-    <Content Include="Content\uploadify-cancel.png" />
+    <Content Include="Content\Images\3eng.swf" />
+    <Content Include="Content\Images\3rus.swf" />
+    <Content Include="Content\Images\glyphicons-halflings-white.png" />
+    <Content Include="Content\Images\glyphicons-halflings.png" />
+    <Content Include="Content\Images\logo_eng.png" />
+    <Content Include="Content\Images\logo_rus.png" />
     <Content Include="Content\uploadify.css" />
-    <Content Include="Content\uploadify.swf" />
-    <Content Include="Resources\Icons\glyphicons-halflings.png" />
-    <Content Include="Resources\Icons\tree-minus.png" />
-    <Content Include="Resources\Icons\tree-plus.png" />
+    <Content Include="Content\Images\uploadify.swf" />
+    <Content Include="Content\Images\tree-minus.png" />
+    <Content Include="Content\Images\tree-plus.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
@@ -363,7 +360,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7010/</IISUrl>
+          <IISUrl>http://localhost:7020/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

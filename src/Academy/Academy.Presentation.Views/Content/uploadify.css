@@ -28,7 +28,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 }
 
 .uploadify-queue-item .cancel a {
-    background-image: url("../Resources/Icons/glyphicons-halflings.png");
+    background-image: url("../Content/images/glyphicons-halflings.png");
     background-position: -312px 0;
     float: right;
     height: 16px;

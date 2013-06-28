@@ -1,6 +1,7 @@
 ﻿@model Academy.Presentation.ViewModels.UserViewModel
 
 @{
+    var headerText = "Main profile settigs";
     var editUserFormSettings = new
         {
             @class = "form-horizontal no-margin",
@@ -9,12 +10,13 @@
         };
 }
 
+<h3 class="text-center">
+    @headerText
+</h3>
+
 @using (Html.BeginForm("Edit", "Profile", FormMethod.Post, editUserFormSettings))
 {
     @Html.ValidationSummary(true)
-    @Html.EditorForModel("EditUserEditor");
+    @Html.EditorForModel("EditUserEditor")
 }
-<p>
-    Disciplines description
-</p>
 

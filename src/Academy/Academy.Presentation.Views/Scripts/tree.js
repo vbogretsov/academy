@@ -22,11 +22,11 @@ function ToggleTree(e, node, img) {
     var children = node.parent().find('> ul > li');
     if (children.is(":visible")) {
         children.hide('fast');
-        img.attr('src', '/Resources/Icons/tree-plus.png');
+        img.attr('src', '/Content/Images/tree-plus.png');
     }
     else {
         children.show('fast');
-        img.attr('src', '/Resources/Icons/tree-minus.png');
+        img.attr('src', '/Content/Images/tree-minus.png');
     }
     e.stopPropagation();
 }

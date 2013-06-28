@@ -1,6 +1,8 @@
 ﻿@model Academy.Presentation.ViewModels.UserViewModel
 
 @{
+    var headerText = "Disciplines settings";
+    var descriptionText = "Disciplines description";
     var editDisciplinesFormSettings = new
     {
         enctype = "multipart/form-data",
@@ -8,10 +10,21 @@
     };
 }
 
+<h3 class="text-center">
+    @headerText
+</h3>
+<p>
+    @descriptionText
+</p>
+
+<div class="span3">
+
 @using (Html.BeginForm("Subscribe", "Notification", FormMethod.Post, editDisciplinesFormSettings))
 {
     @Html.EditorForModel("EditDisciplinesEditor")
 }
+
+</div>
 
 <script type="text/javascript">
     $(function () {

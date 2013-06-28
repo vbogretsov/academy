@@ -1,4 +1,21 @@
 ﻿@using Academy.Presentation.Views.Helpers
 @model Academy.Presentation.ViewModels.UserViewModel
 
-@Html.List(Model.Disciplines.ToList(), "Your disciplines", "list-flat", "text-hypenation")
+@{
+    var headerText = "Your disciplines";
+}
+
+<h4 class="label btn-block">
+    @headerText
+</h4>
+@if (Model.Disciplines != null)
+{
+    <ul class="list-flat">
+        @foreach(var discipline in Model.Disciplines)
+        {
+            <li>
+                <span class="badge btn-block text-hypenation">@discipline.Name</span>
+            </li>
+        }
+    </ul>
+}

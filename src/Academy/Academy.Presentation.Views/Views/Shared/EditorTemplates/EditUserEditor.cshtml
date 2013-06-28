@@ -1,29 +1,68 @@
 ﻿@using Academy.Presentation.Views.Helpers
-@using Academy.Resources
 @model Academy.Presentation.ViewModels.UserViewModel
 
-@Html.ControlGroupFor(
-        m => m.PhotoFile,
-        e => Html.ImageUploadFor(
-            e,
-           "/Resources/Users/0.jpg",
-            String.Format("/Resources/Users/{0}", @Model.PhotoFileName),
-            "photo-fixed-size-preview",
-            "Select photo",
-            "Change",
-            "Remove"))
+@{
+    var textBoxSettings = new { @class = "input-over-date" };
+    var selectImageText = "Select image";
+    var changeText = "Change";
+    var removeTet = "Remove";
+    var labelSettings = new {@class = "control-label"};
+}
 
+<div class="control-group">
+    @Html.LabelFor(m => m.PhotoFile, labelSettings)
+    <div class="controls">
+        <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 250px; height: 250px;">
+                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
+                </div>
+            <div class="fileupload-preview fileupload-exists thumbnail"
+                 style="max-width: 250px; max-height: 250px; min-width: 250px; min-height: 250px; line-height: 20px;"></div>
+            <div>
+                <span class="btn btn-file">
+                    <span class="fileupload-new">@selectImageText</span>
+                    <span class="fileupload-exists">@changeText</span>
+                    <input type="file" />
+                </span>
+                <a href="#" class="btn fileupload-exists"data-dismiss="fileupload">@removeTet</a>
+            </div>
+        </div>
+    </div>
+</div>
 @Html.HiddenFor(m => m.Id)
 @Html.HiddenFor(m => m.PhotoFileName)
-@Html.ControlGroupFor(m => m.FirstName, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
-@Html.ControlGroupFor(m => m.LastName, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
-@Html.ControlGroupFor(m => m.University, e => Html.TextBoxFor(e, new { @class = "input-over-date" }))
-
-@Html.ControlGroupFor(
-        m => m.BirthDate,
-        e => Html.DateTimePickerFor(
+<div class="control-group">
+    @Html.LabelFor(m => m.FirstName, labelSettings)
+    <div class="controls">
+        @Html.TextBoxFor(m => m.FirstName, textBoxSettings)
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+</div>
+<div class="control-group">
+    @Html.LabelFor(m => m.LastName, labelSettings)
+    <div class="controls">
+        @Html.TextBoxFor(m => m.LastName, textBoxSettings)
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+</div>
+<div class="control-group">
+    @Html.LabelFor(m => m.University, labelSettings)
+    <div class="controls">
+        @Html.TextBoxFor(m => m.University, textBoxSettings)
+        @Html.ValidationMessageFor(m => m.University)
+    </div>
+</div>
+<div class="control-group">
+    @Html.LabelFor(m => m.BirthDate, labelSettings)
+    <div class="controls">
+        @Html.DateTimePickerFor(
             m => m.BirthDate.Day,
             m => m.BirthDate.Month,
-            m => m.BirthDate.Year))
-
-@Html.ControlGroupSubmit(Localization.GetString("profile.edit.save"))
+            m => m.BirthDate.Year)
+    </div>
+</div>
+<div class="control-group">
+    <div class="controls">
+        <input type="submit" class="btn btn-primary pull-right" value="Edit" style="margin-right: 20px"/>
+    </div>
+</div>

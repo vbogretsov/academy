@@ -1,11 +1,11 @@
 ﻿@model Academy.Presentation.ViewModels.UserViewModel
 
-<div class="span6 no-margin">
+<div class="span6 no-margin side-bar">
     @{
         Html.RenderPartial("Forms/EditUserForm", Model);
     }
 </div>
-<div class="span3 pull-right">
+<div class="span5">
     @{
         Html.RenderPartial("Forms/SelectDisciplinesForm", Model);
     }

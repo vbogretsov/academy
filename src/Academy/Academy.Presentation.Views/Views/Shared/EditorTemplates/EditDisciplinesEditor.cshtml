@@ -1,25 +1,38 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
 @model UserViewModel
+@{
+    var headerText = "Disciplines settings";
+    var selectDisciplinesText = "Select disciplines";
+    var modalHeaderText = "Select disciplines";
+    var closeText = "Close";
+    var selectText = "Select";
+}
 
 <div id="editDisciplines">
-
-    @Html.ModalButton("disciplines", "Select disciplines", "btn-block")
-
-    @Html.ModalVindowFor(
-        Html.DisciplinesTreeFor(
-            "disciplines",
-            (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines,
-            Model.Disciplines.ToList()),
-        "disciplines",
-        "Disciplines",
-        "Close",
-        "Save")
-
+    <a href="#disciplinesModal" role="button" class="btn btn-block" data-toggle="modal">
+        @selectDisciplinesText
+    </a>
+    <div id="disciplinesModal" class="modal hide fade" tabindex="-1"
+         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">@modalHeaderText</h3>
+        </div>
+        <div class="modal-body">
+            @Html.DisciplinesTreeFor(
+                "disciplines",
+                (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines,
+                Model.Disciplines.ToList())
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">@closeText</button>
+            <button class="btn btn-primary">@selectText</button>
+        </div>
+    </div>
     @{ Html.RenderPartial("RenderTemplates/DisciplinesView", Model); }
-
 </div>
-
 <script type="text/javascript">
     CollapseDisciplinesTree();
 </script>

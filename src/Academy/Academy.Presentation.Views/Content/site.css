@@ -10,6 +10,7 @@
     min-height: 800px;
     height: auto !important;
     height: 100%;
+    padding-bottom: 20px;
     margin-bottom: -1px;
 }
 .footer, .push {
