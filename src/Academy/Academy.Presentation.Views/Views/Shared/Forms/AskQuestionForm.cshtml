@@ -28,8 +28,11 @@
                     success: function(html) {
                         $('#data').html('');
                         $('#data').append(html);
-                        CollapseDisciplinesTree();
                         $('#askQuestion')[0].reset();
+                        CollapseDisciplinesTree();
+                    },
+                    error: function() {
+                        alert('error');
                     }
                 });
             }

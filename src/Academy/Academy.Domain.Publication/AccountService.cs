@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Web.Security;
 using Academy.Domain.DataAccess;
+using Academy.Domain.Interface;
 using Academy.Domain.Objects;
 using Academy.Security;
 
 namespace Academy.Domain.Services
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
         private const string UserRole = "User";
 

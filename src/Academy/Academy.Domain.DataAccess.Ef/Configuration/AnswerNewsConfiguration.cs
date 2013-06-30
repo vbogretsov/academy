@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Configuration
@@ -27,7 +24,7 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             HasRequired(x => x.Answer)
                 .WithMany(x => x.AnswerNewses)
                 .HasForeignKey(x => x.EntityId)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

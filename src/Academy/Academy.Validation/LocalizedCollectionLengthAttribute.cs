@@ -35,7 +35,7 @@ namespace Academy.Validation
             if (collection != null)
             {
                 int count = collection.Cast<dynamic>().Count();
-                result = min < count && count < max;
+                result = min <= count && count <= max;
             }
             return result;
         }

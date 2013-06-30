@@ -13,7 +13,7 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                AcademyContext.NoteService.Add(NoteMapper.Map(viewModel));
+                Service.Add(NoteMapper.Map(viewModel));
             }
             return GetUserNotes();
         }
@@ -21,13 +21,13 @@ namespace Academy.Presentation.Views.Controllers
         [HttpPost]
         public ActionResult RemoveNote(int noteId)
         {
-            AcademyContext.NoteService.Remove(noteId);
+            Service.Remove(noteId);
             return GetUserNotes();
         }
 
         private ActionResult GetUserNotes()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
+            var user = Service.GetCurrentUser();
             return View("RenderTemplates/UserNotesView", UserMapper.Map(user));
         }
     }

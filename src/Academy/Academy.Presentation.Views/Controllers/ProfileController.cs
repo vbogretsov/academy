@@ -12,25 +12,17 @@ namespace Academy.Presentation.Views.Controllers
     {
         private const string UserPhotosFolder = "~/Resources/Users";
 
-        private readonly User currentUser;
-
-        public ProfileController()
-        {
-            currentUser = AcademyContext.Account.GetCurrentUser();
-        }
-
         [HttpGet]
         public ActionResult Index()
         {
-            return View(UserMapper.Map(currentUser));
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpGet]
         public ActionResult Edit()
         {
-            var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            return View(UserMapper.Map(currentUser));
+            ViewBag.Disciplines = GetDisciplines();
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpPost]
@@ -39,9 +31,15 @@ namespace Academy.Presentation.Views.Controllers
             if (ModelState.IsValid)
             {
                 UploadUserPhoto(viewModel);
-                AcademyContext.Account.Update(UserMapper.Map(viewModel));
+                Service.Update(UserMapper.Map(viewModel));
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ContactAdministration()
+        {
+            return View();
         }
 
         private void UploadUserPhoto(UserViewModel viewModel)
@@ -49,7 +47,7 @@ namespace Academy.Presentation.Views.Controllers
             if (viewModel.PhotoFile != null &&
                 viewModel.PhotoFile.ContentLength > 0)
             {
-                viewModel.PhotoFileName = AcademyContext.FileService.Upload(
+                viewModel.PhotoFileName = Service.Upload(
                     viewModel.PhotoFile.InputStream,
                     Server.MapPath(UserPhotosFolder),
                     viewModel.PhotoFile.FileName);

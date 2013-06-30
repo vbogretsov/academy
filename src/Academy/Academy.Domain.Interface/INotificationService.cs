@@ -28,6 +28,6 @@ namespace Academy.Domain.Interface
         IEnumerable<QuestionNews> GetQuestionNews(User user);
 
         //TODO: add paging
-        IEnumerable<QuestionNews> GetAnswerNews(User user);
+        IEnumerable<AnswerNews> GetAnswerNews(User user);
     }
 }

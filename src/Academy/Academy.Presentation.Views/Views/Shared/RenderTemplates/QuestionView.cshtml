@@ -18,9 +18,12 @@
         {
             QuestionId = Model.Id
         };
+    var questionId = String.Format("questionId{0}", Model.Id);
+    var removeQuestionId = String.Format("removeQuestion{0}", Model.Id);
+    var removeQuestionText = "Remove text";
 }
 
-<div class="text-block">
+<div class="text-block" id="@questionId">
     <div class="page-header">
         <span class="label">
             @fullUserName
@@ -44,9 +47,17 @@
                 @Model.PostedDate
             </span>
             <div class="pull-right">
+                @if (User.IsInRole("Admin"))
+                {
+                    <button class="btn btn-mini btn-danger" id="@removeQuestionId">
+                        @removeQuestionText
+                    </button>
+                }
                 @if (Request.IsAuthenticated)
                 {
-                    <button class="btn btn-mini btn-primary" id="@addAnswerId">@addAnswerText</button>
+                    <button class="btn btn-mini btn-primary" id="@addAnswerId">
+                        @addAnswerText
+                    </button>
                 }
                 <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
             </div>
@@ -64,6 +75,15 @@
 
 <script type="text/javascript">
     $(function () {
+        $('#@removeQuestionId').click(function () {
+            $.ajax({
+                url: '@Url.Action("RemoveQuestion", "Question", new {id = Model.Id})',
+                type: 'post',
+                success: function () {
+                    $('#@questionId').remove();
+                }
+            });
+        });
         $('#@addAnswerId').click(function () {
            $('#@newAnswerId').slideToggle('fast');
         });

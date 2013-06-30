@@ -24,8 +24,11 @@
     </div>
 </div>
 <div id="userQuestions">
-    @{Html.RenderPartial("RenderTemplates/QuestionsView", Model);}
+    @{
+        Html.RenderPartial("RenderTemplates/QuestionsView", Model);
+    }
 </div>
+
 <script type="text/javascript">
     CollapseDisciplinesTree();
 </script>

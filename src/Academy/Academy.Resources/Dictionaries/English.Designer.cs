@@ -574,6 +574,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact administration.
+        /// </summary>
+        public static string profile_contact_admin {
+            get {
+                return ResourceManager.GetString("profile.contact.admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string profile_edit_email {
@@ -934,7 +943,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Univercity.
+        ///   Looks up a localized string similar to University.
         /// </summary>
         public static string registration_univercity {
             get {

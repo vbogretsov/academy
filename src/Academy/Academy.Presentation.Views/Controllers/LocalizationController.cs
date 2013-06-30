@@ -5,7 +5,7 @@ namespace Academy.Presentation.Views.Controllers
 {
     public class LocalizationController : Controller
     {
-        //[HttpPost]
+        [HttpGet]
         public ActionResult ChangeLanguage(string language, string returnUrl)
         {
             Session["Language"] = language;

@@ -14,9 +14,12 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public void Add(Answer answer)
         {
-            //Entities.Answers.Add(answer);
-            //Entities.SaveChanges();
             Add(answer, Entities.Answers);
+        }
+
+        public void Remove(int answerId)
+        {
+            Remove(answerId, Entities.Answers);
         }
 
         public IEnumerable<Answer> GetUserAnswers(int userId)

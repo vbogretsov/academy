@@ -17,21 +17,20 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult GetUserArticles()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return GetUserArticles(user);
+            ViewBag.Disciplines = GetDisciplines();
+            return View("GetUserArticles", UserMapper.Map(Service.GetCurrentUser()));
         }
 
         [HttpGet]
         public ActionResult GetUserComments()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(user));
+            return View(UserMapper.Map(Service.GetCurrentUser()));
         }
 
         [HttpGet]
         public ActionResult GetArticle(int articleId)
         {
-            var article = AcademyContext.PublicationService.GetArticle(articleId);
+            var article = Service.GetArticle(articleId);
             return View("RenderTemplates/ArticleView", ArticleMapper.Map(article));
         }
 
@@ -44,15 +43,19 @@ namespace Academy.Presentation.Views.Controllers
         [HttpPost]
         public ActionResult PublishArticle(ArticleViewModel viewModel)
         {
-            var user = AcademyContext.Account.GetCurrentUser();
             if (ModelState.IsValid)
             {
-                var article = ArticleMapper.Map(viewModel);
-                article.Authors.Add(user);
-                AcademyContext.PublicationService.Publish(article);
-                AcademyContext.NotificationService.NotifyAboutNewArticle(article);
+                Service.Publish(ArticleMapper.Map(viewModel));
             }
-            return GetUserArticles(user);
+            return GetUserArticles();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult RemoveArticle(int id)
+        {
+            Service.RemoveArticle(id);
+            return null;
         }
 
         [HttpPost]
@@ -60,13 +63,17 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                var comment = CommentMapper.Map(viewModel);
-                comment.UserId = AcademyContext.Account.GetCurrentUser().Id;
-                AcademyContext.PublicationService.Comment(comment);
-                AcademyContext.NotificationService.NotifyAboutNewComment(comment);
+                Service.Comment(CommentMapper.Map(viewModel));
             }
-            var article = AcademyContext.PublicationService.GetArticle(viewModel.ArticleId);
-            return View("RenderTemplates/CommentsView", ArticleMapper.Map(article));
+            return GetUserArticles();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult RemoveComment(int id)
+        {
+            Service.RemoveComment(id);
+            return null;
         }
 
         [HttpPost]
@@ -75,19 +82,12 @@ namespace Academy.Presentation.Views.Controllers
             string result = null;
             if (file != null)
             {
-                result = AcademyContext.FileService.Upload(
+                result = Service.Upload(
                     file.InputStream,
                     Server.MapPath(ArticlesFolder),
                     file.FileName);
             }
             return result;
-        }
-
-        private ActionResult GetUserArticles(User user)
-        {
-            var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            return View("GetUserArticles", UserMapper.Map(user));
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 using Academy.Domain.Search;
 
@@ -12,6 +10,8 @@ namespace Academy.Domain.DataAccess
         Question Get(int questionId);
 
         void Add(Question question);
+
+        void Remove(int questionId);
 
         IEnumerable<Question> GetUserQuestions(int userId);
 

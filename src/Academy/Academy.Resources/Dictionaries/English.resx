@@ -288,6 +288,9 @@
   <data name="prifile.myquestions" xml:space="preserve">
     <value>My questions</value>
   </data>
+  <data name="profile.contact.admin" xml:space="preserve">
+    <value>Contact administration</value>
+  </data>
   <data name="profile.edit.email" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Register</value>
   </data>
   <data name="registration.univercity" xml:space="preserve">
-    <value>Univercity</value>
+    <value>University</value>
   </data>
   <data name="user.birthdate" xml:space="preserve">
     <value>Birth date</value>

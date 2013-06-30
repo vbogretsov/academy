@@ -24,6 +24,11 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             Add(question, Entities.Questions);
         }
 
+        public void Remove(int questionId)
+        {
+            Remove(questionId, Entities.Questions);
+        }
+
         public IEnumerable<Question> GetUserQuestions(int userId)
         {
             return Entities.Questions.Where(x => x.UserId == userId);

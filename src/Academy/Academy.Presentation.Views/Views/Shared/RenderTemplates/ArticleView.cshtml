@@ -10,9 +10,12 @@
     var newCommentId = String.Format("newCommentFor{0}", Model.Id);
     var commentsId = String.Format("commentsFor{0}", Model.Id);
     const string articleFileText = "Article file: ";
+    var removeArticleText = "Remove artice";
+    var remveArticleId = String.Format("removeArticle{0}", Model.Id);
+    var articleId = String.Format("articleId{0}", Model.Id);
 }
 
-<div class="text-block">
+<div class="text-block" id="@articleId">
     <div class="text-block-header">
         <h4>@Model.Title</h4>
     </div>
@@ -34,11 +37,21 @@
         <div>
             <span><b>@articleFileText</b><a href="@Model.Source">@Model.Source</a></span>
             <div class="pull-right">
+                @if (User.IsInRole("Admin"))
+                {
+                    <button class="btn btn-mini btn-danger" id="@remveArticleId">
+                        @removeArticleText
+                    </button>
+                }
                 @if (Request.IsAuthenticated)
                 {
-                    <button class="btn btn-mini btn-primary" id="@addCommentId">@addCommentText</button>
+                    <button class="btn btn-mini btn-primary" id="@addCommentId">
+                        @addCommentText
+                    </button>
                 }
-                <button class="btn btn-mini" id="@showCommentsId">@showCommentsText</button>
+                <button class="btn btn-mini" id="@showCommentsId">
+                    @showCommentsText
+                </button>
             </div>
         </div>
     </div>
@@ -54,6 +67,15 @@
 
 <script type="text/javascript">
     $(function () {
+        $('#@remveArticleId').click(function() {
+            $.ajax({
+                url: '@Url.Action("RemoveArticle", "Article", new {id = Model.Id})',
+                type: 'post',
+                success: function () {
+                    $('@articleId').remove();
+                }
+            });
+        });
         $('#@addCommentId').click(function () {
             $('#@newCommentId').slideToggle('fast');
         });

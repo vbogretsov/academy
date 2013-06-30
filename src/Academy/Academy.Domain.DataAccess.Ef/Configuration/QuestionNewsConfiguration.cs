@@ -27,7 +27,7 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             HasRequired(x => x.Question)
                 .WithMany(x => x.QuestionNewses)
                 .HasForeignKey(x => x.EntityId)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

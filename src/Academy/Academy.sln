@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Web.Services", "Aca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Interface", "Academy.Domain.Interface\Academy.Domain.Interface.csproj", "{26E5FACD-6992-4106-962E-EBF697542705}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy.Domain.Interface.Facade", "Academy.Domain.Interface.Facade\Academy.Domain.Interface.Facade.csproj", "{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +105,10 @@ Global
 		{26E5FACD-6992-4106-962E-EBF697542705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E5FACD-6992-4106-962E-EBF697542705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E5FACD-6992-4106-962E-EBF697542705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

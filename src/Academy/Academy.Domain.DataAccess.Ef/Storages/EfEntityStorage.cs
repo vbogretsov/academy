@@ -35,8 +35,15 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             T entity = entities.SingleOrDefault(x => x.Id == entityId);
             if (entity != null)
             {
-                entities.Remove(entity);
-                Commit();
+                try
+                {
+                    entities.Remove(entity);
+                    Commit();
+                }
+                catch (Exception exception)
+                {
+                    
+                }
             }
         }
 

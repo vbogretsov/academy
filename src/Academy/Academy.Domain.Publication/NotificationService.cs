@@ -67,7 +67,7 @@ namespace Academy.Domain.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<QuestionNews> GetAnswerNews(User user)
+        public IEnumerable<AnswerNews> GetAnswerNews(User user)
         {
             throw new NotImplementedException();
         }

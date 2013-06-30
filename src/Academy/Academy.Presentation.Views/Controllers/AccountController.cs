@@ -27,7 +27,7 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult Logout()
         {
-            AcademyContext.Account.Logout();
+            Service.Logout();
             return RedirectToAction("Index", "Home");
         }
 
@@ -51,15 +51,12 @@ namespace Academy.Presentation.Views.Controllers
         [AllowAnonymous]
         public JsonResult CheckUserExists([Bind(Prefix = "Registration.Email")] string email)
         {
-            return Json(!AcademyContext.Account.IsUserExists(email));
+            return Json(!Service.IsUserExists(email));
         }
 
         private bool Login(LoginViewModel login)
         {
-            return AcademyContext.Account.Login(
-                login.Email,
-                login.Password,
-                login.RememberMe);
+            return Service.Login(login.Email, login.Password, login.RememberMe);
         }
 
         private ActionResult RegisterNewUser(RegistrationViewModel registration)
@@ -67,8 +64,8 @@ namespace Academy.Presentation.Views.Controllers
             var user = UserMapper.Map(registration);
             try
             {
-                AcademyContext.Account.Register(user, registration.Password);
-                AcademyContext.Account.Login(user.Email, registration.Password);
+                Service.Register(user, registration.Password);
+                Service.Login(user.Email, registration.Password);
                 return RedirectToAction("Index", "Profile");
             }
             catch (SecurityCreateUserException exception)

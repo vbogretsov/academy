@@ -4,7 +4,14 @@
 {
     foreach (var comment in Model.Comments)
     {
-        Html.RenderPartial("RenderTemplates/CommentView", comment);
+        try
+        {
+            Html.RenderPartial("RenderTemplates/CommentView", comment);
+        }
+        catch (Exception exception)
+        {
+            @exception;
+        }
     }
 }
 

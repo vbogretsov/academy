@@ -41,6 +41,10 @@
             LoadView(dataId, "Question/GetUserAnswers");
         });
 
+        this.get('#/ContactAdmin', function() {
+            LoadView(dataId, 'Profile/ContactAdministration');
+        });
+
         // init top menu
         this.get('#/Edit', function () {
             LoadView(bodyId, "Profile/Edit"); //todo: load to other id

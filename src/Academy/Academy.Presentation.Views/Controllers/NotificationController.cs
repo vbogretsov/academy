@@ -15,47 +15,38 @@ namespace Academy.Presentation.Views.Controllers
         [HttpPost]
         public ActionResult Subscribe(IEnumerable<DisciplineViewModel> disciplines)
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            user.Disciplines.Clear();
-            AcademyContext.NotificationService.Subscribe(
-                user.Id,
-                disciplines.Select(x => x.Id));
-            return GetDisciplinesEditor(user);
+            Service.Subscribe(CurrentUser.Id, disciplines.Select(x => x.Id));
+            return GetDisciplinesEditor(CurrentUser);
         }
 
         [HttpGet]
         public ActionResult GetArticleNews()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(user));
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpGet]
         public ActionResult GetQuestionNews()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(user));
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpGet]
         public ActionResult GetCommentNews()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(user));
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpGet]
         public ActionResult GetAnswerNews()
         {
-            var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(user));
+            return View(UserMapper.Map(CurrentUser));
         }
 
         [HttpGet]
         private ActionResult GetDisciplinesEditor(User user)
         {
-            var all = AcademyContext.NotificationService.GetDisciplines();
-            ViewBag.Disciplines = all.Select(DisciplineMapper.Map);
+            ViewBag.Disciplines = GetDisciplines();
             return View(
                 "EditorTemplates/EditDisciplinesEditor",
                 UserMapper.Map(user));

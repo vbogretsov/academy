@@ -18,9 +18,6 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
             Property(x => x.Text)
                 .IsRequired()
                 .HasColumnName("Text");
-            //Property(x => x.Rating) // not supported in .net 4.0
-            //    .IsRequired()
-            //    .HasColumnName("Rating");
             Property(x => x.PostedDate)
                 .IsRequired()
                 .HasColumnName("PostedDate");
@@ -29,11 +26,8 @@ namespace Academy.Domain.DataAccess.Ef.Configuration
                 .HasForeignKey(x => x.UserId);
             HasRequired(x => x.Article)
                 .WithMany(x => x.Comments)
-                .HasForeignKey(x => x.ArticleId);
-            //.Map(x => x.MapKey("UserId"));
-            //HasRequired(x => x.Article)
-            //    .WithMany(x => x.Comments)
-            //    .Map(x => x.MapKey("ArticleId"));
+                .HasForeignKey(x => x.ArticleId)
+                .WillCascadeOnDelete(true);
         }
     }
 }

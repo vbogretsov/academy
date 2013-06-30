@@ -6,13 +6,6 @@ namespace Academy.Domain.Objects
 {
     public class User : Entity
     {
-        //[Key]
-        //public int UserId
-        //{
-        //    get;
-        //    set;
-        //}
-
         [Required(ErrorMessage = "Email is requaried")]
         [StringLength(128)]
         [RegularExpression(@"[a-zA-Z0-9]*@[a-z]*\.(com|ru)", ErrorMessage = "Email is invalid")]

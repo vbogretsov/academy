@@ -257,6 +257,7 @@
     <Content Include="Views\Shared\RenderTemplates\NoteView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\NotesView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\UserNotesView.cshtml" />
+    <Content Include="Views\Profile\ContactAdministration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +284,10 @@
     <ProjectReference Include="..\Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj">
       <Project>{fa81ca6f-6dd2-438e-a6a8-31138567e5f2}</Project>
       <Name>Academy.Domain.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Interface.Facade\Academy.Domain.Interface.Facade.csproj">
+      <Project>{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}</Project>
+      <Name>Academy.Domain.Interface.Facade</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Domain.Interface\Academy.Domain.Interface.csproj">
       <Project>{26E5FACD-6992-4106-962E-EBF697542705}</Project>

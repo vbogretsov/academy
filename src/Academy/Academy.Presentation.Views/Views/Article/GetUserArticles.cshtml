@@ -24,7 +24,9 @@
     </div>
 </div>
 <div id="userArticles">
-    @{Html.RenderPartial("RenderTemplates/ArticlesView", Model);}
+    @{
+        Html.RenderPartial("RenderTemplates/ArticlesView", Model);
+    }
 </div>
 <script type="text/javascript">
     CollapseDisciplinesTree();

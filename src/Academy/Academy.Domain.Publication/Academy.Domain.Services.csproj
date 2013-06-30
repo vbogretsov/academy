@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcademyService.cs" />
     <Compile Include="AccountService.cs" />
+    <Compile Include="AdministrationService.cs" />
     <Compile Include="FileService.cs" />
     <Compile Include="NoteService.cs" />
     <Compile Include="NotificationService.cs" />

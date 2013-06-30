@@ -30,7 +30,10 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.Authors = article.Authors.Select(AuthorMapper.Map).ToList();
             viewModel.Disciplines = article.Disciplines.Select(DisciplineMapper.Map).ToList();
             // TODO: add paging for comments
-            viewModel.Comments = article.Comments.Select(CommentMapper.Map).ToList();
+            if (article.Comments != null)
+            {
+                viewModel.Comments = article.Comments.Select(CommentMapper.Map).ToList();
+            }
             return viewModel;
         }
     }

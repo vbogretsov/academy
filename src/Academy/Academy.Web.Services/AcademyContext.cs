@@ -40,6 +40,8 @@ namespace Academy.Web.Services
 
         private IFileService fileService;
 
+        private IAdministrationService administrationService;
+
         public AcademyContext()
         {
             context = new EfDataContext();
@@ -129,6 +131,18 @@ namespace Academy.Web.Services
                     fileService = new FileService();
                 }
                 return fileService;
+            }
+        }
+
+        public IAdministrationService AdministrationService
+        {
+            get
+            {
+                if (administrationService == null)
+                {
+                    administrationService = new AdministrationService(context);
+                }
+                return administrationService;
             }
         }
 
