@@ -1,0 +1,7 @@
+email:igorko@gmail.com
+first_name:Andrei
+last_name:Igorkov
+university:BGU
+date:03.03.1973
+password:110011
+disciplines:differential.topology,topology,math

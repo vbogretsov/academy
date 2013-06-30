@@ -13,7 +13,12 @@ namespace Academy.Domain.DataAccess
 
         void Remove(int commentId);
 
-        //TODO: add paging
-        IEnumerable<Comment> GetUserComments(int userId);
+        //IEnumerable<Comment> GetUserComments(int userId, int page, int size);
+
+        //int GetUserCommentsCount(int userId);
+
+        //IEnumerable<Comment> GetArticleComments(int articleId, int page, int size);
+
+        //int GetArticleCommentsCount(int articleId);
     }
 }

@@ -1,0 +1,7 @@
+email:gorka@tut.by
+first_name:Tatjana
+last_name:Gorkovich
+university:BGUIR
+date:18.11.1986
+password:110011
+disciplines:human.physiology.and.zoophysics,physiology,biology

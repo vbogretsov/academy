@@ -1,0 +1,15 @@
+title:Molecular genetics
+description:VECTORS FOR THE MOLECULAR CLONING 
+source:Молекулярная генетика_26.pdf
+disciplines:molecular.genetics,genetics,biology
+users:lilo@yahoo.com
+comments
+text:How about consider  and  study  vectors  of  molecular  cloning, and  functions, 
+properties ?
+author:likoret@yahoo.com
+text:Nice work. Thx
+author:sochetto@yahoo.com
+text:You believe DNA, a long chain polymer of deoxyribonucleotides, constitutes the 
+genetic material of  most  known organisms and organelles, and usually is in  the 
+form of a double helix?
+author:solilo@yahoo.com

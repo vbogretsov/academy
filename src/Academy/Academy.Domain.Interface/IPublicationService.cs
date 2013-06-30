@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.Interface
@@ -15,10 +13,14 @@ namespace Academy.Domain.Interface
 
         Article GetArticle(int articleId);
 
-        //TODO: add paging
-        IEnumerable<Article> GetArticles(User user);
+        IPageData<Article> GetUserArticles(int userId, int page, int size);
 
-        //TODO: add paging
-        IEnumerable<Comment> GetComments(User user);
+        //IEnumerable<Comment> GetUserComments(int userId, int page, int size);
+
+        //int GetUserCommentsCount(int userId);
+
+        //IEnumerable<Comment> GetArticleComments(int articleId, int page, int size);
+
+        //int GetArticleCommentsCount(int articleId);
     }
 }

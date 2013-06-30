@@ -1,0 +1,7 @@
+email:lilo@yahoo.com
+first_name:Agata
+last_name:Scheremetjewa
+university:BGUIR
+date:08.12.1971
+password:110011
+disciplines:molecular.genetics,genetics,biology

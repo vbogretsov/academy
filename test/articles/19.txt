@@ -1,0 +1,8 @@
+title:Философская антропология
+description:Основные положения философской антропологии М. Шелера
+source:Философская антропология_19.pdf
+disciplines:philosophical.anthropology,anthropology,biology
+users:dll@tut.by
+comments
+text:ох ну Вы как-то удивительно мыслите. Философия - это Вам не беллетристика, однако.
+author:sem13@tut.by

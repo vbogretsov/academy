@@ -1,0 +1,8 @@
+title:Immunology
+description:A comparison of Implant-Supported Overdentures
+source:Immunology_25.pdf
+disciplines:general.immunology,immunology,biology
+users:solilo@yahoo.com
+comments
+text:how many patients have you got?
+author:lilo@yahoo.com

@@ -1,0 +1,11 @@
+title:Генетика
+description:Активность клетки и понятие генетики
+source:Генетика_28.pdf
+disciplines:molecular.genetics,genetics,biology
+users:sinny@yahoo.com
+comments
+text:Это фантастически просто. Спасибо Вам
+author:dorrn@yahoo.com
+text:Ну, ссновой  регуляции  деятельности  клетки  являются  процессы 
+информации, т. е. процессы, в которых связь между отдельными звеньями, не поспорите. 
+author:stopka@yahoo.com

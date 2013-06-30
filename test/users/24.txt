@@ -1,0 +1,7 @@
+email:rosochka@yahoo.com
+first_name:Rosa
+last_name:Shibut
+university:BGU
+date:14.10.1961
+password:110011
+disciplines:endocrinology, biology

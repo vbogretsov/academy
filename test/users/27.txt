@@ -1,0 +1,7 @@
+email:perem@yahoo.com
+first_name:Petr
+last_name:Korostyljov
+university:BGU
+date:08.12.1981
+password:110011
+disciplines:molecular.genetics,genetics,biology

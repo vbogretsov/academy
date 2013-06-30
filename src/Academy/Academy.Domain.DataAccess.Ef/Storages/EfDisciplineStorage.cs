@@ -27,7 +27,6 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public Discipline Get(int id)
         {
-            //return Entities.Disciplines.SingleOrDefault(x => x.Id == id);
             return Get(id, Entities.Disciplines);
         }
 
@@ -36,11 +35,6 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return Entities.Disciplines.SingleOrDefault(
                 x => x.Name.Equals(name, StringComparison.CurrentCultureIgnoreCase));
         }
-
-        //public IEnumerable<Discipline> Resolve(IEnumerable<int> disciplineIds)
-        //{
-        //    return disciplineIds.Select(Get).Where(x => x != null);
-        //}
 
         private IEnumerable<Discipline> GetAllChildren(IEnumerable<Discipline> roots)
         {

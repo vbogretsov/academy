@@ -1,0 +1,7 @@
+email:sem13@tut.by
+first_name:Olga
+last_name:Putina
+university:BNTU
+date:05.04.1979
+password:110011
+disciplines:physical.anthropology,anthropology,biology

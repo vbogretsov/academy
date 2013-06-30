@@ -170,17 +170,30 @@ namespace Academy.Web.Services
             return PublicationService.GetArticle(articleId);
         }
 
-        // TODO: use userId
-        public IEnumerable<Comment> GetComments(User user)
+        public IPageData<Article> GetUserArticles(int userId, int page, int size)
         {
-            return PublicationService.GetComments(user);
+            return PublicationService.GetUserArticles(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<Article> GetArticles(User user)
-        {
-            return PublicationService.GetArticles(user);
-        }
+        //public IEnumerable<Comment> GetUserComments(int userId, int page, int size)
+        //{
+        //    return publicationService.GetUserComments(userId, page, size);
+        //}
+
+        //public int GetUserCommentsCount(int userId)
+        //{
+        //    return publicationService.GetUserCommentsCount(userId);
+        //}
+
+        //public IEnumerable<Comment> GetArticleComments(int articleId, int page, int size)
+        //{
+        //    return publicationService.GetArticleComments(articleId, page, size);
+        //}
+
+        //public int GetArticleCommentsCount(int articleId)
+        //{
+        //    return publicationService.GetArticleCommentsCount(articleId);
+        //}
 
         public SearchResult<Article> FindArticles(ArticleSearchCriteria criteria)
         {

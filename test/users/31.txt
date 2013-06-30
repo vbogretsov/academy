@@ -1,0 +1,7 @@
+email:stopka@yahoo.com
+first_name:Stepan
+last_name:Domovich
+university:BGU
+date:12.04.1968
+password:110011
+disciplines:combination.group.theory,group.theory,algebra,math

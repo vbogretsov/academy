@@ -1,0 +1,7 @@
+email:sascha@gmail.com
+first_name:Alexander
+last_name:Petrov
+university:BNTU
+date:18.05.1968
+password:110011
+disciplines:endocrinology,biology

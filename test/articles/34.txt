@@ -1,0 +1,8 @@
+title:Дифференциальная геометрия
+description:Дифференциальная геометрия в понятии поверхности
+source:Дифференциальная геометрия_34.pdf
+disciplines:differential.geometry,geometry,math
+users:moskwa@yahoo.com
+comments
+text:Мне понравилось. Однако, я думаю автору необходимо углубиться
+author:angel@gmail.com

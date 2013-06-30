@@ -1,0 +1,10 @@
+title:Конечные поля
+description:Алгебраические структуры
+source:Конечные поля_33.pdf
+disciplines:finite.fields,algebra,math
+users:mordwa@yahoo.com
+comments
+text:А все-таки рассмотрение не приближенное. Можно было бы подробнее. Уделите внимание программной реализации
+author:gorod@yahoo.com
+text:вы чрезмерно придираетесь! Великолепная работа!
+author:igorko@gmail.com

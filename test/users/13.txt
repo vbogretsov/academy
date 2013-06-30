@@ -1,0 +1,7 @@
+email:kokorocho@tut.by
+first_name:Dmitrij
+last_name:Smirnov
+university:BNTU
+date:09.09.1974
+password:110011
+disciplines:mushroom.physiology,physiology,biology

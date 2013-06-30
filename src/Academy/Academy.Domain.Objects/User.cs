@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Academy.Validation;
 
 namespace Academy.Domain.Objects
 {
@@ -8,7 +9,7 @@ namespace Academy.Domain.Objects
     {
         [Required(ErrorMessage = "Email is requaried")]
         [StringLength(128)]
-        [RegularExpression(@"[a-zA-Z0-9]*@[a-z]*\.(com|ru)", ErrorMessage = "Email is invalid")]
+        [RegularExpression(Smtp.SmtpAddressPattern, ErrorMessage = "Email is invalid")]
         public string Email
         {
             get;

@@ -1,0 +1,7 @@
+email:d78sl@tut.by
+first_name:Konstantin
+last_name:Parisev
+university:BNTU
+date:10.04.1985
+password:110011
+disciplines:religious.anthropology,anthropology,biology

@@ -1,0 +1,7 @@
+email:angel16@gmail.com
+first_name:Olga
+last_name:Agerko
+university:BNTU
+date:24.04.1988
+password:110011
+disciplines:general.topology,topology,math

@@ -1,0 +1,8 @@
+title:Теория конечных групп
+description:Теория конечных групп алгебры и их применение
+source:Теория конечных групп_32.pdf
+disciplines:finite.fields.theory,group.theory,algebra,math
+users:irtep@yahoo.com
+comments
+text:Хотелось бы подробнее о спектральной теореме
+author:moskwa@yahoo.com

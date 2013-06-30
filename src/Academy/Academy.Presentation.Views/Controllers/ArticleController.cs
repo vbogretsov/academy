@@ -18,7 +18,17 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult GetUserArticles()
         {
             ViewBag.Disciplines = GetDisciplines();
-            return View("GetUserArticles", UserMapper.Map(Service.GetCurrentUser()));
+            var viewModel = UserMapper.Map(CurrentUser);
+            try
+            {
+                var articles = Service.GetUserArticles(viewModel.Id, 1, PageSize);
+                viewModel.ArticlesPage = PageDataMapper.Map(articles, ArticleMapper.Map);
+            }
+            catch (Exception exception)
+            {
+                
+            }
+            return View("GetUserArticles", viewModel);
         }
 
         [HttpGet]

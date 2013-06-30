@@ -1,0 +1,8 @@
+title:Физиология человека и животных
+description:В графических схемах, контролирующие задания прилагаются
+source:Физиология человека и животных_15.pdf
+disciplines:human.physiology.and.zoophysics,physiology,biology
+users:gorka@tut.by
+comments
+text:А параметры возбудимости?
+author:sobak@tut.by

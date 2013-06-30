@@ -53,7 +53,10 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         public void UpdateDisciplines(int userId, IEnumerable<int> disciplineIds)
         {
             var user = Entities.Users.Find(userId);
-            user.Disciplines.Clear();
+            if (user.Disciplines != null)
+            {
+                user.Disciplines.Clear();
+            }
             user.Disciplines = new List<Discipline>();
             foreach (var disciplineId in disciplineIds)
             {

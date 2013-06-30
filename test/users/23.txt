@@ -1,0 +1,7 @@
+email:sochetto@yahoo.com
+first_name:Ruslan
+last_name:Kacapov
+university:BGUIR
+date:23.09.1951
+password:110011
+disciplines:human.physiology.and.zoophysics,physiology,biology

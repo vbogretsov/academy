@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Academy.Domain.Objects;
@@ -56,6 +57,16 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             where T : Entity
         {
             return entities.SingleOrDefault(x => x.Id == entityId);
+        }
+
+        protected IPageData<T> GetPage<T>(
+            IEnumerable<T> items,
+            int page,
+            int size,
+            int totalCount)
+        {
+            var data = items.Skip((page - 1)*size).Take(size).ToList();
+            return new PageData<T>(data, page, totalCount / size + 1);
         }
 
         protected AcademyEntities Entities

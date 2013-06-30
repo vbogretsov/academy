@@ -1,0 +1,8 @@
+title:Генная инженерия
+description:Генетическая инженерия по Лещинской
+source:Генная инженерия_8.pdf
+disciplines:genetic.engineering,genetics,biology
+users:loloka@mail.ru
+comments
+text:Однако, после встречи с Лещинской у меня сложилось иное впечатление о ее теории. Есть некоторые замечания. Напишу отдельно.
+author:golka@mail.ru

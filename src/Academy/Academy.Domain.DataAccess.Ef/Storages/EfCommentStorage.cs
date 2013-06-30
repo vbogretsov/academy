@@ -14,11 +14,6 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public void Add(Comment comment)
         {
-            //Entities.Comments.Add(comment);
-            //Entities.SaveChanges();
-
-            //comment.Article = articleStorage.Get(comment.ArticleId);
-
             Add(comment, Entities.Comments);
         }
 
@@ -27,14 +22,40 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             Remove(commentId, Entities.Comments);
         }
 
-        public IEnumerable<Comment> GetUserComments(int userId)
+        public IPageData<Comment> GetUserComments(int userId, int page, int size)
         {
-            return Entities.Comments.Where(x => x.UserId == userId);
+            var query = from comment in Entities.Comments
+                where
+                    comment.UserId == userId
+                select comment;
+            return GetPage(query, page, size, GetUserCommentsCount(userId));
         }
 
-        //public void Remove(Comment comment)
-        //{
-        //    Entities.Comments.Remove(comment);
-        //}
+        public int GetUserCommentsCount(int userId)
+        {
+            var query = from comment in Entities.Comments
+                where
+                    comment.UserId == userId
+                select comment;
+            return query.Count();
+        }
+
+        public IPageData<Comment> GetArticleComments(int articleId, int page, int size)
+        {
+            var query = from comment in Entities.Comments
+                where
+                    comment.ArticleId == articleId
+                select comment;
+            return GetPage(query, page, size, GetArticleCommentsCount(articleId));
+        }
+
+        public int GetArticleCommentsCount(int articleId)
+        {
+            var query = from comment in Entities.Comments
+                where
+                    comment.ArticleId == articleId
+                select comment;
+            return query.Count();
+        }
     }
 }

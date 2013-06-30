@@ -1,0 +1,7 @@
+email:alva@gmail.com
+first_name:Olga
+last_name:Alvarado
+university:BGUIR
+date:16.08.1959
+password:110011
+disciplines:mechanics,physics

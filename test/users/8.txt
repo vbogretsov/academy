@@ -1,0 +1,7 @@
+email:loloka@mail.ru
+first_name:Potap
+last_name:Vasilenko
+university:BGU
+date:01.01.1979
+password:110011
+disciplines:genetic.engineering,genetics,biology

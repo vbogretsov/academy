@@ -1,0 +1,7 @@
+email:slava@gmail.com
+first_name:Vjacheslav
+last_name:Slavskij
+university:BGU
+date:18.10.1966
+password:110011
+disciplines:thermodynamics,physics

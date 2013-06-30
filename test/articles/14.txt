@@ -1,0 +1,12 @@
+title:Физиология растений
+description:Своместно с профессирами ольд, Гаевский, Голованова
+source:Физиология растений_14.pdf
+disciplines:phytophysiology,physiology,biology
+users:sobak@tut.by
+comments
+text:Гольд постарел заметно. Что же это? Никак не современно!
+author:alenka@tut.by
+text:Великие люди! Великие публикации! Прочитать безусловно всем!
+author:lopka@mail.ru
+text:Достаточно ли физиологично?
+author:gorka@tut.by

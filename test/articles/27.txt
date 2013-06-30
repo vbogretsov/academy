@@ -1,0 +1,10 @@
+title:Cells
+description:INVESTIGATING THE EFFECTS OF VITREOUS HUMOUR 
+(CRUDE EXTRACT) ON GROWTH AND DIFFERENTIATION OF RAT MESENCHYMAL STEM CELLS (rMSCs) AND HUMAN NTERA2 CELLS
+source:Cells_27.pdf
+disciplines:molecular.genetics,genetics,biology
+users:perem@yahoo.com
+comments
+text:Extracellular matrix is very well known for its effects on cellular behaviours including proliferation, migration and differentiation.
+Vitreous humour (VH) is a gelatinous, colorless and shapeless mix of different substances containing a mass of extracellular matrix, especially hyaluronic acid and collagen fibrils, this here needed to be rethink.
+author:doma@yahoo.com

@@ -1,0 +1,7 @@
+email:elena@gmail.com
+first_name:Elena
+last_name:Tomashuk
+university:BGUIR
+date:09.11.1977
+password:110011
+disciplines:biomechanics,biophysics,biology

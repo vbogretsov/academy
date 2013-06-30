@@ -1,0 +1,7 @@
+email:sinny@yahoo.com
+first_name:Alisa
+last_name:Semchenko
+university:BGU
+date:09.01.1972
+password:110011
+disciplines:molecular.genetics,genetics,biology

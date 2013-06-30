@@ -1,0 +1,7 @@
+email:vetka@gmail.com
+first_name:Swetlana
+last_name:Vasiljewa
+university:BNTU
+date:15.03.1982
+password:110011
+disciplines:economical.phytology,phytology,biology

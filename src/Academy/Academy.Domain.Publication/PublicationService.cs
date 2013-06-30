@@ -40,14 +40,29 @@ namespace Academy.Domain.Services
             return articleStorage.Get(articleId);
         }
 
-        public IEnumerable<Article> GetArticles(User user)
+        public IPageData<Article> GetUserArticles(int userId, int page, int size)
         {
-            throw new NotImplementedException();
+            return articleStorage.GetUserArticles(userId, page, size);
         }
 
-        public IEnumerable<Comment> GetComments(User user)
-        {
-            throw new NotImplementedException();
-        }
+        //public IEnumerable<Comment> GetUserComments(int userId, int page, int size)
+        //{
+        //    return commentStorage.GetUserComments(userId, page, size);
+        //}
+
+        //public int GetUserCommentsCount(int userId)
+        //{
+        //    return commentStorage.GetUserCommentsCount(userId);
+        //}
+
+        //public IEnumerable<Comment> GetArticleComments(int articleId, int page, int size)
+        //{
+        //    return commentStorage.GetArticleComments(articleId, page, size);
+        //}
+
+        //public int GetArticleCommentsCount(int articleId)
+        //{
+        //    return commentStorage.GetArticleCommentsCount(articleId);
+        //}
     }
 }

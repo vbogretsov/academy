@@ -1,0 +1,8 @@
+title:Анатомия растений
+description:Краткий курс вопросов и ответов студентов
+source:Анатомия растений_21.pdf
+disciplines:phytotomy,anatomy,biology
+users:laptka@tut.by
+comments
+text:Да, видно автор долго собирал. Прекрасный материал!
+author:dorimori@tut.by

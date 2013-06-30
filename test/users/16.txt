@@ -1,0 +1,7 @@
+email:alenka@tut.by
+first_name:Alena
+last_name:Moshka
+university:BGU
+date:20.12.1962
+password:110011
+disciplines:social.and.cultural.anthropology,anthropology,biology

@@ -1,0 +1,8 @@
+title:Грибы на примере пчеловодства
+description:Физиология грибов, плчеловодство
+source:Физиология грибов_13.pdf
+disciplines:mushroom.physiology,physiology,biology
+users:kokorocho@tut.by
+comments
+text:Не знаю, мне не хватило
+author:gorka@tut.by

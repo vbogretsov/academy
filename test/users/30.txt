@@ -1,0 +1,7 @@
+email:dorrn@yahoo.com
+first_name:Ivan
+last_name:Dorn
+university:BNTU
+date:11.03.1962
+password:110011
+disciplines:genetic.engineering,genetics,biology

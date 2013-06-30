@@ -58,7 +58,12 @@
     <Compile Include="QuestionNews.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Academy.Validation\Academy.Validation.csproj">
+      <Project>{E7053069-1E36-4BD5-A9B8-CC070AA9E511}</Project>
+      <Name>Academy.Validation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

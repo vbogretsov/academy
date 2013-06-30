@@ -13,7 +13,7 @@ namespace Academy.Domain.DataAccess
 
         void Remove(int articleId);
 
-        IEnumerable<Article> GetUserArticles(int userId);
+        IPageData<Article> GetUserArticles(int userId, int page, int size);
 
         IEnumerable<Article> FindArticles(ArticleSearchCriteria criteria);
     }

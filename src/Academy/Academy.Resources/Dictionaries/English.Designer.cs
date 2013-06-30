@@ -313,7 +313,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find articles.
+        ///   Looks up a localized string similar to Articles Search.
         /// </summary>
         public static string internal_menu_articles {
             get {
@@ -340,7 +340,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Questions and answers.
+        ///   Looks up a localized string similar to Questions &amp; Answers.
         /// </summary>
         public static string internal_menu_questions {
             get {
@@ -502,7 +502,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Find articles.
+        ///   Looks up a localized string similar to Articles Search.
         /// </summary>
         public static string mainmenu_articles {
             get {
@@ -520,7 +520,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Questions and answers.
+        ///   Looks up a localized string similar to Questions &amp; Answers.
         /// </summary>
         public static string mainmenu_questions {
             get {

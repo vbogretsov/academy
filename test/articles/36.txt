@@ -1,0 +1,12 @@
+title:Дифференциальная топология
+description:Точечные оценки параметров статистических распределений
+source:Дифференциальная топология_36.pdf
+disciplines:differential.topology,topology,math
+users:igorko@gmail.com
+comments
+text:Постановка задачи, на мой взгляд, неверна
+author:gorod@yahoo.com
+text:Вы удивительный человек в жизни! И Ваши работы не менее захыватывающие! 
+author:moskwa@yahoo.com
+text:Как-то не хватило мне математической статистики
+author:angel@gmail.com

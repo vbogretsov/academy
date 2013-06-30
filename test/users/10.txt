@@ -1,0 +1,7 @@
+email:kulka@mail.ru
+first_name:Andrej
+last_name:Romanov
+university:BGUIR
+date:19.05.1971
+password:110011
+disciplines:molecular.genetics,genetics,biology

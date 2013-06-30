@@ -1,0 +1,7 @@
+email:doma@yahoo.com
+first_name:Vladimir
+last_name:Butor
+university:BNTU
+date:10.02.1982
+password:110011
+disciplines:genetic.engineering,genetics,biology

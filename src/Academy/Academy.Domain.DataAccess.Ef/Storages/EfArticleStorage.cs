@@ -29,9 +29,13 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             Remove(articleId, Entities.Articles);
         }
 
-        public IEnumerable<Article> GetUserArticles(int userId)
+        public IPageData<Article> GetUserArticles(int userId, int page, int size)
         {
-            return Entities.Articles.Where(x => x.Authors.Any(u => u.Id == userId));
+            var query = from article in Entities.Articles
+                where
+                    article.Authors.Any(x => x.Id == userId)
+                select article;
+            return GetPage(query, page, size, GetUserArticlesCount(userId));
         }
 
         public IEnumerable<Article> FindArticles(ArticleSearchCriteria criteria)
@@ -46,6 +50,14 @@ namespace Academy.Domain.DataAccess.Ef.Storages
                         a.LastName.Contains(criteria.Author))) &&
                     article.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
                 select article;
+        }
+
+        private int GetUserArticlesCount(int userId)
+        {
+            return (from article in Entities.Articles
+                    where
+                        article.Authors.Any(x => x.Id == userId)
+                    select article).Count();
         }
 
         private void Resolve(Article article)

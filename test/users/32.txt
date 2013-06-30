@@ -1,0 +1,7 @@
+email:irtep@yahoo.com
+first_name:Iraklij
+last_name:Lashkevich
+university:BGU
+date:01.09.1972
+password:110011
+disciplines:finite.fields.theory,group.theory,algebra,math

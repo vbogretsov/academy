@@ -1,0 +1,12 @@
+title:Общая топология
+description:Топологическая определяемость верхних полурешеток
+source:Общая топология_38.pdf
+disciplines:general.topology,topology,math
+users:angel16@gmail.com
+comments
+text: Дистрибутивная решётка является одним из основных алгебраических объектов
+author:slava@gmail.com
+text:И как это вы так определили?
+author:alva@gmail.com
+text:Вечтомов из любой работы конфетку сделает!
+author:angel@gmail.com

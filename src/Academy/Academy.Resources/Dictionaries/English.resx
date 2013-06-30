@@ -202,7 +202,7 @@
     <value>ACADEMY</value>
   </data>
   <data name="internal.menu.articles" xml:space="preserve">
-    <value>Find articles</value>
+    <value>Articles Search</value>
   </data>
   <data name="internal.menu.exit" xml:space="preserve">
     <value>Exit</value>
@@ -211,7 +211,7 @@
     <value>Profile settings</value>
   </data>
   <data name="internal.menu.questions" xml:space="preserve">
-    <value>Questions and answers</value>
+    <value>Questions &amp; Answers</value>
   </data>
   <data name="internal.title" xml:space="preserve">
     <value>ACADEMY</value>
@@ -265,13 +265,13 @@
     <value>About</value>
   </data>
   <data name="mainmenu.articles" xml:space="preserve">
-    <value>Find articles</value>
+    <value>Articles Search</value>
   </data>
   <data name="mainmenu.contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
   <data name="mainmenu.questions" xml:space="preserve">
-    <value>Questions and answers</value>
+    <value>Questions &amp; Answers</value>
   </data>
   <data name="note.text" xml:space="preserve">
     <value>Note text</value>

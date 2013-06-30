@@ -1,0 +1,10 @@
+title:Геномика и геносистематика
+description:Использована теория Антонова
+source:Геномика_9.pdf
+disciplines:genomics,genetics,biology
+users:kosmo@mail.ru
+comments
+text:Правда ли, что работа выполнена при поддержке РФФИ Грант 96-15-97970?
+author:loloka@mail.ru
+text:Спасибо
+author:kulka@mail.ru

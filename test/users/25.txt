@@ -1,0 +1,7 @@
+email:solilo@yahoo.com
+first_name:Swetlana
+last_name:Spajka
+university:BGUIR
+date:04.11.1971
+password:110011
+disciplines:general.immunology,immunology,biology

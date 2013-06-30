@@ -1,0 +1,10 @@
+title:Социальная и культурная антропология
+description:Фольклористика и мифология
+source:Социальная и культурная антропология_16.pdf
+disciplines:social.and.cultural.anthropology,anthropology,biology
+users:alenka@tut.by
+comments
+text:Вы способны демонстрировать знания современной научной парадигмы в области 
+филологии, методологических принципов и методических приемов фольклористического 
+исследования
+author:lopka@mail.ru

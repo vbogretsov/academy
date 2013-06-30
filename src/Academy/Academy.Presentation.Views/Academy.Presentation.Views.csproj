@@ -258,6 +258,7 @@
     <Content Include="Views\Shared\RenderTemplates\NotesView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\UserNotesView.cshtml" />
     <Content Include="Views\Profile\ContactAdministration.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\ArticlesPageView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,6 +321,10 @@
     <ProjectReference Include="..\Academy.Security\Academy.Security.csproj">
       <Project>{3fdc5299-2d55-421f-ab6d-4494a279acc1}</Project>
       <Name>Academy.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Test.DataGenerating\Academy.Test.DataGenerating.csproj">
+      <Project>{26104fe9-7b7e-4e46-b372-4b24ffea5f01}</Project>
+      <Name>Academy.Test.DataGenerating</Name>
     </ProjectReference>
     <ProjectReference Include="..\Academy.Utils.Html\Academy.Utils.Html.csproj">
       <Project>{40A99FE3-19E2-4AFE-BAB2-52ABF6CC9763}</Project>

@@ -1,0 +1,10 @@
+title:Анатомия и физиология собаки
+description:Анатомия и физиология собаки, как яркого представителя животных
+source:Анатомия животных_22.pdf
+disciplines:zootomy,anatomy,biology
+users:likoret@yahoo.com
+comments
+text:А систему органов следовало бы поделить
+author:rosochka@yahoo.com
+text:Спорно
+author:solilo@yahoo.com

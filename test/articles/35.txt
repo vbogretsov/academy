@@ -1,0 +1,10 @@
+title:Аналитическая геометрия
+description:Аналитическая геометрия в решении экономических задач
+source:Аналитеческая геометрия_35.pdf
+disciplines:analytic.geometry,geometry,math
+users:gorod@yahoo.com
+comments
+text:Модель Леонтьева прекрасна!
+author:mordwa@yahoo.com
+text:Связь  между  отраслями,  как  правило,  отражается  в  таблицах 
+author:igorko@gmail.com

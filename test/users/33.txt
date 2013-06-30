@@ -1,0 +1,7 @@
+email:mordwa@yahoo.com
+first_name:Evgenij
+last_name:Mordwa
+university:BGUIR
+date:13.10.1988
+password:110011
+disciplines:finite.fields,algebra,math

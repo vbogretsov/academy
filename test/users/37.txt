@@ -1,0 +1,7 @@
+email:angel@gmail.com
+first_name:Angelina
+last_name:Astroshickaja
+university:BGUIR
+date:04.04.1978
+password:110011
+disciplines:�ombinatorial.topology,topology,math

@@ -1,0 +1,7 @@
+email:dorimori@tut.by
+first_name:Zhanna
+last_name:Sycheva
+university:BGU
+date:20.06.1979
+password:110011
+disciplines:anthropotomy,anatomy,biology

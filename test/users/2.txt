@@ -1,0 +1,7 @@
+email:igor@gmail.com
+first_name:Igor
+last_name:Semenov
+university:BGU
+date:02.12.1955
+password:110011
+disciplines:bioenergetics,biophysics,biology

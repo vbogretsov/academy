@@ -25,7 +25,8 @@
 </div>
 <div id="userArticles">
     @{
-        Html.RenderPartial("RenderTemplates/ArticlesView", Model);
+        //Html.RenderPartial("RenderTemplates/ArticlesView", Model);
+        Html.RenderPartial("RenderTemplates/Paging/ArticlesPageView", Model.ArticlesPage);
     }
 </div>
 <script type="text/javascript">

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Academy.Domain.DataAccess;
 using Academy.Domain.DataAccess.Ef;
@@ -30,8 +31,46 @@ namespace Academy.Test
 
         private static void Start(string[] args)
         {
+            //ValidateEncoding();
             CreateDatabase();
+            //ValidateDates();
+            //UpdateTestPasswords();
+            //CreateDatabase();
             //TestChildDisciplines();
+        }
+
+        private static void ValidateEncoding()
+        {
+            const string articlesFolder = @"d:\dev\academy\test\articles\";
+            foreach (var file in Directory.GetFiles(articlesFolder))
+            {
+                Console.WriteLine(File.ReadAllText(file, Encoding.GetEncoding(1251)));
+            }
+        }
+
+        private static void ValidateDates()
+        {
+            const string usersFolder = @"d:\dev\academy\test\users\";
+            foreach (var testUser in Directory.GetFiles(usersFolder))
+            {
+                string userInfo = File.ReadAllText(testUser);
+                string date = Regex.Match(userInfo, "(?<=date:).*").Value.TrimEnd('\r');
+                DateTime dateTime;
+                if (!DateTime.TryParse(date, out dateTime))
+                {
+                    Console.WriteLine(testUser);
+                }
+            }
+        }
+
+        private static void UpdateTestPasswords()
+        {
+            const string usersFolder = @"d:\dev\academy\test\users\";
+            foreach (var testUser in Directory.GetFiles(usersFolder))
+            {
+                string userInfo = File.ReadAllText(testUser);
+                File.WriteAllText(testUser, userInfo.Replace("some password", "110011"));
+            }
         }
 
         private static void TestChildDisciplines()
@@ -70,11 +109,12 @@ namespace Academy.Test
                     academyEntities.Database.Delete();
                 }
                 academyEntities.Database.Create();
+                academyEntities.Database.ExecuteSqlCommand("ALTER DATABASE Academy COLLATE Cyrillic_General_CI_AS");
                 Console.WriteLine("Database created");
-                Console.WriteLine("GEnerating test data...");
-                TestDataGenerator generator = new TestDataGenerator(academyEntities);
-                generator.GenerateDisciplines();
-                Console.WriteLine("Generating test data compleeted");
+                //Console.WriteLine("Generating test data...");
+                //TestDataGenerator generator = new TestDataGenerator(academyEntities);
+                //generator.GenerateDisciplines();
+                //Console.WriteLine("Generating test data compleeted");
             }
         }
     }

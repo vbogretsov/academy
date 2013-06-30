@@ -1,0 +1,7 @@
+email:gorod@yahoo.com
+first_name:Innokentij
+last_name:Podarkov
+university:BGU
+date:28.02.1974
+password:110011
+disciplines:analytic.geometry,geometry,math

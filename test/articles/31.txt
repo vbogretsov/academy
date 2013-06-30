@@ -1,0 +1,10 @@
+title:Combination Group Theory
+description:TRIPLE-WAVE ENSEMBLES IN A THIN CYLINDRICAL SHELL
+source:Комбинаторная теория групп_31.pdf
+disciplines:combination.group.theory,group.theory,algebra,math
+users:stopka@yahoo.com
+comments
+text:Primitive  nonlinear!
+author:irtep@yahoo.com
+text:It`s a bit spontaneous.. didn`t believe that`s possible
+author:perem@yahoo.com

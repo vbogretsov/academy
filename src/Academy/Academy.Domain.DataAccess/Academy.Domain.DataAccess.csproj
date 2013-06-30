@@ -46,6 +46,7 @@
     <Compile Include="IDisciplineStorage.cs" />
     <Compile Include="INewsStorage.cs" />
     <Compile Include="INoteStorage.cs" />
+    <Compile Include="IPageData.cs" />
     <Compile Include="IStorageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IQuestionStorage.cs" />

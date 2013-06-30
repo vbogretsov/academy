@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26104FE9-7B7E-4E46-B372-4B24FFEA5F01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Academy.Test.DataGenerating</RootNamespace>
+    <AssemblyName>Academy.Test.DataGenerating</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDataGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Academy.Domain.DataAccess.Ef\Academy.Domain.DataAccess.Ef.csproj">
+      <Project>{189df691-6cc4-42e2-a69c-49b3ca9bbf72}</Project>
+      <Name>Academy.Domain.DataAccess.Ef</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.DataAccess\Academy.Domain.DataAccess.csproj">
+      <Project>{fa81ca6f-6dd2-438e-a6a8-31138567e5f2}</Project>
+      <Name>Academy.Domain.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Interface.Facade\Academy.Domain.Interface.Facade.csproj">
+      <Project>{03DC4D2D-4F8E-48F8-8B80-54A6A66EB10E}</Project>
+      <Name>Academy.Domain.Interface.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Interface\Academy.Domain.Interface.csproj">
+      <Project>{26E5FACD-6992-4106-962E-EBF697542705}</Project>
+      <Name>Academy.Domain.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Objects\Academy.Domain.Objects.csproj">
+      <Project>{a06f334c-5653-476a-b2f6-eb32cdc4eca7}</Project>
+      <Name>Academy.Domain.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Domain.Publication\Academy.Domain.Services.csproj">
+      <Project>{25155062-AE67-4A59-9F0D-1978642A48B0}</Project>
+      <Name>Academy.Domain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Security.Simple\Academy.Security.Simple.csproj">
+      <Project>{959BC2F3-08D6-4E43-8D0C-5E3B10490F9D}</Project>
+      <Name>Academy.Security.Simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Security\Academy.Security.csproj">
+      <Project>{3FDC5299-2D55-421F-AB6D-4494A279ACC1}</Project>
+      <Name>Academy.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Academy.Web.Services\Academy.Web.Services.csproj">
+      <Project>{ebad12b8-d16b-41f1-8bb3-90f3b5bcb9a1}</Project>
+      <Name>Academy.Web.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

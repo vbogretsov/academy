@@ -1,0 +1,7 @@
+email:sobak@tut.by
+first_name:Marina
+last_name:Sobak
+university:BGU
+date:03.06.1989
+password:110011
+disciplines:phytophysiology,physiology,biology

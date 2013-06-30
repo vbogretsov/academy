@@ -1,0 +1,7 @@
+email:socha@mail.ru
+first_name:Viktorija
+last_name:Gajduk
+university:BGU
+date:14.10.1952
+password:110011
+disciplines:embryology,biology

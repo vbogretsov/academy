@@ -1,0 +1,7 @@
+email:dll@tut.by
+first_name:Egor
+last_name:Anamiev
+university:BNTU
+date:19.05.1978
+password:110011
+disciplines:philosophical.anthropology,anthropology,biology

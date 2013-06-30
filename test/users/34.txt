@@ -1,0 +1,7 @@
+email:moskwa@yahoo.com
+first_name:Galina
+last_name:Senchenkova
+university:BGU
+date:23.11.1968
+password:110011
+disciplines:differential.geometry,geometry,math

@@ -1,0 +1,7 @@
+email:lopka@mail.ru
+first_name:Anastasija
+last_name:Sonnikova
+university:BNTU
+date:05.02.1969
+password:110011
+disciplines:microorganism.physiology,physiology,biology

@@ -1,0 +1,10 @@
+title:Биоакустика
+description:Звуковая сигнализация у животных и их взаимоотношение
+source:Биоакустика_4.pdf
+disciplines:bioacoustics,biophysics,biology
+users:alina@gmail.com
+comments
+text:Странно вы все-таки рассуждаете. Только ли о животных речь??
+author:vetka@gmail.com
+text:Спросите же инженеров-акустиков! Друг проработал более 20 лет в этой сфере! Могу дать информацию.
+author:igor@gmail.com

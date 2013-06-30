@@ -13,6 +13,8 @@ namespace Academy.Presentation.Views.Controllers
 {
     public abstract class AcademyController : Controller
     {
+        private const int DefualtPageSize = 5;
+
         private readonly AcademyContext academyContext;
 
         private readonly AcademyService service;
@@ -56,6 +58,14 @@ namespace Academy.Presentation.Views.Controllers
             get
             {
                 return service;
+            }
+        }
+
+        protected int PageSize
+        {
+            get
+            {
+                return DefualtPageSize;
             }
         }
     }

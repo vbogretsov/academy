@@ -1,0 +1,8 @@
+title:Физиология человека и животных
+description:description
+source:Физиология человека и животных_23.pdf
+disciplines:human.physiology.and.zoophysics,physiology,biology
+users:sochetto@yahoo.com
+comments
+text:И что же представляет собой условный рефлекс?
+author:rosochka@yahoo.com

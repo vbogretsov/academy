@@ -1,0 +1,7 @@
+email:samaa@mail.ru
+first_name:Oleg
+last_name:Salnik
+university:BGU
+date:08.04.1975
+password:110011
+disciplines:environmental.science,phytology,biology

@@ -1,0 +1,7 @@
+email:laptka@tut.by
+first_name:Ekaterina
+last_name:Zhar
+university:BGU
+date:21.07.1980
+password:110011
+disciplines:phytotomy,anatomy,biology

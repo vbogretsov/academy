@@ -1,0 +1,8 @@
+title:Биомеханика
+description:Понятие о центре тяжести
+source:Биомеханика_3.pdf
+disciplines:biomechanics,biophysics,biology
+users:elena@gmail.com
+comments
+text:Великолепная работа! Четко и по существу! Искренне благодарю Вас, коллега!
+author:sascha@gmail.com

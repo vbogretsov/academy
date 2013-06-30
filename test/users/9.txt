@@ -1,0 +1,7 @@
+email:kosmo@mail.ru
+first_name:Denis
+last_name:Iwanow
+university:BGUIR
+date:10.08.1985
+password:110011
+disciplines:genomics,genetics,biology

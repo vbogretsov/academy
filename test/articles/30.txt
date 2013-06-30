@@ -1,0 +1,11 @@
+title:Genes
+description:HETEROLOGOUS CROSSEXPRESSION OF OXYGENASE AND GLYCOSYLTRANSFERASE GENES IN STREPTOMYCETES, PRODUCING ANGUCYCLIC ANTIBIOTICS
+source:Genes_30.PDF
+disciplines:genetic.engineering,genetics,biology
+users:dorrn@yahoo.com
+comments
+text:The heterologous expression of oxygenase genes urdM,
+ovmOIII, lanM2, lndZ5 and glycosyltransferase gene
+urdGT2 in different angucycline producers of genus
+Streptomyces has been carried out.
+author:stopka@yahoo.com

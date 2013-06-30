@@ -1,0 +1,7 @@
+email:golka@mail.ru
+first_name:Ekaterina
+last_name:Avakjan
+university:BGUIR
+date:25.10.1963
+password:110011
+disciplines:phytosociology,phytology,biology

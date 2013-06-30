@@ -1,0 +1,7 @@
+email:likoret@yahoo.com
+first_name:Grigorij
+last_name:Bok
+university:BGUIR
+date:22.08.1981
+password:110011
+disciplines:zootomy,anatomy,biology

@@ -24,7 +24,8 @@ namespace Academy.Domain.Services
 
         public void Subscribe(int userId, IEnumerable<int> disciplineIds)
         {
-            userStorage.UpdateDisciplines(userId, disciplineIds);
+            var disciplines = disciplineStorage.Get(disciplineIds);
+            userStorage.UpdateDisciplines(userId, disciplines.Select(x => x.Id));
         }
 
         public IEnumerable<Discipline> GetDisciplines()

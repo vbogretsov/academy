@@ -1,0 +1,8 @@
+title:Механика
+description:Механика жидкостей
+source:Механика_39.pdf
+disciplines:mechanics,physics
+users:alva@gmail.com
+comments
+text:Спасибо
+author:angel@gmail.com

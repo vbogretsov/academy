@@ -1,0 +1,8 @@
+title:Сельское хозяйство и экономическая ботаника
+description:Растениеводство, животноводство, пчеловодство
+source:Экономическая ботаника_5.pdf
+disciplines:economical.phytology,phytology,biology
+users:vetka@gmail.com
+comments
+text:И Вы думаете 2/3 работников АПК ?
+author:alina@gmail.com

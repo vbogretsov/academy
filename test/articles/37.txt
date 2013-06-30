@@ -1,0 +1,8 @@
+title:Комбинаторная топология
+description:Топологические пространства
+source:Комбинаторная топология_37.pdf
+disciplines:combinatorial.topology,topology,math
+users:angel@gmail.com
+comments
+text:Ну, связность топологических пространств Вы не расписали
+author:alva@gmail.com
