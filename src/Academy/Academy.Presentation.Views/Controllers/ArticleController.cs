@@ -15,26 +15,25 @@ namespace Academy.Presentation.Views.Controllers
         private const string ArticlesFolder = "~/Resources/Articles";
 
         [HttpGet]
-        public ActionResult GetUserArticles()
+        public ActionResult GetUserArticles(int pageNumber = 1, int pageSize = DefualtPageSize)
         {
-            ViewBag.Disciplines = GetDisciplines();
-            var viewModel = UserMapper.Map(CurrentUser);
-            try
-            {
-                var articles = Service.GetUserArticles(viewModel.Id, 1, PageSize);
-                viewModel.ArticlesPage = PageDataMapper.Map(articles, ArticleMapper.Map);
-            }
-            catch (Exception exception)
-            {
-                
-            }
-            return View("GetUserArticles", viewModel);
+            IncludeDisciplines();
+            CurrentUser.ArticlesPage = LoadUserArticles(CurrentUser.Id, pageNumber, PageSize);
+            return View("GetUserArticles", CurrentUser);
         }
 
         [HttpGet]
-        public ActionResult GetUserComments()
+        public ActionResult GetUserArticlesPage(int pageNumber, int pageSize)
         {
-            return View(UserMapper.Map(Service.GetCurrentUser()));
+            CurrentUser.ArticlesPage = LoadUserArticles(CurrentUser.Id, pageNumber, pageSize);
+            return View("RenderTemplates/Paging/ArticlesPageView", CurrentUser.ArticlesPage);
+        }
+
+        [HttpGet]
+        public ActionResult GetUserComments(int pageNumber = 1, int pageSize = DefualtPageSize)
+        {
+            CurrentUser.CommentsPage = LoadUserComments(CurrentUser.Id, pageNumber, pageSize);
+            return View("RenderTemplates/Paging/CommentsPageView", CurrentUser.CommentsPage);
         }
 
         [HttpGet]
@@ -98,6 +97,24 @@ namespace Academy.Presentation.Views.Controllers
                     file.FileName);
             }
             return result;
+        }
+
+        private PageViewModel<ArticleViewModel> LoadUserArticles(
+            int userId,
+            int pageNumber,
+            int pageSize)
+        {
+            var articles = Service.GetUserArticles(userId, pageNumber, pageSize);
+            return PageDataMapper.Map(articles, ArticleMapper.Map);
+        }
+
+        private PageViewModel<CommentViewModel> LoadUserComments(
+            int userId,
+            int pageNumber,
+            int pageSize)
+        {
+            var comments = Service.GetUserComments(userId, pageNumber, pageSize);
+            return PageDataMapper.Map(comments, CommentMapper.Map);
         }
     }
 }

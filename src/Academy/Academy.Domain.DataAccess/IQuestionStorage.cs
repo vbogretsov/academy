@@ -15,6 +15,8 @@ namespace Academy.Domain.DataAccess
 
         IEnumerable<Question> GetUserQuestions(int userId);
 
+        IPageData<Question> GetUserQuestions(int userId, int page, int size);
+
         IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria);
     }
 }

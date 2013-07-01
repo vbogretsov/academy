@@ -27,8 +27,7 @@ namespace Academy.Presentation.Views.Controllers
 
         private ActionResult GetUserNotes()
         {
-            var user = Service.GetCurrentUser();
-            return View("RenderTemplates/UserNotesView", UserMapper.Map(user));
+            return View("RenderTemplates/UserNotesView", CurrentUser);
         }
     }
 }

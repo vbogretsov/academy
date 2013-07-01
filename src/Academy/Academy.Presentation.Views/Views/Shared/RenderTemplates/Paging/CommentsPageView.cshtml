@@ -1,14 +1,12 @@
 ﻿@using Academy.Presentation.ViewModels;
+@model  PageViewModel<CommentViewModel>
 
-@model PageViewModel<ArticleViewModel>
-
-
-<div id="articlesPage" style="min-height: 600px">
+<div id="commentsPage" style="min-height: 600px">
     @if (Model.Items != null)
     {
-        foreach (var article in Model.Items)
+        foreach (var comment in Model.Items)
         {
-            Html.RenderPartial("RenderTemplates/ArticleView", article);
+            Html.RenderPartial("RenderTemplates/CommentView", comment);
         }
     }
     <div class="pagination" id="articlesPageNav" align="center">
@@ -17,7 +15,7 @@
             {
                 if (pageNumber != Model.PageNumber)
                 {
-                    <li><a href="#/GetUserArticlesPage?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
+                    <li><a href="#/GetUserComments?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
                 }
                 else
                 {

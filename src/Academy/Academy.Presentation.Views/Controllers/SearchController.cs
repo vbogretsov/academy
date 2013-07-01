@@ -10,7 +10,7 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult SearchArticles()
         {
-            ViewBag.Disciplines = GetDisciplines();
+            IncludeDisciplines();
             return View(new ArticleSearchViewModel());
         }
 
@@ -26,7 +26,7 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult SearchQuestions()
         {
-            ViewBag.Disciplines = GetDisciplines();
+            IncludeDisciplines();
             return View();
         }
 

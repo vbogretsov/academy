@@ -14,6 +14,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             viewModel.Items = model.Data.Select(map).ToList();
             viewModel.PageNumber = model.PageNumber;
             viewModel.PagesCount = model.PagesCount;
+            viewModel.PageSize = model.PageSize;
             return viewModel;
         }
     }

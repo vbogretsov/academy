@@ -15,14 +15,14 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(UserMapper.Map(CurrentUser));
+            return View(CurrentUser);
         }
 
         [HttpGet]
         public ActionResult Edit()
         {
-            ViewBag.Disciplines = GetDisciplines();
-            return View(UserMapper.Map(CurrentUser));
+            IncludeDisciplines();
+            return View(CurrentUser);
         }
 
         [HttpPost]

@@ -107,6 +107,12 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
+        public PageViewModel<CommentViewModel> CommentsPage
+        {
+            get;
+            set;
+        }
+
         //TODO: add paging
         public IEnumerable<NoteViewModel> Notes
         {
@@ -116,6 +122,12 @@ namespace Academy.Presentation.ViewModels
 
         //TODO: add paging
         public IEnumerable<QuestionViewModel> Questions
+        {
+            get;
+            set;
+        }
+
+        public PageViewModel<QuestionViewModel> QuestionsPage
         {
             get;
             set;

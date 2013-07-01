@@ -66,7 +66,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             int totalCount)
         {
             var data = items.Skip((page - 1)*size).Take(size).ToList();
-            return new PageData<T>(data, page, totalCount / size + 1);
+            return new PageData<T>(data, page, size, totalCount / size + 1);
         }
 
         protected AcademyEntities Entities

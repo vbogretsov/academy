@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Academy.Domain.DataAccess.Ef
 {
     internal class PageData<T> : IPageData<T>
     {
-        public PageData(IEnumerable<T> data, int pageNumber, int pagesCount)
+        public PageData(IEnumerable<T> data, int page, int size, int pagesCount)
         {
             Data = data;
-            PageNumber = pageNumber;
+            PageNumber = page;
+            PageSize = size;
             PagesCount = pagesCount;
         }
 
         public IEnumerable<T> Data
+        {
+            get;
+            private set;
+        }
+
+        public int PageSize
         {
             get;
             private set;

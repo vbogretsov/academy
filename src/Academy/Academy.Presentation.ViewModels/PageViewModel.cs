@@ -5,11 +5,6 @@ namespace Academy.Presentation.ViewModels
 {
     public class PageViewModel<T>
     {
-        public string GetPageUrl(int pageNumber)
-        {
-            return String.Format(PageUrl, pageNumber);
-        }
-
         public IEnumerable<T> Items
         {
             get;
@@ -22,16 +17,16 @@ namespace Academy.Presentation.ViewModels
             internal set;
         }
 
+        public int PageSize
+        {
+            get;
+            set;
+        }
+
         public int PagesCount
         {
             get;
             internal set;
-        }
-
-        public string PageUrl
-        {
-            get;
-            set;
         }
     }
 }

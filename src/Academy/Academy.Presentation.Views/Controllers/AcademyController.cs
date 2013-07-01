@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
@@ -13,11 +14,13 @@ namespace Academy.Presentation.Views.Controllers
 {
     public abstract class AcademyController : Controller
     {
-        private const int DefualtPageSize = 5;
+        protected const int DefualtPageSize = 5;
 
         private readonly AcademyContext academyContext;
 
         private readonly AcademyService service;
+
+        private UserViewModel currentUser;
 
         protected AcademyController()
         {
@@ -25,9 +28,9 @@ namespace Academy.Presentation.Views.Controllers
             service = new AcademyService();
         }
 
-        protected IEnumerable<DisciplineViewModel> GetDisciplines()
+        protected void IncludeDisciplines()
         {
-            return Service.GetDisciplines().Select(DisciplineMapper.Map);
+            ViewBag.Disciplines = Service.GetDisciplines().Select(DisciplineMapper.Map);
         }
 
         protected override void Dispose(bool disposing)
@@ -37,11 +40,15 @@ namespace Academy.Presentation.Views.Controllers
             base.Dispose(disposing);
         }
 
-        protected User CurrentUser
+        protected UserViewModel CurrentUser
         {
             get
             {
-                return Service.GetCurrentUser();
+                if (currentUser == null)
+                {
+                    currentUser = UserMapper.Map(Service.GetCurrentUser());
+                }
+                return currentUser;
             }
         }
 

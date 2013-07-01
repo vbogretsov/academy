@@ -1,23 +1,22 @@
 ﻿@using Academy.Presentation.ViewModels;
 
-@model PageViewModel<ArticleViewModel>
+@model PageViewModel<QuestionViewModel>
 
-
-<div id="articlesPage" style="min-height: 600px">
+<div id="questionsPage" style="min-height: 600px">
     @if (Model.Items != null)
     {
-        foreach (var article in Model.Items)
+        foreach (var question in Model.Items)
         {
-            Html.RenderPartial("RenderTemplates/ArticleView", article);
+            Html.RenderPartial("RenderTemplates/QuestionView", question);
         }
     }
-    <div class="pagination" id="articlesPageNav" align="center">
+    <div class="pagination" id="questionsPageNav" align="center">
         <ul>
             @for (int pageNumber = 1; pageNumber <= Model.PagesCount; pageNumber++)
             {
                 if (pageNumber != Model.PageNumber)
                 {
-                    <li><a href="#/GetUserArticlesPage?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
+                    <li><a href="#/GetUserQuestionsPage?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
                 }
                 else
                 {

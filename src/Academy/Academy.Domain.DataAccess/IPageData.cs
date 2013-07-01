@@ -12,10 +12,10 @@ namespace Academy.Domain.DataAccess
             get;
         }
 
-        //int PageSize
-        //{
-        //    get;
-        //}
+        int PageSize
+        {
+            get;
+        }
 
         int PageNumber
         {

@@ -15,9 +15,6 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var question = QuestionMapper.Map(viewModel);
-                //AcademyContext.QuestionService.Ask(question);
-                //AcademyContext.NotificationService.NotifyAboutNewQuestion(question);
                 Service.Ask(QuestionMapper.Map(viewModel));
             }
             return GetUserQuestionsResult();
@@ -27,7 +24,6 @@ namespace Academy.Presentation.Views.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult RemoveQuestion(int id)
         {
-            //AcademyContext.AdministrationService.RemoveQuestion(id);
             Service.RemoveQuestion(id);
             return null;
         }
@@ -37,13 +33,8 @@ namespace Academy.Presentation.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var answer = AnswerMapper.Map(viewModel);
-                //answer.UserId = AcademyContext.Account.GetCurrentUser().Id;
-                //AcademyContext.QuestionService.Answer(answer);
-                //AcademyContext.NotificationService.NotifyAboutNewAnswer(answer);
                 Service.Answer(AnswerMapper.Map(viewModel));
                 var question = Service.GetQuestion(viewModel.QuestionId);
-                //var question = AcademyContext.QuestionService.GetQuestion(viewModel.QuestionId);
                 return View("RenderTemplates/AnswersView", QuestionMapper.Map(question));
             }
             return GetUserQuestionsResult(); //TODO: add error handling
@@ -53,7 +44,6 @@ namespace Academy.Presentation.Views.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult RemoveAnswer(int id)
         {
-            //AcademyContext.AdministrationService.RemoveAnswer(id);
             Service.RemoveAnswer(id);
             return null;
         }
@@ -61,32 +51,45 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult GetQuestion(int questionId)
         {
-            //var question = AcademyContext.QuestionService.GetQuestion(questionId);
             var question = Service.GetQuestion(questionId);
             return View("RenderTemplates/QuestionView", QuestionMapper.Map(question));
         }
 
         [HttpGet]
-        public ActionResult GetUserQuestions()
+        public ActionResult GetUserQuestions(int pageNumber = 1, int pageSize = DefualtPageSize)
         {
-            return GetUserQuestionsResult();
+            IncludeDisciplines();
+            CurrentUser.QuestionsPage = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
+            return View("GetUserQuestions", CurrentUser);
+            //return GetUserQuestionsResult();
+        }
+
+        [HttpGet]
+        public ActionResult GetUserQuestionsPage(int pageNumber, int pageSize)
+        {
+            CurrentUser.QuestionsPage = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
+            return View("RenderTemplates/Paging/QuestionsPageView", CurrentUser.QuestionsPage);
         }
 
         [HttpGet]
         public ActionResult GetUserAnswers()
         {
-            //var user = AcademyContext.Account.GetCurrentUser();
-            return View(UserMapper.Map(CurrentUser));
+            return View(CurrentUser);
         }
 
-        [HttpGet]
         private ActionResult GetUserQuestionsResult()
         {
-            //var user = AcademyContext.Account.GetCurrentUser();
-            //var disciplines = AcademyContext.NotificationService.GetDisciplines();
-            //ViewBag.Disciplines = disciplines.Select(DisciplineMapper.Map);
-            ViewBag.Disciplines = GetDisciplines();
-            return View("GetUserQuestions", UserMapper.Map(CurrentUser));
+            IncludeDisciplines();
+            return View("GetUserQuestions", CurrentUser);
+        }
+
+        private PageViewModel<QuestionViewModel> LoadUserQuestions(
+            int userId,
+            int pageNumber,
+            int pageSize)
+        {
+            var questions = Service.GetUserQuestions(userId, pageNumber, pageSize);
+            return PageDataMapper.Map(questions, QuestionMapper.Map);
         }
     }
 }

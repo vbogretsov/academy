@@ -42,6 +42,11 @@ namespace Academy.Domain.Services
             return questionStorage.Get(questionId);
         }
 
+        public IPageData<Question> GetUserQuestions(int userId, int page, int size)
+        {
+            return questionStorage.GetUserQuestions(userId, page, size);
+        }
+
         //TODO: add paging
         public IEnumerable<Question> GetQuestions(User user)
         {

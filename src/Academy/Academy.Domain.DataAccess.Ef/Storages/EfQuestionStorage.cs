@@ -34,12 +34,30 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return Entities.Questions.Where(x => x.UserId == userId);
         }
 
+        public IPageData<Question> GetUserQuestions(int userId, int page, int size)
+        {
+            var query = from question in Entities.Questions
+                where
+                    question.UserId == userId
+                select question;
+            return GetPage(query, page, size, GetUserQuestionsCount(userId));
+        }
+
         public IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria)
         {
             return from question in Entities.Questions
                 where question.Title.Contains(criteria.Keyword) &&
                     question.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
                 select question;
+        }
+
+        private int GetUserQuestionsCount(int userId)
+        {
+            var query = from question in Entities.Questions
+                where
+                    question.UserId == userId
+                select question;
+            return query.Count();
         }
     }
 }

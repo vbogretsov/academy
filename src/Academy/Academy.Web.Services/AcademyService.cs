@@ -139,6 +139,11 @@ namespace Academy.Web.Services
             return QuestionService.GetQuestion(questionId);
         }
 
+        public IPageData<Question> GetUserQuestions(int userId, int page, int size)
+        {
+            return QuestionService.GetUserQuestions(userId, page, size);
+        }
+
         // TODO: use userId
         public IEnumerable<Answer> GetAnswers(User user)
         {
@@ -173,6 +178,11 @@ namespace Academy.Web.Services
         public IPageData<Article> GetUserArticles(int userId, int page, int size)
         {
             return PublicationService.GetUserArticles(userId, page, size);
+        }
+
+        public IPageData<Comment> GetUserComments(int userId, int page, int size)
+        {
+            return PublicationService.GetUserComments(userId, page, size);
         }
 
         //public IEnumerable<Comment> GetUserComments(int userId, int page, int size)

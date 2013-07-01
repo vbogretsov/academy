@@ -25,7 +25,8 @@
 </div>
 <div id="userQuestions">
     @{
-        Html.RenderPartial("RenderTemplates/QuestionsView", Model);
+        //Html.RenderPartial("RenderTemplates/QuestionsView", Model);
+        Html.RenderPartial("RenderTemplates/Paging/QuestionsPageView", Model.QuestionsPage);
     }
 </div>
 

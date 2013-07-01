@@ -13,6 +13,8 @@ namespace Academy.Domain.DataAccess
 
         void Remove(int commentId);
 
+        IPageData<Comment> GetUserComments(int userId, int page, int size);
+
         //IEnumerable<Comment> GetUserComments(int userId, int page, int size);
 
         //int GetUserCommentsCount(int userId);
