@@ -17,6 +17,8 @@ namespace Academy.Domain.Interface
 
         IPageData<Comment> GetUserComments(int userId, int page, int size);
 
+        IPageData<Comment> GetArticleComments(int articleId, int page, int size);
+
         //IEnumerable<Comment> GetUserComments(int userId, int page, int size);
 
         //int GetUserCommentsCount(int userId);

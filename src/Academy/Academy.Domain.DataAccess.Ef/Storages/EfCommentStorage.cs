@@ -49,7 +49,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return GetPage(query, page, size, GetArticleCommentsCount(articleId));
         }
 
-        public int GetArticleCommentsCount(int articleId)
+        private int GetArticleCommentsCount(int articleId)
         {
             var query = from comment in Entities.Comments
                 where

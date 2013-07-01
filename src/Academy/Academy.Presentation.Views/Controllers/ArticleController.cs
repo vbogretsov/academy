@@ -37,6 +37,14 @@ namespace Academy.Presentation.Views.Controllers
         }
 
         [HttpGet]
+        public ActionResult GetArticleComments(int articleId, int pageNumber = 1, int pageSize = DefualtPageSize)
+        {
+            var comments = Service.GetArticleComments(articleId, pageNumber, pageSize);
+            var commentsView = PageDataMapper.Map(comments, CommentMapper.Map);
+            return View("RenderTemplates/Paging/CommentsPageView", commentsView);
+        }
+
+        [HttpGet]
         public ActionResult GetArticle(int articleId)
         {
             var article = Service.GetArticle(articleId);

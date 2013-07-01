@@ -185,25 +185,10 @@ namespace Academy.Web.Services
             return PublicationService.GetUserComments(userId, page, size);
         }
 
-        //public IEnumerable<Comment> GetUserComments(int userId, int page, int size)
-        //{
-        //    return publicationService.GetUserComments(userId, page, size);
-        //}
-
-        //public int GetUserCommentsCount(int userId)
-        //{
-        //    return publicationService.GetUserCommentsCount(userId);
-        //}
-
-        //public IEnumerable<Comment> GetArticleComments(int articleId, int page, int size)
-        //{
-        //    return publicationService.GetArticleComments(articleId, page, size);
-        //}
-
-        //public int GetArticleCommentsCount(int articleId)
-        //{
-        //    return publicationService.GetArticleCommentsCount(articleId);
-        //}
+        public IPageData<Comment> GetArticleComments(int articleId, int page, int size)
+        {
+            return PublicationService.GetArticleComments(articleId, page, size);
+        }
 
         public SearchResult<Article> FindArticles(ArticleSearchCriteria criteria)
         {

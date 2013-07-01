@@ -50,6 +50,10 @@ namespace Academy.Domain.Services
             return commentStorage.GetUserComments(userId, page, size);
         }
 
+        public IPageData<Comment> GetArticleComments(int articleId, int page, int size)
+        {
+            return commentStorage.GetArticleComments(articleId, page, size);
+        }
 
         //public IEnumerable<Comment> GetUserComments(int userId, int page, int size)
         //{

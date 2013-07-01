@@ -66,11 +66,15 @@
 </div>
 <div id="@newAnswerId" class="text-block hide">
     <div class="text-block-body">
-        @{ Html.RenderPartial("Forms/AddAnswerForm", answerTemplate); }
+        @{
+            Html.RenderPartial("Forms/AddAnswerForm", answerTemplate);
+        }
     </div>
 </div>
 <div id="@answersId" class="hide">
-    @{Html.RenderPartial("RenderTemplates/AnswersView", Model);}
+    @{
+        Html.RenderPartial("RenderTemplates/AnswersView", Model);
+    }
 </div>
 
 <script type="text/javascript">
@@ -85,9 +89,10 @@
             });
         });
         $('#@addAnswerId').click(function () {
-           $('#@newAnswerId').slideToggle('fast');
+            $('#@newAnswerId').slideToggle('fast');
         });
-        $('#@showAnswersId').click(function() {
+        $('#@showAnswersId').click(function () {
+            
             $('#@answersId').slideToggle('fast');
         });
     })
