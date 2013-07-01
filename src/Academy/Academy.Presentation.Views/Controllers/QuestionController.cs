@@ -17,7 +17,7 @@ namespace Academy.Presentation.Views.Controllers
             {
                 Service.Ask(QuestionMapper.Map(viewModel));
             }
-            return GetUserQuestionsResult();
+            return GetUserQuestions();
         }
 
         [HttpPost]
@@ -37,7 +37,7 @@ namespace Academy.Presentation.Views.Controllers
                 var question = Service.GetQuestion(viewModel.QuestionId);
                 return View("RenderTemplates/AnswersView", QuestionMapper.Map(question));
             }
-            return GetUserQuestionsResult(); //TODO: add error handling
+            return GetUserQuestions(); //TODO: add error handling
         }
 
         [HttpPost]
@@ -61,7 +61,6 @@ namespace Academy.Presentation.Views.Controllers
             IncludeDisciplines();
             CurrentUser.QuestionsPage = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
             return View("GetUserQuestions", CurrentUser);
-            //return GetUserQuestionsResult();
         }
 
         [HttpGet]
@@ -77,13 +76,7 @@ namespace Academy.Presentation.Views.Controllers
             return View(CurrentUser);
         }
 
-        private ActionResult GetUserQuestionsResult()
-        {
-            IncludeDisciplines();
-            return View("GetUserQuestions", CurrentUser);
-        }
-
-        private PageViewModel<QuestionViewModel> LoadUserQuestions(
+        private PageDataViewModel<QuestionViewModel> LoadUserQuestions(
             int userId,
             int pageNumber,
             int pageSize)

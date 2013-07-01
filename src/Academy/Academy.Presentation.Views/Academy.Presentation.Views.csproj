@@ -134,7 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\AcademyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
@@ -231,7 +233,7 @@
     <Content Include="Views\Shared\Forms\CommentArticleForm.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\ArticlesView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\QuestionsView.cshtml" />
-    <Content Include="Views\Article\GetUserComments.cshtml" />
+    <Content Include="Views\Comment\GetUserComments.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleCommentView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleAnswerView.cshtml" />
     <Content Include="Views\Notification\GetArticleNews.cshtml" />
@@ -262,6 +264,7 @@
     <Content Include="Views\Shared\RenderTemplates\Paging\QuestionsPageView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\Paging\PageView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\Paging\CommentsPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\SingleCommentsPageView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

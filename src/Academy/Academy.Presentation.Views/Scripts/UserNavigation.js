@@ -28,7 +28,7 @@
         });
 
         this.get('#/Comments', function () {
-            LoadView(dataId, "Article/GetUserComments");
+            LoadView(dataId, "Comment/GetUserComments");
         });
 
         this.get('#/Questions', function () {
@@ -37,10 +37,6 @@
 
         this.get('#/Answers', function () {
             LoadView(dataId, "Question/GetUserAnswers");
-        });
-
-        this.get('#/ContactAdmin', function () {
-            LoadView(dataId, 'Profile/ContactAdministration');
         });
 
         // init top menu
@@ -63,13 +59,13 @@
             var url;
             if ($('#userArticles').length > 0) {
                 url = 'Article/GetUserArticlesPage?pageNumber='
-                    + this.params['pageNumber']
-                    + '&pageSize=' + this.params['pageSize'];
-                id = '#articlesPage';
+                    + this.params['pageNumber'] + '&pageSize='
+                    + this.params['pageSize'];
+                id = '#userArticles';
             } else { // occurs during page reload
                 url = 'Article/GetUserArticles?pageNumber='
-                    + this.params['pageNumber']
-                    + '&pageSize=' + this.params['pageSize'];
+                    + this.params['pageNumber'] + '&pageSize='
+                    + this.params['pageSize'];
                 id = dataId;
             }
             LoadView(id, url);
@@ -81,23 +77,32 @@
             var url;
             if ($('#userQuestions').length > 0) {
                 url = 'Question/GetUserQuestionsPage?pageNumber='
-                    + this.params['pageNumber']
-                    + '&pageSize=' + this.params['pageSize'];
+                    + this.params['pageNumber'] + '&pageSize='
+                    + this.params['pageSize'];
                 id = '#questionsPage';
             } else { // occurs during page reload
                 url = 'Question/GetUserQuestions?pageNumber='
-                    + this.params['pageNumber']
-                    + '&pageSize=' + this.params['pageSize'];
+                    + this.params['pageNumber'] + '&pageSize='
+                    + this.params['pageSize'];
                 id = dataId;
             }
             LoadView(id, url);
         });
 
         this.get('#/GetUserComments', function () {
-            var url = 'Article/GetUserComments?pageNumber='
-                + this.params['pageNumber']
-                + '&pageSize=' + this.params['pageSize'];
+            var url = 'Comment/GetUserComments?pageNumber='
+                + this.params['pageNumber'] + '&pageSize='
+                + this.params['pageSize'];
             LoadView(dataId, url);
+        });
+
+        this.get('#/GetArticleComments', function () {
+            var url = 'Comment/GetArticleComments?articleId='
+                + this.params['articleId'] + '&pageNumber='
+                + this.params['pageNumber'] + '&pageSize='
+                + this.params['pageSize'];
+            var id = '#commentsFor' + this.params['articleId'];
+            LoadView(id, url);
         });
 
         return false;
@@ -114,6 +119,10 @@ function LoadView(divId, request, complete) {
         cache: false,
         success: function (result) {
             $(divId).html(result);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.status);
+            alert(thrownError);
         }
     });
 }

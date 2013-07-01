@@ -31,10 +31,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IPageData<Article> GetUserArticles(int userId, int page, int size)
         {
-            var query = from article in Entities.Articles
-                where
-                    article.Authors.Any(x => x.Id == userId)
-                select article;
+            var query = GetUserArticlesQuery(userId);
             return GetPage(query, page, size, GetUserArticlesCount(userId));
         }
 
@@ -54,10 +51,15 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         private int GetUserArticlesCount(int userId)
         {
-            return (from article in Entities.Articles
-                    where
-                        article.Authors.Any(x => x.Id == userId)
-                    select article).Count();
+            return GetUserArticlesQuery(userId).Count();
+        }
+
+        private IEnumerable<Article> GetUserArticlesQuery(int userId)
+        {
+            return from article in Entities.Articles
+                where
+                    article.Authors.Any(x => x.Id == userId)
+                select article;
         }
 
         private void Resolve(Article article)

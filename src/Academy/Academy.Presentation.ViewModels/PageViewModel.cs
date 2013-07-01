@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class PageViewModel<T>
+    public class PageViewModel
     {
-        public IEnumerable<T> Items
+        public string AreaId
         {
             get;
-            internal set;
+            set;
+        }
+
+        public string UrlFormat
+        {
+            get;
+            set;
         }
 
         public int PageNumber

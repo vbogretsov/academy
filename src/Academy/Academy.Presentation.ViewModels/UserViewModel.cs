@@ -94,7 +94,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public PageViewModel<ArticleViewModel> ArticlesPage
+        public PageDataViewModel<ArticleViewModel> ArticlesPage
         {
             get;
             set;
@@ -107,7 +107,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public PageViewModel<CommentViewModel> CommentsPage
+        public PageDataViewModel<CommentViewModel> CommentsPage
         {
             get;
             set;
@@ -127,7 +127,7 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        public PageViewModel<QuestionViewModel> QuestionsPage
+        public PageDataViewModel<QuestionViewModel> QuestionsPage
         {
             get;
             set;

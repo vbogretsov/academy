@@ -1,29 +1,14 @@
 ﻿@using Academy.Presentation.ViewModels;
 
-@model PageViewModel<ArticleViewModel>
+@model PageDataViewModel<ArticleViewModel>
 
+@{
+    Layout = "PageView.cshtml";
+}
 
-<div id="articlesPage" style="min-height: 600px">
-    @if (Model.Items != null)
-    {
-        foreach (var article in Model.Items)
-        {
-            Html.RenderPartial("RenderTemplates/ArticleView", article);
-        }
+@section PageData
+{
+    @{
+        Html.RenderPartial("RenderTemplates/ArticlesView", Model.Items);
     }
-    <div class="pagination" id="articlesPageNav" align="center">
-        <ul>
-            @for (int pageNumber = 1; pageNumber <= Model.PagesCount; pageNumber++)
-            {
-                if (pageNumber != Model.PageNumber)
-                {
-                    <li><a href="#/GetUserArticlesPage?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
-                }
-                else
-                {
-                    <li class="active"><a href="#">@pageNumber</a></li>
-                }
-            }
-        </ul>
-    </div>
-</div>
+}

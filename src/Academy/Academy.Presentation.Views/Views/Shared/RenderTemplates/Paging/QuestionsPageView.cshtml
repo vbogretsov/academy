@@ -1,28 +1,15 @@
 ﻿@using Academy.Presentation.ViewModels;
 
-@model PageViewModel<QuestionViewModel>
+@model PageDataViewModel<QuestionViewModel>
 
-<div id="questionsPage" style="min-height: 600px">
-    @if (Model.Items != null)
+@{
+    Layout = "PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var question in Model.Items)
     {
-        foreach (var question in Model.Items)
-        {
-            Html.RenderPartial("RenderTemplates/QuestionView", question);
-        }
+        Html.RenderPartial("RenderTemplates/QuestionView", question);
     }
-    <div class="pagination" id="questionsPageNav" align="center">
-        <ul>
-            @for (int pageNumber = 1; pageNumber <= Model.PagesCount; pageNumber++)
-            {
-                if (pageNumber != Model.PageNumber)
-                {
-                    <li><a href="#/GetUserQuestionsPage?pageNumber=@pageNumber&pageSize=@Model.PageSize">@pageNumber</a></li>
-                }
-                else
-                {
-                    <li class="active"><a href="#">@pageNumber</a></li>
-                }
-            }
-        </ul>
-    </div>
-</div>
+}

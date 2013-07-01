@@ -24,38 +24,40 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IPageData<Comment> GetUserComments(int userId, int page, int size)
         {
-            var query = from comment in Entities.Comments
-                where
-                    comment.UserId == userId
-                select comment;
+            var query = GetUserCommentsQuery(userId);
             return GetPage(query, page, size, GetUserCommentsCount(userId));
         }
 
         public int GetUserCommentsCount(int userId)
         {
-            var query = from comment in Entities.Comments
-                where
-                    comment.UserId == userId
-                select comment;
-            return query.Count();
+            return GetUserCommentsQuery(userId).Count();
         }
 
         public IPageData<Comment> GetArticleComments(int articleId, int page, int size)
         {
-            var query = from comment in Entities.Comments
-                where
-                    comment.ArticleId == articleId
-                select comment;
+            var query = GetArticleCommentsQuery(articleId);
             return GetPage(query, page, size, GetArticleCommentsCount(articleId));
         }
 
         private int GetArticleCommentsCount(int articleId)
         {
-            var query = from comment in Entities.Comments
+            return GetArticleCommentsQuery(articleId).Count();
+        }
+
+        private IEnumerable<Comment> GetUserCommentsQuery(int userId)
+        {
+            return from comment in Entities.Comments
+                where
+                    comment.UserId == userId
+                select comment;
+        }
+
+        private IEnumerable<Comment> GetArticleCommentsQuery(int articleId)
+        {
+            return from comment in Entities.Comments
                 where
                     comment.ArticleId == articleId
                 select comment;
-            return query.Count();
         }
     }
 }

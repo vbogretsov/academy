@@ -1,3 +1,29 @@
-﻿@model Academy.Presentation.ViewModels.PageViewModel<dynamic>
+﻿@model Academy.Presentation.ViewModels.PageViewModel
 
+@{
+    var paginationId = String.Format("pageNav{0}", Model.AreaId);
+}
 
+<div id="@Model.AreaId">
+    @RenderSection("PageData")
+    <div class="pagination" id="@paginationId" align="center">
+        <ul>
+            @for (int pageNumber = 1; pageNumber <= Model.PagesCount; pageNumber++)
+            {
+                if (pageNumber != Model.PageNumber)
+                {
+                    var url = String.Format(
+                        "{0}pageNumber={1}&pageSize={2}",
+                        Model.UrlFormat,
+                        pageNumber,
+                        Model.PageSize);
+                <li><a href="@url">@pageNumber</a></li>
+                }
+                else
+                {
+                    <li class="active"><a href="#">@pageNumber</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>

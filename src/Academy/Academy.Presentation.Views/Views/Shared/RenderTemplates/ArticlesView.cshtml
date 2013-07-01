@@ -1,9 +1,9 @@
 ﻿@using Academy.Presentation.ViewModels
-@model Academy.Presentation.ViewModels.UserViewModel
+@model IEnumerable<ArticleViewModel>
 
-@if (Model.Articles != null)
+@if (Model != null)
 {
-    foreach (var article in Model.Articles)
+    foreach (var article in Model)
     {
         Html.RenderPartial("RenderTemplates/ArticleView", article);
     }

@@ -85,7 +85,14 @@
             $('#@newCommentId').slideToggle('fast');
         });
         $('#@showCommentsId').click(function () {
-            // todo: add comments load
+            if ($('#@commentsId').is(':empty')) {
+                $.ajax({
+                    url: '@Url.Action("GetArticleComments", "Comment", new {articleId = Model.Id})',
+                    success: function(page) {
+                        $('#@commentsId').html(page);
+                    }
+                });
+            }
             $('#@commentsId').slideToggle('fast');
         });
     })
