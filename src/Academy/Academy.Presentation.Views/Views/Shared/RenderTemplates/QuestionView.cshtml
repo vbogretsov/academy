@@ -59,7 +59,9 @@
                         @addAnswerText
                     </button>
                 }
-                <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">@showAnswersText</button>
+                <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">
+                    @showAnswersText
+                </button>
             </div>
         </div>
     </div>
@@ -71,11 +73,7 @@
         }
     </div>
 </div>
-<div id="@answersId" class="hide">
-    @{
-        Html.RenderPartial("RenderTemplates/AnswersView", Model);
-    }
-</div>
+<div id="@answersId" class="hide" />
 
 <script type="text/javascript">
     $(function () {
@@ -92,7 +90,14 @@
             $('#@newAnswerId').slideToggle('fast');
         });
         $('#@showAnswersId').click(function () {
-            
+            if ($('#@answersId').is(':empty')) {
+                $.ajax({
+                    url: '@Url.Action("GetQuestionAnswers", "Answer", new {questionId = Model.Id})',
+                    success: function(page) {
+                        $('#@answersId').html(page);
+                    }
+                });
+            }
             $('#@answersId').slideToggle('fast');
         });
     })

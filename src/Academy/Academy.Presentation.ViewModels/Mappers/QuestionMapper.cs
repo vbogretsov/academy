@@ -8,33 +8,25 @@ namespace Academy.Presentation.ViewModels.Mappers
 {
     public static class QuestionMapper
     {
+        private static readonly TitledPostMapper<Question, QuestionViewModel> mapper =
+            new TitledPostMapper<Question, QuestionViewModel>();
+
         public static Question Map(QuestionViewModel viewModel)
         {
-            Question question = new Question();
-            question.Id = viewModel.Id;
-            question.UserId = viewModel.AuthorId;
-            question.Title = viewModel.Title;
-            question.Text = viewModel.Text;
-            question.PostedDate = viewModel.PostedDate;
-            question.Disciplines = viewModel.Disciplines.Select(
+            var model = mapper.Map(viewModel);
+            model.UserId = viewModel.AuthorId;
+            model.Disciplines = viewModel.Disciplines.Select(
                 DisciplineMapper.Map).ToList();
-            return question;
+            return model;
         }
 
-        public static QuestionViewModel Map(Question question)
+        public static QuestionViewModel Map(Question model)
         {
-            QuestionViewModel viewModel = new QuestionViewModel();
-            viewModel.Id = question.Id;
-            viewModel.Title = question.Title;
-            viewModel.Text = question.Text;
-            viewModel.PostedDate = question.PostedDate;
-            viewModel.Author = AuthorMapper.Map(question.User);
-            viewModel.Disciplines = question.Disciplines.Select(
+            var viewModel = mapper.Map(model);
+            viewModel.Author = AuthorMapper.Map(model.User);
+            viewModel.AuthorId = model.UserId;
+            viewModel.Disciplines = model.Disciplines.Select(
                 DisciplineMapper.Map);
-            if (question.Answers != null)
-            {
-                viewModel.Answers = question.Answers.Select(AnswerMapper.Map);
-            }
             return viewModel;
         }
     }

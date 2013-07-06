@@ -8,7 +8,8 @@
 
 @section PageData
 {
-    @{
-        Html.RenderPartial("RenderTemplates/ArticlesView", Model.Items);
+    @foreach (var article in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/ArticleView", article);
     }
 }

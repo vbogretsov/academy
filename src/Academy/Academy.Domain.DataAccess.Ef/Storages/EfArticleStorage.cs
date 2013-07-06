@@ -40,7 +40,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return from article in Entities.Articles
                 where
                     article.Title.Contains(criteria.Title) &&
-                    article.Description.Contains(criteria.Description) &&
+                    article.Text.Contains(criteria.Description) &&
                     (article.Authors.Any(a =>
                         a.Email.Contains(criteria.Author) ||
                         a.FirstName.Contains(criteria.Author) ||
@@ -51,7 +51,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         private int GetUserArticlesCount(int userId)
         {
-            return GetUserArticlesQuery(userId).Count();
+            return Entities.Articles.Count(x => x.Authors.Any(a => a.Id == userId));
         }
 
         private IEnumerable<Article> GetUserArticlesQuery(int userId)

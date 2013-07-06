@@ -14,5 +14,7 @@ namespace Academy.Domain.DataAccess
         bool Exists(int userId, int entityId);
 
         IEnumerable<T> Get(int userId);
+
+        IPageData<T> Get(int userId, int page, int size);
     }
 }

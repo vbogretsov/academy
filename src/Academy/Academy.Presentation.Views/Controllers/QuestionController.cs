@@ -28,26 +28,6 @@ namespace Academy.Presentation.Views.Controllers
             return null;
         }
 
-        [HttpPost]
-        public ActionResult Answer(AnswerViewModel viewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                Service.Answer(AnswerMapper.Map(viewModel));
-                var question = Service.GetQuestion(viewModel.QuestionId);
-                return View("RenderTemplates/AnswersView", QuestionMapper.Map(question));
-            }
-            return GetUserQuestions(); //TODO: add error handling
-        }
-
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public ActionResult RemoveAnswer(int id)
-        {
-            Service.RemoveAnswer(id);
-            return null;
-        }
-
         [HttpGet]
         public ActionResult GetQuestion(int questionId)
         {
@@ -66,14 +46,8 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult GetUserQuestionsPage(int pageNumber, int pageSize)
         {
-            CurrentUser.QuestionsPage = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/QuestionsPageView", CurrentUser.QuestionsPage);
-        }
-
-        [HttpGet]
-        public ActionResult GetUserAnswers()
-        {
-            return View(CurrentUser);
+            var page = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
+            return View("RenderTemplates/Paging/QuestionsPageView", page);
         }
 
         private PageDataViewModel<QuestionViewModel> LoadUserQuestions(
@@ -82,7 +56,9 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize)
         {
             var questions = Service.GetUserQuestions(userId, pageNumber, pageSize);
-            return PageDataMapper.Map(questions, QuestionMapper.Map);
+            var page = PageDataMapper.Map(questions, QuestionMapper.Map);
+            page.UrlFormat = "#/GetUserQuestionsPage?";
+            return page;
         }
     }
 }

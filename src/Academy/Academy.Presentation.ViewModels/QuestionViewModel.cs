@@ -4,7 +4,7 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class QuestionViewModel : EntityViewModel
+    public class QuestionViewModel : EntityViewModel, ITitledPostViewModel
     {
         [LocalizedDisplay("question.title")]
         [LocalizedRequired("question.title.err.required")]
@@ -49,10 +49,10 @@ namespace Academy.Presentation.ViewModels
         }
 
         //TODO: add paging
-        public IEnumerable<AnswerViewModel> Answers
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<AnswerViewModel> Answers
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }

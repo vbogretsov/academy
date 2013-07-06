@@ -47,16 +47,14 @@ namespace Academy.Domain.Services
             return questionStorage.GetUserQuestions(userId, page, size);
         }
 
-        //TODO: add paging
-        public IEnumerable<Question> GetQuestions(User user)
+        public IPageData<Answer> GetUserAnswers(int userId, int page, int size)
         {
-            throw new NotImplementedException();
+            return answerStorage.GetUserAnswers(userId, page, size);
         }
 
-        //TODO: add paging
-        public IEnumerable<Answer> GetAnswers(User user)
+        public IPageData<Answer> GetQuestionAnswers(int questionId, int page, int size)
         {
-            throw new NotImplementedException();
+            return answerStorage.GetQuestionAnswers(questionId, page, size);
         }
     }
 }

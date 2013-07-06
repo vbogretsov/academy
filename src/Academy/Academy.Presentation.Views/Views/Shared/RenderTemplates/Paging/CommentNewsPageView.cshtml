@@ -1,0 +1,14 @@
+﻿@using Academy.Presentation.ViewModels;
+@model PageDataViewModel<CommentNewsViewModel>
+
+@{
+    Layout = "PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var commentNews in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/CommentNewsView", commentNews);
+    }
+}

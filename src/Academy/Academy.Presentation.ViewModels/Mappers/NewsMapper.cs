@@ -1,16 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Presentation.ViewModels.Mappers
 {
-    public static class NewsMapper
+    public class NewsMapper<TModel, TViewModel> : EntityMapper<TModel, TViewModel>
+        where TModel : News
+        where TViewModel : NewsViewModel
     {
-        public static NewsViewModel Map(News news)
+        public override TViewModel Map(TModel model)
         {
-            NewsViewModel
+            var viewModel = base.Map(model);
+            viewModel.Read = model.Read;
+            return viewModel;
+        }
+
+        public override TModel Map(TViewModel viewModel)
+        {
+            var model = base.Map(viewModel);
+            model.Read = viewModel.Read;
+            return model;
         }
     }
 }

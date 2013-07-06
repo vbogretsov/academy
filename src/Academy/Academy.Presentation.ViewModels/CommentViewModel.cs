@@ -3,7 +3,7 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class CommentViewModel : EntityViewModel
+    public class CommentViewModel : EntityViewModel, IPostViewModel
     {
         [LocalizedDisplay("comment.text")]
         [LocalizedRequired("comment.text.err.required")]

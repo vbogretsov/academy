@@ -53,11 +53,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         private int GetUserQuestionsCount(int userId)
         {
-            var query = from question in Entities.Questions
-                where
-                    question.UserId == userId
-                select question;
-            return query.Count();
+            return Entities.Questions.Count(x => x.UserId == userId);
         }
     }
 }

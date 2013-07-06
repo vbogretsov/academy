@@ -25,9 +25,30 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserNotes();
         }
 
-        private ActionResult GetUserNotes()
+        public ActionResult GetUserNotes(
+            int pageNumber = 1,
+            int pageSize = DefualtPageSize)
         {
+            CurrentUser.NotesPage = LoadUserNotes(CurrentUser.Id, pageNumber, pageSize);
             return View("RenderTemplates/UserNotesView", CurrentUser);
+        }
+
+        public ActionResult GetUserNotesPage(int pageNumber, int pageSize)
+        {
+            var page = LoadUserNotes(CurrentUser.Id, pageNumber, pageSize);
+            return View("RenderTemplates/Paging/NotesPageView", page);
+        }
+
+        // TODO: Refactor to avoid copy paste
+        private PageDataViewModel<NoteViewModel> LoadUserNotes(
+            int userId,
+            int pageNumber,
+            int pageSize)
+        {
+            var notes = Service.GetUserNotes(userId, pageNumber, pageSize);
+            var page = PageDataMapper.Map(notes, NoteMapper.Map);
+            page.UrlFormat = "#/GetUserNotes?";
+            return page;
         }
     }
 }

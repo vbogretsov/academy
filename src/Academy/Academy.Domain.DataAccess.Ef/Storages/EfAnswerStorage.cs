@@ -22,9 +22,40 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             Remove(answerId, Entities.Answers);
         }
 
-        public IEnumerable<Answer> GetUserAnswers(int userId)
+        public IPageData<Answer> GetUserAnswers(int userId, int page, int size)
         {
-            return Entities.Answers.Where(x => x.UserId == userId);
+            var query = GetUserAnserwsQuery(userId);
+            return GetPage(query, page, size, GetUserAnswersCount(userId));
+        }
+
+        public IPageData<Answer> GetQuestionAnswers(int questionId, int page, int size)
+        {
+            var query = GetQuestionAnswersQuery(questionId);
+            return GetPage(query, page, size, GetQuestionAnswersCount(questionId));
+        }
+
+        private IEnumerable<Answer> GetUserAnserwsQuery(int userId)
+        {
+            return from answer in Entities.Answers
+                    where answer.UserId == userId
+                select answer;
+        }
+
+        private int GetUserAnswersCount(int userId)
+        {
+            return GetUserAnserwsQuery(userId).Count();
+        }
+
+        private IEnumerable<Answer> GetQuestionAnswersQuery(int questionId)
+        {
+            return from answer in Entities.Answers
+                    where answer.QuestionId == questionId
+                select answer;
+        }
+
+        private int GetQuestionAnswersCount(int questionId)
+        {
+            return GetQuestionAnswersQuery(questionId).Count();
         }
     }
 }

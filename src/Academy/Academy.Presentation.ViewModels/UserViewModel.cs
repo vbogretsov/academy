@@ -10,12 +10,12 @@ namespace Academy.Presentation.ViewModels
     {
         private HttpPostedFileBase photoFile;
 
-        public UserViewModel()
-        {
-            Disciplines = new List<DisciplineViewModel>();
-            Articles = new List<ArticleViewModel>();
-            Comments = new List<CommentViewModel>();
-        }
+        //public UserViewModel()
+        //{
+        //    //Disciplines = new List<DisciplineViewModel>();
+        //    //Articles = new List<ArticleViewModel>();
+        //    //Comments = new List<CommentViewModel>();
+        //}
 
         [LocalizedDisplay("user.email")]
         [LocalizedRequired("user.email.err.required")]
@@ -88,11 +88,11 @@ namespace Academy.Presentation.ViewModels
         }
 
         //TODO: add paging
-        public IEnumerable<ArticleViewModel> Articles
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<ArticleViewModel> Articles
+        //{
+        //    get;
+        //    set;
+        //}
 
         public PageDataViewModel<ArticleViewModel> ArticlesPage
         {
@@ -101,31 +101,37 @@ namespace Academy.Presentation.ViewModels
         }
 
         //TODO: add paging
-        public IEnumerable<CommentViewModel> Comments
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<CommentViewModel> Comments
+        //{
+        //    get;
+        //    set;
+        //}
 
-        public PageDataViewModel<CommentViewModel> CommentsPage
+        //public PageDataViewModel<CommentViewModel> CommentsPage
+        //{
+        //    get;
+        //    set;
+        //}
+
+        //TODO: add paging
+        //public IEnumerable<NoteViewModel> Notes
+        //{
+        //    get;
+        //    set;
+        //}
+
+        public PageDataViewModel<NoteViewModel> NotesPage
         {
             get;
             set;
         }
 
         //TODO: add paging
-        public IEnumerable<NoteViewModel> Notes
-        {
-            get;
-            set;
-        }
-
-        //TODO: add paging
-        public IEnumerable<QuestionViewModel> Questions
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<QuestionViewModel> Questions
+        //{
+        //    get;
+        //    set;
+        //}
 
         public PageDataViewModel<QuestionViewModel> QuestionsPage
         {
@@ -134,38 +140,38 @@ namespace Academy.Presentation.ViewModels
         }
 
         //TODO: add paging
-        public IEnumerable<AnswerViewModel> Answers
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<AnswerViewModel> Answers
+        //{
+        //    get;
+        //    set;
+        //}
 
         //TODO: add paging
-        public IEnumerable<ArticleNewsViewModel> ArticleNews
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<ArticleNewsViewModel> ArticleNews
+        //{
+        //    get;
+        //    set;
+        //}
 
         //TODO: add paging
-        public IEnumerable<QuestionNewsViewModel> QuestionNews
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<QuestionNewsViewModel> QuestionNews
+        //{
+        //    get;
+        //    set;
+        //}
 
         //TODO: add paging
-        public IEnumerable<CommentNewsViewModel> CommentNews
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<CommentNewsViewModel> CommentNews
+        //{
+        //    get;
+        //    set;
+        //}
 
         //TODO: add paging
-        public IEnumerable<AnswerNewsViewModel> AnswerNews
-        {
-            get;
-            set;
-        }
+        //public IEnumerable<AnswerNewsViewModel> AnswerNews
+        //{
+        //    get;
+        //    set;
+        //}
     }
 }

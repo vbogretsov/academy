@@ -691,20 +691,29 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register.
-        /// </summary>
-        public static string registration__btn_register {
-            get {
-                return ResourceManager.GetString("registration..btn.register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Birth date.
         /// </summary>
         public static string registration_bidthdate {
             get {
                 return ResourceManager.GetString("registration.bidthdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified date is invalid.
+        /// </summary>
+        public static string registration_bidthdate_err_invalid {
+            get {
+                return ResourceManager.GetString("registration.bidthdate.err.invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string registration_btn_register {
+            get {
+                return ResourceManager.GetString("registration.btn.register", resourceCulture);
             }
         }
         
@@ -867,15 +876,6 @@ namespace Academy.Validation.Dictionaries {
         public static string registration_univercity {
             get {
                 return ResourceManager.GetString("registration.univercity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

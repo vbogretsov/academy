@@ -26,7 +26,7 @@
         }
     </div>
     <div class="text-block-body">
-        @Model.Description
+        @Model.Text
     </div>
     <div class="text-block-footer">
         <b>Disciplines</b>:
@@ -64,11 +64,6 @@
     </div>
 </div>
 <div id="@commentsId" class="hide" />
-@*<div id="@commentsId" class="hide">
-    @{
-        Html.RenderPartial("RenderTemplates/CommentsView", Model);
-    }
-</div>*@
 
 <script type="text/javascript">
     $(function () {

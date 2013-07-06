@@ -1,26 +1,13 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Configuration
 {
-    internal class ArticleConfiguration : EntityTypeConfiguration<Article>
+    internal class ArticleConfiguration : TitledPostConfiguration<Article>
     {
         public ArticleConfiguration()
+            : base("academy_Article", "ArticleId")
         {
-            ToTable("academy_Article");
-            HasKey(x => x.Id);
-            Property(x => x.Id)
-                .IsRequired()
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
-                .HasColumnName("ArticleId");
-            Property(x => x.Title)
-                .IsRequired()
-                .HasColumnName("Title");
-            Property(x => x.Description)
-                .IsRequired()
-                .HasColumnName("Description");
             Property(x => x.Source)
                 .IsRequired()
                 .HasColumnName("Source");

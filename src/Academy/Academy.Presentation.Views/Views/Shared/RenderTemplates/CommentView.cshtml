@@ -4,25 +4,29 @@
     var removeId = String.Format("removeComment{0}", Model.Id);
     var removeText = "Remove comment";
     var commentId = String.Format("comment{0}", Model.Id);
+    var postedText = "Posted: ";
 }
 
-<div class="page-header" id="@commentId">
+<div id="@commentId">
     <span class="label">
         @String.Format("{0} {1} {2}", Model.Author.Email, Model.Author.FirstName, Model.Author.LastName)
     </span>
-    <span class="label pull-right">@Model.PostedDate</span>
+    @*<span class="label pull-right">@Model.PostedDate</span>*@
     <div class="text-block">
         <div class="text-block-body">
             @Model.Text
         </div>
-        @if (User.IsInRole("Admin"))
-        {
-            <div class="pull-right">
-                <button class="btn btn-mini btn-danger" id="@removeId">
-                    @removeText
-                </button>
-            </div>
-        }
+        <div class="text-block-footer">
+            <b>@postedText</b>@Model.PostedDate
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="pull-right">
+                    <button class="btn btn-mini btn-danger" id="@removeId">
+                        @removeText
+                    </button>
+                </div>
+            }
+        </div>
     </div>
 </div>
 

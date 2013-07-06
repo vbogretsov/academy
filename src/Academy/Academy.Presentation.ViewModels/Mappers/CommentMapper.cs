@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Presentation.ViewModels.Mappers
 {
     public static class CommentMapper
     {
-        public static CommentViewModel Map(Comment comment)
+        private static readonly PostMapper<Comment, CommentViewModel> mapper =
+            new PostMapper<Comment, CommentViewModel>();
+
+        public static CommentViewModel Map(Comment model)
         {
-            CommentViewModel viewModel = new CommentViewModel();
-            viewModel.Id = comment.Id;
-            viewModel.Text = comment.Text;
-            viewModel.Author = AuthorMapper.Map(comment.User);
-            viewModel.PostedDate = comment.PostedDate;
-            viewModel.ArticleId = comment.ArticleId;
+            var viewModel = mapper.Map(model);
+            viewModel.AuthorId = model.UserId;
+            viewModel.Author = AuthorMapper.Map(model.User);
+            viewModel.ArticleId = model.ArticleId;
             return viewModel;
         }
 
         public static Comment Map(CommentViewModel viewModel)
         {
-            Comment comment = new Comment();
-            comment.Id = viewModel.Id;
-            comment.ArticleId = viewModel.ArticleId;
-            comment.Text = viewModel.Text;
-            comment.UserId = viewModel.AuthorId;
-            return comment;
+            var model = mapper.Map(viewModel);
+            model.ArticleId = viewModel.ArticleId;
+            model.UserId = viewModel.AuthorId;
+            return model;
         }
     }
 }

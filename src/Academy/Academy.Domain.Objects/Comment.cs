@@ -1,40 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Academy.Domain.Objects.Enums;
 
 namespace Academy.Domain.Objects
 {
-    public class Comment : Entity
+    public class Comment : Post
     {
-        //[Key]
-        //public int CommentId
-        //{
-        //    get;
-        //    set;
-        //}
-
-        [Required(ErrorMessage = "Comment text is required")]
-        public string Text
-        {
-            get;
-            set;
-        }
-
-        [Required(ErrorMessage = "Rating is required")]
-        public Rating Rating
-        {
-            get;
-            set;
-        }
-
-        [Required(ErrorMessage = "Creation date is required")]
-        public DateTime PostedDate
-        {
-            get;
-            set;
-        }
-
         public int UserId
         {
             get;

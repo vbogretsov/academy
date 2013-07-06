@@ -1,0 +1,15 @@
+﻿@using Academy.Presentation.ViewModels;
+
+@model  PageDataViewModel<AnswerViewModel>
+
+@{
+    Layout = "~/Views/Shared/RenderTemplates/Paging/PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var answer in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/SingleAnswerView", answer);
+    }
+}

@@ -54,7 +54,6 @@ namespace Academy.Presentation.Views.Controllers
         {
             var comments = Service.GetArticleComments(articleId, pageNumber, pageSize);
             var page = PageDataMapper.Map(comments, CommentMapper.Map);
-            page.AreaId = articleId.ToString();
             page.UrlFormat = String.Format("#/GetArticleComments?articleId={0}&", articleId);
             return page;
         }

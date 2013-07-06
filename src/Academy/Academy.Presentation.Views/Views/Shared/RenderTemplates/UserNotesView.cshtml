@@ -23,6 +23,8 @@
         </div>
     </div>
 </div>
+<div id="userNotes">
 @{
-    Html.RenderPartial("RenderTemplates/NotesView", Model);
+    Html.RenderPartial("RenderTemplates/Paging/NotesPageView", Model.NotesPage);
 }
+</div>

@@ -790,6 +790,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The specified date is invalid.
+        /// </summary>
+        public static string registration_date_err_invalid {
+            get {
+                return ResourceManager.GetString("registration.date.err.invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string registration_email {

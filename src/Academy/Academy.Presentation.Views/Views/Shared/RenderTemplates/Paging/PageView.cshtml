@@ -6,6 +6,8 @@
 
 <div id="@Model.AreaId">
     @RenderSection("PageData")
+    <div class="page-header">
+    </div>
     <div class="pagination" id="@paginationId" align="center">
         <ul>
             @for (int pageNumber = 1; pageNumber <= Model.PagesCount; pageNumber++)

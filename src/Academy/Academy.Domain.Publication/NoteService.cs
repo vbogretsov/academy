@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Domain.DataAccess;
 using Academy.Domain.Interface;
 using Academy.Domain.Objects;
@@ -28,10 +25,9 @@ namespace Academy.Domain.Services
             context.NoteStorage.Remove(noteId);
         }
 
-        // TODO: add paging
-        public IEnumerable<Note> GetNotes(int userId)
+        public IPageData<Note> GetUserNotes(int userId, int page, int size)
         {
-            throw new NotImplementedException();
+            return context.NoteStorage.GetUserNotes(userId, page, size);
         }
     }
 }

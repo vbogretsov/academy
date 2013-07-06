@@ -1,32 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess.Ef.Configuration
 {
-    internal class QuestionConfiguration : EntityTypeConfiguration<Question>
+    internal class QuestionConfiguration : TitledPostConfiguration<Question>
     {
         public QuestionConfiguration()
+            : base("academy_Question", "QuestionId")
         {
-            ToTable("academy_Question");
-            HasKey(x => x.Id);
-            Property(x => x.Id)
-                .IsRequired()
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
-                .HasColumnName("QuestionId");
-            Property(x => x.Title)
-                .IsRequired()
-                .HasColumnName("Title");
-            Property(x => x.Text)
-                .IsRequired()
-                .HasColumnName("Text");
-            Property(x => x.PostedDate)
-                .IsRequired()
-                .HasColumnName("PostedDate");
             HasRequired(x => x.User)
                 .WithMany(x => x.Questions)
                 .HasForeignKey(x => x.UserId)

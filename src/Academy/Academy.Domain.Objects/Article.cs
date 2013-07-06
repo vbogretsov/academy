@@ -4,29 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academy.Domain.Objects
 {
-    public class Article : Entity, IByDisciplinesNotifiable
+    public class Article : TitledPost, IByDisciplinesNotifiable
     {
-        //[Key]
-        //public int ArticleId
-        //{
-        //    get;
-        //    set;
-        //}
-
-        [Required(ErrorMessage = "Article title is required")]
-        public string Title
-        {
-            get;
-            set;
-        }
-
-        [Required(ErrorMessage = "Article description is required")]
-        public string Description
-        {
-            get;
-            set;
-        }
-
         [Required(ErrorMessage = "Source file name is required")]
         public string Source
         {

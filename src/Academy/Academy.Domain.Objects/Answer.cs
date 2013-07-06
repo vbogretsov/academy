@@ -3,32 +3,8 @@ using System.Collections.Generic;
 
 namespace Academy.Domain.Objects
 {
-    public class Answer : Entity
+    public class Answer : Post
     {
-        //public int AnswerId
-        //{
-        //    get;
-        //    set;
-        //}
-
-        public string Text
-        {
-            get;
-            set;
-        }
-
-        public int QuestionId
-        {
-            get;
-            set;
-        }
-
-        public virtual Question Question
-        {
-            get;
-            set;
-        }
-
         public int UserId
         {
             get;
@@ -41,7 +17,13 @@ namespace Academy.Domain.Objects
             set;
         }
 
-        public DateTime PostedDate
+        public int QuestionId
+        {
+            get;
+            set;
+        }
+
+        public virtual Question Question
         {
             get;
             set;

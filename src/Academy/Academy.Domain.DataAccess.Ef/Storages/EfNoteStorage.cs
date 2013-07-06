@@ -23,9 +23,23 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             Remove(noteId, Entities.Notes);
         }
 
-        public IEnumerable<Note> GetUserNotes(int userId)
+        public IPageData<Note> GetUserNotes(int userId, int page, int size)
         {
-            return Entities.Notes.Where(x => x.UserId == userId);
+            var query = GetUserNotesQuery(userId);
+            return GetPage(query, page, size, GetUserNotesCount(userId));
+        }
+
+        private IEnumerable<Note> GetUserNotesQuery(int userId)
+        {
+            return from note in Entities.Notes
+                    where note.UserId == userId
+                    orderby note.PostedDate descending
+                select note;
+        }
+
+        private int GetUserNotesCount(int userId)
+        {
+            return GetUserNotesQuery(userId).Count();
         }
     }
 }

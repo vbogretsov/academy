@@ -360,6 +360,9 @@
   <data name="registration.bidthdate" xml:space="preserve">
     <value>Birth date</value>
   </data>
+  <data name="registration.date.err.invalid" xml:space="preserve">
+    <value>The specified date is invalid</value>
+  </data>
   <data name="registration.email" xml:space="preserve">
     <value>Email</value>
   </data>

@@ -26,9 +26,8 @@
                     url: this.action,
                     type: this.method,
                     data: $(this).serialize(),
-                    success: function (html) {
-                        $('#data').html('');
-                        $('#data').append(html);
+                    success: function (result) {
+                        $('#data').html(result);
                         CollapseDisciplinesTree();
                         $('#@formId')[0].reset();
                     }

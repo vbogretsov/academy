@@ -53,9 +53,13 @@
     <Compile Include="Configuration\CommentConfiguration.cs" />
     <Compile Include="Configuration\CommentNewsConfiguration.cs" />
     <Compile Include="Configuration\DisciplineConfiguration.cs" />
+    <Compile Include="Configuration\EntityConfiguration.cs" />
+    <Compile Include="Configuration\NewsConfiguration.cs" />
     <Compile Include="Configuration\NoteConfiguration.cs" />
+    <Compile Include="Configuration\PostConfiguration.cs" />
     <Compile Include="Configuration\QuestionConfiguration.cs" />
     <Compile Include="Configuration\QuestionNewsConfiguration.cs" />
+    <Compile Include="Configuration\TitledPostConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
     <Compile Include="EfDataContext.cs" />
     <Compile Include="PageData.cs" />

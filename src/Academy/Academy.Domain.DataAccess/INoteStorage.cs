@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.DataAccess
@@ -10,6 +9,6 @@ namespace Academy.Domain.DataAccess
 
         void Remove(int noteId);
 
-        IEnumerable<Note> GetUserNotes(int userId);
+        IPageData<Note> GetUserNotes(int userId, int page, int size);
     }
 }

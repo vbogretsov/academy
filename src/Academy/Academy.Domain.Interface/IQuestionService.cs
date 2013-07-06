@@ -18,9 +18,8 @@ namespace Academy.Domain.Interface
 
         IPageData<Question> GetUserQuestions(int userId, int page, int size);
 
-        //TODO: add paging
-        IEnumerable<Question> GetQuestions(User user);
+        IPageData<Answer> GetUserAnswers(int userId, int page, int size);
 
-        IEnumerable<Answer> GetAnswers(User user);
+        IPageData<Answer> GetQuestionAnswers(int questionId, int page, int size);
     }
 }

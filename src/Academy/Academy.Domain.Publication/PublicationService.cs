@@ -24,6 +24,7 @@ namespace Academy.Domain.Services
 
         public void Publish(Article article)
         {
+            article.PostedDate = DateTime.Now;
             article.Disciplines = disciplineStorage.Get(
                 article.Disciplines.Select(x => x.Id)).ToList();
             articleStorage.Add(article);

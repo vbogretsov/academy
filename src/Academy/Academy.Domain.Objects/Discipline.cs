@@ -11,13 +11,6 @@ namespace Academy.Domain.Objects
             return Name;
         }
 
-        //[Key]
-        //public int DisciplineId
-        //{
-        //    get;
-        //    set;
-        //}
-
         public string Name
         {
             get;

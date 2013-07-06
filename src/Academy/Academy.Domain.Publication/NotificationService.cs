@@ -33,6 +33,26 @@ namespace Academy.Domain.Services
             return disciplineStorage.Get();
         }
 
+        public IPageData<ArticleNews> GetArticleNews(int userId, int page, int size)
+        {
+            return context.ArticleNewsStorage.Get(userId, page, size);
+        }
+
+        public IPageData<CommentNews> GetCommentNews(int userId, int page, int size)
+        {
+            return context.CommentNewsStorage.Get(userId, page, size);
+        }
+
+        public IPageData<QuestionNews> GetQuestionNews(int userId, int page, int size)
+        {
+            return context.QuestionNewsStorage.Get(userId, page, size);
+        }
+
+        public IPageData<AnswerNews> GetAnswerNews(int userId, int page, int size)
+        {
+            return context.AnswerNewsStorage.Get(userId, page, size);
+        }
+
         public void NotifyAboutNewArticle(Article article)
         {
             ThreadPool.QueueUserWorkItem(s => NotifyAboutNewsArticleAsync(article));
@@ -51,26 +71,6 @@ namespace Academy.Domain.Services
         public void NotifyAboutNewAnswer(Answer answer)
         {
             ThreadPool.QueueUserWorkItem(s => NotifyAboutNewAnswerAsync(answer));
-        }
-
-        public IEnumerable<ArticleNews> GetArticleNews(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<CommentNews> GetCommentNews(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<QuestionNews> GetQuestionNews(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<AnswerNews> GetAnswerNews(User user)
-        {
-            throw new NotImplementedException();
         }
 
         private void NotifyAboutNewsArticleAsync(Article article)

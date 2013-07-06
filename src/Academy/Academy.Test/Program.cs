@@ -19,7 +19,6 @@ namespace Academy.Test
         {
             try
             {
-                
                 Start(args);
             }
             catch (Exception exception)
@@ -111,10 +110,10 @@ namespace Academy.Test
                 academyEntities.Database.Create();
                 academyEntities.Database.ExecuteSqlCommand("ALTER DATABASE Academy COLLATE Cyrillic_General_CI_AS");
                 Console.WriteLine("Database created");
-                Console.WriteLine("Generating test data...");
-                TestDataGenerator generator = new TestDataGenerator(academyEntities);
-                generator.GenerateDisciplines();
-                Console.WriteLine("Generating test data compleeted");
+                //Console.WriteLine("Generating test data...");
+                //TestDataGenerator generator = new TestDataGenerator(academyEntities);
+                //generator.GenerateDisciplines();
+                //Console.WriteLine("Generating test data compleeted");
             }
         }
     }

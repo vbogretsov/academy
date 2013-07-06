@@ -137,6 +137,7 @@
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\DateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\NoteController.cs" />
@@ -265,6 +266,14 @@
     <Content Include="Views\Shared\RenderTemplates\Paging\PageView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\Paging\CommentsPageView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\Paging\SingleCommentsPageView.cshtml" />
+    <Content Include="Views\Answer\GetUserAnswers.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\AnswersPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\SingleAnswersPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\ArticleNewsPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\CommentNewsPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\QuestionNewsPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\AnswerNewsPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\Paging\NotesPageView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -376,7 +385,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7028/</IISUrl>
+          <IISUrl>http://localhost:7010/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

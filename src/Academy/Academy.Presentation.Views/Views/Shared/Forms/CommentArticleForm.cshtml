@@ -1,12 +1,12 @@
 ﻿@using Academy.Presentation.ViewModels
-@model Academy.Presentation.ViewModels.CommentViewModel
+@model CommentViewModel
 
 @{
     var postCommentFormId = String.Format("commentFormFor{0}", Model.ArticleId);
-    var commentsId = String.Format("commentsFor{0}", Model.Id);
+    var commentsId = String.Format("commentsFor{0}", Model.ArticleId);
 }
 
-@using (Html.BeginForm("CommentArticle", "Article", FormMethod.Post, new { id = postCommentFormId }))
+@using (Html.BeginForm("CommentArticle", "Comment", FormMethod.Post, new { id = postCommentFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateCommentEditor", Model);
     <input type="submit" class="btn btn-primary pull-right" value="Comment"/>
@@ -22,8 +22,7 @@
                     url: this.action,
                     data: $(this).serialize(),
                     success: function (result) {
-                        $('#@commentsId').html('');
-                        $('#@commentsId').append(result);
+                        $('#@commentsId').html(result);
                         $('#@postCommentFormId')[0].reset();
                     }
                 });

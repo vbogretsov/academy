@@ -6,7 +6,7 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class AnswerViewModel : EntityViewModel
+    public class AnswerViewModel : EntityViewModel, IPostViewModel
     {
         [LocalizedDisplay("answer.text")]
         [LocalizedRequired("answer.text.err.required")]

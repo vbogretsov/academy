@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Academy.Presentation.ViewModels.Utils;
 using Academy.Validation;
 
@@ -62,6 +59,7 @@ namespace Academy.Presentation.ViewModels
         }
 
         [LocalizedDisplay("registration.bidthdate")]
+        [LocalizedRemote("ValidateDate", "Date", "POST", "registration.bidthdate.err.invalid")]
         public DateViewModel BirthDate
         {
             get;

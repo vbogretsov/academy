@@ -3,7 +3,7 @@ using Academy.Validation;
 
 namespace Academy.Presentation.ViewModels
 {
-    public class NoteViewModel : EntityViewModel
+    public class NoteViewModel : EntityViewModel, ITitledPostViewModel
     {
         public int UserId
         {

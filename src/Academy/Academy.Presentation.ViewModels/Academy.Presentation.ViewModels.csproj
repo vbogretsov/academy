@@ -54,6 +54,10 @@
     <Compile Include="DisciplineViewModel.cs" />
     <Compile Include="EntityViewModel.cs" />
     <Compile Include="HomeViewModel.cs" />
+    <Compile Include="IEntityViewModel.cs" />
+    <Compile Include="INewsViewModel.cs" />
+    <Compile Include="IPostViewModel.cs" />
+    <Compile Include="ITitledPostViewModel.cs" />
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="Mappers\AnswerMapper.cs" />
     <Compile Include="Mappers\AnswerNewsMapper.cs" />
@@ -67,8 +71,11 @@
     <Compile Include="Mappers\CommentNewsMapper.cs" />
     <Compile Include="Mappers\DateMapper.cs" />
     <Compile Include="Mappers\DisciplineMapper.cs" />
+    <Compile Include="Mappers\EntityMapper.cs" />
+    <Compile Include="Mappers\NewsMapper.cs" />
     <Compile Include="Mappers\NoteMapper.cs" />
     <Compile Include="Mappers\PageDataMapper.cs" />
+    <Compile Include="Mappers\PostMapper.cs" />
     <Compile Include="Mappers\QuestionMapper.cs" />
     <Compile Include="Mappers\QuestionNewsMapper.cs" />
     <Compile Include="Mappers\QuestionSearchMapper.cs" />
@@ -76,6 +83,7 @@
     <Compile Include="Mappers\QuestionSmallMapper.cs" />
     <Compile Include="Mappers\SingleAnswerMapper.cs" />
     <Compile Include="Mappers\SingleCommentMapper.cs" />
+    <Compile Include="Mappers\TitledPostMapper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="NewsViewModel.cs" />
     <Compile Include="NoteViewModel.cs" />

@@ -10,6 +10,8 @@ namespace Academy.Domain.DataAccess
 
         void Remove(int answerId);
 
-        IEnumerable<Answer> GetUserAnswers(int userId);
+        IPageData<Answer> GetUserAnswers(int userId, int page, int size);
+
+        IPageData<Answer> GetQuestionAnswers(int questionId, int page, int size);
     }
 }

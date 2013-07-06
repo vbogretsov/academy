@@ -5,7 +5,7 @@
     string answersId = String.Format("answersFor{0}", Model.QuestionId);
 }
 
-@using (Html.BeginForm("Answer", "Question", FormMethod.Post, new { id = postAsnwerFormId }))
+@using (Html.BeginForm("Answer", "Answer", FormMethod.Post, new { id = postAsnwerFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateAnswerEditor", Model);
     <input type="submit" class="btn btn-primary pull-right" value="Answer"/>
@@ -20,8 +20,7 @@
                 type: this.method,
                 data: $(this).serialize(),
                 success: function (result) {
-                    $('#@answersId').html('');
-                    $('#@answersId').append(result);
+                    $('#@answersId').html(result);
                     $('#@postAsnwerFormId')[0].reset();
                 }
             });

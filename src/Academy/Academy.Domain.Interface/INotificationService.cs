@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.Interface
@@ -18,16 +19,12 @@ namespace Academy.Domain.Interface
 
         IEnumerable<Discipline> GetDisciplines();
 
-        //TODO: add paging
-        IEnumerable<ArticleNews> GetArticleNews(User user);
+        IPageData<ArticleNews> GetArticleNews(int userId, int page, int size);
 
-        //TODO: add paging
-        IEnumerable<CommentNews> GetCommentNews(User user);
+        IPageData<CommentNews> GetCommentNews(int userId, int page, int size);
 
-        //TODO: add paging
-        IEnumerable<QuestionNews> GetQuestionNews(User user);
+        IPageData<QuestionNews> GetQuestionNews(int userId, int page, int size);
 
-        //TODO: add paging
-        IEnumerable<AnswerNews> GetAnswerNews(User user);
+        IPageData<AnswerNews> GetAnswerNews(int userId, int page, int size);
     }
 }

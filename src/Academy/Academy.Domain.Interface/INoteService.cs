@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Academy.Domain.DataAccess;
 using Academy.Domain.Objects;
 
 namespace Academy.Domain.Interface
@@ -13,7 +10,6 @@ namespace Academy.Domain.Interface
 
         void Remove(int noteId);
 
-        //TODO: add paging
-        IEnumerable<Note> GetNotes(int userId);
+        IPageData<Note> GetUserNotes(int userId, int page, int size);
     }
 }

@@ -327,7 +327,7 @@
   <data name="question.title.err.required" xml:space="preserve">
     <value>Question title is required</value>
   </data>
-  <data name="registration..btn.register" xml:space="preserve">
+  <data name="registration.btn.register" xml:space="preserve">
     <value>Register</value>
   </data>
   <data name="registration.bidthdate" xml:space="preserve">
@@ -387,9 +387,6 @@
   <data name="registration.univercity" xml:space="preserve">
     <value>Univercity</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="user.birthdate" xml:space="preserve">
     <value>Birth date</value>
   </data>
@@ -425,5 +422,8 @@
   </data>
   <data name="user.university.err.required" xml:space="preserve">
     <value>University is required</value>
+  </data>
+  <data name="registration.bidthdate.err.invalid" xml:space="preserve">
+    <value>The specified date is invalid</value>
   </data>
 </root>

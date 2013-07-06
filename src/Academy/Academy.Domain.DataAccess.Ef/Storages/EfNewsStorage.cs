@@ -52,5 +52,23 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         {
             return entities.Where(x => x.UserId == userId);
         }
+
+        public IPageData<T> Get(int userId, int page, int size)
+        {
+            var query = GetNewsQuery(userId);
+            return GetPage(query, page, size, GetNewsCount(userId));
+        }
+
+        private IEnumerable<T> GetNewsQuery(int userId)
+        {
+            return from t in entities
+                   where t.UserId == userId
+                select t;
+        }
+
+        private int GetNewsCount(int userId)
+        {
+            return GetNewsQuery(userId).Count();
+        }
     }
 }

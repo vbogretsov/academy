@@ -18,27 +18,47 @@ namespace Academy.Presentation.Views.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetArticleNews()
+        public ActionResult GetArticleNews(
+            int pageNumber = 1,
+            int pageSize = DefualtPageSize)
         {
-            return View(CurrentUser);
+            var news = Service.GetArticleNews(CurrentUser.Id, pageNumber, pageSize);
+            var page = PageDataMapper.Map(news, ArticleNewsMapper.Map);
+            page.UrlFormat = "#/NewArticles?";
+            return View("RenderTemplates/Paging/ArticleNewsPageView", page);
         }
 
         [HttpGet]
-        public ActionResult GetQuestionNews()
+        public ActionResult GetQuestionNews(
+            int pageNumber = 1,
+            int pageSize = DefualtPageSize)
         {
-            return View(CurrentUser);
+            var news = Service.GetQuestionNews(CurrentUser.Id, pageNumber, pageSize);
+            var page = PageDataMapper.Map(news, QuestionNewsMapper.Map);
+            page.UrlFormat = "#/NewQuestions?";
+            return View("RenderTemplates/Paging/QuestionNewsPageView", page);
         }
 
         [HttpGet]
-        public ActionResult GetCommentNews()
+        public ActionResult GetCommentNews(
+            int pageNumber = 1,
+            int pageSize = DefualtPageSize)
         {
-            return View(CurrentUser);
+            var news = Service.GetCommentNews(CurrentUser.Id, pageNumber, pageSize);
+            var page = PageDataMapper.Map(news, CommentNewsMapper.Map);
+            page.UrlFormat = "#/NewComments?";
+            return View("RenderTemplates/Paging/CommentNewsPageView", page);
         }
 
         [HttpGet]
-        public ActionResult GetAnswerNews()
+        public ActionResult GetAnswerNews(
+            int pageNumber = 1,
+            int pageSize = DefualtPageSize)
         {
-            return View(CurrentUser);
+            var news = Service.GetAnswerNews(CurrentUser.Id, pageNumber, pageSize);
+            var page = PageDataMapper.Map(news, AnswerNewsMapper.Map);
+            page.UrlFormat = "#/NewAnswers?";
+            return View("RenderTemplates/Paging/AnswerNewsPageView", page);
         }
 
         [HttpGet]

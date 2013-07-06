@@ -1,0 +1,14 @@
+﻿@using Academy.Presentation.ViewModels;
+@model PageDataViewModel<NoteViewModel>
+
+@{
+    Layout = "PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var note in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/NoteView", note);
+    }
+}

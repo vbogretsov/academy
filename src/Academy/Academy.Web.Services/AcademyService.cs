@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using Academy.Domain.DataAccess;
 using Academy.Domain.DataAccess.Ef;
 using Academy.Domain.Interface;
@@ -116,9 +114,9 @@ namespace Academy.Web.Services
             NoteService.Remove(noteId);
         }
 
-        public IEnumerable<Note> GetNotes(int userId)
+        public IPageData<Note> GetUserNotes(int userId, int page, int size)
         {
-            return NoteService.GetNotes(userId);
+            return NoteService.GetUserNotes(userId, page, size);
         }
 
         public void Ask(Question question)
@@ -144,16 +142,14 @@ namespace Academy.Web.Services
             return QuestionService.GetUserQuestions(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<Answer> GetAnswers(User user)
+        public IPageData<Answer> GetUserAnswers(int userId, int page, int size)
         {
-            return QuestionService.GetAnswers(user);
+            return QuestionService.GetUserAnswers(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<Question> GetQuestions(User user)
+        public IPageData<Answer> GetQuestionAnswers(int questionId, int page, int size)
         {
-            return QuestionService.GetQuestions(user);
+            return QuestionService.GetQuestionAnswers(questionId, page, size);
         }
 
         public void Publish(Article article)
@@ -210,28 +206,24 @@ namespace Academy.Web.Services
             return NotificationService.GetDisciplines();
         }
 
-        // TODO: use userId
-        public IEnumerable<AnswerNews> GetAnswerNews(User user)
+        public IPageData<ArticleNews> GetArticleNews(int userId, int page, int size)
         {
-            return NotificationService.GetAnswerNews(user);
+            return NotificationService.GetArticleNews(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<QuestionNews> GetQuestionNews(User user)
+        public IPageData<CommentNews> GetCommentNews(int userId, int page, int size)
         {
-            return NotificationService.GetQuestionNews(user);
+            return NotificationService.GetCommentNews(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<CommentNews> GetCommentNews(User user)
+        public IPageData<QuestionNews> GetQuestionNews(int userId, int page, int size)
         {
-            return NotificationService.GetCommentNews(user);
+            return NotificationService.GetQuestionNews(userId, page, size);
         }
 
-        // TODO: use userId
-        public IEnumerable<ArticleNews> GetArticleNews(User user)
+        public IPageData<AnswerNews> GetAnswerNews(int userId, int page, int size)
         {
-            return NotificationService.GetArticleNews(user);
+            return NotificationService.GetAnswerNews(userId, page, size);
         }
 
         public void NotifyAboutNewAnswer(Answer answer)

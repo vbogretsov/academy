@@ -108,7 +108,7 @@ namespace Academy.Test.DataGenerating
             var article = new Article();
             article.Title = GetInfoField(articleInfo, "title");
             writer.WriteLine("Title: {0}", article.Title);
-            article.Description = GetInfoField(articleInfo, "description");
+            article.Text = GetInfoField(articleInfo, "description");
             article.Source = GetInfoField(articleInfo, "source");
             var authors = GetInfoField(articleInfo, "users").Split(',');
             article.Authors = new List<User>();

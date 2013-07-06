@@ -1,0 +1,14 @@
+﻿@using Academy.Presentation.ViewModels;
+@model PageDataViewModel<AnswerNewsViewModel>
+
+@{
+    Layout = "PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var answerNews in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/AnswerNewsView", answerNews);
+    }
+}

@@ -5,26 +5,21 @@ namespace Academy.Presentation.ViewModels.Mappers
 {
     public static class NoteMapper
     {
-        public static NoteViewModel Map(Note note)
+        private static readonly TitledPostMapper<Note, NoteViewModel> mapper =
+            new TitledPostMapper<Note, NoteViewModel>();
+
+        public static NoteViewModel Map(Note model)
         {
-            NoteViewModel viewModel = new NoteViewModel();
-            viewModel.Id = note.Id;
-            viewModel.UserId = note.UserId;
-            viewModel.Title = note.Title;
-            viewModel.Text = note.Text;
-            viewModel.PostedDate = note.PostedDate;
+            var viewModel = mapper.Map(model);
+            viewModel.UserId = model.UserId;
             return viewModel;
         }
 
         public static Note Map(NoteViewModel viewModel)
         {
-            Note note = new Note();
-            note.Id = viewModel.Id;
-            note.UserId = viewModel.UserId;
-            note.Title = viewModel.Title;
-            note.Text = viewModel.Text;
-            note.PostedDate = viewModel.PostedDate;
-            return note;
+            var model = mapper.Map(viewModel);
+            model.UserId = viewModel.UserId;
+            return model;
         }
     }
 }

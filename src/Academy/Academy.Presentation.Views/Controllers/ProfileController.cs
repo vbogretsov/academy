@@ -15,6 +15,7 @@ namespace Academy.Presentation.Views.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            CurrentUser.NotesPage = LoadUserNotes(CurrentUser.Id, 1, DefualtPageSize);
             return View(CurrentUser);
         }
 
@@ -52,6 +53,18 @@ namespace Academy.Presentation.Views.Controllers
                     Server.MapPath(UserPhotosFolder),
                     viewModel.PhotoFile.FileName);
             }
+        }
+
+        // TODO: Refactor to avoid copy paste
+        private PageDataViewModel<NoteViewModel> LoadUserNotes(
+            int userId,
+            int pageNumber,
+            int pageSize)
+        {
+            var notes = Service.GetUserNotes(userId, pageNumber, pageSize);
+            var page = PageDataMapper.Map(notes, NoteMapper.Map);
+            page.UrlFormat = "";
+            return page;
         }
     }
 }

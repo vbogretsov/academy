@@ -9,9 +9,10 @@
     var removeId = String.Format("removeAnswer{0}", Model.Id);
     var removeText = "Remove comment";
     var answerId = String.Format("answerId{0}", Model.Id);
+    var postedText = "Posted: ";
 }
 
-<div class="page-header" id="@answerId">
+<div id="@answerId">
     <span class="label">
         @authorFullName
     </span>
@@ -20,14 +21,17 @@
         <div class="text-block-body">
             @Model.Text
         </div>
-        @if (User.IsInRole("Admin"))
-        {
-            <div class="pull-right">
-                <button class="btn btn-mini btn-danger" id="@removeId">
-                    @removeText
-                </button>
-            </div>
-        }
+        <div class="text-block-footer">
+            <b>@postedText</b>@Model.PostedDate
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="pull-right">
+                    <button class="btn btn-mini btn-danger" id="@removeId">
+                        @removeText
+                    </button>
+                </div>
+            }
+        </div>
     </div>
 </div>
 
@@ -35,9 +39,9 @@
     $(function () {
         $('#@removeId').click(function () {
             $.ajax({
-                url: '@Url.Action("RemoveAnswer", "Question", new {id = Model.Id})',
+                url: '@Url.Action("RemoveAnswer", "Question", new { id = Model.Id })',
                 type: 'post',
-                success: function() {
+                success: function () {
                     $('#@answerId').remove();
                 }
             });
