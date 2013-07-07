@@ -1,9 +1,0 @@
-﻿@model Academy.Presentation.ViewModels.UserViewModel
-
-@if (Model.Notes != null)
-{
-    foreach (var note in Model.Notes)
-    {
-        Html.RenderPartial("RenderTemplates/NoteView", note);
-    }
-}

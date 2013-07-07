@@ -3,7 +3,7 @@
 @model  PageDataViewModel<CommentViewModel>
 
 @{
-    Layout = "PageView.cshtml";
+    Layout = "../Shared/RenderTemplates/Paging/PageView.cshtml";
 }
 
 @section PageData
@@ -12,4 +12,9 @@
     {
         Html.RenderPartial("RenderTemplates/CommentView", comment);
     }
+}
+
+@section Scripts
+{
+    <script type="text/javascript" src="../../Scripts/InitCommentHandlers.js"></script>
 }

@@ -18,9 +18,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult FindArticles(ArticleSearchViewModel viewModel)
         {
             var result = Service.FindArticles(ArticleSearchMapper.Map(viewModel));
-            return View(
-                "RenderTemplates/ArticleSearchResultView",
-                ArticleSearchResultMapper.Map(result));
+            return View("ArticleSearchResultView", ArticleSearchResultMapper.Map(result));
         }
 
         [HttpGet]
@@ -34,9 +32,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult FindQuestions(QuestionSearchViewModel viewModel)
         {
             var result = Service.FindQuestions(QuestionSearchMapper.Map(viewModel));
-            return View(
-                "RenderTemplates/QuestionSearchResultView",
-                QuestionSearchResultMapper.Map(result));
+            return View("QuestionSearchResultView", QuestionSearchResultMapper.Map(result));
         }
     }
 }

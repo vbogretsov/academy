@@ -5,7 +5,9 @@
 }
 
 <div id="@Model.AreaId">
-    @RenderSection("PageData")
+    <div style="min-height: 600px">
+        @RenderSection("PageData")
+    </div>
     <div class="page-header">
     </div>
     <div class="pagination" id="@paginationId" align="center">
@@ -19,7 +21,7 @@
                         Model.UrlFormat,
                         pageNumber,
                         Model.PageSize);
-                <li><a href="@url">@pageNumber</a></li>
+                    <li><a href="@url">@pageNumber</a></li>
                 }
                 else
                 {
@@ -29,3 +31,4 @@
         </ul>
     </div>
 </div>
+@RenderSection("Scripts", false)

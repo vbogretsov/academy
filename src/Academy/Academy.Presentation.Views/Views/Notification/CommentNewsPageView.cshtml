@@ -1,0 +1,19 @@
+﻿@using Academy.Presentation.ViewModels;
+@model PageDataViewModel<CommentNewsViewModel>
+
+@{
+    Layout = "../Shared/RenderTemplates/Paging/PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var commentNews in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/CommentNewsView", commentNews);
+    }
+}
+@section Scripts
+{
+    <script type="text/javascript" src="../../Scripts/InitSingleArticleHandlers.js"></script>
+    <script type="text/javascript" src="../../Scripts/InitSingleCommentHandlers.js"></script>
+}

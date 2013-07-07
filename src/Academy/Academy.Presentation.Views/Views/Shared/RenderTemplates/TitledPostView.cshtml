@@ -1,0 +1,34 @@
+﻿@using Academy.Presentation.ViewModels
+@model ITitledPostViewModel
+
+@{
+    var id = String.Format("titledPostId{0}", Model.Id);
+    var postedText = "Posted: ";
+}
+
+<div class="text-block" id="@id">
+    <div class="text-block-header">
+        <h4>@Model.Title</h4>
+    </div>
+    <div class="text-block-sub-header">
+        @RenderSection("Authors")
+    </div>
+    <div class="text-block-body">
+        @Model.Text
+    </div>
+    <div class="text-block-footer">
+        @RenderSection("Disciplines", false)
+        <div>
+            <span>
+                @RenderSection("AdditionalInfo", false)
+                <br/>
+                <b>@postedText</b>@Model.PostedDate
+            </span>
+            <div class="pull-right">
+                @RenderSection("Buttons", false)
+            </div>
+        </div>
+    </div>
+</div>
+@RenderSection("Footer", false)
+@RenderSection("Scripts", false)

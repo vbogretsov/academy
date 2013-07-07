@@ -2,6 +2,13 @@
 
 <div>
     @{
-        Html.RenderPartial("RenderTemplates/SingleCommentView", Model.Comment);
+        try
+        {
+            Html.RenderPartial("RenderTemplates/SingleCommentView", Model.Comment);
+        }
+        catch (Exception exception)
+        {
+            @exception
+        }
     }
 </div>

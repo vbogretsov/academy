@@ -16,7 +16,7 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize = DefualtPageSize)
         {
             var page = LoadUserAnswers(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/SingleAnswersPageView", page);
+            return View("SingleAnswersPageView", page);
         }
 
         [HttpGet]
@@ -26,7 +26,7 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize = DefualtPageSize)
         {
             var page = LoadQuestionAnswers(questionId, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/AnswersPageView", page);
+            return View("AnswersPageView", page);
         }
 
         [HttpPost]

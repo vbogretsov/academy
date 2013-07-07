@@ -1,52 +1,32 @@
 ﻿@model Academy.Presentation.ViewModels.CommentViewModel
-
+@{
+    Layout = "SinglePostView.cshtml";
+}
 @{
     const string showArticleText = "Show article";
     var showArticleId = String.Format("showArticleFor{0}", Model.Id);
-    var parentArticleId = String.Format("articleFor{0}", Model.Id);
-    var authorFullName = String.Format(
+    var articleAreaId = String.Format("articleFor{0}", Model.Id);
+    var parentArticleId = String.Format("article{0}", Model.ArticleId);
+}
+@section Authors
+{
+    @String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
         Model.Author.FirstName,
-        Model.Author.LastName);
-    var postedText = "Posted: ";
+        Model.Author.LastName)
 }
-
-<div>
-    <span class="label">
-        @authorFullName
-    </span>
-    <div class="text-block">
-        <div class="text-block-body">
-            @Model.Text
-        </div>
-        <div class="text-block-footer">
-            <span class="label">@Model.Article.Title</span>
-            <br/>
-            <b>@postedText</b>@Model.PostedDate
-            <div class="pull-right">
-                <button class="btn btn-mini btn-primary" id="@showArticleId">@showArticleText</button>
-            </div>
-        </div>
+@section ParentInfo
+{
+    @Model.Article.Title
+}
+@section Buttons
+{
+    <button class="btn btn-mini btn-primary" id="@showArticleId">@showArticleText</button>
+}
+@section Footer
+{
+    <div id="@articleAreaId">
+        <div id="@parentArticleId" class="hide" />
     </div>
-</div>
-<div id="@parentArticleId" class="hide" />
-
-<script type="text/javascript">
-    $(function () {
-        $('#@showArticleId').click(function () {
-            if ($('#@parentArticleId').is(':empty')) {
-                $.ajax({
-                    url: '@Url.Action("GetArticle", "Article", new {articleId = Model.ArticleId})',
-                    cache: false,
-                    success: function(result) {
-                        $('#@parentArticleId').append(result);
-                        $('#@parentArticleId').slideToggle('fast');
-                    }
-                });
-            } else {
-                $('#@parentArticleId').slideToggle('fast');
-            }
-        });
-    });
-</script>
+}

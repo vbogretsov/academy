@@ -1,52 +1,32 @@
 ﻿@model Academy.Presentation.ViewModels.AnswerViewModel
-
 @{
-    var parentQuestionId = String.Format("questionFor{0}", Model.Id);
+    Layout = "SinglePostView.cshtml";
+}
+@{
+    var questionAreaId = String.Format("questionFor{0}", Model.Id);
+    var parentQuestionId = String.Format("question{0}", Model.Id);
     var showQuestionId = String.Format("showQuestionFor{0}", Model.Id);
     const string showQuestionText = "Show question";
-    var authorFullName = String.Format(
+}
+@section Authors
+{
+    @String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
         Model.Author.FirstName,
-        Model.Author.LastName);
-    var postedText = "Posted: ";
+        Model.Author.LastName)
 }
-
-<div>
-    <span class="label">
-        @authorFullName
-    </span>
-    <div class="text-block">
-        <div class="text-block-body">
-            @Model.Text
-        </div>
-        <div class="text-block-footer">
-            <b>@postedText</b>@Model.PostedDate
-            <br/>
-            <span class="label">@Model.Question.Title</span>
-            <div class="pull-right">
-                <button class="btn btn-mini btn-primary" id="@showQuestionId">@showQuestionText</button>
-            </div>
-        </div>
+@section ParentInfo
+{
+    @Model.Question.Title
+}
+@section Buttons
+{
+    <button class="btn btn-mini btn-primary" id="@showQuestionId">@showQuestionText</button>
+}
+@section Footer
+{
+    <div id="@questionAreaId">
+        <div id="@parentQuestionId" class="hide" />
     </div>
-</div>
-<div id="@parentQuestionId" class="hide" />
-
-<script type="text/javascript">
-    $(function () {
-        $('#@showQuestionId').click(function () {
-            if ($('#@parentQuestionId').is(':empty')) {
-                $.ajax({
-                    url: '@Url.Action("GetQuestion", "Question", new {questionId = Model.QuestionId})',
-                    cache: false,
-                    success: function(result) {
-                        $('#@parentQuestionId').append(result);
-                        $('#@parentQuestionId').slideToggle('fast');
-                    }
-                });
-            } else {
-                $('#@parentQuestionId').slideToggle('fast');
-            }
-        });
-    });
-</script>
+}

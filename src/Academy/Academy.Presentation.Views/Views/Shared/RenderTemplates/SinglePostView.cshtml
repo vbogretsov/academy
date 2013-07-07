@@ -1,0 +1,28 @@
+﻿@using Academy.Presentation.ViewModels
+@model IPostViewModel
+
+@{
+    var postedText = "Posted: ";
+}
+
+<div>
+    <span class="label">
+        @RenderSection("Authors")
+    </span>
+    <div class="text-block">
+        <div class="text-block-body">
+            @Model.Text
+        </div>
+        <div class="text-block-footer">
+            <span class="label">@RenderSection("ParentInfo")</span>
+            <br/>
+            <b>@postedText</b>@Model.PostedDate
+            <div class="pull-right">
+                @*<button class="btn btn-mini btn-primary" id="@showArticleId">@showArticleText</button>*@
+                @RenderSection("Buttons")
+            </div>
+        </div>
+    </div>
+</div>
+@RenderSection("Footer")
+@*<div id="@parentArticleId" class="hide" />*@

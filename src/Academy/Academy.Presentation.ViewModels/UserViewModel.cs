@@ -87,38 +87,11 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        //TODO: add paging
-        //public IEnumerable<ArticleViewModel> Articles
-        //{
-        //    get;
-        //    set;
-        //}
-
         public PageDataViewModel<ArticleViewModel> ArticlesPage
         {
             get;
             set;
         }
-
-        //TODO: add paging
-        //public IEnumerable<CommentViewModel> Comments
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //public PageDataViewModel<CommentViewModel> CommentsPage
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //TODO: add paging
-        //public IEnumerable<NoteViewModel> Notes
-        //{
-        //    get;
-        //    set;
-        //}
 
         public PageDataViewModel<NoteViewModel> NotesPage
         {
@@ -126,52 +99,10 @@ namespace Academy.Presentation.ViewModels
             set;
         }
 
-        //TODO: add paging
-        //public IEnumerable<QuestionViewModel> Questions
-        //{
-        //    get;
-        //    set;
-        //}
-
         public PageDataViewModel<QuestionViewModel> QuestionsPage
         {
             get;
             set;
         }
-
-        //TODO: add paging
-        //public IEnumerable<AnswerViewModel> Answers
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //TODO: add paging
-        //public IEnumerable<ArticleNewsViewModel> ArticleNews
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //TODO: add paging
-        //public IEnumerable<QuestionNewsViewModel> QuestionNews
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //TODO: add paging
-        //public IEnumerable<CommentNewsViewModel> CommentNews
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //TODO: add paging
-        //public IEnumerable<AnswerNewsViewModel> AnswerNews
-        //{
-        //    get;
-        //    set;
-        //}
     }
 }

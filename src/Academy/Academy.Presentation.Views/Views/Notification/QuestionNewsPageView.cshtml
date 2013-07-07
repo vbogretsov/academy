@@ -1,0 +1,19 @@
+﻿@using Academy.Presentation.ViewModels;
+@model PageDataViewModel<QuestionNewsViewModel>
+
+@{
+    Layout = "../Shared/RenderTemplates/Paging/PageView.cshtml";
+}
+
+@section PageData
+{
+    @foreach (var questionNews in Model.Items)
+    {
+        Html.RenderPartial("RenderTemplates/QuestionNewsView", questionNews);
+    }
+}
+@section Scripts
+{
+    <script type="text/javascript" src="../../Scripts/InitSingleQuestionHandlers.js"></script>
+    <script type="text/javascript" src="../../Scripts/InitQuestionHandlers.js"></script>
+}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Academy.Domain.Objects
 {
@@ -23,6 +24,7 @@ namespace Academy.Domain.Objects
             set;
         }
 
+        [Required(ErrorMessage = "Question should have at least one discipline")]
         public virtual ICollection<Discipline> Disciplines
         {
             get;

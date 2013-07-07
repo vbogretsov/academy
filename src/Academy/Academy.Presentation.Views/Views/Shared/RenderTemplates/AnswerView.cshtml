@@ -1,18 +1,43 @@
 ﻿@model Academy.Presentation.ViewModels.AnswerViewModel
 
 @{
-    var authorFullName = String.Format(
+    Layout = "PostView.cshtml";
+}
+
+@{
+    //var authorFullName = String.Format(
+    //    "{0} {1} {2}",
+    //    Model.Author.Email,
+    //    Model.Author.FirstName,
+    //    Model.Author.LastName);
+    var removeId = String.Format("removeAnswer{0}", Model.Id);
+    var removeText = "Remove comment";
+    //var answerId = String.Format("answerId{0}", Model.Id);
+    //var postedText = "Posted: ";
+}
+
+@section Author
+{
+    @String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
         Model.Author.FirstName,
-        Model.Author.LastName);
-    var removeId = String.Format("removeAnswer{0}", Model.Id);
-    var removeText = "Remove comment";
-    var answerId = String.Format("answerId{0}", Model.Id);
-    var postedText = "Posted: ";
+        Model.Author.LastName)
 }
 
-<div id="@answerId">
+@section Buttons
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="pull-right">
+            <button class="btn btn-mini btn-danger" id="@removeId">
+                @removeText
+            </button>
+        </div>
+    }
+}
+
+@*<div id="@answerId">
     <span class="label">
         @authorFullName
     </span>
@@ -47,4 +72,4 @@
             });
         });
     });
-</script>
+</script>*@

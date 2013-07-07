@@ -25,7 +25,7 @@ namespace Academy.Presentation.Views.Controllers
             var news = Service.GetArticleNews(CurrentUser.Id, pageNumber, pageSize);
             var page = PageDataMapper.Map(news, ArticleNewsMapper.Map);
             page.UrlFormat = "#/NewArticles?";
-            return View("RenderTemplates/Paging/ArticleNewsPageView", page);
+            return View("ArticleNewsPageView", page);
         }
 
         [HttpGet]
@@ -36,7 +36,7 @@ namespace Academy.Presentation.Views.Controllers
             var news = Service.GetQuestionNews(CurrentUser.Id, pageNumber, pageSize);
             var page = PageDataMapper.Map(news, QuestionNewsMapper.Map);
             page.UrlFormat = "#/NewQuestions?";
-            return View("RenderTemplates/Paging/QuestionNewsPageView", page);
+            return View("QuestionNewsPageView", page);
         }
 
         [HttpGet]
@@ -47,7 +47,7 @@ namespace Academy.Presentation.Views.Controllers
             var news = Service.GetCommentNews(CurrentUser.Id, pageNumber, pageSize);
             var page = PageDataMapper.Map(news, CommentNewsMapper.Map);
             page.UrlFormat = "#/NewComments?";
-            return View("RenderTemplates/Paging/CommentNewsPageView", page);
+            return View("CommentNewsPageView", page);
         }
 
         [HttpGet]
@@ -58,7 +58,7 @@ namespace Academy.Presentation.Views.Controllers
             var news = Service.GetAnswerNews(CurrentUser.Id, pageNumber, pageSize);
             var page = PageDataMapper.Map(news, AnswerNewsMapper.Map);
             page.UrlFormat = "#/NewAnswers?";
-            return View("RenderTemplates/Paging/AnswerNewsPageView", page);
+            return View("AnswerNewsPageView", page);
         }
 
         [HttpGet]

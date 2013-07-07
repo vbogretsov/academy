@@ -11,7 +11,7 @@ namespace Academy.Presentation.ViewModels.Mappers
         public static CommentNewsViewModel Map(CommentNews model)
         {
             var viewModel = mapper.Map(model);
-            viewModel.Comment = CommentMapper.Map(model.Comment);
+            viewModel.Comment = SingleCommentMapper.Map(model.Comment);
             return viewModel;
         }
     }

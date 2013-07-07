@@ -54,6 +54,7 @@
     <Compile Include="DisciplineViewModel.cs" />
     <Compile Include="EntityViewModel.cs" />
     <Compile Include="HomeViewModel.cs" />
+    <Compile Include="IDisciplinesRelatedViewModel.cs" />
     <Compile Include="IEntityViewModel.cs" />
     <Compile Include="INewsViewModel.cs" />
     <Compile Include="IPostViewModel.cs" />

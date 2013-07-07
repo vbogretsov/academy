@@ -1,9 +1,0 @@
-﻿@model Academy.Presentation.ViewModels.UserViewModel
-
-@if (Model.Answers != null)
-{
-    foreach (var answer in Model.Answers)
-    {
-        Html.RenderPartial("RenderTemplates/SingleAnswerView", answer);
-    }
-}

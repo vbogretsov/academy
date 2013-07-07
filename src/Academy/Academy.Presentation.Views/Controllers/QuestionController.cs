@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
@@ -47,7 +44,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult GetUserQuestionsPage(int pageNumber, int pageSize)
         {
             var page = LoadUserQuestions(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/QuestionsPageView", page);
+            return View("QuestionsPageView", page);
         }
 
         private PageDataViewModel<QuestionViewModel> LoadUserQuestions(

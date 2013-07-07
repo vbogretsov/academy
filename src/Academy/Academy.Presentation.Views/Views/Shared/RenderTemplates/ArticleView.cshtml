@@ -2,20 +2,24 @@
 @model ArticleViewModel
 
 @{
+    Layout = "TitledPostView.cshtml";
+    //var id = String.Format("titledPostId{0}", Model.Id);
+}
+
+@{
     const string addCommentText = "Add comment";
     var addCommentId = String.Format("addCommentFor{0}", Model.Id);
     const string showCommentsText = "Show comments";
     var showCommentsId = String.Format("showCommentsFor{0}", Model.Id);
-    var commentTemplate = new CommentViewModel {ArticleId = Model.Id};
+    var commentTemplate = new CommentViewModel { ArticleId = Model.Id };
     var newCommentId = String.Format("newCommentFor{0}", Model.Id);
     var commentsId = String.Format("commentsFor{0}", Model.Id);
     const string articleFileText = "Article file: ";
-    var removeArticleText = "Remove artice";
-    var remveArticleId = String.Format("removeArticle{0}", Model.Id);
-    var articleId = String.Format("articleId{0}", Model.Id);
+    var removeText = "Remove";
+    var removeId = String.Format("removeArticle{0}", Model.Id);
 }
 
-<div class="text-block" id="@articleId">
+@*<div class="text-block" id="@articleId">
     <div class="text-block-header">
         <h4>@Model.Title</h4>
     </div>
@@ -55,24 +59,72 @@
             </div>
         </div>
     </div>
-</div>
-<div id="@newCommentId" class="text-block hide">
-    <div class="text-block-body">
-        @{
-            Html.RenderPartial("Forms/CommentArticleForm", commentTemplate);
-        }
-    </div>
-</div>
-<div id="@commentsId" class="hide" />
+</div>*@
 
-<script type="text/javascript">
+@section Authors
+{
+    @foreach (var author in Model.Authors)
+    {
+        <h6>@String.Format("{0} {1} {2}", author.Email, author.FirstName, author.LastName)</h6>
+    }
+}
+
+@section Disciplines
+{
+    <b>Disciplines</b>:
+    @foreach (var discipline in Model.Disciplines)
+    {
+        <span class="label font-small">@discipline.Name</span>
+    }
+}
+
+@section AdditionalInfo
+{
+    <b>@articleFileText</b><a href="@Model.Source">@Model.Source</a>
+}
+
+@section Buttons
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <button class="btn btn-mini btn-danger" id="@removeId">
+            @removeText
+        </button>
+    }
+    @if (Request.IsAuthenticated)
+    {
+        <button class="btn btn-mini btn-primary" id="@addCommentId">
+            @addCommentText
+        </button>
+    }
+    <button class="btn btn-mini" id="@showCommentsId">
+        @showCommentsText
+    </button>
+}
+
+@section Footer
+{
+    <div id="@newCommentId" class="text-block hide">
+        <div class="text-block-body">
+            @{
+                Html.RenderPartial("Forms/CommentArticleForm", commentTemplate);
+            }
+        </div>
+    </div>
+    <div id="@commentsId" class="hide" />
+}
+
+@*@section Scripts
+{
+    <script type="text/javascript">
     $(function () {
-        $('#@remveArticleId').click(function() {
+        alert('xxx');
+        $('#@remveId').click(function () {
             $.ajax({
-                url: '@Url.Action("RemoveArticle", "Article", new {id = Model.Id})',
+                url: '@Url.Action("RemoveArticle", "Article", new { id = Model.Id })',
                 type: 'post',
                 success: function () {
-                    $('@articleId').remove();
+                    $('@id').remove();
                 }
             });
         });
@@ -82,13 +134,15 @@
         $('#@showCommentsId').click(function () {
             if ($('#@commentsId').is(':empty')) {
                 $.ajax({
-                    url: '@Url.Action("GetArticleComments", "Comment", new {articleId = Model.Id})',
-                    success: function(page) {
+                    url: '@Url.Action("GetArticleComments", "Comment", new { articleId = Model.Id })',
+                    success: function (page) {
                         $('#@commentsId').html(page);
                     }
                 });
-            }
+                }
             $('#@commentsId').slideToggle('fast');
         });
     })
 </script>
+}*@
+

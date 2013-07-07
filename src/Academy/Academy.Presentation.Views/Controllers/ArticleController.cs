@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Academy.Domain.Objects;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
 
@@ -26,7 +23,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult GetUserArticlesPage(int pageNumber, int pageSize)
         {
             CurrentUser.ArticlesPage = LoadUserArticles(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/ArticlesPageView", CurrentUser.ArticlesPage);
+            return View("ArticlesPageView", CurrentUser.ArticlesPage);
         }
 
         [HttpGet]
@@ -52,7 +49,7 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserArticles();
         }
 
-        [HttpPost]
+        //[HttpPost]
         [Authorize(Roles = "Admin")]
         public ActionResult RemoveArticle(int id)
         {

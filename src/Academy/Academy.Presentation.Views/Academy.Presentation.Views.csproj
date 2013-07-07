@@ -179,6 +179,14 @@
     <Content Include="Scripts\bootstrap-fileupload.js" />
     <Content Include="Scripts\bootstrap.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\InitAnswerHandlers.js" />
+    <Content Include="Scripts\InitArticleHandlers.js" />
+    <Content Include="Scripts\InitSingleArticleHandlers.js" />
+    <Content Include="Scripts\InitCommentHandlers.js" />
+    <Content Include="Scripts\InitQuestionHandlers.js" />
+    <Content Include="Scripts\InitSingleAnswerHandlers.js" />
+    <Content Include="Scripts\InitSingleCommentHandlers.js" />
+    <Content Include="Scripts\InitSingleQuestionHandlers.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -219,32 +227,21 @@
     <Content Include="Views\Shared\RenderTemplates\DisciplinesView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\RegistrationEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LoginEditor.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\CommentsView.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateQuestionEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateAnswerEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\QuestionView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\AnswerView.cshtml" />
     <Content Include="Views\Question\GetUserQuestions.cshtml" />
-    <Content Include="Views\Question\GetUserAnswers.cshtml" />
     <Content Include="Views\Shared\Forms\AskQuestionForm.cshtml" />
     <Content Include="Views\Shared\Forms\AddAnswerForm.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\AnswersView.cshtml" />
     <Content Include="Views\Article\GetUserArticles.cshtml" />
     <Content Include="Views\Shared\Forms\PublishArticleForm.cshtml" />
     <Content Include="Views\Shared\Forms\CommentArticleForm.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\ArticlesView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\QuestionsView.cshtml" />
-    <Content Include="Views\Comment\GetUserComments.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleCommentView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\SingleAnswerView.cshtml" />
-    <Content Include="Views\Notification\GetArticleNews.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\ArticleNewsView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\QuestionNewsView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\CommentNewsView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\AnswerNewsView.cshtml" />
-    <Content Include="Views\Notification\GetQuestionNews.cshtml" />
-    <Content Include="Views\Notification\GetCommentNews.cshtml" />
-    <Content Include="Views\Notification\GetAnswerNews.cshtml" />
     <Content Include="Views\Shared\Forms\EditUserForm.cshtml" />
     <Content Include="Views\Shared\Forms\SelectDisciplinesForm.cshtml" />
     <Content Include="Views\Search\SearchArticles.cshtml" />
@@ -253,32 +250,34 @@
     <Content Include="Views\Shared\Forms\QuestionSearchForm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\AerticleSearchEditor.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\QuestionSearchEditor.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\ArticleSearchResultView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\QuestionSearchResultView.cshtml" />
+    <Content Include="Views\Search\ArticleSearchResultView.cshtml" />
+    <Content Include="Views\Search\QuestionSearchResultView.cshtml" />
     <Content Include="Views\Shared\Forms\AddNoteForm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\CreateNoteEditor.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\NoteView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\NotesView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\UserNotesView.cshtml" />
+    <Content Include="Views\Note\UserNotesView.cshtml" />
     <Content Include="Views\Profile\ContactAdministration.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\ArticlesPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\QuestionsPageView.cshtml" />
+    <Content Include="Views\Article\ArticlesPageView.cshtml" />
+    <Content Include="Views\Question\QuestionsPageView.cshtml" />
     <Content Include="Views\Shared\RenderTemplates\Paging\PageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\CommentsPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\SingleCommentsPageView.cshtml" />
+    <Content Include="Views\Comment\CommentsPageView.cshtml" />
+    <Content Include="Views\Comment\SingleCommentsPageView.cshtml" />
     <Content Include="Views\Answer\GetUserAnswers.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\AnswersPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\SingleAnswersPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\ArticleNewsPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\CommentNewsPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\QuestionNewsPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\AnswerNewsPageView.cshtml" />
-    <Content Include="Views\Shared\RenderTemplates\Paging\NotesPageView.cshtml" />
+    <Content Include="Views\Answer\AnswersPageView.cshtml" />
+    <Content Include="Views\Answer\SingleAnswersPageView.cshtml" />
+    <Content Include="Views\Notification\ArticleNewsPageView.cshtml" />
+    <Content Include="Views\Notification\CommentNewsPageView.cshtml" />
+    <Content Include="Views\Notification\QuestionNewsPageView.cshtml" />
+    <Content Include="Views\Notification\AnswerNewsPageView.cshtml" />
+    <Content Include="Views\Note\NotesPageView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\AnswerNewsView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\PostView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\TitledPostView.cshtml" />
+    <Content Include="Views\Shared\RenderTemplates\SinglePostView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Resources\Articles\" />
-    <Folder Include="Views\Note\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -385,7 +384,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7010/</IISUrl>
+          <IISUrl>http://localhost:7015/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

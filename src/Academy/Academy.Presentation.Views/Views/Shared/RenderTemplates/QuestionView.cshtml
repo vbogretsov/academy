@@ -2,13 +2,16 @@
 @model Academy.Presentation.ViewModels.QuestionViewModel
 
 @{
+    Layout = "TitledPostView.cshtml";
+}
+
+@{
     var answersId = String.Format("answersFor{0}", Model.Id);
     var newAnswerId = String.Format("newAnswerFor{0}", Model.Id);
     const string addAnswerText = "Add answer";
     var addAnswerId = String.Format("addAnswerFor{0}", Model.Id);
     var showAnswersId = String.Format("showAnswersFor{0}", Model.Id);
     const string showAnswersText = "Show answers";
-    const string postedText = "Posted: ";
     var fullUserName = String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
@@ -18,12 +21,11 @@
         {
             QuestionId = Model.Id
         };
-    var questionId = String.Format("questionId{0}", Model.Id);
-    var removeQuestionId = String.Format("removeQuestion{0}", Model.Id);
-    var removeQuestionText = "Remove text";
+    var removeText = "Remove";
+    var removeId = String.Format("removeQuestion{0}", Model.Id);
 }
 
-<div class="text-block" id="@questionId">
+@*<div class="text-block" id="@questionId">
     <div class="page-header">
         <span class="label">
             @fullUserName
@@ -65,24 +67,61 @@
             </div>
         </div>
     </div>
-</div>
-<div id="@newAnswerId" class="text-block hide">
-    <div class="text-block-body">
-        @{
-            Html.RenderPartial("Forms/AddAnswerForm", answerTemplate);
-        }
-    </div>
-</div>
-<div id="@answersId" class="hide" />
+</div>*@
 
-<script type="text/javascript">
+@section Authors
+{
+    <h6>@fullUserName</h6>
+}
+
+@section Disciplines
+{
+    <b>Disciplines</b>:
+    @foreach (var discipline in Model.Disciplines)
+    {
+        <span class="label font-small">@discipline.Name</span>
+    }
+}
+
+@section Buttons
+{
+    @if (User.IsInRole("Admin"))
+    {
+        <button class="btn btn-mini btn-danger" id="@removeId">
+            @removeText
+        </button>
+    }
+    @if (Request.IsAuthenticated)
+    {
+        <button class="btn btn-mini btn-primary" id="@addAnswerId">
+            @addAnswerText
+        </button>
+    }
+    <button class="btn btn-mini" id="@showAnswersId">
+        @showAnswersText
+    </button>
+}
+
+@section Footer
+{
+    <div id="@newAnswerId" class="text-block hide">
+        <div class="text-block-body">
+            @{
+                Html.RenderPartial("Forms/AddAnswerForm", answerTemplate);
+            }
+        </div>
+    </div>
+    <div id="@answersId" class="hide" />
+}
+
+@*<script type="text/javascript">
     $(function () {
-        $('#@removeQuestionId').click(function () {
+        $('#@remveId').click(function () {
             $.ajax({
-                url: '@Url.Action("RemoveQuestion", "Question", new {id = Model.Id})',
+                url: '@Url.Action("RemoveArticle", "Article", new { id = Model.Id })',
                 type: 'post',
                 success: function () {
-                    $('#@questionId').remove();
+                    $('@id').remove();
                 }
             });
         });
@@ -101,4 +140,4 @@
             $('#@answersId').slideToggle('fast');
         });
     })
-</script>
+</script>*@

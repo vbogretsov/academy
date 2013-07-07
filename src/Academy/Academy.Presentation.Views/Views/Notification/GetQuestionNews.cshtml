@@ -1,9 +1,0 @@
-﻿@model Academy.Presentation.ViewModels.UserViewModel
-
-@if (Model.QuestionNews != null)
-{
-    foreach (var viewModel in Model.QuestionNews)
-    {
-        Html.RenderPartial("RenderTemplates/QuestionNewsView", viewModel);
-    }
-}

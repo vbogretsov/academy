@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
@@ -16,7 +13,7 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize = DefualtPageSize)
         {
             var page = LoadUserComments(CurrentUser.Id, pageNumber, pageSize);
-            return View("GetUserComments", page);
+            return View("SingleCommentsPageView", page);
         }
 
         [HttpGet]
@@ -26,7 +23,7 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize = DefualtPageSize)
         {
             var page = LoadArticleComments(articleId, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/CommentsPageView", page);
+            return View("CommentsPageView", page);
         }
 
         [HttpPost]

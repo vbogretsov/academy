@@ -36,7 +36,7 @@ namespace Academy.Presentation.Views.Controllers
         public ActionResult GetUserNotesPage(int pageNumber, int pageSize)
         {
             var page = LoadUserNotes(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/Paging/NotesPageView", page);
+            return View("NotesPageView", page);
         }
 
         // TODO: Refactor to avoid copy paste
