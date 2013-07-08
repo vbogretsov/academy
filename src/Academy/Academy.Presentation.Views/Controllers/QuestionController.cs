@@ -17,11 +17,11 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserQuestions();
         }
 
-        [HttpPost]
+        [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult RemoveQuestion(int id)
+        public ActionResult RemoveQuestion(int questionId)
         {
-            Service.RemoveQuestion(id);
+            Service.RemoveQuestion(questionId);
             return null;
         }
 

@@ -39,11 +39,11 @@ namespace Academy.Presentation.Views.Controllers
             return GetQuestionAnswers(viewModel.QuestionId);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult RemoveAnswer(int id)
+        public ActionResult RemoveAnswer(int answerId)
         {
-            Service.RemoveAnswer(id);
+            Service.RemoveAnswer(answerId);
             return null;
         }
 

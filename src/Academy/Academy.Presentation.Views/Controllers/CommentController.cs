@@ -26,11 +26,11 @@ namespace Academy.Presentation.Views.Controllers
             return View("CommentsPageView", page);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult RemoveComment(int id)
+        public ActionResult RemoveComment(int commentId)
         {
-            Service.RemoveComment(id);
+            Service.RemoveComment(commentId);
             return null;
         }
 

@@ -17,9 +17,7 @@
     $('button[id^="removeQuestion' + questionId + '"]').click(function () {
         $.ajax({
             url: 'Question/RemoveQuestion?id=' + questionId,
-            action: 'post',
             success: function () {
-                alert($('#titledPostId' + questionId).length);
                 $('#titledPostId' + questionId).remove();
             }
         });

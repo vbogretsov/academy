@@ -49,11 +49,11 @@ namespace Academy.Presentation.Views.Controllers
             return GetUserArticles();
         }
 
-        //[HttpPost]
+        [HttpGet]
         [Authorize(Roles = "Admin")]
-        public ActionResult RemoveArticle(int id)
+        public ActionResult RemoveArticle(int articleId)
         {
-            Service.RemoveArticle(id);
+            Service.RemoveArticle(articleId);
             return null;
         }
 

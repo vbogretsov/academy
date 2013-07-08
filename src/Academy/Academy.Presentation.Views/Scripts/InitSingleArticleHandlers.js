@@ -16,8 +16,7 @@
     });
     $('button[id="removeArticle' + articleId + '"]').click(function () {
         $.ajax({
-            url: 'Article/RemoveArticle?id=' + articleId,
-            action: 'post',
+            url: 'Article/RemoveArticle?articleId=' + articleId,
             success: function () {
                 alert($('#titledPostId' + articleId).length);
                 $('#titledPostId' + articleId).remove();
