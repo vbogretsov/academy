@@ -46,6 +46,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
                         a.FirstName.Contains(criteria.Author) ||
                         a.LastName.Contains(criteria.Author))) &&
                     article.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
+                orderby article.PostedDate descending
                 select article;
         }
 
@@ -59,6 +60,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return from article in Entities.Articles
                 where
                     article.Authors.Any(x => x.Id == userId)
+                orderby
+                   article.PostedDate descending
                 select article;
         }
 

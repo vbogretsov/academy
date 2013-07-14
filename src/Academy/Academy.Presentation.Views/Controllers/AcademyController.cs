@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
-using Academy.Domain.DataAccess;
-using Academy.Domain.Objects;
 using Academy.Presentation.ViewModels;
 using Academy.Presentation.ViewModels.Mappers;
 using Academy.Web.Services;
@@ -16,15 +13,12 @@ namespace Academy.Presentation.Views.Controllers
     {
         protected const int DefualtPageSize = 5;
 
-        private readonly AcademyContext academyContext;
-
         private readonly AcademyService service;
 
         private UserViewModel currentUser;
 
         protected AcademyController()
         {
-            academyContext = new AcademyContext();
             service = new AcademyService();
         }
 
@@ -35,7 +29,6 @@ namespace Academy.Presentation.Views.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            academyContext.Dispose();
             service.Dispose();
             base.Dispose(disposing);
         }
@@ -49,14 +42,6 @@ namespace Academy.Presentation.Views.Controllers
                     currentUser = UserMapper.Map(Service.GetCurrentUser());
                 }
                 return currentUser;
-            }
-        }
-
-        protected AcademyContext AcademyContext
-        {
-            get
-            {
-                return academyContext;
             }
         }
 

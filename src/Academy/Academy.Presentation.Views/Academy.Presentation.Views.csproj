@@ -172,6 +172,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\Users\0.gif" />
     <Content Include="Resources\Users\0.jpg" />
     <Content Include="Scripts\AdminNavigation.js" />
     <Content Include="Scripts\AnonymousNavigation.js" />

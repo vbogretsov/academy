@@ -18,16 +18,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         protected void Add<T>(T entity, IDbSet<T> entities)
             where T : Entity
         {
-            try
-            {
-                entities.Add(entity);
-                Commit();
-            }
-            catch (Exception exception)
-            {
-                // TODO: process exception
-                var s = exception.Message;
-            }
+            entities.Add(entity);
+            Commit();
         }
 
         protected void Remove<T>(int entityId, IDbSet<T> entities)
@@ -36,15 +28,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             T entity = entities.SingleOrDefault(x => x.Id == entityId);
             if (entity != null)
             {
-                try
-                {
-                    entities.Remove(entity);
-                    Commit();
-                }
-                catch (Exception exception)
-                {
-                    
-                }
+                entities.Remove(entity);
+                Commit();
             }
         }
 
@@ -66,7 +51,9 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             int totalCount)
         {
             var data = items.Skip((page - 1)*size).Take(size).ToList();
-            return new PageData<T>(data, page, size, (totalCount + 1) / size);
+            int rem = totalCount % size;
+            int pagesCount = rem > 0 ? (totalCount/size) + 1 : totalCount/size;
+            return new PageData<T>(data, page, size, pagesCount);
         }
 
         protected AcademyEntities Entities

@@ -49,6 +49,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return from comment in Entities.Comments
                 where
                     comment.UserId == userId
+                orderby
+                    comment.PostedDate descending
                 select comment;
         }
 
@@ -57,6 +59,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             return from comment in Entities.Comments
                 where
                     comment.ArticleId == articleId
+                orderby
+                   comment.PostedDate descending
                 select comment;
         }
     }

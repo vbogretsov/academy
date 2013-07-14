@@ -37,7 +37,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         private IEnumerable<Answer> GetUserAnserwsQuery(int userId)
         {
             return from answer in Entities.Answers
-                    where answer.UserId == userId
+                where answer.UserId == userId
+                orderby answer.PostedDate descending
                 select answer;
         }
 
@@ -50,6 +51,7 @@ namespace Academy.Domain.DataAccess.Ef.Storages
         {
             return from answer in Entities.Answers
                     where answer.QuestionId == questionId
+                   orderby answer.PostedDate descending
                 select answer;
         }
 

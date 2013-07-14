@@ -31,13 +31,6 @@ namespace Academy.Presentation.Views.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [AllowAnonymous]
-        public ActionResult RestorePassword()
-        {
-            // TODO: add password restoring.
-            throw new NotImplementedException();
-        }
-
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Register(RegistrationViewModel registration)

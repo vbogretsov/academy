@@ -3,7 +3,6 @@
 
 @{
     Layout = "TitledPostView.cshtml";
-    //var id = String.Format("titledPostId{0}", Model.Id);
 }
 
 @{
@@ -18,48 +17,6 @@
     var removeText = "Remove";
     var removeId = String.Format("removeArticle{0}", Model.Id);
 }
-
-@*<div class="text-block" id="@articleId">
-    <div class="text-block-header">
-        <h4>@Model.Title</h4>
-    </div>
-    <div class="text-block-sub-header">
-        @foreach (var author in Model.Authors)
-        {
-            <h6>@String.Format("{0} {1} {2}", author.Email, author.FirstName, author.LastName)</h6>
-        }
-    </div>
-    <div class="text-block-body">
-        @Model.Text
-    </div>
-    <div class="text-block-footer">
-        <b>Disciplines</b>:
-        @foreach (var discipline in Model.Disciplines)
-        {
-            <span class="label font-small">@discipline.Name</span>
-        }
-        <div>
-            <span><b>@articleFileText</b><a href="@Model.Source">@Model.Source</a></span>
-            <div class="pull-right">
-                @if (User.IsInRole("Admin"))
-                {
-                    <button class="btn btn-mini btn-danger" id="@remveArticleId">
-                        @removeArticleText
-                    </button>
-                }
-                @if (Request.IsAuthenticated)
-                {
-                    <button class="btn btn-mini btn-primary" id="@addCommentId">
-                        @addCommentText
-                    </button>
-                }
-                <button class="btn btn-mini" id="@showCommentsId">
-                    @showCommentsText
-                </button>
-            </div>
-        </div>
-    </div>
-</div>*@
 
 @section Authors
 {
@@ -80,7 +37,10 @@
 
 @section AdditionalInfo
 {
-    <b>@articleFileText</b><a href="@Model.Source">@Model.Source</a>
+    <b>@articleFileText</b>
+    <a href="/Resources/Articles/@Model.Source">
+        @Path.GetFileNameWithoutExtension(@Model.Source)
+    </a>
 }
 
 @section Buttons

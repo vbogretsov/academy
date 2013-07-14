@@ -65,5 +65,13 @@ namespace Academy.Presentation.ViewModels
             get;
             set;
         }
+
+        public string PhotoFileName
+        {
+            get
+            {
+                return "0.jpg";
+            }
+        }
     }
 }

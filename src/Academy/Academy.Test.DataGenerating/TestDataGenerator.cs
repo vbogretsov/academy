@@ -22,7 +22,9 @@ namespace Academy.Test.DataGenerating
 
         private readonly RoleManager roleManager;
 
-        public TestDataGenerator(string testDataFolder, IAcademyService service)
+        public TestDataGenerator(
+            string testDataFolder,
+            IAcademyService service)
         {
             this.testDataFolder = testDataFolder;
             this.service = service;

@@ -14,7 +14,7 @@
     <div class="controls">
         <div class="fileupload fileupload-new" data-provides="fileupload">
                 <div class="fileupload-new thumbnail" style="width: 250px; height: 250px;">
-                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
+                    <img src="/Resources/Users/@Model.PhotoFileName" />
                 </div>
             <div class="fileupload-preview fileupload-exists thumbnail"
                  style="max-width: 250px; max-height: 250px; min-width: 250px; min-height: 250px; line-height: 20px;"></div>
@@ -22,7 +22,6 @@
                 <span class="btn btn-file">
                     <span class="fileupload-new">@selectImageText</span>
                     <span class="fileupload-exists">@changeText</span>
-                    @*<input type="file" />*@
                     @Html.TextBoxFor(m => m.PhotoFile, new {type = "file"})
                 </span>
                 <a href="#" class="btn fileupload-exists"data-dismiss="fileupload">@removeTet</a>

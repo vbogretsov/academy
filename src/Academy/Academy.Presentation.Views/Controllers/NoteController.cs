@@ -30,7 +30,7 @@ namespace Academy.Presentation.Views.Controllers
             int pageSize = DefualtPageSize)
         {
             CurrentUser.NotesPage = LoadUserNotes(CurrentUser.Id, pageNumber, pageSize);
-            return View("RenderTemplates/UserNotesView", CurrentUser);
+            return View("UserNotesView", CurrentUser);
         }
 
         public ActionResult GetUserNotesPage(int pageNumber, int pageSize)

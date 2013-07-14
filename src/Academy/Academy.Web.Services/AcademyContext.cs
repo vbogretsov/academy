@@ -53,10 +53,10 @@ namespace Academy.Web.Services
             {
                 if (accountService == null)
                 {
-                    accountService = new AccountService(
-                        roleManager,
-                        accountManager,
-                        context);
+                    //accountService = new AccountService(
+                    //    roleManager,
+                    //    accountManager,
+                    //    context);
                 }
                 return accountService;
             }
@@ -68,7 +68,7 @@ namespace Academy.Web.Services
             {
                 if (publicationService == null)
                 {
-                    publicationService = new PublicationService(context);
+                    //publicationService = new PublicationService(context);
                 }
                 return publicationService;
             }

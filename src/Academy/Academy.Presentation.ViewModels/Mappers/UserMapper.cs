@@ -46,6 +46,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             user.LastName = viewModel.LastName;
             user.University = viewModel.University;
             user.BirthDate = DateMapper.Map(viewModel.BirthDate);
+            user.PhotoFileName = viewModel.PhotoFileName;
             return user;
         }
     }
