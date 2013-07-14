@@ -28,8 +28,10 @@
                     data: $(this).serialize(),
                     success: function (result) {
                         $('#data').html(result);
+                        $('#@formId').find(':input').each(function () {
+                            $(this).val('');
+                        });
                         CollapseDisciplinesTree();
-                        $('#@formId')[0].reset();
                     }
                 });
             }

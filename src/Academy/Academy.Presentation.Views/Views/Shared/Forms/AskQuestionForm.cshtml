@@ -28,7 +28,9 @@
                     success: function(html) {
                         $('#data').html('');
                         $('#data').append(html);
-                        $('#askQuestion')[0].reset();
+                        $('#askQuestion').find(':input').each(function() {
+                            $(this).val('');
+                        });
                         CollapseDisciplinesTree();
                     },
                     error: function() {
