@@ -1,8 +1,9 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model UserViewModel
 
 @{
-    const string addNoteText = "Add new note";
+    var addNoteText = Localization.GetString("add.new.note");
     var noteTemlate = new NoteViewModel {UserId = Model.Id};
 }
 

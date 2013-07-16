@@ -1,8 +1,9 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model UserViewModel
 
 @{
-    const string askQuestionText = "Ask Question";
+    var askQuestionText = Localization.GetString("ask.question");
     var questionTemplate = new QuestionViewModel {AuthorId = Model.Id};
 }
 

@@ -1,8 +1,9 @@
-﻿@model Academy.Presentation.ViewModels.UserViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.UserViewModel
 
 @{
-    var headerText = "Disciplines settings";
-    var descriptionText = "Disciplines description";
+    var headerText = Localization.GetString("user.edit.disciplines.title");
+    var descriptionText = Localization.GetString("user.edit.disciplines.description");
     var editDisciplinesFormSettings = new
     {
         enctype = "multipart/form-data",

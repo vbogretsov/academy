@@ -1,19 +1,13 @@
-﻿@model Academy.Presentation.ViewModels.AnswerViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.AnswerViewModel
 
 @{
     Layout = "PostView.cshtml";
 }
 
 @{
-    //var authorFullName = String.Format(
-    //    "{0} {1} {2}",
-    //    Model.Author.Email,
-    //    Model.Author.FirstName,
-    //    Model.Author.LastName);
     var removeId = String.Format("removeAnswer{0}", Model.Id);
-    var removeText = "Remove comment";
-    //var answerId = String.Format("answerId{0}", Model.Id);
-    //var postedText = "Posted: ";
+    var removeText = Localization.GetString("remove.answer");
 }
 
 @section Author
@@ -36,40 +30,3 @@
         </div>
     }
 }
-
-@*<div id="@answerId">
-    <span class="label">
-        @authorFullName
-    </span>
-    <span class="label pull-right">@Model.PostedDate</span>
-    <div class="text-block">
-        <div class="text-block-body">
-            @Model.Text
-        </div>
-        <div class="text-block-footer">
-            <b>@postedText</b>@Model.PostedDate
-            @if (User.IsInRole("Admin"))
-            {
-                <div class="pull-right">
-                    <button class="btn btn-mini btn-danger" id="@removeId">
-                        @removeText
-                    </button>
-                </div>
-            }
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    $(function () {
-        $('#@removeId').click(function () {
-            $.ajax({
-                url: '@Url.Action("RemoveAnswer", "Question", new { id = Model.Id })',
-                type: 'post',
-                success: function () {
-                    $('#@answerId').remove();
-                }
-            });
-        });
-    });
-</script>*@

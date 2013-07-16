@@ -1,5 +1,6 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
+@using Academy.Resources
 @model QuestionViewModel
 
 @{
@@ -9,9 +10,10 @@
     const string questionTitleClass = "full-block";
     const string questionTitleStyle = "height: 30px; font-size: 12pt";
 
-    const string selectDisciplinesHeader = "Select disciplines for question";
-    const string selectDisciplinesText = "Select disciplines";
-    
+    string selectDisciplinesHeader =
+        Localization.GetString("question.create.select.question.disciplines");
+    string selectDisciplinesText =
+        Localization.GetString("question.create.select.disciplines");
 }
 
 @Html.HiddenFor(m => m.AuthorId)
@@ -49,6 +51,8 @@
         @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Select</button>
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">
+            @Localization.GetString("question.create.modal.select")
+        </button>
     </div>
 </div>

@@ -117,11 +117,68 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="about.p1" xml:space="preserve">
+    <value>Social network for scientists "Academy" was established in 2013.</value>
+  </data>
+  <data name="about.p2" xml:space="preserve">
+    <value>Our primary goal is to create a space that would combine the work of new and expectant scientists around the world, made it possible to use publications.</value>
+  </data>
+  <data name="about.p3" xml:space="preserve">
+    <value>The technical features of the site include upload, download and comment on publications, create your profile with personal information, the confidentiality of which is guaranteed. You can also ask any question and get an answer, or leave a response yourself. Leave a note in your own profile to remember important events!</value>
+  </data>
+  <data name="about.p4" xml:space="preserve">
+    <value>We wanted to create a resource accessible from anywhere in the world which would bring benefits to all, wishing to obtain reliable information from trusted sources.</value>
+  </data>
+  <data name="about.p5" xml:space="preserve">
+    <value>Internet site "Academy" is specific. Our target audience is people with higher education and advanced degree (graduate degrees), as well as graduate students, masters - and all those who wants in the future to go into the social category of "scientists." By registering here, you will always be able to find the information you need in the fields of Mathematics, Physics, Biology, and view questions / answers of colleagues and people of interest.</value>
+  </data>
+  <data name="about.p6" xml:space="preserve">
+    <value>You can use the change of language in order to view the "Academy" in the language of your choice conveniently. Upload a personal photo. Find your desired material by searching. Comment publication and thus facilitate the search for the rest of those who subscribe to this topic. Leave interesting discipline and get updates on everything going on in them! For best performance, use the website feedback form in the Contact section. We always welcome suggestions and feedback, we will answer all the questions.</value>
+  </data>
+  <data name="about.p7" xml:space="preserve">
+    <value>Like any aspiring project, we are going to grow, providing more and more functionality to users.</value>
+  </data>
+  <data name="about.p8" xml:space="preserve">
+    <value>Thank you for choosing us!</value>
+  </data>
+  <data name="about.p9" xml:space="preserve">
+    <value>Social network for scientists "Academy". Always on the pulse of science! © 2013</value>
+  </data>
+  <data name="add.new.article" xml:space="preserve">
+    <value>Add new article</value>
+  </data>
+  <data name="add.new.note" xml:space="preserve">
+    <value>Add new note</value>
+  </data>
+  <data name="answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="answer.add" xml:space="preserve">
+    <value>Add answer</value>
+  </data>
   <data name="answer.text" xml:space="preserve">
     <value>Answer text</value>
   </data>
   <data name="answer.text.err.required" xml:space="preserve">
     <value>Answer text is required</value>
+  </data>
+  <data name="answers.show" xml:space="preserve">
+    <value>Show answers</value>
+  </data>
+  <data name="article.create.add.author" xml:space="preserve">
+    <value>Add author</value>
+  </data>
+  <data name="article.create.modal.select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="article.create.select.article.disciplines" xml:space="preserve">
+    <value>Select disciplines for article</value>
+  </data>
+  <data name="article.create.select.disciplines" xml:space="preserve">
+    <value>Select disciplines</value>
   </data>
   <data name="article.description" xml:space="preserve">
     <value>Article description</value>
@@ -132,6 +189,9 @@
   <data name="article.disciplines.err.required" xml:space="preserve">
     <value>Article should have at least one discipline</value>
   </data>
+  <data name="article.file" xml:space="preserve">
+    <value>Article file</value>
+  </data>
   <data name="article.search.author" xml:space="preserve">
     <value>Author</value>
   </data>
@@ -140,6 +200,9 @@
   </data>
   <data name="article.search.title" xml:space="preserve">
     <value>Article title</value>
+  </data>
+  <data name="article.show" xml:space="preserve">
+    <value>Show article</value>
   </data>
   <data name="article.source" xml:space="preserve">
     <value>Article pdf file name</value>
@@ -152,6 +215,9 @@
   </data>
   <data name="article.title.err.required" xml:space="preserve">
     <value>Article title is required</value>
+  </data>
+  <data name="ask.question" xml:space="preserve">
+    <value>Ask question</value>
   </data>
   <data name="author.email" xml:space="preserve">
     <value>Email</value>
@@ -177,14 +243,65 @@
   <data name="banner" xml:space="preserve">
     <value>3eng.swf</value>
   </data>
+  <data name="change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="cintacts.p2" xml:space="preserve">
+    <value>In case you  have any problems ba using the site or if you have any wishes,questions whatever,please feel free to contact us!</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="comment.add" xml:space="preserve">
+    <value>Add comment</value>
+  </data>
   <data name="comment.text" xml:space="preserve">
     <value>Comment text</value>
   </data>
   <data name="comment.text.err.required" xml:space="preserve">
     <value>Comment text is required</value>
   </data>
+  <data name="comments.show" xml:space="preserve">
+    <value>Show comments</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="contacts.p1" xml:space="preserve">
+    <value>Dear users!</value>
+  </data>
+  <data name="contacts.p10" xml:space="preserve">
+    <value>Thank you very much!</value>
+  </data>
+  <data name="contacts.p3" xml:space="preserve">
+    <value>Email the Head Office :</value>
+  </data>
+  <data name="contacts.p4" xml:space="preserve">
+    <value>alololo@gmail.com</value>
+  </data>
+  <data name="contacts.p5" xml:space="preserve">
+    <value>kororo@gmail.com</value>
+  </data>
+  <data name="contacts.p6" xml:space="preserve">
+    <value>or just call us:</value>
+  </data>
+  <data name="contacts.p7" xml:space="preserve">
+    <value>+25 (269) 12-3563</value>
+  </data>
+  <data name="contacts.p8" xml:space="preserve">
+    <value>+74 (021) 13-5684</value>
+  </data>
+  <data name="contacts.p9" xml:space="preserve">
+    <value>+89 (589) 14-5692</value>
+  </data>
   <data name="copyright" xml:space="preserve">
     <value>© 2013 Academy</value>
+  </data>
+  <data name="disciplines" xml:space="preserve">
+    <value>Disciplines</value>
   </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>About</value>
@@ -201,8 +318,11 @@
   <data name="external.title" xml:space="preserve">
     <value>ACADEMY</value>
   </data>
+  <data name="find" xml:space="preserve">
+    <value>Find</value>
+  </data>
   <data name="internal.menu.articles" xml:space="preserve">
-    <value>Articles Search</value>
+    <value>Articles search</value>
   </data>
   <data name="internal.menu.exit" xml:space="preserve">
     <value>Exit</value>
@@ -211,7 +331,7 @@
     <value>Profile settings</value>
   </data>
   <data name="internal.menu.questions" xml:space="preserve">
-    <value>Questions &amp; Answers</value>
+    <value>Questions &amp; answers</value>
   </data>
   <data name="internal.title" xml:space="preserve">
     <value>ACADEMY</value>
@@ -223,7 +343,7 @@
     <value>Language</value>
   </data>
   <data name="lang.rus" xml:space="preserve">
-    <value>Russian</value>
+    <value>Русский</value>
   </data>
   <data name="login.btn.login" xml:space="preserve">
     <value>Login</value>
@@ -265,13 +385,52 @@
     <value>About</value>
   </data>
   <data name="mainmenu.articles" xml:space="preserve">
-    <value>Articles Search</value>
+    <value>Articles search</value>
   </data>
   <data name="mainmenu.contacts" xml:space="preserve">
     <value>Contacts</value>
   </data>
   <data name="mainmenu.questions" xml:space="preserve">
-    <value>Questions &amp; Answers</value>
+    <value>Questions &amp; answers</value>
+  </data>
+  <data name="month1" xml:space="preserve">
+    <value>Januar</value>
+  </data>
+  <data name="month10" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="month11" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="month12" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="month2" xml:space="preserve">
+    <value>Februar</value>
+  </data>
+  <data name="month3" xml:space="preserve">
+    <value>Marth</value>
+  </data>
+  <data name="month4" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="month5" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="month6" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="month7" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="month8" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="month9" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="note.add" xml:space="preserve">
+    <value>Add note</value>
   </data>
   <data name="note.text" xml:space="preserve">
     <value>Note text</value>
@@ -284,6 +443,9 @@
   </data>
   <data name="note.title.err.required" xml:space="preserve">
     <value>Note title is required</value>
+  </data>
+  <data name="posted" xml:space="preserve">
+    <value>Date posted</value>
   </data>
   <data name="prifile.myquestions" xml:space="preserve">
     <value>My questions</value>
@@ -336,11 +498,35 @@
   <data name="profile.newquestions" xml:space="preserve">
     <value>New questions</value>
   </data>
+  <data name="publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="question.create.modal.select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="question.create.select.disciplines" xml:space="preserve">
+    <value>Select disciplines</value>
+  </data>
+  <data name="question.create.select.question.disciplines" xml:space="preserve">
+    <value>Select disciplines for question</value>
+  </data>
   <data name="question.disciplines.err.required" xml:space="preserve">
     <value>At least one discipline should be selected</value>
   </data>
   <data name="question.search.keyword" xml:space="preserve">
     <value>Search keywords</value>
+  </data>
+  <data name="question.search.title" xml:space="preserve">
+    <value>Questions search</value>
+  </data>
+  <data name="question.serach" xml:space="preserve">
+    <value>Questions search</value>
+  </data>
+  <data name="question.serach.select.disciplines" xml:space="preserve">
+    <value>Select disciplines</value>
+  </data>
+  <data name="question.show" xml:space="preserve">
+    <value>Show question</value>
   </data>
   <data name="question.text" xml:space="preserve">
     <value>Question text</value>
@@ -417,11 +603,41 @@
   <data name="registration.univercity" xml:space="preserve">
     <value>University</value>
   </data>
+  <data name="remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="remove.answer" xml:space="preserve">
+    <value>Remove answer</value>
+  </data>
+  <data name="remove.comment" xml:space="preserve">
+    <value>Remove comment</value>
+  </data>
+  <data name="remove.note" xml:space="preserve">
+    <value>Remove note</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="select.disciplines" xml:space="preserve">
+    <value>Select disciplines</value>
+  </data>
+  <data name="select.image" xml:space="preserve">
+    <value>Select image</value>
+  </data>
   <data name="user.birthdate" xml:space="preserve">
     <value>Birth date</value>
   </data>
   <data name="user.birthdate.err.required" xml:space="preserve">
     <value>Birth date is required</value>
+  </data>
+  <data name="user.edit.disciplines.description" xml:space="preserve">
+    <value>Disciplines description</value>
+  </data>
+  <data name="user.edit.disciplines.title" xml:space="preserve">
+    <value>Disciplines settings</value>
+  </data>
+  <data name="user.edit.title" xml:space="preserve">
+    <value>Main profile settigs</value>
   </data>
   <data name="user.email" xml:space="preserve">
     <value>Email</value>
@@ -452,5 +668,11 @@
   </data>
   <data name="user.university.err.required" xml:space="preserve">
     <value>University is required</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome to the "Academy"!</value>
+  </data>
+  <data name="your.disciplines" xml:space="preserve">
+    <value>Your disciplines</value>
   </data>
 </root>

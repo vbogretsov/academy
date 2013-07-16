@@ -1,5 +1,6 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
+@using Academy.Resources
 
 @model QuestionSearchViewModel
 
@@ -9,7 +10,7 @@
 }
 
 <div class="page-header">
-    Articles saerch
+    @Localization.GetString("question.search.title")
 </div>
 <div class="control-group">
     @Html.TextBoxFor(m => m.Keyword, new
@@ -20,7 +21,7 @@
         })
 </div>
 <div class="page-header">
-    Select disciplines
+    @Localization.GetString("select.disciplines")
 </div>
 <div class="control-group scrollable-horizontal tree-editor">
     @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)

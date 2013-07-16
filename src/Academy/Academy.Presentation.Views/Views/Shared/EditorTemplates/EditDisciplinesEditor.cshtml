@@ -1,12 +1,13 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
+@using Academy.Resources
 @model UserViewModel
 @{
-    var headerText = "Disciplines settings";
-    var selectDisciplinesText = "Select disciplines";
-    var modalHeaderText = "Select disciplines";
-    var closeText = "Close";
-    var selectText = "Select";
+    //var headerText = "Disciplines settings";
+    var selectDisciplinesText = Localization.GetString("select.disciplines");
+    var modalHeaderText = Localization.GetString("select.disciplines");
+    var closeText = Localization.GetString("close");
+    var selectText = Localization.GetString("select");
 }
 
 <div id="editDisciplines">

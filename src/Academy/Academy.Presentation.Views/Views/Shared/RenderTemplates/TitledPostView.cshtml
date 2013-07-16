@@ -1,9 +1,10 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model ITitledPostViewModel
 
 @{
     var id = String.Format("titledPostId{0}", Model.Id);
-    var postedText = "Posted: ";
+    var postedText = Localization.GetString("posted");
 }
 
 <div class="text-block" id="@id">
@@ -22,7 +23,7 @@
             <span>
                 @RenderSection("AdditionalInfo", false)
                 <br/>
-                <b>@postedText</b>@Model.PostedDate
+                <b>@postedText: </b>@Model.PostedDate
             </span>
             <div class="pull-right">
                 @RenderSection("Buttons", false)

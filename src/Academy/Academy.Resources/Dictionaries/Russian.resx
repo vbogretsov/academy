@@ -117,313 +117,562 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="about" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="about.p1" xml:space="preserve">
+    <value>Социальная сеть для ученых «Академия» создана в 2013 году.</value>
+  </data>
+  <data name="about.p2" xml:space="preserve">
+    <value>Нашей основной целью является создание пространства, которое бы объединяло работы будущих и настоящих ученых всего мира, давало возможность пользования публикациями.</value>
+  </data>
+  <data name="about.p3" xml:space="preserve">
+    <value>В технические возможности сайта входят загрузка, скачивание и комментирование публикаций, создание своего профиля с личной информацией, конфиденциальность которой гарантируется. Вы также можете задать любой интересующий вас вопрос и получить на него ответ, либо оставить ответ самому. Оставляйте заметки в собственном профиле, чтобы помнить важные мероприятия!</value>
+  </data>
+  <data name="about.p4" xml:space="preserve">
+    <value>Мы хотели организовать доступный из любой точки мира ресурс, который приносил бы пользу всем желающим получить достоверную информацию из проверенных источников.</value>
+  </data>
+  <data name="about.p5" xml:space="preserve">
+    <value>Интернет-сайт «Академия» специфичен. Нашей целевой аудиторией являются люди с высшим образованием и ученой степенью (учеными степенями), а также аспиранты, магистры — и все те, кто в будущем стремится попасть в социальную категорию «ученых». Зарегистрировавшись здесь, вы всегда сможете найти нужную вам информацию в сферах Математики, Физики, Биологии, а такжепросмотреть вопросы/ ответы коллег и людей по интересам.</value>
+  </data>
+  <data name="about.p6" xml:space="preserve">
+    <value>Вы можете воспользоваться сменой языков, чтобы просматривать «Академию» на удобном вам языке. Загрузите личное фото, чтобы вас могли узнать читатели. Найти необходимый вам материал, воспользовавшись поиском. Комментировать публикации и таким образом облегчать поиск остальным, подписавшимся на данную тематику. Оставляйте интересующие вас дисциплины и получайте обновления по всему происходящему в них!</value>
+  </data>
+  <data name="about.p7" xml:space="preserve">
+    <value>Для наилучшей работы сайта воспользуйтесь формой обратной связи в разделе Контакты. Мы будем рады любым предложениям и отзывам, ответим на все вопросы.</value>
+  </data>
+  <data name="about.p8" xml:space="preserve">
+    <value>Как и любой начинающий проект, мы собираемся расти, предоставляя все новые и новые возможности пользователям. Спасибо, что выбрали нас!</value>
+  </data>
+  <data name="about.p9" xml:space="preserve">
+    <value>Социальная сеть для ученых «Академия». Всегда на пульсе науки! © 2013</value>
+  </data>
+  <data name="add.new.article" xml:space="preserve">
+    <value>Добавить новую статью</value>
+  </data>
+  <data name="add.new.note" xml:space="preserve">
+    <value>Добавить новую заметку</value>
+  </data>
+  <data name="answer" xml:space="preserve">
+    <value>Ответить</value>
+  </data>
+  <data name="answer.add" xml:space="preserve">
+    <value>Добавить ответ</value>
+  </data>
   <data name="answer.text" xml:space="preserve">
-    <value>Answer text</value>
+    <value>Текст ответа</value>
   </data>
   <data name="answer.text.err.required" xml:space="preserve">
-    <value>Answer text is required</value>
+    <value>Требуется ввести текст ответа</value>
+  </data>
+  <data name="answers.show" xml:space="preserve">
+    <value>Показать ответы</value>
+  </data>
+  <data name="article.create.add.author" xml:space="preserve">
+    <value>Добавить автора</value>
+  </data>
+  <data name="article.create.modal.select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="article.create.select.article.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины для статьи</value>
+  </data>
+  <data name="article.create.select.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины</value>
   </data>
   <data name="article.description" xml:space="preserve">
-    <value>Article description</value>
+    <value>Описание статьи</value>
   </data>
   <data name="article.description.err.required" xml:space="preserve">
-    <value>Article description is required</value>
+    <value>Требуется ввести описание статьи</value>
   </data>
   <data name="article.disciplines.err.required" xml:space="preserve">
-    <value>Article should have at least one discipline</value>
+    <value>Статья должна относиться хотя бы к одной дисциплине</value>
+  </data>
+  <data name="article.file" xml:space="preserve">
+    <value>Файл статьи</value>
   </data>
   <data name="article.search.author" xml:space="preserve">
-    <value>Author</value>
+    <value>Автор</value>
   </data>
   <data name="article.search.description" xml:space="preserve">
-    <value>Article description</value>
+    <value>Описание статьи</value>
   </data>
   <data name="article.search.title" xml:space="preserve">
-    <value>Article title</value>
+    <value>Заголовок статьи</value>
+  </data>
+  <data name="article.show" xml:space="preserve">
+    <value>Показать статью</value>
   </data>
   <data name="article.source" xml:space="preserve">
-    <value>Article pdf file name</value>
+    <value>Имя файла статьи в pdf</value>
   </data>
   <data name="article.source.err.required" xml:space="preserve">
-    <value>Source file name is required</value>
+    <value>Требуется ввести имя источника файла</value>
   </data>
   <data name="article.title" xml:space="preserve">
-    <value>Artcile title</value>
+    <value>Заголовок статьи</value>
   </data>
   <data name="article.title.err.required" xml:space="preserve">
-    <value>Article title is required</value>
+    <value>Требуется ввести заголовок статьи</value>
+  </data>
+  <data name="ask.question" xml:space="preserve">
+    <value>Задать вопрос</value>
   </data>
   <data name="author.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Емэйл</value>
   </data>
   <data name="author.email.err.invalid" xml:space="preserve">
-    <value>Specified email is not an email address</value>
+    <value>Выбранный емэйл не является емэйл-адресом</value>
   </data>
   <data name="author.email.err.required" xml:space="preserve">
-    <value>Email is required</value>
+    <value>Требуется ввести емэйл</value>
   </data>
   <data name="author.firstname" xml:space="preserve">
-    <value>First name</value>
+    <value>Имя</value>
   </data>
   <data name="author.firstname.err.required" xml:space="preserve">
-    <value>First name is required</value>
+    <value>Требуется ввести имя</value>
   </data>
   <data name="author.lastname" xml:space="preserve">
-    <value>Last name</value>
+    <value>Фамилия</value>
   </data>
   <data name="author.lastname.err.required" xml:space="preserve">
-    <value>Last name is required</value>
+    <value>Требуется ввести фамилию</value>
   </data>
   <data name="banner" xml:space="preserve">
-    <value>3eng.swf</value>
+    <value>3rus.swf</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="cintacts.p2" xml:space="preserve">
+    <value>В случае, если у вас возникли проблемы с использованием ресурса, вопросы, пожелания, мы всегда готовы выйти на связь с вами!</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="comment" xml:space="preserve">
+    <value>Комментировать</value>
+  </data>
+  <data name="comment.add" xml:space="preserve">
+    <value>Добавить комментарий</value>
   </data>
   <data name="comment.text" xml:space="preserve">
-    <value>Comment text</value>
+    <value>Текст комментария</value>
   </data>
   <data name="comment.text.err.required" xml:space="preserve">
-    <value>Comment text is required</value>
+    <value>Требуется ввести текст комментария</value>
+  </data>
+  <data name="comments.show" xml:space="preserve">
+    <value>Показать комментарии</value>
+  </data>
+  <data name="contacts" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="contacts.p1" xml:space="preserve">
+    <value>Уважаемы пользователи!</value>
+  </data>
+  <data name="contacts.p10" xml:space="preserve">
+    <value>Спасибо вам!</value>
+  </data>
+  <data name="contacts.p3" xml:space="preserve">
+    <value>Напишите администрации сайта на следующие электронные ящики:</value>
+  </data>
+  <data name="contacts.p4" xml:space="preserve">
+    <value>alololo@gmail.com</value>
+  </data>
+  <data name="contacts.p5" xml:space="preserve">
+    <value>kororo@gmail.com</value>
+  </data>
+  <data name="contacts.p6" xml:space="preserve">
+    <value>или позвоните нам по телефонам:</value>
+  </data>
+  <data name="contacts.p7" xml:space="preserve">
+    <value>+25 (269) 12-3563</value>
+  </data>
+  <data name="contacts.p8" xml:space="preserve">
+    <value>+74 (021) 13-5684</value>
+  </data>
+  <data name="contacts.p9" xml:space="preserve">
+    <value>+89 (589) 14-5692</value>
   </data>
   <data name="copyright" xml:space="preserve">
-    <value>© 2013 Academy</value>
+    <value>© 2013 Академия</value>
+  </data>
+  <data name="disciplines" xml:space="preserve">
+    <value>Дисциплины</value>
   </data>
   <data name="external.menu.about" xml:space="preserve">
-    <value>About</value>
+    <value>О нас</value>
   </data>
   <data name="external.menu.articles" xml:space="preserve">
-    <value>Articles</value>
+    <value>Статьи</value>
   </data>
   <data name="external.menu.contacts" xml:space="preserve">
-    <value>Contacts</value>
+    <value>Контакты</value>
   </data>
   <data name="external.menu.questions" xml:space="preserve">
-    <value>Questions</value>
+    <value>Вопросы</value>
   </data>
   <data name="external.title" xml:space="preserve">
-    <value>ACADEMY</value>
+    <value>АКАДЕМИЯ</value>
+  </data>
+  <data name="find" xml:space="preserve">
+    <value>Найти</value>
   </data>
   <data name="internal.menu.articles" xml:space="preserve">
-    <value>Articles</value>
+    <value>Поиск статей</value>
   </data>
   <data name="internal.menu.exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Выход</value>
   </data>
   <data name="internal.menu.profile" xml:space="preserve">
-    <value>Profile</value>
+    <value>Настройки профиля</value>
   </data>
   <data name="internal.menu.questions" xml:space="preserve">
-    <value>Questions</value>
+    <value>Вопросы и ответы</value>
   </data>
   <data name="internal.title" xml:space="preserve">
-    <value>ACADEMY</value>
+    <value>АКАДЕМИЯ</value>
   </data>
   <data name="lang.eng" xml:space="preserve">
     <value>English</value>
   </data>
   <data name="lang.language" xml:space="preserve">
-    <value>Language</value>
+    <value>Язык</value>
   </data>
   <data name="lang.rus" xml:space="preserve">
-    <value>Russian</value>
+    <value>Русский</value>
   </data>
   <data name="login.btn.login" xml:space="preserve">
-    <value>Login</value>
+    <value>Вход</value>
   </data>
   <data name="login.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Емэйл</value>
   </data>
   <data name="login.er.email.invalid" xml:space="preserve">
-    <value>The specified address is not a valid email address</value>
+    <value>Неправильно введен емэйл</value>
   </data>
   <data name="login.er.email.required" xml:space="preserve">
-    <value>Specify email address to login</value>
+    <value>Введите емэйл для входа</value>
   </data>
   <data name="login.er.pwd.required" xml:space="preserve">
-    <value>Specify password to login</value>
+    <value>Введите пароль для входа</value>
   </data>
   <data name="login.err.failed" xml:space="preserve">
-    <value>The user name or password provided is incorrect.</value>
+    <value>Имя пользователя или пароль неверны</value>
   </data>
   <data name="login.forgotpwd" xml:space="preserve">
-    <value>Forgot the password?</value>
+    <value>Забыли пароль?</value>
   </data>
   <data name="login.lbl.signin" xml:space="preserve">
-    <value>Sign In</value>
+    <value>Авторизоваться</value>
   </data>
   <data name="login.pwd" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="login.remember" xml:space="preserve">
-    <value>Stay online</value>
+    <value>Оставаться в системе</value>
   </data>
   <data name="login.submit" xml:space="preserve">
-    <value>Login</value>
+    <value>Вход</value>
   </data>
   <data name="logo" xml:space="preserve">
-    <value>logo_eng.png</value>
+    <value>logo_rus.png</value>
+  </data>
+  <data name="mainmenu.about" xml:space="preserve">
+    <value>О нас</value>
+  </data>
+  <data name="mainmenu.articles" xml:space="preserve">
+    <value>Поиск статей</value>
+  </data>
+  <data name="mainmenu.contacts" xml:space="preserve">
+    <value>Контакты</value>
+  </data>
+  <data name="mainmenu.questions" xml:space="preserve">
+    <value>Вопросы и ответы</value>
+  </data>
+  <data name="month1" xml:space="preserve">
+    <value>Январь</value>
+  </data>
+  <data name="month10" xml:space="preserve">
+    <value>Октябрь</value>
+  </data>
+  <data name="month11" xml:space="preserve">
+    <value>Ноябрь</value>
+  </data>
+  <data name="month12" xml:space="preserve">
+    <value>Декабрь</value>
+  </data>
+  <data name="month2" xml:space="preserve">
+    <value>Февраль</value>
+  </data>
+  <data name="month3" xml:space="preserve">
+    <value>Март</value>
+  </data>
+  <data name="month4" xml:space="preserve">
+    <value>Апрель</value>
+  </data>
+  <data name="month5" xml:space="preserve">
+    <value>Май</value>
+  </data>
+  <data name="month6" xml:space="preserve">
+    <value>Июнь</value>
+  </data>
+  <data name="month7" xml:space="preserve">
+    <value>Июль</value>
+  </data>
+  <data name="month8" xml:space="preserve">
+    <value>Август</value>
+  </data>
+  <data name="month9" xml:space="preserve">
+    <value>Сентябрь</value>
+  </data>
+  <data name="note.add" xml:space="preserve">
+    <value>Добавить заметку</value>
   </data>
   <data name="note.text" xml:space="preserve">
-    <value>Note text</value>
+    <value>Текст заметки</value>
   </data>
   <data name="note.text.err.required" xml:space="preserve">
-    <value>Note text is required</value>
+    <value>Требуется ввести текст заметки</value>
   </data>
   <data name="note.title" xml:space="preserve">
-    <value>Note title</value>
+    <value>Заголовок заметки</value>
   </data>
   <data name="note.title.err.required" xml:space="preserve">
-    <value>Note title is required</value>
+    <value>Требуется ввести заголовок заметки</value>
+  </data>
+  <data name="posted" xml:space="preserve">
+    <value>Дата публикации</value>
   </data>
   <data name="prifile.myquestions" xml:space="preserve">
-    <value>My questions</value>
+    <value>Мои вопросы</value>
+  </data>
+  <data name="profile.contact.admin" xml:space="preserve">
+    <value>Связь с администрацией</value>
   </data>
   <data name="profile.edit.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Емэйл</value>
   </data>
   <data name="profile.edit.er.email.invalid" xml:space="preserve">
-    <value>The specified address is not a valid email address</value>
+    <value>Неверный емэйл-адрес</value>
   </data>
   <data name="profile.edit.er.email.required" xml:space="preserve">
-    <value>Email address is required</value>
+    <value>Требуется ввести емэйл</value>
   </data>
   <data name="profile.edit.er.fname.required" xml:space="preserve">
-    <value>Fist name is required</value>
+    <value>Требуется ввести имя</value>
   </data>
   <data name="profile.edit.er.lname" xml:space="preserve">
-    <value>Last name is required</value>
+    <value>Требуется ввести фамилию</value>
   </data>
   <data name="profile.edit.fname" xml:space="preserve">
-    <value>First name</value>
+    <value>Имя</value>
   </data>
   <data name="profile.edit.lname" xml:space="preserve">
-    <value>Last name</value>
+    <value>Фамилия</value>
   </data>
   <data name="profile.edit.save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
   </data>
   <data name="profile.myanswers" xml:space="preserve">
-    <value>My answers</value>
+    <value>Мои ответы</value>
   </data>
   <data name="profile.myarticles" xml:space="preserve">
-    <value>My articles</value>
+    <value>Мои статьи</value>
   </data>
   <data name="profile.mycomment" xml:space="preserve">
-    <value>My comment</value>
+    <value>Мои комментарии</value>
+  </data>
+  <data name="profile.newanswers" xml:space="preserve">
+    <value>Новые ответы</value>
+  </data>
+  <data name="profile.newarticles" xml:space="preserve">
+    <value>Новые статьи</value>
+  </data>
+  <data name="profile.newcomments" xml:space="preserve">
+    <value>Новые комментарии</value>
+  </data>
+  <data name="profile.newquestions" xml:space="preserve">
+    <value>Новые вопросы</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>Опубликовать</value>
+  </data>
+  <data name="question.create.modal.select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="question.create.select.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины</value>
+  </data>
+  <data name="question.create.select.question.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины для вопроса</value>
   </data>
   <data name="question.disciplines.err.required" xml:space="preserve">
-    <value>At least one discipline should be selected</value>
+    <value>Хотя бы одна дисциплина должна быть выбрана</value>
   </data>
   <data name="question.search.keyword" xml:space="preserve">
-    <value>Search keywords</value>
+    <value>Ключевые слова поиска</value>
+  </data>
+  <data name="question.search.title" xml:space="preserve">
+    <value>Поиск вопросов</value>
+  </data>
+  <data name="question.serach" xml:space="preserve">
+    <value>Поиск вопросов</value>
+  </data>
+  <data name="question.serach.select.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины</value>
+  </data>
+  <data name="question.show" xml:space="preserve">
+    <value>Показать вопросы</value>
   </data>
   <data name="question.text" xml:space="preserve">
-    <value>Question text</value>
+    <value>Текст вопроса</value>
   </data>
   <data name="question.text.err.required" xml:space="preserve">
-    <value>Question text is required</value>
+    <value>Требуется ввести текст вопроса</value>
   </data>
   <data name="question.title" xml:space="preserve">
-    <value>Question title</value>
+    <value>Заголовок вопроса</value>
   </data>
   <data name="question.title.err.required" xml:space="preserve">
-    <value>Question title is required</value>
-  </data>
-  <data name="registration.btn.register" xml:space="preserve">
-    <value>Register</value>
+    <value>Требуется ввести заголовок вопроса</value>
   </data>
   <data name="registration.bidthdate" xml:space="preserve">
-    <value>Birth date</value>
+    <value>Дата рождения</value>
+  </data>
+  <data name="registration.btn.register" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="registration.date.err.invalid" xml:space="preserve">
+    <value>Дата неверна</value>
   </data>
   <data name="registration.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Емэйл</value>
   </data>
   <data name="registration.er.email.exists" xml:space="preserve">
-    <value>User with specified email already exists</value>
+    <value>Пользователь с таким емэйлом уже существует</value>
   </data>
   <data name="registration.er.email.invalid" xml:space="preserve">
-    <value>The specified address is not a valid email address</value>
+    <value>Неверный емэйл-адрес</value>
   </data>
   <data name="registration.er.email.required" xml:space="preserve">
-    <value>Email address is required</value>
+    <value>Требуется ввести емэйл</value>
   </data>
   <data name="registration.er.fname.required" xml:space="preserve">
-    <value>First name is required</value>
+    <value>Требуется ввести имя</value>
   </data>
   <data name="registration.er.lname.required" xml:space="preserve">
-    <value>Last name is required</value>
+    <value>Требуется ввести фамилию</value>
   </data>
   <data name="registration.er.pwd.length" xml:space="preserve">
-    <value>Password must have least 6 symbols</value>
+    <value>Пароль должен содержать хотя бы 6 символов</value>
   </data>
   <data name="registration.er.pwd.required" xml:space="preserve">
-    <value>Pssword is required</value>
+    <value>Требуется ввести пароль</value>
   </data>
   <data name="registration.er.pwdconf.notmatch" xml:space="preserve">
-    <value>Password confirmation does not match the password</value>
+    <value>Подтверждение пароля не совпадает с паролем</value>
   </data>
   <data name="registration.er.pwdconf.required" xml:space="preserve">
-    <value>Password confirmation is required</value>
+    <value>Требуется подтвердить пароль</value>
   </data>
   <data name="registration.er.university.required" xml:space="preserve">
-    <value>University is required</value>
+    <value>Требуется ввести университет</value>
   </data>
   <data name="registration.fname" xml:space="preserve">
-    <value>First name</value>
+    <value>Имя</value>
   </data>
   <data name="registration.lbl.register" xml:space="preserve">
-    <value>Register if you do not have an account</value>
+    <value>Зарегистрируйтесь, если у вас нет аккаунта</value>
   </data>
   <data name="registration.lname" xml:space="preserve">
-    <value>Last name</value>
+    <value>Фамилия</value>
   </data>
   <data name="registration.pwd" xml:space="preserve">
-    <value>Password</value>
+    <value>Пароль</value>
   </data>
   <data name="registration.pwdconf" xml:space="preserve">
-    <value>Password confirmation</value>
+    <value>Подтверждение пароля</value>
   </data>
   <data name="registration.submit" xml:space="preserve">
-    <value>Register</value>
+    <value>Регистрация</value>
   </data>
   <data name="registration.univercity" xml:space="preserve">
-    <value>Univercity</value>
+    <value>Университет</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="remove.answer" xml:space="preserve">
+    <value>Удалить ответ</value>
+  </data>
+  <data name="remove.comment" xml:space="preserve">
+    <value>Удалить комментарий</value>
+  </data>
+  <data name="remove.note" xml:space="preserve">
+    <value>Удалить заметку</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="select.disciplines" xml:space="preserve">
+    <value>Выбрать дисциплины</value>
+  </data>
+  <data name="select.image" xml:space="preserve">
+    <value>Выбрать изображение</value>
   </data>
   <data name="user.birthdate" xml:space="preserve">
-    <value>Birth date</value>
+    <value>Дата рождения</value>
   </data>
   <data name="user.birthdate.err.required" xml:space="preserve">
-    <value>Birth date is required</value>
+    <value>Требуется ввести дату рождения</value>
+  </data>
+  <data name="user.edit.disciplines.description" xml:space="preserve">
+    <value>Описание дисциплин</value>
+  </data>
+  <data name="user.edit.disciplines.title" xml:space="preserve">
+    <value>Настройки дисциплин</value>
+  </data>
+  <data name="user.edit.title" xml:space="preserve">
+    <value>Настройки профиля</value>
   </data>
   <data name="user.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Емэйл</value>
   </data>
   <data name="user.email.err.invalid" xml:space="preserve">
-    <value>Specified email is not an email address</value>
+    <value>Неверный емэйл-адрес</value>
   </data>
   <data name="user.email.err.required" xml:space="preserve">
-    <value>Email is required</value>
+    <value>Требуется ввести емэйл</value>
   </data>
   <data name="user.firstname" xml:space="preserve">
-    <value>First name</value>
+    <value>Имя</value>
   </data>
   <data name="user.firstname.err.requiered" xml:space="preserve">
-    <value>First name is required</value>
+    <value>Требуется ввести имя</value>
   </data>
   <data name="user.lastname" xml:space="preserve">
-    <value>Last name</value>
+    <value>Фамилия</value>
   </data>
   <data name="user.lastname.err.required" xml:space="preserve">
-    <value>Last name is required</value>
+    <value>Требуется ввести фамилию</value>
   </data>
   <data name="user.photo" xml:space="preserve">
-    <value>Photo</value>
+    <value>Фото</value>
   </data>
   <data name="user.university" xml:space="preserve">
-    <value>University</value>
+    <value>Университет</value>
   </data>
   <data name="user.university.err.required" xml:space="preserve">
-    <value>University is required</value>
+    <value>Требуется ввести университет</value>
   </data>
-  <data name="registration.bidthdate.err.invalid" xml:space="preserve">
-    <value>The specified date is invalid</value>
+  <data name="welcome" xml:space="preserve">
+    <value>Добро пожаловать в "Академию"!</value>
+  </data>
+  <data name="your.disciplines" xml:space="preserve">
+    <value>Ваши дисциплины</value>
   </data>
 </root>

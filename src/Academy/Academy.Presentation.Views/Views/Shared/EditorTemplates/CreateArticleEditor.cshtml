@@ -1,14 +1,19 @@
 ﻿@using Academy.Presentation.ViewModels
 @using Academy.Presentation.Views.Helpers
+@using Academy.Resources
 
 @model ArticleViewModel
 
 @*TODO: refactor hardcoded style*@
 
 @{
-    const string selectDisciplinesText = "Select disciplines";
-    const string selectDisciplinesHeader = "Select disciplines for article";
-    const string addAuthorText = "Add author";
+    string selectDisciplinesText =
+        Localization.GetString("article.create.select.disciplines");
+    string selectDisciplinesHeader =
+        Localization.GetString("article.create.select.article.disciplines");
+    string addAuthorText =
+        Localization.GetString("article.create.add.author");
+    string publishText = Localization.GetString("publish");
 }
 
 <div class="control-group">
@@ -47,7 +52,9 @@
         @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Select</button>
+        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">
+            @Localization.GetString("article.create.modal.select")
+        </button>
     </div>
 </div>
 

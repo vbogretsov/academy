@@ -1,15 +1,17 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model CommentViewModel
 
 @{
     var postCommentFormId = String.Format("commentFormFor{0}", Model.ArticleId);
     var commentsId = String.Format("commentsFor{0}", Model.ArticleId);
+    var commentText = Localization.GetString("comment");
 }
 
 @using (Html.BeginForm("CommentArticle", "Comment", FormMethod.Post, new { id = postCommentFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateCommentEditor", Model);
-    <input type="submit" class="btn btn-primary pull-right" value="Comment"/>
+    <input type="submit" class="btn btn-primary pull-right" value="@commentText"/>
 }
 
 <script type="text/javascript">

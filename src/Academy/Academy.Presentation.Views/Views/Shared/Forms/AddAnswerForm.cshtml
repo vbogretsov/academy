@@ -1,4 +1,5 @@
-﻿@model Academy.Presentation.ViewModels.AnswerViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.AnswerViewModel
 
 @{
     string postAsnwerFormId = String.Format("postAnswerForm{0}", Model.QuestionId);
@@ -8,7 +9,7 @@
 @using (Html.BeginForm("Answer", "Answer", FormMethod.Post, new { id = postAsnwerFormId }))
 {
     Html.RenderPartial("EditorTemplates/CreateAnswerEditor", Model);
-    <input type="submit" class="btn btn-primary pull-right" value="Answer"/>
+    <input type="submit" class="btn btn-primary pull-right" value="@Localization.GetString("answer")"/>
 }
 
 <script type="text/javascript">

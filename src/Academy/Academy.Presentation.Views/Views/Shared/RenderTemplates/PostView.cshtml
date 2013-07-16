@@ -1,9 +1,10 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model IPostViewModel
 
 @{
     var id = String.Format("post{0}", Model.Id);
-    var postedText = "Posted: ";
+    var postedText = Localization.GetString("posted");
 }
 
 <div id="@id">
@@ -15,7 +16,7 @@
             @Model.Text
         </div>
         <div class="text-block-footer">
-            <b>@postedText</b>@Model.PostedDate
+            <b>@postedText: </b>@Model.PostedDate
             @RenderSection("Buttons")
         </div>
     </div>

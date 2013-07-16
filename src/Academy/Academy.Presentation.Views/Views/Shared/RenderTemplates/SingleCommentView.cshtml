@@ -1,9 +1,10 @@
-﻿@model Academy.Presentation.ViewModels.CommentViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.CommentViewModel
 @{
     Layout = "SinglePostView.cshtml";
 }
 @{
-    const string showArticleText = "Show article";
+    var showArticleText = Localization.GetString("article.show");
     var showArticleId = String.Format("showArticleFor{0}", Model.Id);
     var articleAreaId = String.Format("articleFor{0}", Model.Id);
     var parentArticleId = String.Format("article{0}", Model.ArticleId);

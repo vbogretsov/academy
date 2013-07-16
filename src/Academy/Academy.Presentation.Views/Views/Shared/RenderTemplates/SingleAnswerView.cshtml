@@ -1,4 +1,5 @@
-﻿@model Academy.Presentation.ViewModels.AnswerViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.AnswerViewModel
 @{
     Layout = "SinglePostView.cshtml";
 }
@@ -6,7 +7,7 @@
     var questionAreaId = String.Format("questionFor{0}", Model.Id);
     var parentQuestionId = String.Format("question{0}", Model.Id);
     var showQuestionId = String.Format("showQuestionFor{0}", Model.Id);
-    const string showQuestionText = "Show question";
+    var showQuestionText = Localization.GetString("question.show");
 }
 @section Authors
 {

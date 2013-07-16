@@ -1,8 +1,10 @@
-﻿@model Academy.Presentation.ViewModels.NoteViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.NoteViewModel
 
 @{
-    const string removeNoteText = "Remove note";
+    var removeNoteText = Localization.GetString("remove.note");
     var removeNoteId = String.Format("removeNote{0}", Model.Id);
+    var postedText = Localization.GetString("posted");
 }
 
 <div class="text-block">
@@ -13,7 +15,7 @@
         @Model.Text
     </div>
     <div class="text-block-footer">
-        <b>Date posted: </b>
+        <b>@postedText: </b>
         @Model.PostedDate
         <button class="btn btn-small btn-danger pull-right" id="@removeNoteId">@removeNoteText</button>
     </div>

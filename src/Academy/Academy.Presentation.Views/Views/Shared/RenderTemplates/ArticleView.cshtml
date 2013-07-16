@@ -1,4 +1,5 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model ArticleViewModel
 
 @{
@@ -6,16 +7,17 @@
 }
 
 @{
-    const string addCommentText = "Add comment";
+    var addCommentText = Localization.GetString("comment.add");
     var addCommentId = String.Format("addCommentFor{0}", Model.Id);
-    const string showCommentsText = "Show comments";
+    var showCommentsText = Localization.GetString("comments.show");//"Show comments";
     var showCommentsId = String.Format("showCommentsFor{0}", Model.Id);
     var commentTemplate = new CommentViewModel { ArticleId = Model.Id };
     var newCommentId = String.Format("newCommentFor{0}", Model.Id);
     var commentsId = String.Format("commentsFor{0}", Model.Id);
-    const string articleFileText = "Article file: ";
-    var removeText = "Remove";
+    var articleFileText = Localization.GetString("article.file");
+    var removeText = Localization.GetString("remove");
     var removeId = String.Format("removeArticle{0}", Model.Id);
+    var disciplinesText = Localization.GetString("disciplines");
 }
 
 @section Authors
@@ -28,7 +30,7 @@
 
 @section Disciplines
 {
-    <b>Disciplines</b>:
+    <b>@disciplinesText</b>:
     @foreach (var discipline in Model.Disciplines)
     {
         <span class="label font-small">@discipline.Name</span>
@@ -37,7 +39,7 @@
 
 @section AdditionalInfo
 {
-    <b>@articleFileText</b>
+    <b>@articleFileText: </b>
     <a href="/Resources/Articles/@Model.Source">
         @Path.GetFileNameWithoutExtension(@Model.Source)
     </a>
@@ -73,36 +75,3 @@
     </div>
     <div id="@commentsId" class="hide" />
 }
-
-@*@section Scripts
-{
-    <script type="text/javascript">
-    $(function () {
-        alert('xxx');
-        $('#@remveId').click(function () {
-            $.ajax({
-                url: '@Url.Action("RemoveArticle", "Article", new { id = Model.Id })',
-                type: 'post',
-                success: function () {
-                    $('@id').remove();
-                }
-            });
-        });
-        $('#@addCommentId').click(function () {
-            $('#@newCommentId').slideToggle('fast');
-        });
-        $('#@showCommentsId').click(function () {
-            if ($('#@commentsId').is(':empty')) {
-                $.ajax({
-                    url: '@Url.Action("GetArticleComments", "Comment", new { articleId = Model.Id })',
-                    success: function (page) {
-                        $('#@commentsId').html(page);
-                    }
-                });
-                }
-            $('#@commentsId').slideToggle('fast');
-        });
-    })
-</script>
-}*@
-

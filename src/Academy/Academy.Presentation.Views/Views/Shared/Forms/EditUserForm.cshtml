@@ -1,7 +1,8 @@
-﻿@model Academy.Presentation.ViewModels.UserViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.UserViewModel
 
 @{
-    var headerText = "Main profile settigs";
+    var headerText = Localization.GetString("user.edit.title");
     var editUserFormSettings = new
         {
             @class = "form-horizontal no-margin",

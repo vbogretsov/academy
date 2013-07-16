@@ -1,11 +1,13 @@
 ﻿@using Academy.Presentation.Views.Helpers
+@using Academy.Resources
 @model Academy.Presentation.ViewModels.UserViewModel
 
 @{
     var textBoxSettings = new { @class = "input-over-date" };
-    var selectImageText = "Select image";
-    var changeText = "Change";
-    var removeTet = "Remove";
+    var selectImageText = Localization.GetString("select.image");
+    var changeText = Localization.GetString("change");
+    var removeTet = Localization.GetString("remove");
+    var editText = Localization.GetString("edit");
     var labelSettings = new {@class = "control-label"};
 }
 
@@ -64,6 +66,6 @@
 </div>
 <div class="control-group">
     <div class="controls">
-        <input type="submit" class="btn btn-primary pull-right" value="Edit" style="margin-right: 20px"/>
+        <input type="submit" class="btn btn-primary pull-right" value="@editText" style="margin-right: 20px"/>
     </div>
 </div>

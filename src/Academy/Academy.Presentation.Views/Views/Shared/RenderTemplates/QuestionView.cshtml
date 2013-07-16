@@ -1,4 +1,5 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model Academy.Presentation.ViewModels.QuestionViewModel
 
 @{
@@ -8,10 +9,10 @@
 @{
     var answersId = String.Format("answersFor{0}", Model.Id);
     var newAnswerId = String.Format("newAnswerFor{0}", Model.Id);
-    const string addAnswerText = "Add answer";
+    var addAnswerText = Localization.GetString("answer.add");
     var addAnswerId = String.Format("addAnswerFor{0}", Model.Id);
     var showAnswersId = String.Format("showAnswersFor{0}", Model.Id);
-    const string showAnswersText = "Show answers";
+    var showAnswersText = Localization.GetString("answers.show");
     var fullUserName = String.Format(
         "{0} {1} {2}",
         Model.Author.Email,
@@ -21,53 +22,9 @@
         {
             QuestionId = Model.Id
         };
-    var removeText = "Remove";
+    var removeText = Localization.GetString("remove");
     var removeId = String.Format("removeQuestion{0}", Model.Id);
 }
-
-@*<div class="text-block" id="@questionId">
-    <div class="page-header">
-        <span class="label">
-            @fullUserName
-        </span>
-    </div>
-    <div class="text-block-header">
-        <h4>@Model.Title</h4>
-    </div>
-    <div class="text-block-body">
-        @Model.Text
-    </div>
-    <div class="text-block-footer">
-        <b>Disciplines</b>:
-        @foreach (var discipline in Model.Disciplines)
-        {
-            <span class="label font-small">@discipline.Name</span>
-        }
-        <div>
-            <span>
-                <b>@postedText</b>
-                @Model.PostedDate
-            </span>
-            <div class="pull-right">
-                @if (User.IsInRole("Admin"))
-                {
-                    <button class="btn btn-mini btn-danger" id="@removeQuestionId">
-                        @removeQuestionText
-                    </button>
-                }
-                @if (Request.IsAuthenticated)
-                {
-                    <button class="btn btn-mini btn-primary" id="@addAnswerId">
-                        @addAnswerText
-                    </button>
-                }
-                <button class="btn btn-mini" id="@showAnswersId" style="margin-right: 10px">
-                    @showAnswersText
-                </button>
-            </div>
-        </div>
-    </div>
-</div>*@
 
 @section Authors
 {
@@ -76,7 +33,7 @@
 
 @section Disciplines
 {
-    <b>Disciplines</b>:
+    <b>@Localization.GetString("disciplines"): </b>
     @foreach (var discipline in Model.Disciplines)
     {
         <span class="label font-small">@discipline.Name</span>
@@ -113,31 +70,3 @@
     </div>
     <div id="@answersId" class="hide" />
 }
-
-@*<script type="text/javascript">
-    $(function () {
-        $('#@remveId').click(function () {
-            $.ajax({
-                url: '@Url.Action("RemoveArticle", "Article", new { id = Model.Id })',
-                type: 'post',
-                success: function () {
-                    $('@id').remove();
-                }
-            });
-        });
-        $('#@addAnswerId').click(function () {
-            $('#@newAnswerId').slideToggle('fast');
-        });
-        $('#@showAnswersId').click(function () {
-            if ($('#@answersId').is(':empty')) {
-                $.ajax({
-                    url: '@Url.Action("GetQuestionAnswers", "Answer", new {questionId = Model.Id})',
-                    success: function(page) {
-                        $('#@answersId').html(page);
-                    }
-                });
-            }
-            $('#@answersId').slideToggle('fast');
-        });
-    })
-</script>*@

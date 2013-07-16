@@ -66,6 +66,7 @@
     <EmbeddedResource Include="Dictionaries\English.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>English.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dictionaries\Russian.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

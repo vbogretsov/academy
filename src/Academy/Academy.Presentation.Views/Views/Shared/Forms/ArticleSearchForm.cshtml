@@ -1,15 +1,17 @@
-﻿@model Academy.Presentation.ViewModels.ArticleSearchViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.ArticleSearchViewModel
 
 @{
     const string formId = "articleSearch";
     var formSettings = new {id = formId};
+    var findText = @Localization.GetString("find");
 }
 
 @using (Html.BeginForm("FindArticles", "Search", FormMethod.Post, formSettings))
 {
     Html.RenderPartial("EditorTemplates/AerticleSearchEditor", Model);
 
-    <input type="submit" class="btn btn-primary pull-right" value="Find" style="margin-top: 20px"/>
+    <input type="submit" class="btn btn-primary pull-right" value="@findText" style="margin-top: 20px"/>
 }
 
 <script type="text/javascript">

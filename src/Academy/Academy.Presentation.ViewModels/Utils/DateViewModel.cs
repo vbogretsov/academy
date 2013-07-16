@@ -16,18 +16,18 @@ namespace Academy.Presentation.ViewModels.Utils
             years = Enumerable.Range(1900, 150);
             months = new []
                 {
-                    new MonthViewModel("Januar", 1),
-                    new MonthViewModel("Februar", 2),
-                    new MonthViewModel("Marth", 3),
-                    new MonthViewModel("April", 4),
-                    new MonthViewModel("May", 5),
-                    new MonthViewModel("June", 6),
-                    new MonthViewModel("July", 7),
-                    new MonthViewModel("August", 8),
-                    new MonthViewModel("September", 9),
-                    new MonthViewModel("October", 10),
-                    new MonthViewModel("November", 11),
-                    new MonthViewModel("December", 12)
+                    new MonthViewModel(1),
+                    new MonthViewModel(2),
+                    new MonthViewModel(3),
+                    new MonthViewModel(4),
+                    new MonthViewModel(5),
+                    new MonthViewModel(6),
+                    new MonthViewModel(7),
+                    new MonthViewModel(8),
+                    new MonthViewModel(9),
+                    new MonthViewModel(10),
+                    new MonthViewModel(11),
+                    new MonthViewModel(12)
                 };
         }
 

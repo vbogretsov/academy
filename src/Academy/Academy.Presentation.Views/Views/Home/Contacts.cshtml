@@ -1,6 +1,18 @@
-﻿@*@{
-    ViewBag.Title = "Contacts";
-    Layout = "~/Views/Shared/External.cshtml";
-}*@
-
-<h2>Contacts</h2>
+﻿@using Academy.Resources
+<h2>@Localization.GetString("contacts")</h2>
+<p>@Localization.GetString("contacts.p1")</p>
+<br />
+<p>@Localization.GetString("contacts.p2")</p>
+<br />
+<ul class="list-flat">@Localization.GetString("contacts.p3")
+    <li>@Localization.GetString("contacts.p4")</li>
+    <li>@Localization.GetString("contacts.p5")</li>
+</ul>
+<br />
+<ul class="list-flat">@Localization.GetString("contacts.p6")
+    <li>@Localization.GetString("contacts.p7")</li>
+    <li>@Localization.GetString("contacts.p8")</li>
+    <li>@Localization.GetString("contacts.p9")</li>
+</ul>
+<br />
+<p>@Localization.GetString("contacts.p10")</p>

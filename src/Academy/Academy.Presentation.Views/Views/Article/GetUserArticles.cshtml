@@ -1,8 +1,9 @@
 ﻿@using Academy.Presentation.ViewModels
+@using Academy.Resources
 @model UserViewModel
 
 @{
-    const string addArticleText = "Add new article";
+    var addArticleText = Localization.GetString("add.new.article");
     var articleTemplate = new ArticleViewModel();
 }
 
