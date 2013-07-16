@@ -37,28 +37,31 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IEnumerable<Article> FindArticles(ArticleSearchCriteria criteria)
         {
-            return criteria.Disciplines != null
-                ? from article in Entities.Articles
-                where
-                    article.Title.Contains(criteria.Title) &&
-                    article.Text.Contains(criteria.Description) &&
-                    (article.Authors.Any(a =>
-                        a.Email.Contains(criteria.Author) ||
-                        a.FirstName.Contains(criteria.Author) ||
-                        a.LastName.Contains(criteria.Author))) &&
-                    article.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
-                orderby article.PostedDate descending
-                select article
-                : from article in Entities.Articles
-                where
-                    article.Title.Contains(criteria.Title) &&
-                    article.Text.Contains(criteria.Description) &&
-                    (article.Authors.Any(a =>
-                        a.Email.Contains(criteria.Author) ||
-                        a.FirstName.Contains(criteria.Author) ||
-                        a.LastName.Contains(criteria.Author)))
-                orderby article.PostedDate descending
-                select article;
+            //return criteria.Disciplines != null
+            //    ? from article in Entities.Articles
+            //    where
+            //        article.Title.Contains(criteria.Title) &&
+            //        article.Text.Contains(criteria.Description) &&
+            //        (article.Authors.Any(a =>
+            //            a.Email.Contains(criteria.Author) ||
+            //            a.FirstName.Contains(criteria.Author) ||
+            //            a.LastName.Contains(criteria.Author))) &&
+            //        article.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
+            //    orderby article.PostedDate descending
+            //    select article
+            //    : from article in Entities.Articles
+            //    where
+            //        article.Title.Contains(criteria.Title) &&
+            //        article.Text.Contains(criteria.Description) &&
+            //        (article.Authors.Any(a =>
+            //            a.Email.Contains(criteria.Author) ||
+            //            a.FirstName.Contains(criteria.Author) ||
+            //            a.LastName.Contains(criteria.Author)))
+            //    orderby article.PostedDate descending
+            //    select article;
+            return from article in Entities.Articles
+                   where article.Title.Contains(criteria.Title)
+                   select article;
         }
 
         private int GetUserArticlesCount(int userId)

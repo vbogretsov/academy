@@ -7,6 +7,11 @@ namespace Academy.Domain.DataAccess.Ef
 {
     public class AcademyEntities : DbContext
     {
+        public AcademyEntities()
+            : base("AcademyEntities")
+        {
+        }
+
         private static void AddConfigurations(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new UserConfiguration());

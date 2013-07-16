@@ -70,7 +70,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Social network for scientists &quot;Academy&quot; was established in 2013..
+        ///   Looks up a localized string similar to Social network for scientists &quot;AcademyDb&quot; was established in 2013..
         /// </summary>
         public static string about_p1 {
             get {
@@ -106,7 +106,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Internet site &quot;Academy&quot; is specific. Our target audience is people with higher education and advanced degree (graduate degrees), as well as graduate students, masters - and all those who wants in the future to go into the social category of &quot;scientists.&quot; By registering here, you will always be able to find the information you need in the fields of Mathematics, Physics, Biology, and view questions / answers of colleagues and people of interest..
+        ///   Looks up a localized string similar to Internet site &quot;AcademyDb&quot; is specific. Our target audience is people with higher education and advanced degree (graduate degrees), as well as graduate students, masters - and all those who wants in the future to go into the social category of &quot;scientists.&quot; By registering here, you will always be able to find the information you need in the fields of Mathematics, Physics, Biology, and view questions / answers of colleagues and people of interest..
         /// </summary>
         public static string about_p5 {
             get {
@@ -115,7 +115,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can use the change of language in order to view the &quot;Academy&quot; in the language of your choice conveniently. Upload a personal photo. Find your desired material by searching. Comment publication and thus facilitate the search for the rest of those who subscribe to this topic. Leave interesting discipline and get updates on everything going on in them! For best performance, use the website feedback form in the Contact section. We always welcome suggestions and feedback, we will answer all the questions..
+        ///   Looks up a localized string similar to You can use the change of language in order to view the &quot;AcademyDb&quot; in the language of your choice conveniently. Upload a personal photo. Find your desired material by searching. Comment publication and thus facilitate the search for the rest of those who subscribe to this topic. Leave interesting discipline and get updates on everything going on in them! For best performance, use the website feedback form in the Contact section. We always welcome suggestions and feedback, we will answer all the questions..
         /// </summary>
         public static string about_p6 {
             get {
@@ -142,7 +142,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Social network for scientists &quot;Academy&quot;. Always on the pulse of science! © 2013.
+        ///   Looks up a localized string similar to Social network for scientists &quot;AcademyDb&quot;. Always on the pulse of science! © 2013.
         /// </summary>
         public static string about_p9 {
             get {
@@ -718,7 +718,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to © 2013 Academy.
+        ///   Looks up a localized string similar to © 2013 AcademyDb.
         /// </summary>
         public static string copyright {
             get {
@@ -779,7 +779,7 @@ namespace Academy.Validation.Dictionaries {
                 return ResourceManager.GetString("endocrinology", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to //------------------------------------------------------------------------------
         ///// &lt;auto-generated&gt;
@@ -850,7 +850,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ACADEMY.
+        ///   Looks up a localized string similar to AcademyDb.
         /// </summary>
         public static string external_title {
             get {
@@ -994,7 +994,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ACADEMY.
+        ///   Looks up a localized string similar to AcademyDb.
         /// </summary>
         public static string internal_title {
             get {
@@ -2038,7 +2038,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Academy: Home.
+        ///   Looks up a localized string similar to AcademyDb: Home.
         /// </summary>
         public static string title_home {
             get {
@@ -2047,7 +2047,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Academy: Profile.
+        ///   Looks up a localized string similar to AcademyDb: Profile.
         /// </summary>
         public static string title_profile {
             get {

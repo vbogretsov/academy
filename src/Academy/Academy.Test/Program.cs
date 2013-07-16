@@ -30,12 +30,8 @@ namespace Academy.Test
 
         private static void Start(string[] args)
         {
-            //ValidateEncoding();
             CreateDatabase();
-            //ValidateDates();
-            //UpdateTestPasswords();
-            //CreateDatabase();
-            //TestChildDisciplines();
+            //InitializeDatabase();
         }
 
         private static void ValidateEncoding()
@@ -98,6 +94,14 @@ namespace Academy.Test
             yield return storage.Get(14);
         }
 
+        private static void InitializeDatabase()
+        {
+            using (var academyEntities = new AcademyEntities())
+            {
+                academyEntities.Database.ExecuteSqlCommand(Scripts.InitAcademyScript);
+            }
+        }
+
         private static void CreateDatabase()
         {
             using (AcademyEntities academyEntities = new AcademyEntities())
@@ -108,7 +112,7 @@ namespace Academy.Test
                     academyEntities.Database.Delete();
                 }
                 academyEntities.Database.Create();
-                academyEntities.Database.ExecuteSqlCommand("ALTER DATABASE Academy COLLATE Cyrillic_General_CI_AS");
+                //academyEntities.Database.ExecuteSqlCommand("ALTER DATABASE Academy COLLATE Cyrillic_General_CI_AS");
                 Console.WriteLine("Database created");
                 //Console.WriteLine("Generating test data...");
                 //TestDataGenerator generator = new TestDataGenerator(academyEntities);

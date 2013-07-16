@@ -70,6 +70,7 @@ namespace Academy.Test.DataGenerating
             user.LastName = GetInfoField(userInfo, "last_name");
             user.University = GetInfoField(userInfo, "university");
             user.BirthDate = DateTime.Parse(GetInfoField(userInfo, "date"));
+            user.PhotoFileName = "0.jpg";
             string passwrod = GetInfoField(userInfo, "password");
             service.Register(user, passwrod);
             string[] disciplines = GetInfoField(userInfo, "disciplines").Split(',');

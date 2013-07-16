@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Web.Http;
@@ -6,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.SessionState;
+using Academy.Domain.DataAccess.Ef;
 using Academy.Presentation.Views;
 using Academy.Presentation.Views.App_Start;
 using Academy.Security;
@@ -30,7 +32,7 @@ namespace Academy.Presentation
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             InitializeSecurity();
             InitializeRoles();
-            //GenerateTestData();
+            GenerateTestData();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
@@ -47,10 +49,16 @@ namespace Academy.Presentation
 
         private static void GenerateTestData()
         {
-            var generator = new TestDataGenerator(
-                @"d:\dev\academy\test\",
-                new AcademyService());
-            generator.GenerateTestData();
+            bool generateTestData = Convert.ToBoolean(
+                ConfigurationManager.AppSettings["TestDataGenerationMode"]);
+            if (generateTestData)
+            {
+                var testDataPath = ConfigurationManager.AppSettings["TestDataPath"];
+                var generator = new TestDataGenerator(
+                    testDataPath,
+                    new AcademyService());
+                generator.GenerateTestData();
+            }
         }
 
         private static void SetLanguage(HttpSessionState session)

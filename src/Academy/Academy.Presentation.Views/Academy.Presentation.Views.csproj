@@ -56,6 +56,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -158,6 +159,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\AcademyDb.sdf" />
     <Content Include="Content\bootstrap-fileupload.css" />
     <Content Include="Content\Images\3eng.swf" />
     <Content Include="Content\Images\3rus.swf" />
@@ -275,7 +277,6 @@
     <Content Include="Views\Shared\RenderTemplates\SinglePostView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Resources\Articles\" />
   </ItemGroup>
   <ItemGroup>
