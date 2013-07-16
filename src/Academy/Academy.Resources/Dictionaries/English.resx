@@ -153,6 +153,15 @@
   <data name="add.new.note" xml:space="preserve">
     <value>Add new note</value>
   </data>
+  <data name="algebra" xml:space="preserve">
+    <value>Algebra</value>
+  </data>
+  <data name="analytic.geometry" xml:space="preserve">
+    <value>Analytic geometry</value>
+  </data>
+  <data name="anatomy" xml:space="preserve">
+    <value>Anatomy</value>
+  </data>
   <data name="answer" xml:space="preserve">
     <value>Answer</value>
   </data>
@@ -167,6 +176,12 @@
   </data>
   <data name="answers.show" xml:space="preserve">
     <value>Show answers</value>
+  </data>
+  <data name="anthropology" xml:space="preserve">
+    <value>Anthropology</value>
+  </data>
+  <data name="anthropotomy" xml:space="preserve">
+    <value>Anthropotomy</value>
   </data>
   <data name="article.create.add.author" xml:space="preserve">
     <value>Add author</value>
@@ -243,6 +258,21 @@
   <data name="banner" xml:space="preserve">
     <value>3eng.swf</value>
   </data>
+  <data name="bioacoustics" xml:space="preserve">
+    <value>Bioacoustics</value>
+  </data>
+  <data name="bioenergetics" xml:space="preserve">
+    <value>Bioenergetics</value>
+  </data>
+  <data name="biology" xml:space="preserve">
+    <value>Biology</value>
+  </data>
+  <data name="biomechanics" xml:space="preserve">
+    <value>Biomechanics</value>
+  </data>
+  <data name="biophysics" xml:space="preserve">
+    <value>Biophysics</value>
+  </data>
   <data name="change" xml:space="preserve">
     <value>Change</value>
   </data>
@@ -251,6 +281,12 @@
   </data>
   <data name="close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="combination.group.theory" xml:space="preserve">
+    <value>Combination group theory</value>
+  </data>
+  <data name="combinatorial.topology" xml:space="preserve">
+    <value>Combinatorial topology</value>
   </data>
   <data name="comment" xml:space="preserve">
     <value>Comment</value>
@@ -300,8 +336,33 @@
   <data name="copyright" xml:space="preserve">
     <value>© 2013 Academy</value>
   </data>
+  <data name="differential.geometry" xml:space="preserve">
+    <value>Differential geometry</value>
+  </data>
+  <data name="differential.topology" xml:space="preserve">
+    <value>Differential topology</value>
+  </data>
   <data name="disciplines" xml:space="preserve">
     <value>Disciplines</value>
+  </data>
+  <data name="economical.phytology" xml:space="preserve">
+    <value>Economical phytology</value>
+  </data>
+  <data name="embryology" xml:space="preserve">
+    <value>Embryology</value>
+  </data>
+  <data name="endocrinology" xml:space="preserve">
+    <value>Endocrinology</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="English" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>english.resx;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="English_Designer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>english.designer.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="environmental.science" xml:space="preserve">
+    <value>Environmental science</value>
   </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>About</value>
@@ -320,6 +381,36 @@
   </data>
   <data name="find" xml:space="preserve">
     <value>Find</value>
+  </data>
+  <data name="finite.fields" xml:space="preserve">
+    <value>Finite fields</value>
+  </data>
+  <data name="general.immunology" xml:space="preserve">
+    <value>General immunology</value>
+  </data>
+  <data name="general.topology" xml:space="preserve">
+    <value>General topology</value>
+  </data>
+  <data name="genetic.engineering" xml:space="preserve">
+    <value>Genetic engineering</value>
+  </data>
+  <data name="genetics" xml:space="preserve">
+    <value>Genetics</value>
+  </data>
+  <data name="genomics" xml:space="preserve">
+    <value>Genomics</value>
+  </data>
+  <data name="geometry" xml:space="preserve">
+    <value>Geometry</value>
+  </data>
+  <data name="group.theory" xml:space="preserve">
+    <value>Group theory</value>
+  </data>
+  <data name="human.physiology.and.zoophysics" xml:space="preserve">
+    <value>Human physiology and zoophysics</value>
+  </data>
+  <data name="immunology" xml:space="preserve">
+    <value>Immunology</value>
   </data>
   <data name="internal.menu.articles" xml:space="preserve">
     <value>Articles search</value>
@@ -393,6 +484,21 @@
   <data name="mainmenu.questions" xml:space="preserve">
     <value>Questions &amp; answers</value>
   </data>
+  <data name="math" xml:space="preserve">
+    <value>Math</value>
+  </data>
+  <data name="mechanics" xml:space="preserve">
+    <value>Mechanics</value>
+  </data>
+  <data name="medical.physics" xml:space="preserve">
+    <value>Medical physics</value>
+  </data>
+  <data name="microrganism.physiology" xml:space="preserve">
+    <value>Microrganism physiology</value>
+  </data>
+  <data name="molecular.genetics" xml:space="preserve">
+    <value>Molecular genetics</value>
+  </data>
   <data name="month1" xml:space="preserve">
     <value>Januar</value>
   </data>
@@ -429,6 +535,9 @@
   <data name="month9" xml:space="preserve">
     <value>September</value>
   </data>
+  <data name="mushroom.physiology" xml:space="preserve">
+    <value>Mushroom physiology</value>
+  </data>
   <data name="note.add" xml:space="preserve">
     <value>Add note</value>
   </data>
@@ -443,6 +552,33 @@
   </data>
   <data name="note.title.err.required" xml:space="preserve">
     <value>Note title is required</value>
+  </data>
+  <data name="particular.immunology" xml:space="preserve">
+    <value>Particular immunology</value>
+  </data>
+  <data name="philosophical.anthropology" xml:space="preserve">
+    <value>Philosophical anthropology</value>
+  </data>
+  <data name="physical.anthropology" xml:space="preserve">
+    <value>Physical anthropology</value>
+  </data>
+  <data name="physics" xml:space="preserve">
+    <value>Physics</value>
+  </data>
+  <data name="physiology" xml:space="preserve">
+    <value>Physiology</value>
+  </data>
+  <data name="phytology" xml:space="preserve">
+    <value>Phytology</value>
+  </data>
+  <data name="phytophysiology" xml:space="preserve">
+    <value>Phytophysiology</value>
+  </data>
+  <data name="phytosociology" xml:space="preserve">
+    <value>Phytosociology</value>
+  </data>
+  <data name="phytotomy" xml:space="preserve">
+    <value>Phytotomy</value>
   </data>
   <data name="posted" xml:space="preserve">
     <value>Date posted</value>
@@ -603,6 +739,9 @@
   <data name="registration.univercity" xml:space="preserve">
     <value>University</value>
   </data>
+  <data name="religious.anthropology" xml:space="preserve">
+    <value>Religious anthropology</value>
+  </data>
   <data name="remove" xml:space="preserve">
     <value>Remove</value>
   </data>
@@ -615,6 +754,9 @@
   <data name="remove.note" xml:space="preserve">
     <value>Remove note</value>
   </data>
+  <data name="search.result.empty" xml:space="preserve">
+    <value>No search result</value>
+  </data>
   <data name="select" xml:space="preserve">
     <value>Select</value>
   </data>
@@ -623,6 +765,15 @@
   </data>
   <data name="select.image" xml:space="preserve">
     <value>Select image</value>
+  </data>
+  <data name="social.and.cultural.anthropology" xml:space="preserve">
+    <value>Social.and cultural anthropology</value>
+  </data>
+  <data name="thermodynamics" xml:space="preserve">
+    <value>Thermodynamics</value>
+  </data>
+  <data name="topology" xml:space="preserve">
+    <value>Topology</value>
   </data>
   <data name="user.birthdate" xml:space="preserve">
     <value>Birth date</value>
@@ -674,5 +825,17 @@
   </data>
   <data name="your.disciplines" xml:space="preserve">
     <value>Your disciplines</value>
+  </data>
+  <data name="zootomy" xml:space="preserve">
+    <value>Zootom</value>
+  </data>
+  <data name="article.serach.title" xml:space="preserve">
+    <value>Articles search</value>
+  </data>
+  <data name="title.home" xml:space="preserve">
+    <value>Academy: Home</value>
+  </data>
+  <data name="title.profile" xml:space="preserve">
+    <value>Academy: Profile</value>
   </data>
 </root>

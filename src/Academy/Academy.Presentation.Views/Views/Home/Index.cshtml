@@ -29,6 +29,9 @@
         @Html.AntiForgeryToken()
         @Html.EditorForModel("LoginEditor")
     }
+    <div class="page-header" style="text-align: right">
+        <b>@Localization.GetString("registration.lbl.register")</b>
+    </div>
     @using (Html.BeginForm(
         "Register",
         "Account",

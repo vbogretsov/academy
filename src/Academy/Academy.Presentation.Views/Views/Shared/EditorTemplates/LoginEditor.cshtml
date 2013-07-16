@@ -20,10 +20,9 @@
                 })
     <input type="submit" value="@Localization.GetString("login.submit")" class="btn" />
 </p>
-<p>
+<p style="max-width: 200px">
     @Html.ValidationMessageFor(m => m.Login.Email)
     @Html.ValidationMessageFor(m => m.Login.Password)
-    @Html.ValidationSummary(false)
 </p>
 <p>
     <label class="checkbox">

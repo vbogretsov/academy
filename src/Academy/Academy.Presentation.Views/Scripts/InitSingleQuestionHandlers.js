@@ -1,8 +1,8 @@
 ﻿function InitQuestionHandlers(questionId) {
-    $('button[id^="addAnswerFor' + questionId + '"]').click(function () {
+    $('button[id^="addAnswerFor' + questionId + '"]').unbind('click').bind('click', function () {
         $('#newAnswerFor' + questionId).slideToggle('fast');
     });
-    $('button[id^="showAnswersFor' + questionId + '"]').click(function () {
+    $('button[id^="showAnswersFor' + questionId + '"]').unbind('click').bind('click', function () {
         var answersId = '#answersFor' + questionId;
         if ($(answersId).is(':empty')) {
             $.ajax({
@@ -14,7 +14,7 @@
         }
         $(answersId).slideToggle('fast');
     });
-    $('button[id^="removeQuestion' + questionId + '"]').click(function () {
+    $('button[id^="removeQuestion' + questionId + '"]').unbind('click').bind('click', function () {
         $.ajax({
             url: 'Question/RemoveQuestion?id=' + questionId,
             success: function () {

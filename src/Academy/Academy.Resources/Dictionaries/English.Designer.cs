@@ -169,6 +169,33 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Algebra.
+        /// </summary>
+        public static string algebra {
+            get {
+                return ResourceManager.GetString("algebra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Analytic geometry.
+        /// </summary>
+        public static string analytic_geometry {
+            get {
+                return ResourceManager.GetString("analytic.geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anatomy.
+        /// </summary>
+        public static string anatomy {
+            get {
+                return ResourceManager.GetString("anatomy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Answer.
         /// </summary>
         public static string answer {
@@ -210,6 +237,24 @@ namespace Academy.Validation.Dictionaries {
         public static string answers_show {
             get {
                 return ResourceManager.GetString("answers.show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anthropology.
+        /// </summary>
+        public static string anthropology {
+            get {
+                return ResourceManager.GetString("anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anthropotomy.
+        /// </summary>
+        public static string anthropotomy {
+            get {
+                return ResourceManager.GetString("anthropotomy", resourceCulture);
             }
         }
         
@@ -309,6 +354,15 @@ namespace Academy.Validation.Dictionaries {
         public static string article_search_title {
             get {
                 return ResourceManager.GetString("article.search.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Articles search.
+        /// </summary>
+        public static string article_serach_title {
+            get {
+                return ResourceManager.GetString("article.serach.title", resourceCulture);
             }
         }
         
@@ -439,6 +493,51 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bioacoustics.
+        /// </summary>
+        public static string bioacoustics {
+            get {
+                return ResourceManager.GetString("bioacoustics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bioenergetics.
+        /// </summary>
+        public static string bioenergetics {
+            get {
+                return ResourceManager.GetString("bioenergetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biology.
+        /// </summary>
+        public static string biology {
+            get {
+                return ResourceManager.GetString("biology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biomechanics.
+        /// </summary>
+        public static string biomechanics {
+            get {
+                return ResourceManager.GetString("biomechanics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biophysics.
+        /// </summary>
+        public static string biophysics {
+            get {
+                return ResourceManager.GetString("biophysics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change.
         /// </summary>
         public static string change {
@@ -462,6 +561,24 @@ namespace Academy.Validation.Dictionaries {
         public static string close {
             get {
                 return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combination group theory.
+        /// </summary>
+        public static string combination_group_theory {
+            get {
+                return ResourceManager.GetString("combination.group.theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Combinatorial topology.
+        /// </summary>
+        public static string combinatorial_topology {
+            get {
+                return ResourceManager.GetString("combinatorial.topology", resourceCulture);
             }
         }
         
@@ -610,11 +727,89 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Differential geometry.
+        /// </summary>
+        public static string differential_geometry {
+            get {
+                return ResourceManager.GetString("differential.geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Differential topology.
+        /// </summary>
+        public static string differential_topology {
+            get {
+                return ResourceManager.GetString("differential.topology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disciplines.
         /// </summary>
         public static string disciplines {
             get {
                 return ResourceManager.GetString("disciplines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Economical phytology.
+        /// </summary>
+        public static string economical_phytology {
+            get {
+                return ResourceManager.GetString("economical.phytology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Embryology.
+        /// </summary>
+        public static string embryology {
+            get {
+                return ResourceManager.GetString("embryology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Endocrinology.
+        /// </summary>
+        public static string endocrinology {
+            get {
+                return ResourceManager.GetString("endocrinology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.18051
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace Academy.Validation.Dictionaries {
+        ///    using System;
+        ///    
+        ///    
+        ///    /// &lt;summary&gt;
+        ///    ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string English_Designer {
+            get {
+                return ResourceManager.GetString("English_Designer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Environmental science.
+        /// </summary>
+        public static string environmental_science {
+            get {
+                return ResourceManager.GetString("environmental.science", resourceCulture);
             }
         }
         
@@ -669,6 +864,96 @@ namespace Academy.Validation.Dictionaries {
         public static string find {
             get {
                 return ResourceManager.GetString("find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finite fields.
+        /// </summary>
+        public static string finite_fields {
+            get {
+                return ResourceManager.GetString("finite.fields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General immunology.
+        /// </summary>
+        public static string general_immunology {
+            get {
+                return ResourceManager.GetString("general.immunology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General topology.
+        /// </summary>
+        public static string general_topology {
+            get {
+                return ResourceManager.GetString("general.topology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genetic engineering.
+        /// </summary>
+        public static string genetic_engineering {
+            get {
+                return ResourceManager.GetString("genetic.engineering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genetics.
+        /// </summary>
+        public static string genetics {
+            get {
+                return ResourceManager.GetString("genetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genomics.
+        /// </summary>
+        public static string genomics {
+            get {
+                return ResourceManager.GetString("genomics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geometry.
+        /// </summary>
+        public static string geometry {
+            get {
+                return ResourceManager.GetString("geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group theory.
+        /// </summary>
+        public static string group_theory {
+            get {
+                return ResourceManager.GetString("group.theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Human physiology and zoophysics.
+        /// </summary>
+        public static string human_physiology_and_zoophysics {
+            get {
+                return ResourceManager.GetString("human.physiology.and.zoophysics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Immunology.
+        /// </summary>
+        public static string immunology {
+            get {
+                return ResourceManager.GetString("immunology", resourceCulture);
             }
         }
         
@@ -889,6 +1174,51 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Math.
+        /// </summary>
+        public static string math {
+            get {
+                return ResourceManager.GetString("math", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mechanics.
+        /// </summary>
+        public static string mechanics {
+            get {
+                return ResourceManager.GetString("mechanics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medical physics.
+        /// </summary>
+        public static string medical_physics {
+            get {
+                return ResourceManager.GetString("medical.physics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Microrganism physiology.
+        /// </summary>
+        public static string microrganism_physiology {
+            get {
+                return ResourceManager.GetString("microrganism.physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Molecular genetics.
+        /// </summary>
+        public static string molecular_genetics {
+            get {
+                return ResourceManager.GetString("molecular.genetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Januar.
         /// </summary>
         public static string month1 {
@@ -997,6 +1327,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mushroom physiology.
+        /// </summary>
+        public static string mushroom_physiology {
+            get {
+                return ResourceManager.GetString("mushroom.physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add note.
         /// </summary>
         public static string note_add {
@@ -1038,6 +1377,87 @@ namespace Academy.Validation.Dictionaries {
         public static string note_title_err_required {
             get {
                 return ResourceManager.GetString("note.title.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Particular immunology.
+        /// </summary>
+        public static string particular_immunology {
+            get {
+                return ResourceManager.GetString("particular.immunology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Philosophical anthropology.
+        /// </summary>
+        public static string philosophical_anthropology {
+            get {
+                return ResourceManager.GetString("philosophical.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Physical anthropology.
+        /// </summary>
+        public static string physical_anthropology {
+            get {
+                return ResourceManager.GetString("physical.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Physics.
+        /// </summary>
+        public static string physics {
+            get {
+                return ResourceManager.GetString("physics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Physiology.
+        /// </summary>
+        public static string physiology {
+            get {
+                return ResourceManager.GetString("physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytology.
+        /// </summary>
+        public static string phytology {
+            get {
+                return ResourceManager.GetString("phytology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytophysiology.
+        /// </summary>
+        public static string phytophysiology {
+            get {
+                return ResourceManager.GetString("phytophysiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytosociology.
+        /// </summary>
+        public static string phytosociology {
+            get {
+                return ResourceManager.GetString("phytosociology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phytotomy.
+        /// </summary>
+        public static string phytotomy {
+            get {
+                return ResourceManager.GetString("phytotomy", resourceCulture);
             }
         }
         
@@ -1519,6 +1939,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Religious anthropology.
+        /// </summary>
+        public static string religious_anthropology {
+            get {
+                return ResourceManager.GetString("religious.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string remove {
@@ -1555,6 +1984,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No search result.
+        /// </summary>
+        public static string search_result_empty {
+            get {
+                return ResourceManager.GetString("search.result.empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
         public static string select {
@@ -1578,6 +2016,51 @@ namespace Academy.Validation.Dictionaries {
         public static string select_image {
             get {
                 return ResourceManager.GetString("select.image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Social.and cultural anthropology.
+        /// </summary>
+        public static string social_and_cultural_anthropology {
+            get {
+                return ResourceManager.GetString("social.and.cultural.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thermodynamics.
+        /// </summary>
+        public static string thermodynamics {
+            get {
+                return ResourceManager.GetString("thermodynamics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Academy: Home.
+        /// </summary>
+        public static string title_home {
+            get {
+                return ResourceManager.GetString("title.home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Academy: Profile.
+        /// </summary>
+        public static string title_profile {
+            get {
+                return ResourceManager.GetString("title.profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Topology.
+        /// </summary>
+        public static string topology {
+            get {
+                return ResourceManager.GetString("topology", resourceCulture);
             }
         }
         
@@ -1731,6 +2214,15 @@ namespace Academy.Validation.Dictionaries {
         public static string your_disciplines {
             get {
                 return ResourceManager.GetString("your.disciplines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zootom.
+        /// </summary>
+        public static string zootomy {
+            get {
+                return ResourceManager.GetString("zootomy", resourceCulture);
             }
         }
     }

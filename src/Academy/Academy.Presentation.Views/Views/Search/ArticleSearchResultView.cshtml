@@ -1,10 +1,18 @@
-﻿@model Academy.Presentation.ViewModels.ArticleSearchResultViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.ArticleSearchResultViewModel
 
-
-@foreach (var article in Model.Articles)
+@if (Model.Articles != null)
 {
-    Html.RenderPartial("RenderTemplates/ArticleView", article);
+    foreach (var article in Model.Articles)
+    {
+        Html.RenderPartial("RenderTemplates/ArticleView", article);
+    }
 }
+else
+{
+    <p>@Localization.GetString("search.result.empty")</p>
+}
+
 
 <script type="text/javascript" src="../../Scripts/InitSingleArticleHandlers.js"></script>
 <script type="text/javascript" src="../../Scripts/InitArticleHandlers.js"></script>

@@ -29,7 +29,9 @@
                     success: function (result) {
                         $('#data').html(result);
                         $('#@formId').find(':input').each(function () {
-                            $(this).val('');
+                            if ($(this).attr('type') != 'submit') {
+                                $(this).val('');
+                            }
                         });
                         CollapseDisciplinesTree();
                     }

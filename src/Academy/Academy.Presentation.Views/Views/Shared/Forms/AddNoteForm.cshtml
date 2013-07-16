@@ -29,6 +29,11 @@
                     data: $(this).serialize(),
                     success: function(result) {
                         $('#data').html(result);
+                        $('#@formId').find(':input').each(function () {
+                            if ($(this).attr('type') != 'submit') {
+                                $(this).val('');
+                            }
+                        });
                     }
                 });
             }

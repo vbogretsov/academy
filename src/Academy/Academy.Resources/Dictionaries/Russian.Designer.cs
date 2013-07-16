@@ -169,6 +169,33 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Алгебра.
+        /// </summary>
+        public static string algebra {
+            get {
+                return ResourceManager.GetString("algebra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Аналитическая геометрия.
+        /// </summary>
+        public static string analytic_geometry {
+            get {
+                return ResourceManager.GetString("analytic.geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Анатомия.
+        /// </summary>
+        public static string anatomy {
+            get {
+                return ResourceManager.GetString("anatomy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ответить.
         /// </summary>
         public static string answer {
@@ -210,6 +237,24 @@ namespace Academy.Validation.Dictionaries {
         public static string answers_show {
             get {
                 return ResourceManager.GetString("answers.show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Антропология.
+        /// </summary>
+        public static string anthropology {
+            get {
+                return ResourceManager.GetString("anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Анатомия человека.
+        /// </summary>
+        public static string anthropotomy {
+            get {
+                return ResourceManager.GetString("anthropotomy", resourceCulture);
             }
         }
         
@@ -309,6 +354,15 @@ namespace Academy.Validation.Dictionaries {
         public static string article_search_title {
             get {
                 return ResourceManager.GetString("article.search.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поиск статей.
+        /// </summary>
+        public static string article_serach_title {
+            get {
+                return ResourceManager.GetString("article.serach.title", resourceCulture);
             }
         }
         
@@ -439,6 +493,51 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Биоакустика.
+        /// </summary>
+        public static string bioacoustics {
+            get {
+                return ResourceManager.GetString("bioacoustics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Биоэнергетика.
+        /// </summary>
+        public static string bioenergetics {
+            get {
+                return ResourceManager.GetString("bioenergetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Биология.
+        /// </summary>
+        public static string biology {
+            get {
+                return ResourceManager.GetString("biology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Биомеханика.
+        /// </summary>
+        public static string biomechanics {
+            get {
+                return ResourceManager.GetString("biomechanics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Биофизика.
+        /// </summary>
+        public static string biophysics {
+            get {
+                return ResourceManager.GetString("biophysics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Изменить.
         /// </summary>
         public static string change {
@@ -462,6 +561,24 @@ namespace Academy.Validation.Dictionaries {
         public static string close {
             get {
                 return ResourceManager.GetString("close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Комбинаторная теория групп.
+        /// </summary>
+        public static string combination_group_theory {
+            get {
+                return ResourceManager.GetString("combination.group.theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Комбинаторная топология.
+        /// </summary>
+        public static string combinatorial_topology {
+            get {
+                return ResourceManager.GetString("combinatorial.topology", resourceCulture);
             }
         }
         
@@ -610,11 +727,65 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Дифференциальная геометрия.
+        /// </summary>
+        public static string differential_geometry {
+            get {
+                return ResourceManager.GetString("differential.geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дифференциальная топология.
+        /// </summary>
+        public static string differential_topology {
+            get {
+                return ResourceManager.GetString("differential.topology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Дисциплины.
         /// </summary>
         public static string disciplines {
             get {
                 return ResourceManager.GetString("disciplines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Экономическая биология.
+        /// </summary>
+        public static string economical_phytology {
+            get {
+                return ResourceManager.GetString("economical.phytology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Эмбриология.
+        /// </summary>
+        public static string embryology {
+            get {
+                return ResourceManager.GetString("embryology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Эндокринология.
+        /// </summary>
+        public static string endocrinology {
+            get {
+                return ResourceManager.GetString("endocrinology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Экология растений.
+        /// </summary>
+        public static string environmental_science {
+            get {
+                return ResourceManager.GetString("environmental.science", resourceCulture);
             }
         }
         
@@ -669,6 +840,96 @@ namespace Academy.Validation.Dictionaries {
         public static string find {
             get {
                 return ResourceManager.GetString("find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кщнечные поля.
+        /// </summary>
+        public static string finite_fields {
+            get {
+                return ResourceManager.GetString("finite.fields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Общая иммунология.
+        /// </summary>
+        public static string general_immunology {
+            get {
+                return ResourceManager.GetString("general.immunology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Общая топология.
+        /// </summary>
+        public static string general_topology {
+            get {
+                return ResourceManager.GetString("general.topology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Генная инженерия.
+        /// </summary>
+        public static string genetic_engineering {
+            get {
+                return ResourceManager.GetString("genetic.engineering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Генетика.
+        /// </summary>
+        public static string genetics {
+            get {
+                return ResourceManager.GetString("genetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Геномика.
+        /// </summary>
+        public static string genomics {
+            get {
+                return ResourceManager.GetString("genomics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Геометрия.
+        /// </summary>
+        public static string geometry {
+            get {
+                return ResourceManager.GetString("geometry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Теория групп.
+        /// </summary>
+        public static string group_theory {
+            get {
+                return ResourceManager.GetString("group.theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физиология человека и животных.
+        /// </summary>
+        public static string human_physiology_and_zoophysics {
+            get {
+                return ResourceManager.GetString("human.physiology.and.zoophysics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Иммунология.
+        /// </summary>
+        public static string immunology {
+            get {
+                return ResourceManager.GetString("immunology", resourceCulture);
             }
         }
         
@@ -889,6 +1150,51 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Математика.
+        /// </summary>
+        public static string math {
+            get {
+                return ResourceManager.GetString("math", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Механика.
+        /// </summary>
+        public static string mechanics {
+            get {
+                return ResourceManager.GetString("mechanics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Медицианская физика.
+        /// </summary>
+        public static string medical_physics {
+            get {
+                return ResourceManager.GetString("medical.physics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физиология микроорганизмов.
+        /// </summary>
+        public static string microrganism_physiology {
+            get {
+                return ResourceManager.GetString("microrganism.physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Молекулярная генетика.
+        /// </summary>
+        public static string molecular_genetics {
+            get {
+                return ResourceManager.GetString("molecular.genetics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Январь.
         /// </summary>
         public static string month1 {
@@ -997,6 +1303,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Физиология грибов.
+        /// </summary>
+        public static string mushroom_physiology {
+            get {
+                return ResourceManager.GetString("mushroom.physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Добавить заметку.
         /// </summary>
         public static string note_add {
@@ -1038,6 +1353,87 @@ namespace Academy.Validation.Dictionaries {
         public static string note_title_err_required {
             get {
                 return ResourceManager.GetString("note.title.err.required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Частная иммунология.
+        /// </summary>
+        public static string particular_immunology {
+            get {
+                return ResourceManager.GetString("particular.immunology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Философская антропология.
+        /// </summary>
+        public static string philosophical_anthropology {
+            get {
+                return ResourceManager.GetString("philosophical.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физическая антропология.
+        /// </summary>
+        public static string physical_anthropology {
+            get {
+                return ResourceManager.GetString("physical.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физика.
+        /// </summary>
+        public static string physics {
+            get {
+                return ResourceManager.GetString("physics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физиология.
+        /// </summary>
+        public static string physiology {
+            get {
+                return ResourceManager.GetString("physiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ботаника.
+        /// </summary>
+        public static string phytology {
+            get {
+                return ResourceManager.GetString("phytology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Физиология растений.
+        /// </summary>
+        public static string phytophysiology {
+            get {
+                return ResourceManager.GetString("phytophysiology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Геоботаника.
+        /// </summary>
+        public static string phytosociology {
+            get {
+                return ResourceManager.GetString("phytosociology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Анатомия растений.
+        /// </summary>
+        public static string phytotomy {
+            get {
+                return ResourceManager.GetString("phytotomy", resourceCulture);
             }
         }
         
@@ -1519,6 +1915,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Религиозная антропология.
+        /// </summary>
+        public static string religious_anthropology {
+            get {
+                return ResourceManager.GetString("religious.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Удалить.
         /// </summary>
         public static string remove {
@@ -1555,6 +1960,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Поиск результатов не дал.
+        /// </summary>
+        public static string search_result_empty {
+            get {
+                return ResourceManager.GetString("search.result.empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Выбрать.
         /// </summary>
         public static string select {
@@ -1578,6 +1992,51 @@ namespace Academy.Validation.Dictionaries {
         public static string select_image {
             get {
                 return ResourceManager.GetString("select.image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Социально-культурная антропология.
+        /// </summary>
+        public static string social_and_cultural_anthropology {
+            get {
+                return ResourceManager.GetString("social.and.cultural.anthropology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Термодинамика.
+        /// </summary>
+        public static string thermodynamics {
+            get {
+                return ResourceManager.GetString("thermodynamics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Академия: Домашняя.
+        /// </summary>
+        public static string title_home {
+            get {
+                return ResourceManager.GetString("title.home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Академия: Профиль.
+        /// </summary>
+        public static string title_profile {
+            get {
+                return ResourceManager.GetString("title.profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Топология.
+        /// </summary>
+        public static string topology {
+            get {
+                return ResourceManager.GetString("topology", resourceCulture);
             }
         }
         
@@ -1731,6 +2190,15 @@ namespace Academy.Validation.Dictionaries {
         public static string your_disciplines {
             get {
                 return ResourceManager.GetString("your.disciplines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Анатомия животных.
+        /// </summary>
+        public static string zootomy {
+            get {
+                return ResourceManager.GetString("zootomy", resourceCulture);
             }
         }
     }

@@ -50,6 +50,15 @@
         this.get('#/Answers', function () {
             LoadView(dataId, 'Answer/GetUserAnswers');
         });
+        
+        // init footer
+        this.get('#/Contacts', function () {
+            LoadView(bodyId, "Home/Contacts");
+        });
+
+        this.get('#/About', function () {
+            LoadView(bodyId, "Home/About");
+        });
 
         // init top menu
         this.get('#/Edit', function () {

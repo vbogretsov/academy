@@ -1,8 +1,8 @@
 ﻿function InitArticleHandlers(articleId) {
-    $('button[id="addCommentFor' + articleId + '"]').click( function () {
+    $('button[id="addCommentFor' + articleId + '"]').unbind('click').bind('click', function () {
         $('#newCommentFor' + articleId).slideToggle('fast');
     });
-    $('button[id="showCommentsFor' + articleId + '"]').click(function () {
+    $('button[id="showCommentsFor' + articleId + '"]').unbind('click').bind('click', function () {
         var commentsId = '#commentsFor' + articleId;
         if ($(commentsId).is(':empty')) {
             $.ajax({
@@ -14,11 +14,10 @@
         }
         $(commentsId).slideToggle('fast');
     });
-    $('button[id="removeArticle' + articleId + '"]').click(function () {
+    $('button[id="removeArticle' + articleId + '"]').unbind('click').bind('click', function () {
         $.ajax({
             url: 'Article/RemoveArticle?articleId=' + articleId,
             success: function () {
-                alert($('#titledPostId' + articleId).length);
                 $('#titledPostId' + articleId).remove();
             }
         });

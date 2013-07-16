@@ -14,7 +14,9 @@
         @foreach(var discipline in Model.Disciplines)
         {
             <li>
-                <span class="badge btn-block text-hypenation">@discipline.Name</span>
+                <span class="badge btn-block text-hypenation">
+                    @Localization.GetString(discipline.Name)
+                </span>
             </li>
         }
     </ul>

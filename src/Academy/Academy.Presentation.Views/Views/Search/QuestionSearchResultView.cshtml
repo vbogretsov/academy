@@ -1,9 +1,18 @@
-﻿@model Academy.Presentation.ViewModels.QuestionSearchResultViewModel
+﻿@using Academy.Resources
+@model Academy.Presentation.ViewModels.QuestionSearchResultViewModel
 
-@foreach (var question in Model.Questions)
+@if (Model.Questions != null)
 {
-    Html.RenderPartial("RenderTemplates/QuestionView", question);
+    foreach (var question in Model.Questions)
+    {
+        Html.RenderPartial("RenderTemplates/QuestionView", question);
+    }
 }
+else
+{
+    <p>@Localization.GetString("search.result.empty")</p>
+}
+
 
 <script type="text/javascript" src="../../Scripts/InitSingleQuestionHandlers.js"></script>
 <script type="text/javascript" src="../../Scripts/InitQuestionHandlers.js"></script>

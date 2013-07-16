@@ -46,9 +46,16 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria)
         {
-            return from question in Entities.Questions
-                where question.Title.Contains(criteria.Keyword) &&
+            return criteria.Disciplines != null
+                ? from question in Entities.Questions
+                where
+                    question.Title.Contains(criteria.Keyword) &&
                     question.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
+                orderby question.PostedDate descending
+                select question
+                : from question in Entities.Questions
+                where
+                    question.Title.Contains(criteria.Keyword)
                 orderby question.PostedDate descending
                 select question;
         }

@@ -6,11 +6,9 @@ namespace Academy.Security.Simple
 {
     public class WebMatrixAccountManager : AccountManager
     {
-        private const string CreateUserFailed = "Failed to create user";
-
         public override bool Login(string username, string password, bool remember = false)
         {
-            return WebSecurity.Login(username, password);
+            return WebSecurity.Login(username, password, remember);
         }
 
         public override void Logout()

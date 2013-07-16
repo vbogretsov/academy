@@ -5,7 +5,7 @@
 }
 @{
     var questionAreaId = String.Format("questionFor{0}", Model.Id);
-    var parentQuestionId = String.Format("question{0}", Model.Id);
+    var parentQuestionId = String.Format("question{0}", Model.Question.Id);
     var showQuestionId = String.Format("showQuestionFor{0}", Model.Id);
     var showQuestionText = Localization.GetString("question.show");
 }

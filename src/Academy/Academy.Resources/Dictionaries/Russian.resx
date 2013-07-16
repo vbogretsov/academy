@@ -153,6 +153,15 @@
   <data name="add.new.note" xml:space="preserve">
     <value>Добавить новую заметку</value>
   </data>
+  <data name="algebra" xml:space="preserve">
+    <value>Алгебра</value>
+  </data>
+  <data name="analytic.geometry" xml:space="preserve">
+    <value>Аналитическая геометрия</value>
+  </data>
+  <data name="anatomy" xml:space="preserve">
+    <value>Анатомия</value>
+  </data>
   <data name="answer" xml:space="preserve">
     <value>Ответить</value>
   </data>
@@ -167,6 +176,12 @@
   </data>
   <data name="answers.show" xml:space="preserve">
     <value>Показать ответы</value>
+  </data>
+  <data name="anthropology" xml:space="preserve">
+    <value>Антропология</value>
+  </data>
+  <data name="anthropotomy" xml:space="preserve">
+    <value>Анатомия человека</value>
   </data>
   <data name="article.create.add.author" xml:space="preserve">
     <value>Добавить автора</value>
@@ -200,6 +215,9 @@
   </data>
   <data name="article.search.title" xml:space="preserve">
     <value>Заголовок статьи</value>
+  </data>
+  <data name="article.serach.title" xml:space="preserve">
+    <value>Поиск статей</value>
   </data>
   <data name="article.show" xml:space="preserve">
     <value>Показать статью</value>
@@ -243,6 +261,21 @@
   <data name="banner" xml:space="preserve">
     <value>3rus.swf</value>
   </data>
+  <data name="bioacoustics" xml:space="preserve">
+    <value>Биоакустика</value>
+  </data>
+  <data name="bioenergetics" xml:space="preserve">
+    <value>Биоэнергетика</value>
+  </data>
+  <data name="biology" xml:space="preserve">
+    <value>Биология</value>
+  </data>
+  <data name="biomechanics" xml:space="preserve">
+    <value>Биомеханика</value>
+  </data>
+  <data name="biophysics" xml:space="preserve">
+    <value>Биофизика</value>
+  </data>
   <data name="change" xml:space="preserve">
     <value>Изменить</value>
   </data>
@@ -251,6 +284,12 @@
   </data>
   <data name="close" xml:space="preserve">
     <value>Закрыть</value>
+  </data>
+  <data name="combination.group.theory" xml:space="preserve">
+    <value>Комбинаторная теория групп</value>
+  </data>
+  <data name="combinatorial.topology" xml:space="preserve">
+    <value>Комбинаторная топология</value>
   </data>
   <data name="comment" xml:space="preserve">
     <value>Комментировать</value>
@@ -300,8 +339,26 @@
   <data name="copyright" xml:space="preserve">
     <value>© 2013 Академия</value>
   </data>
+  <data name="differential.geometry" xml:space="preserve">
+    <value>Дифференциальная геометрия</value>
+  </data>
+  <data name="differential.topology" xml:space="preserve">
+    <value>Дифференциальная топология</value>
+  </data>
   <data name="disciplines" xml:space="preserve">
     <value>Дисциплины</value>
+  </data>
+  <data name="economical.phytology" xml:space="preserve">
+    <value>Экономическая биология</value>
+  </data>
+  <data name="embryology" xml:space="preserve">
+    <value>Эмбриология</value>
+  </data>
+  <data name="endocrinology" xml:space="preserve">
+    <value>Эндокринология</value>
+  </data>
+  <data name="environmental.science" xml:space="preserve">
+    <value>Экология растений</value>
   </data>
   <data name="external.menu.about" xml:space="preserve">
     <value>О нас</value>
@@ -320,6 +377,36 @@
   </data>
   <data name="find" xml:space="preserve">
     <value>Найти</value>
+  </data>
+  <data name="finite.fields" xml:space="preserve">
+    <value>Кщнечные поля</value>
+  </data>
+  <data name="general.immunology" xml:space="preserve">
+    <value>Общая иммунология</value>
+  </data>
+  <data name="general.topology" xml:space="preserve">
+    <value>Общая топология</value>
+  </data>
+  <data name="genetic.engineering" xml:space="preserve">
+    <value>Генная инженерия</value>
+  </data>
+  <data name="genetics" xml:space="preserve">
+    <value>Генетика</value>
+  </data>
+  <data name="genomics" xml:space="preserve">
+    <value>Геномика</value>
+  </data>
+  <data name="geometry" xml:space="preserve">
+    <value>Геометрия</value>
+  </data>
+  <data name="group.theory" xml:space="preserve">
+    <value>Теория групп</value>
+  </data>
+  <data name="human.physiology.and.zoophysics" xml:space="preserve">
+    <value>Физиология человека и животных</value>
+  </data>
+  <data name="immunology" xml:space="preserve">
+    <value>Иммунология</value>
   </data>
   <data name="internal.menu.articles" xml:space="preserve">
     <value>Поиск статей</value>
@@ -393,6 +480,21 @@
   <data name="mainmenu.questions" xml:space="preserve">
     <value>Вопросы и ответы</value>
   </data>
+  <data name="math" xml:space="preserve">
+    <value>Математика</value>
+  </data>
+  <data name="mechanics" xml:space="preserve">
+    <value>Механика</value>
+  </data>
+  <data name="medical.physics" xml:space="preserve">
+    <value>Медицианская физика</value>
+  </data>
+  <data name="microrganism.physiology" xml:space="preserve">
+    <value>Физиология микроорганизмов</value>
+  </data>
+  <data name="molecular.genetics" xml:space="preserve">
+    <value>Молекулярная генетика</value>
+  </data>
   <data name="month1" xml:space="preserve">
     <value>Январь</value>
   </data>
@@ -429,6 +531,9 @@
   <data name="month9" xml:space="preserve">
     <value>Сентябрь</value>
   </data>
+  <data name="mushroom.physiology" xml:space="preserve">
+    <value>Физиология грибов</value>
+  </data>
   <data name="note.add" xml:space="preserve">
     <value>Добавить заметку</value>
   </data>
@@ -443,6 +548,33 @@
   </data>
   <data name="note.title.err.required" xml:space="preserve">
     <value>Требуется ввести заголовок заметки</value>
+  </data>
+  <data name="particular.immunology" xml:space="preserve">
+    <value>Частная иммунология</value>
+  </data>
+  <data name="philosophical.anthropology" xml:space="preserve">
+    <value>Философская антропология</value>
+  </data>
+  <data name="physical.anthropology" xml:space="preserve">
+    <value>Физическая антропология</value>
+  </data>
+  <data name="physics" xml:space="preserve">
+    <value>Физика</value>
+  </data>
+  <data name="physiology" xml:space="preserve">
+    <value>Физиология</value>
+  </data>
+  <data name="phytology" xml:space="preserve">
+    <value>Ботаника</value>
+  </data>
+  <data name="phytophysiology" xml:space="preserve">
+    <value>Физиология растений</value>
+  </data>
+  <data name="phytosociology" xml:space="preserve">
+    <value>Геоботаника</value>
+  </data>
+  <data name="phytotomy" xml:space="preserve">
+    <value>Анатомия растений</value>
   </data>
   <data name="posted" xml:space="preserve">
     <value>Дата публикации</value>
@@ -603,6 +735,9 @@
   <data name="registration.univercity" xml:space="preserve">
     <value>Университет</value>
   </data>
+  <data name="religious.anthropology" xml:space="preserve">
+    <value>Религиозная антропология</value>
+  </data>
   <data name="remove" xml:space="preserve">
     <value>Удалить</value>
   </data>
@@ -615,6 +750,9 @@
   <data name="remove.note" xml:space="preserve">
     <value>Удалить заметку</value>
   </data>
+  <data name="search.result.empty" xml:space="preserve">
+    <value>Поиск результатов не дал</value>
+  </data>
   <data name="select" xml:space="preserve">
     <value>Выбрать</value>
   </data>
@@ -623,6 +761,21 @@
   </data>
   <data name="select.image" xml:space="preserve">
     <value>Выбрать изображение</value>
+  </data>
+  <data name="social.and.cultural.anthropology" xml:space="preserve">
+    <value>Социально-культурная антропология</value>
+  </data>
+  <data name="thermodynamics" xml:space="preserve">
+    <value>Термодинамика</value>
+  </data>
+  <data name="title.home" xml:space="preserve">
+    <value>Академия: Домашняя</value>
+  </data>
+  <data name="title.profile" xml:space="preserve">
+    <value>Академия: Профиль</value>
+  </data>
+  <data name="topology" xml:space="preserve">
+    <value>Топология</value>
   </data>
   <data name="user.birthdate" xml:space="preserve">
     <value>Дата рождения</value>
@@ -674,5 +827,8 @@
   </data>
   <data name="your.disciplines" xml:space="preserve">
     <value>Ваши дисциплины</value>
+  </data>
+  <data name="zootomy" xml:space="preserve">
+    <value>Анатомия животных</value>
   </data>
 </root>

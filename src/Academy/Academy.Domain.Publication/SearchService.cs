@@ -20,15 +20,13 @@ namespace Academy.Domain.Services
         public SearchResult<Article> FindArticles(ArticleSearchCriteria criteria)
         {
             var articles = context.ArticleStorage.FindArticles(criteria);
-            var result = articles != null ? articles.ToList() : new List<Article>();
-            return new SearchResult<Article>(result);
+            return new SearchResult<Article>(articles.ToList());
         }
 
         public SearchResult<Question> FindQuestions(QuestionSearchCriteria criteria)
         {
-            var questions = context.QuestionStorage.FindQuestions(criteria);
-            var result = questions != null ? questions.ToList() : new List<Question>();
-            return new SearchResult<Question>(result);
+            var questions = context.QuestionStorage.FindQuestions(criteria).ToList();
+            return new SearchResult<Question>(questions);
         }
     }
 }

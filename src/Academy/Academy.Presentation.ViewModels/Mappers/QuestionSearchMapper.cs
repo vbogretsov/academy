@@ -12,7 +12,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             model.Keyword = viewModel.Keyword ?? String.Empty;
             model.Disciplines = viewModel.Disciplines != null
                 ? viewModel.Disciplines.Select(x => x.Id)
-                : new int[0];
+                : null;
             return model;
         }
     }

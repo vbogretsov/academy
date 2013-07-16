@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Academy.Presentation.ViewModels;
+using Academy.Resources;
 using Academy.Utils.Html;
 
 namespace Academy.Presentation.Views.Helpers
@@ -21,13 +22,13 @@ namespace Academy.Presentation.Views.Helpers
         {
             AppendHtml("<img src='/Content/Images/tree-plus.png'>");
             base.AppendNodeConent(value);
-            AppendHtml(SpanFormat, value.Id, CollectionName, value.Name);
+            AppendHtml(SpanFormat, value.Id, CollectionName, Localization.GetString(value.Name));
         }
 
         protected override void AppendLeafContent(DisciplineViewModel value)
         {
             base.AppendLeafContent(value);
-            AppendHtml(SpanFormat, value.Id, CollectionName, value.Name);
+            AppendHtml(SpanFormat, value.Id, CollectionName, Localization.GetString(value.Name));
         }
     }
 }

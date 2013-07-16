@@ -17,6 +17,7 @@
 <script type="text/javascript">
     $(function () {
         $('#@formId').submit(function () {
+            $('#questionResult').html('');
             $.ajax({
                 type: this.method,
                 url: this.action,

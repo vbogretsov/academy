@@ -15,7 +15,7 @@ namespace Academy.Presentation.ViewModels.Mappers
             model.Author = viewModel.Author ?? String.Empty;
             model.Disciplines = viewModel.Disciplines != null
                 ? viewModel.Disciplines.Select(x => x.Id)
-                : new int[0];
+                : null;
             return model;
         }
     }
