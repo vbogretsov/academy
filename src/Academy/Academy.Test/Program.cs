@@ -94,14 +94,6 @@ namespace Academy.Test
             yield return storage.Get(14);
         }
 
-        private static void InitializeDatabase()
-        {
-            using (var academyEntities = new AcademyEntities())
-            {
-                academyEntities.Database.ExecuteSqlCommand(Scripts.InitAcademyScript);
-            }
-        }
-
         private static void CreateDatabase()
         {
             using (AcademyEntities academyEntities = new AcademyEntities())
