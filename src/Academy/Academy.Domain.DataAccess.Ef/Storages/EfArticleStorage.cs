@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Academy.Domain.DataAccess.Ef.Search;
 using Academy.Domain.Objects;
 using Academy.Domain.Search;
 
@@ -37,6 +38,8 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IEnumerable<Article> FindArticles(ArticleSearchCriteria criteria)
         {
+            var filter = new ArticleFilter(criteria);
+            return filter.Select(Entities.Articles);
             //return criteria.Disciplines != null
             //    ? from article in Entities.Articles
             //    where
@@ -59,9 +62,9 @@ namespace Academy.Domain.DataAccess.Ef.Storages
             //            a.LastName.Contains(criteria.Author)))
             //    orderby article.PostedDate descending
             //    select article;
-            return from article in Entities.Articles
-                   where article.Title.Contains(criteria.Title)
-                   select article;
+            //return from article in Entities.Articles
+            //       where article.Title.Contains(criteria.Title)
+            //       select article;
         }
 
         private int GetUserArticlesCount(int userId)

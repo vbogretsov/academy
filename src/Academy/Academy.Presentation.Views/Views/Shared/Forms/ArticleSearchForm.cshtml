@@ -17,7 +17,7 @@
 <script type="text/javascript">
     $(function() {
         $('#@formId').submit(function () {
-            $('#articleResult').html('');
+            $('#articleResult').html('<img src="/Content/Images/ajax-loader.gif"/>');
             $.ajax({
                 type: this.method,
                 url: this.action,

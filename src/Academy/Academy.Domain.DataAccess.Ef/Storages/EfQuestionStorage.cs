@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Academy.Domain.DataAccess.Ef.Search;
 using Academy.Domain.Objects;
 using Academy.Domain.Search;
 
@@ -46,18 +47,20 @@ namespace Academy.Domain.DataAccess.Ef.Storages
 
         public IEnumerable<Question> FindQuestions(QuestionSearchCriteria criteria)
         {
-            return criteria.Disciplines != null
-                ? from question in Entities.Questions
-                where
-                    question.Title.Contains(criteria.Keyword) &&
-                    question.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
-                orderby question.PostedDate descending
-                select question
-                : from question in Entities.Questions
-                where
-                    question.Title.Contains(criteria.Keyword)
-                orderby question.PostedDate descending
-                select question;
+            var filter = new QuestionFilter(criteria);
+            return filter.Select(Entities.Questions);
+            //return criteria.Disciplines != null
+            //    ? from question in Entities.Questions
+            //    where
+            //        question.Title.Contains(criteria.Keyword) &&
+            //        question.Disciplines.Any(d => criteria.Disciplines.Contains(d.Id))
+            //    orderby question.PostedDate descending
+            //    select question
+            //    : from question in Entities.Questions
+            //    where
+            //        question.Title.Contains(criteria.Keyword)
+            //    orderby question.PostedDate descending
+            //    select question;
         }
 
         private int GetUserQuestionsCount(int userId)

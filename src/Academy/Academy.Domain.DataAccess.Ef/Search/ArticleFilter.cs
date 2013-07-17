@@ -1,47 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Academy.Domain.Objects;
 using Academy.Domain.Search;
 
 namespace Academy.Domain.DataAccess.Ef.Search
 {
-    internal class ArticleFilter
+    internal class ArticleFilter : Filter<Article>
     {
-        private delegate IEnumerable<Article> Filter(IEnumerable<Article> articles);
-
-        private readonly ICollection<Filter> filters;
-
         public ArticleFilter(ArticleSearchCriteria criteria)
         {
-            filters = new List<Filter>();
             if (!String.IsNullOrEmpty(criteria.Title))
             {
-                filters.Add(x => x.Where(a => a.Title.Contains(criteria.Title)));
+                AddFilter(x => x.Where(a => a.Title.Contains(criteria.Title)));
             }
             if (!String.IsNullOrEmpty(criteria.Description))
             {
-                filters.Add(x => x.Where(a => a.Title.Contains(criteria.Description)));
+                AddFilter(x => x.Where(a => a.Title.Contains(criteria.Description)));
             }
             if (!String.IsNullOrEmpty(criteria.Author))
             {
-                // todo: add author filter.
+                AddFilter(x =>
+                    x.Where(
+                        a => a.Authors.Any(u =>
+                            u.Email.Contains(criteria.Author) ||
+                            u.FirstName.Contains(criteria.Author) ||
+                            u.LastName.Contains(criteria.Author))));
             }
             if (criteria.Disciplines != null)
             {
-                // todo: add disciplines filter.
+                AddFilter(x => x.Where(a => a.Disciplines.Any(
+                    d => criteria.Disciplines.Contains(d.Id))));
             }
-        }
-
-        public IEnumerable<Article> Select(IEnumerable<Article> articles)
-        {
-            var result = articles;
-            foreach (var filter in filters)
-            {
-                result = filter(result);
-            }
-            return result;
         }
     }
 }

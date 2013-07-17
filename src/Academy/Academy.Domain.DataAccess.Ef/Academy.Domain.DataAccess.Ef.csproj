@@ -64,6 +64,8 @@
     <Compile Include="EfDataContext.cs" />
     <Compile Include="PageData.cs" />
     <Compile Include="Search\ArticleFilter.cs" />
+    <Compile Include="Search\Filter.cs" />
+    <Compile Include="Search\QuestionFilter.cs" />
     <Compile Include="Storages\EfAnswerNewsStorage.cs" />
     <Compile Include="Storages\EfAnswerStorage.cs" />
     <Compile Include="Storages\EfArticleNewsStorage.cs" />
