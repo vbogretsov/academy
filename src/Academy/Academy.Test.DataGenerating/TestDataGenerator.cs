@@ -69,6 +69,7 @@ namespace Academy.Test.DataGenerating
             user.FirstName = GetInfoField(userInfo, "first_name");
             user.LastName = GetInfoField(userInfo, "last_name");
             user.University = GetInfoField(userInfo, "university");
+            
             user.BirthDate = DateTime.Parse(GetInfoField(userInfo, "date"));
             user.PhotoFileName = "0.jpg";
             string passwrod = GetInfoField(userInfo, "password");

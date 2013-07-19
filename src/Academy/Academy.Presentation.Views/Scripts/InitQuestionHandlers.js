@@ -1,6 +1,6 @@
 ﻿$(function () {
-    $('button[id^="addAnswerFor"]').each(function() {
-        var questionId = $(this).attr('id').substring(12);
+    $('button[id^="showAnswersFor"]').each(function() {
+        var questionId = $(this).attr('id').substring(14);
         InitQuestionHandlers(questionId);
     });
 })

@@ -37,12 +37,6 @@ namespace Academy.Presentation.Views.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public ActionResult ContactAdministration()
-        {
-            return View();
-        }
-
         private void UploadUserPhoto(UserViewModel viewModel)
         {
             if (viewModel.PhotoFile != null &&
@@ -63,7 +57,7 @@ namespace Academy.Presentation.Views.Controllers
         {
             var notes = Service.GetUserNotes(userId, pageNumber, pageSize);
             var page = PageDataMapper.Map(notes, NoteMapper.Map);
-            page.UrlFormat = "";
+            page.UrlFormat = "#/GetUserNotes?";
             return page;
         }
     }

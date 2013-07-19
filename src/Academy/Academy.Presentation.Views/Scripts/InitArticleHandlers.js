@@ -1,6 +1,6 @@
 ﻿$(function () {
-    $('button[id^="addCommentFor"]').each(function() {
-        var articleId = $(this).attr('id').substring(13);
+    $('button[id^="showCommentsFor"]').each(function() {
+        var articleId = $(this).attr('id').substring(15);
         InitArticleHandlers(articleId);
     });
 })

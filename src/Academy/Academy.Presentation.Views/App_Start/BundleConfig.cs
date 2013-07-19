@@ -49,8 +49,14 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/flash").Include(
                 "~/Scripts/swfobject.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/AdminNavigation").Include(
-                "~/Scripts/AdminNavigation.js"));
+            bundles.Add(new ScriptBundle("~/bundles/InitCreateArticleForm").Include(
+                "~/Scripts/InitCreateArticleForm.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/InitCreateQuestionForm").Include(
+                "~/Scripts/InitCreateQuestionForm.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/InitCreateNoteForm").Include(
+                "~/Scripts/InitCreateNoteForm.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                     .Include("~/Content/bootstrap*")
