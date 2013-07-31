@@ -3,13 +3,14 @@
         $.validator.unobtrusive.parse('#askQuestion');
         if ($('#askQuestion').valid()) {
             $.ajax({
-                url: '#/Question/Ask',
+                url: this.action,
                 type: this.method,
                 data: $(this).serialize(),
                 success: function (html) {
                     $('#data').html(html);
                     $('#askQuestion').find(':input').each(function () {
-                        if ($(this).attr('type') != 'submit') {
+                        var type = $(this).attr('type');
+                        if (type != 'submit' && type != 'hidden' && type != 'checkbox') {
                             $(this).val('');
                         }
                     });

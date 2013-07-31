@@ -43,6 +43,12 @@
     width: 60px;
 }
 
+.paragraph
+{
+    text-indent: 40px;
+    white-space: pre-line;
+}
+
 .select-month
 {
     width: 115px;

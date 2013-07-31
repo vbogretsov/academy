@@ -9,7 +9,8 @@
                 success: function (result) {
                     $('#data').html(result);
                     $('#addNote').find(':input').each(function () {
-                        if ($(this).attr('type') != 'submit') {
+                        var type = $(this).attr('type');
+                        if (type != 'submit' && type != 'hidden') {
                             $(this).val('');
                         }
                     });

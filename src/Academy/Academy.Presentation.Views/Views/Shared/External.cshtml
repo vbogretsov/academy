@@ -8,22 +8,25 @@
     <meta name="viewport" content="width=device-width" />
     <title>@Localization.GetString("title.home")</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/sammy")
-    @Scripts.Render("~/bundles/AnonymousNavigation")
-    @RenderSection("headScripts", false)
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="../../Scripts/sammy.js"></script>
+    <script type="text/javascript" src="../../Scripts/MainMenu.js"></script>
+    <script type="text/javascript" src="../../Scripts/AnonymousNavigation.js"></script>
+    @RenderSection("scripts", false)
 </head>
     <body>
         <div class="wrapper">
             <div class="row">
                 <h1>
-                    <a class="title" href="/">
-                        <img src="../../Content/images/@Localization.GetString("logo")"/>
-                    </a>
+                    <img src="../../Content/images/@Localization.GetString("logo")" alt="@Localization.GetString("logo.text")"/>
                 </h1>
                 <div class="navbar">
                     <div class="navbar-inner">
                         <ul class="nav pull-right" id="mainMenu">
+                            <li class="divider-vertical">
+                                <a href="/">@Localization.GetString("home")</a>
+                            </li>
                             <li class="divider-vertical">
                                 <a href="#/SearchArticles">@Localization.GetString("mainmenu.articles")</a>
                             </li>
@@ -54,8 +57,5 @@
                 @Localization.GetString("copyright")
             </p>
         </div>
-        @Scripts.Render("~/bundles/bootstrap-dropdown")
-        @Scripts.Render("~/bundles/MainMenu")
-        @RenderSection("scripts", false)
     </body>
 </html>

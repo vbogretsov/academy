@@ -4,25 +4,25 @@
 
 @model QuestionSearchViewModel
 
-@{
+@*@{
     const string textFieldClass = "search-query full-block";
     const string textFieldStyle = "height: 30px";
-}
+}*@
 
-<div class="page-header">
+@*<div class="page-header">
     @Localization.GetString("question.search.title")
-</div>
-<div class="control-group">
+</div>*@
+@*<div class="control-group">
     @Html.TextBoxFor(m => m.Keyword, new
         {
             @class = textFieldClass,
             placeholder = Html.DisplayNameFor(m => m.Keyword),
             style = textFieldStyle
         })
-</div>
-<div class="page-header">
+</div>*@
+@*<div class="page-header">
     @Localization.GetString("select.disciplines")
-</div>
+</div>*@
 <div class="control-group scrollable-horizontal tree-editor">
     @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)
 </div>

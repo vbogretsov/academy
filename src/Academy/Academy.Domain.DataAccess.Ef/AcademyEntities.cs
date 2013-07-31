@@ -8,7 +8,7 @@ namespace Academy.Domain.DataAccess.Ef
     public class AcademyEntities : DbContext
     {
         public AcademyEntities()
-            : base("AcademyEntities")
+            : base()
         {
         }
 

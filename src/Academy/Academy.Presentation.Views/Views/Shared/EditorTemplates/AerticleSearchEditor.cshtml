@@ -9,10 +9,10 @@
     const string textFieldStyle = "height: 30px";
 }
 
-<div class="page-header">
+@*<div class="page-header">
     @Localization.GetString("article.serach.title")
-</div>
-<div class="control-group">
+</div>*@
+@*<div class="control-group">
     @Html.TextBoxFor(m => m.Title, new
         {
             @class = textFieldClass,
@@ -35,9 +35,9 @@
             placeholder = Html.DisplayNameFor(m => m.Author),
             style = textFieldStyle
         })
-</div>
+</div>*@
 <div class="page-header">
-    @Localization.GetString("question.serach.select.disciplines")
+    @Localization.GetString("select.disciplines")
 </div>
 <div class="control-group scrollable-horizontal tree-editor">
     @Html.DisciplinesTreeFor("Disciplines", (IEnumerable<DisciplineViewModel>)ViewBag.Disciplines)

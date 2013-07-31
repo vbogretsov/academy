@@ -168,6 +168,7 @@
 });
 
 function LoadView(divId, request) {
+    $(divId).html('<div style="text-align: center;"><img src="/Content/Images/ajax_loader_blue_512.gif"/></div>');
     $.ajax({
         url: request,
         cache: false,

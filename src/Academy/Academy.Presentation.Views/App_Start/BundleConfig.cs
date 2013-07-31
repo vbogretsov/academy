@@ -11,6 +11,8 @@ namespace Academy.Presentation.Views.App_Start
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-1.*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryunobtrusive").Include());
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                 "~/Scripts/jquery.unobtrusive*",
                 "~/Scripts/jquery.validate*"));

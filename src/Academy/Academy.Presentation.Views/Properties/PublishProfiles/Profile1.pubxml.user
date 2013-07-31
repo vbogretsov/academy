@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2013-07-20T11:36:33.3434728+03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/AcademyDb.sdf">
+      <publishTime>07/31/2013 23:33:42</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.DataAccess.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.DataAccess.Ef.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.Interface.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.Interface.Facade.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.Objects.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.Search.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Domain.Services.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Presentation.ViewModels.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Academy.Presentation.Views.dll">
+      <publishTime>07/31/2013 23:43:38</publishTime>
+    </File>
+    <File Include="bin/Academy.Resources.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Security.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Security.Simple.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Test.DataGenerating.dll">
+      <publishTime>07/31/2013 23:43:38</publishTime>
+    </File>
+    <File Include="bin/Academy.Utils.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Utils.Html.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Validation.dll">
+      <publishTime>07/31/2013 23:43:36</publishTime>
+    </File>
+    <File Include="bin/Academy.Web.Services.dll">
+      <publishTime>07/31/2013 23:43:37</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/App_Data/AcademyDb.sdf">
+      <publishTime>07/31/2013 23:33:42</publishTime>
+    </File>
+    <File Include="bin/BeginCollectionItem.dll">
+      <publishTime>06/09/2013 12:57:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/13/2013 18:27:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ObjectBuilder2.dll">
+      <publishTime>08/05/2008 14:37:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>08/05/2008 14:37:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.dll">
+      <publishTime>06/08/2013 20:18:29</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/20/2013 20:17:08</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>10/07/2012 20:52:12</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>10/07/2012 20:52:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>10/07/2012 20:53:02</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>10/07/2012 20:53:02</publishTime>
+    </File>
+    <File Include="Content/bootstrap-fileupload.css">
+      <publishTime>05/06/2013 20:03:02</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>06/26/2013 22:35:21</publishTime>
+    </File>
+    <File Include="Content/Images/3eng.swf">
+      <publishTime>06/25/2013 23:10:55</publishTime>
+    </File>
+    <File Include="Content/Images/3rus.swf">
+      <publishTime>06/25/2013 22:42:42</publishTime>
+    </File>
+    <File Include="Content/Images/ajax-loader.gif">
+      <publishTime>07/17/2013 23:17:16</publishTime>
+    </File>
+    <File Include="Content/Images/ajax_loader_blue_512.gif">
+      <publishTime>07/21/2013 15:12:25</publishTime>
+    </File>
+    <File Include="Content/Images/banner.static.eng.jpg">
+      <publishTime>07/30/2013 21:28:43</publishTime>
+    </File>
+    <File Include="Content/Images/banner.static.rus.jpg">
+      <publishTime>07/30/2013 21:28:43</publishTime>
+    </File>
+    <File Include="Content/Images/eng.gif">
+      <publishTime>07/31/2013 23:24:23</publishTime>
+    </File>
+    <File Include="Content/Images/glyphicons-halflings-white.png">
+      <publishTime>06/15/2013 14:27:43</publishTime>
+    </File>
+    <File Include="Content/Images/glyphicons-halflings.png">
+      <publishTime>06/15/2013 14:27:43</publishTime>
+    </File>
+    <File Include="Content/Images/loading.gif">
+      <publishTime>07/17/2013 23:17:16</publishTime>
+    </File>
+    <File Include="Content/Images/logo_eng.png">
+      <publishTime>06/25/2013 22:21:13</publishTime>
+    </File>
+    <File Include="Content/Images/logo_rus.png">
+      <publishTime>06/25/2013 22:23:49</publishTime>
+    </File>
+    <File Include="Content/Images/rus.gif">
+      <publishTime>07/31/2013 23:24:23</publishTime>
+    </File>
+    <File Include="Content/Images/tree-minus.png">
+      <publishTime>06/29/2013 12:17:12</publishTime>
+    </File>
+    <File Include="Content/Images/tree-plus.png">
+      <publishTime>06/29/2013 12:17:12</publishTime>
+    </File>
+    <File Include="Content/Images/uploadify.swf">
+      <publishTime>06/29/2013 12:17:12</publishTime>
+    </File>
+    <File Include="Content/site.css">
+      <publishTime>07/29/2013 22:46:15</publishTime>
+    </File>
+    <File Include="Content/uploadify.css">
+      <publishTime>06/29/2013 12:17:12</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/17/2013 23:59:40</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>06/15/2013 14:31:30</publishTime>
+    </File>
+    <File Include="Resources/Users/0.jpg">
+      <publishTime>07/14/2013 23:36:46</publishTime>
+    </File>
+    <File Include="Scripts/AnonymousNavigation.js">
+      <publishTime>07/21/2013 15:22:06</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-dropdown.js">
+      <publishTime>05/06/2013 20:03:02</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-fileupload.js">
+      <publishTime>05/06/2013 20:03:02</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="Scripts/InitAnswerHandlers.js">
+      <publishTime>07/08/2013 22:55:06</publishTime>
+    </File>
+    <File Include="Scripts/InitArticleHandlers.js">
+      <publishTime>07/20/2013 11:36:33</publishTime>
+    </File>
+    <File Include="Scripts/InitCommentHandlers.js">
+      <publishTime>07/08/2013 22:54:08</publishTime>
+    </File>
+    <File Include="Scripts/InitCreateAnswerForm.js">
+      <publishTime>07/21/2013 13:37:18</publishTime>
+    </File>
+    <File Include="Scripts/InitCreateArticleForm.js">
+      <publishTime>07/21/2013 16:10:31</publishTime>
+    </File>
+    <File Include="Scripts/InitCreateCommentForm.js">
+      <publishTime>07/21/2013 13:17:02</publishTime>
+    </File>
+    <File Include="Scripts/InitCreateNoteForm.js">
+      <publishTime>07/21/2013 14:03:32</publishTime>
+    </File>
+    <File Include="Scripts/InitCreateQuestionForm.js">
+      <publishTime>07/21/2013 14:19:07</publishTime>
+    </File>
+    <File Include="Scripts/InitNoteHandlers.js">
+      <publishTime>07/21/2013 13:46:22</publishTime>
+    </File>
+    <File Include="Scripts/InitQuestionHandlers.js">
+      <publishTime>07/20/2013 11:36:33</publishTime>
+    </File>
+    <File Include="Scripts/InitSingleAnswerHandlers.js">
+      <publishTime>07/16/2013 17:06:28</publishTime>
+    </File>
+    <File Include="Scripts/InitSingleArticleHandlers.js">
+      <publishTime>07/21/2013 13:16:55</publishTime>
+    </File>
+    <File Include="Scripts/InitSingleCommentHandlers.js">
+      <publishTime>07/07/2013 14:38:02</publishTime>
+    </File>
+    <File Include="Scripts/InitSingleQuestionHandlers.js">
+      <publishTime>07/21/2013 13:37:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>07/29/2013 20:51:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>07/29/2013 20:51:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>06/08/2013 20:18:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>06/08/2013 20:18:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>07/20/2013 21:56:11</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.uploadify.js">
+      <publishTime>06/15/2013 18:07:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>06/08/2013 21:02:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/06/2013 20:03:03</publishTime>
+    </File>
+    <File Include="Scripts/MainMenu.js">
+      <publishTime>06/27/2013 22:18:34</publishTime>
+    </File>
+    <File Include="Scripts/sammy.js">
+      <publishTime>06/17/2013 18:05:21</publishTime>
+    </File>
+    <File Include="Scripts/SideMenu.js">
+      <publishTime>06/27/2013 22:27:53</publishTime>
+    </File>
+    <File Include="Scripts/swfobject.js">
+      <publishTime>11/06/2009 15:14:00</publishTime>
+    </File>
+    <File Include="Scripts/tree.js">
+      <publishTime>07/21/2013 15:12:39</publishTime>
+    </File>
+    <File Include="Scripts/UserNavigation.js">
+      <publishTime>07/21/2013 15:22:09</publishTime>
+    </File>
+    <File Include="Views/Answer/AnswersPageView.cshtml">
+      <publishTime>07/07/2013 13:38:59</publishTime>
+    </File>
+    <File Include="Views/Answer/GetUserAnswers.cshtml">
+      <publishTime>06/07/2013 19:09:41</publishTime>
+    </File>
+    <File Include="Views/Answer/SingleAnswersPageView.cshtml">
+      <publishTime>07/07/2013 15:14:04</publishTime>
+    </File>
+    <File Include="Views/Article/ArticlesPageView.cshtml">
+      <publishTime>07/07/2013 14:45:56</publishTime>
+    </File>
+    <File Include="Views/Article/GetUserArticles.cshtml">
+      <publishTime>07/16/2013 10:12:01</publishTime>
+    </File>
+    <File Include="Views/Comment/CommentsPageView.cshtml">
+      <publishTime>07/07/2013 17:21:11</publishTime>
+    </File>
+    <File Include="Views/Comment/SingleCommentsPageView.cshtml">
+      <publishTime>07/07/2013 15:10:06</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>07/29/2013 22:44:05</publishTime>
+    </File>
+    <File Include="Views/Home/Contacts.cshtml">
+      <publishTime>07/16/2013 12:39:48</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>07/31/2013 23:28:51</publishTime>
+    </File>
+    <File Include="Views/Note/NotesPageView.cshtml">
+      <publishTime>07/21/2013 13:47:02</publishTime>
+    </File>
+    <File Include="Views/Note/UserNotesView.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Notification/AnswerNewsPageView.cshtml">
+      <publishTime>07/07/2013 15:19:01</publishTime>
+    </File>
+    <File Include="Views/Notification/ArticleNewsPageView.cshtml">
+      <publishTime>07/07/2013 15:14:56</publishTime>
+    </File>
+    <File Include="Views/Notification/CommentNewsPageView.cshtml">
+      <publishTime>07/07/2013 15:20:26</publishTime>
+    </File>
+    <File Include="Views/Notification/QuestionNewsPageView.cshtml">
+      <publishTime>07/07/2013 15:16:28</publishTime>
+    </File>
+    <File Include="Views/Profile/Edit.cshtml">
+      <publishTime>06/29/2013 12:17:12</publishTime>
+    </File>
+    <File Include="Views/Profile/Index.cshtml">
+      <publishTime>07/21/2013 12:01:02</publishTime>
+    </File>
+    <File Include="Views/Question/GetUserQuestions.cshtml">
+      <publishTime>07/16/2013 10:14:19</publishTime>
+    </File>
+    <File Include="Views/Question/QuestionsPageView.cshtml">
+      <publishTime>07/16/2013 10:14:23</publishTime>
+    </File>
+    <File Include="Views/Search/ArticleSearchResultView.cshtml">
+      <publishTime>07/16/2013 12:58:26</publishTime>
+    </File>
+    <File Include="Views/Search/QuestionSearchResultView.cshtml">
+      <publishTime>07/16/2013 13:07:13</publishTime>
+    </File>
+    <File Include="Views/Search/SearchArticles.cshtml">
+      <publishTime>07/07/2013 17:14:43</publishTime>
+    </File>
+    <File Include="Views/Search/SearchQuestions.cshtml">
+      <publishTime>07/07/2013 17:15:20</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/AerticleSearchEditor.cshtml">
+      <publishTime>07/30/2013 21:18:09</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateAnswerEditor.cshtml">
+      <publishTime>06/24/2013 23:21:05</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateArticleEditor.cshtml">
+      <publishTime>07/21/2013 14:30:27</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateAuthorEditor.cshtml">
+      <publishTime>06/17/2013 18:57:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateCommentEditor.cshtml">
+      <publishTime>06/24/2013 23:21:43</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateNoteEditor.cshtml">
+      <publishTime>07/14/2013 19:52:54</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CreateQuestionEditor.cshtml">
+      <publishTime>07/16/2013 09:31:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EditDisciplinesEditor.cshtml">
+      <publishTime>07/31/2013 23:18:51</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EditUserEditor.cshtml">
+      <publishTime>07/16/2013 11:38:38</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/LoginEditor.cshtml">
+      <publishTime>07/16/2013 15:55:49</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/QuestionSearchEditor.cshtml">
+      <publishTime>07/31/2013 23:06:04</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/RegistrationEditor.cshtml">
+      <publishTime>07/16/2013 16:31:19</publishTime>
+    </File>
+    <File Include="Views/Shared/External.cshtml">
+      <publishTime>07/31/2013 23:30:29</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/AddAnswerForm.cshtml">
+      <publishTime>07/21/2013 14:22:59</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/AddNoteForm.cshtml">
+      <publishTime>07/21/2013 12:04:01</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/ArticleSearchForm.cshtml">
+      <publishTime>07/30/2013 21:20:22</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/AskQuestionForm.cshtml">
+      <publishTime>07/21/2013 12:04:38</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/CommentArticleForm.cshtml">
+      <publishTime>07/21/2013 14:23:21</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/EditUserForm.cshtml">
+      <publishTime>07/16/2013 09:47:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/PublishArticleForm.cshtml">
+      <publishTime>07/21/2013 14:23:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/QuestionSearchForm.cshtml">
+      <publishTime>07/30/2013 21:20:32</publishTime>
+    </File>
+    <File Include="Views/Shared/Forms/SelectDisciplinesForm.cshtml">
+      <publishTime>07/21/2013 14:23:40</publishTime>
+    </File>
+    <File Include="Views/Shared/Internal.cshtml">
+      <publishTime>07/30/2013 21:31:52</publishTime>
+    </File>
+    <File Include="Views/Shared/Languages.cshtml">
+      <publishTime>06/09/2013 10:19:26</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/AnswerNewsView.cshtml">
+      <publishTime>06/23/2013 10:06:33</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/AnswerView.cshtml">
+      <publishTime>07/16/2013 09:53:54</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/ArticleNewsView.cshtml">
+      <publishTime>03/07/2013 13:13:13</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/ArticleView.cshtml">
+      <publishTime>07/16/2013 10:02:19</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/CommentNewsView.cshtml">
+      <publishTime>07/16/2013 09:58:14</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/CommentView.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/DisciplinesView.cshtml">
+      <publishTime>07/16/2013 16:23:57</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/NoteView.cshtml">
+      <publishTime>07/21/2013 13:46:36</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/Paging/PageView.cshtml">
+      <publishTime>07/07/2013 17:23:21</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/PostView.cshtml">
+      <publishTime>07/16/2013 10:03:12</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/QuestionNewsView.cshtml">
+      <publishTime>06/22/2013 14:04:42</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/QuestionView.cshtml">
+      <publishTime>07/16/2013 10:07:21</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/SingleAnswerView.cshtml">
+      <publishTime>07/16/2013 17:08:21</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/SingleCommentView.cshtml">
+      <publishTime>07/16/2013 17:40:37</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/SinglePostView.cshtml">
+      <publishTime>07/16/2013 10:09:52</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/TitledPostView.cshtml">
+      <publishTime>07/16/2013 10:10:17</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/UserName.cshtml">
+      <publishTime>06/23/2013 12:58:32</publishTime>
+    </File>
+    <File Include="Views/Shared/RenderTemplates/UserView.cshtml">
+      <publishTime>07/14/2013 23:12:32</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>06/09/2013 12:57:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/31/2013 23:44:07</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

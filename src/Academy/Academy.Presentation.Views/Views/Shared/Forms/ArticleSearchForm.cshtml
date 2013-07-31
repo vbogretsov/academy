@@ -4,7 +4,7 @@
 @{
     const string formId = "articleSearch";
     var formSettings = new {id = formId};
-    var findText = @Localization.GetString("find");
+    var findText = @Localization.GetString("find.articles");
 }
 
 @using (Html.BeginForm("FindArticles", "Search", FormMethod.Post, formSettings))
@@ -17,7 +17,7 @@
 <script type="text/javascript">
     $(function() {
         $('#@formId').submit(function () {
-            $('#articleResult').html('<img src="/Content/Images/ajax-loader.gif"/>');
+            $('#articleResult').html('<div style="text-align: center;"><img src="/Content/Images/ajax_loader_blue_512.gif"/></div>');
             $.ajax({
                 type: this.method,
                 url: this.action,

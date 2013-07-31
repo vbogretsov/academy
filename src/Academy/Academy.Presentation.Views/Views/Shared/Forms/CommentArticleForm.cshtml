@@ -4,7 +4,6 @@
 
 @{
     var postCommentFormId = String.Format("commentFormFor{0}", Model.ArticleId);
-    var commentsId = String.Format("commentsFor{0}", Model.ArticleId);
     var commentText = Localization.GetString("comment");
 }
 
@@ -13,24 +12,4 @@
     Html.RenderPartial("EditorTemplates/CreateCommentEditor", Model);
     <input type="submit" class="btn btn-primary pull-right" value="@commentText"/>
 }
-
-<script type="text/javascript">
-    $(function () {
-        $('#@postCommentFormId').submit(function () {
-            $.validator.unobtrusive.parse($('#@postCommentFormId'));
-            if ($('#@postCommentFormId').valid()) {
-                $.ajax({
-                    type: this.method,
-                    url: this.action,
-                    data: $(this).serialize(),
-                    success: function (result) {
-                        $('#@commentsId').html(result);
-                        $('#@postCommentFormId')[0].reset();
-                    }
-                });
-            }
-            return false;
-        });
-    });
-</script>
 

@@ -2,7 +2,6 @@
 @model Academy.Presentation.ViewModels.ArticleViewModel
 
 @{
-    const string formId = "publishArticle";
     var formSettings = new
         {
             id = "publishArticle",
@@ -18,4 +17,4 @@
     @Html.EditorForModel("CreateArticleEditor")
 }
 
-@Scripts.Render("~/bundles/InitCreateArticleForm")
+<script type="text/javascript" src="../../../Scripts/InitCreateArticleForm.js"></script>

@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>@Localization.GetString("title.profile")</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/sammy")
-    @Scripts.Render("~/bundles/UserNavigation")
     @RenderSection("styles", false)
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/sammy.js"></script>
+    <script type="text/javascript" src="../../Scripts/UserNavigation.js"></script>
+    <script type="text/javascript" src="../../Scripts/MainMenu.js"></script>
+    <script type="text/javascript" src="../../Scripts/SideMenu.js"></script>
+    @RenderSection("scripts", false)
 </head>
 <body>
     <div class="wrapper">
@@ -49,8 +52,5 @@
             @Localization.GetString("copyright")
         </p>
     </div>
-    @Scripts.Render("~/bundles/MainMenu")
-    @Scripts.Render("~/bundles/SideMenu")
-    @RenderSection("scripts", false)
 </body>
 </html>

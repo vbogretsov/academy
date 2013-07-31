@@ -4,11 +4,16 @@
 @{
     Layout = "../Shared/RenderTemplates/Paging/PageView.cshtml";
 }
-
+    
 @section PageData
 {
     @foreach (var note in Model.Items)
     {
         Html.RenderPartial("RenderTemplates/NoteView", note);
     }
+}
+
+@section Scripts
+{
+    <script type="text/javascript" src="../../Scripts/InitNoteHandlers.js"></script>
 }

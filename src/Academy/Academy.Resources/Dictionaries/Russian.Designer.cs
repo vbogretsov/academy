@@ -70,7 +70,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Социальная сеть для ученых «Академия» создана в 2013 году..
+        ///   Looks up a localized string similar to      Социальная сеть для ученых «Академия» создана в 2013 году..
         /// </summary>
         public static string about_p1 {
             get {
@@ -79,7 +79,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Нашей основной целью является создание пространства, которое бы объединяло работы будущих и настоящих ученых всего мира, давало возможность пользования публикациями..
+        ///   Looks up a localized string similar to      Нашей основной целью является создание пространства, которое бы объединяло работы будущих и настоящих ученых всего мира, давало возможность пользования публикациями..
         /// </summary>
         public static string about_p2 {
             get {
@@ -88,7 +88,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to В технические возможности сайта входят загрузка, скачивание и комментирование публикаций, создание своего профиля с личной информацией, конфиденциальность которой гарантируется. Вы также можете задать любой интересующий вас вопрос и получить на него ответ, либо оставить ответ самому. Оставляйте заметки в собственном профиле, чтобы помнить важные мероприятия!.
+        ///   Looks up a localized string similar to      В технические возможности сайта входят загрузка, скачивание и комментирование публикаций, создание своего профиля с личной информацией, конфиденциальность которой гарантируется. Вы также можете задать любой интересующий вас вопрос и получить на него ответ, либо оставить ответ самому. Оставляйте заметки в собственном профиле, чтобы помнить важные мероприятия!.
         /// </summary>
         public static string about_p3 {
             get {
@@ -97,7 +97,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Мы хотели организовать доступный из любой точки мира ресурс, который приносил бы пользу всем желающим получить достоверную информацию из проверенных источников..
+        ///   Looks up a localized string similar to      Мы хотели организовать доступный из любой точки мира ресурс, который приносил бы пользу всем желающим получить достоверную информацию из проверенных источников..
         /// </summary>
         public static string about_p4 {
             get {
@@ -106,7 +106,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Интернет-сайт «Академия» специфичен. Нашей целевой аудиторией являются люди с высшим образованием и ученой степенью (учеными степенями), а также аспиранты, магистры — и все те, кто в будущем стремится попасть в социальную категорию «ученых». Зарегистрировавшись здесь, вы всегда сможете найти нужную вам информацию в сферах Математики, Физики, Биологии, а такжепросмотреть вопросы/ ответы коллег и людей по интересам..
+        ///   Looks up a localized string similar to      Интернет-сайт «Академия» специфичен. Нашей целевой аудиторией являются люди с высшим образованием и ученой степенью (учеными степенями), а также аспиранты, магистры — и все те, кто в будущем стремится попасть в социальную категорию «ученых». Зарегистрировавшись здесь, вы всегда сможете найти нужную вам информацию в сферах Математики, Физики, Биологии, а также просмотреть вопросы/ ответы коллег и людей по интересам..
         /// </summary>
         public static string about_p5 {
             get {
@@ -115,7 +115,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Вы можете воспользоваться сменой языков, чтобы просматривать «Академию» на удобном вам языке. Загрузите личное фото, чтобы вас могли узнать читатели. Найти необходимый вам материал, воспользовавшись поиском. Комментировать публикации и таким образом облегчать поиск остальным, подписавшимся на данную тематику. Оставляйте интересующие вас дисциплины и получайте обновления по всему происходящему в них!.
+        ///   Looks up a localized string similar to      Вы можете воспользоваться сменой языков, чтобы просматривать «Академию» на удобном вам языке. Загрузите личное фото, чтобы вас могли узнать читатели. Найти необходимый вам материал, воспользовавшись поиском. Комментировать публикации и таким образом облегчать поиск остальным, подписавшимся на данную тематику. Оставляйте интересующие вас дисциплины и получайте обновления по всему происходящему в них!.
         /// </summary>
         public static string about_p6 {
             get {
@@ -124,7 +124,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Для наилучшей работы сайта воспользуйтесь формой обратной связи в разделе Контакты. Мы будем рады любым предложениям и отзывам, ответим на все вопросы..
+        ///   Looks up a localized string similar to      Для связи с нами воспользуйтесь информацией из раздела Контакты. Мы будем рады любым предложениям и отзывам, ответим на все вопросы..
         /// </summary>
         public static string about_p7 {
             get {
@@ -133,7 +133,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Как и любой начинающий проект, мы собираемся расти, предоставляя все новые и новые возможности пользователям. Спасибо, что выбрали нас!.
+        ///   Looks up a localized string similar to      Как и любой начинающий проект, мы собираемся расти, предоставляя все новые и новые возможности пользователям. Спасибо, что выбрали нас!.
         /// </summary>
         public static string about_p8 {
             get {
@@ -142,7 +142,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Социальная сеть для ученых «Академия». Всегда на пульсе науки! © 2013.
+        ///   Looks up a localized string similar to     Социальная сеть для ученых «Академия». Всегда на пульсе науки! © 2013.
         /// </summary>
         public static string about_p9 {
             get {
@@ -192,6 +192,15 @@ namespace Academy.Validation.Dictionaries {
         public static string anatomy {
             get {
                 return ResourceManager.GetString("anatomy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rus.gif.
+        /// </summary>
+        public static string animation {
+            get {
+                return ResourceManager.GetString("animation", resourceCulture);
             }
         }
         
@@ -493,6 +502,15 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to banner.static.rus.jpg.
+        /// </summary>
+        public static string banner_static {
+            get {
+                return ResourceManager.GetString("banner.static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Биоакустика.
         /// </summary>
         public static string bioacoustics {
@@ -534,6 +552,15 @@ namespace Academy.Validation.Dictionaries {
         public static string biophysics {
             get {
                 return ResourceManager.GetString("biophysics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Выберете дисциплины.
+        /// </summary>
+        public static string btn_select_disciplines {
+            get {
+                return ResourceManager.GetString("btn.select.disciplines", resourceCulture);
             }
         }
         
@@ -637,7 +664,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Уважаемы пользователи!.
+        ///   Looks up a localized string similar to Уважаемые пользователи!.
         /// </summary>
         public static string contacts_p1 {
             get {
@@ -844,6 +871,24 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Найти статьи.
+        /// </summary>
+        public static string find_articles {
+            get {
+                return ResourceManager.GetString("find.articles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Найти вопросы.
+        /// </summary>
+        public static string find_questions {
+            get {
+                return ResourceManager.GetString("find.questions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Кщнечные поля.
         /// </summary>
         public static string finite_fields {
@@ -912,6 +957,15 @@ namespace Academy.Validation.Dictionaries {
         public static string group_theory {
             get {
                 return ResourceManager.GetString("group.theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Главная.
+        /// </summary>
+        public static string home {
+            get {
+                return ResourceManager.GetString("home", resourceCulture);
             }
         }
         
@@ -1110,6 +1164,15 @@ namespace Academy.Validation.Dictionaries {
         public static string logo {
             get {
                 return ResourceManager.GetString("logo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Лого.
+        /// </summary>
+        public static string logo_text {
+            get {
+                return ResourceManager.GetString("logo.text", resourceCulture);
             }
         }
         
@@ -1978,7 +2041,7 @@ namespace Academy.Validation.Dictionaries {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Выбрать дисциплины.
+        ///   Looks up a localized string similar to Выбирете интересующие Вас дисциплины..
         /// </summary>
         public static string select_disciplines {
             get {

@@ -42,9 +42,17 @@
     <Reference Include="BeginCollectionItem">
       <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Debug\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\temp\academy\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -155,11 +163,16 @@
     <Content Include="Content\Images\3eng.swf" />
     <Content Include="Content\Images\3rus.swf" />
     <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\ajax_loader_blue_512.gif" />
+    <Content Include="Content\Images\banner.static.eng.jpg" />
+    <Content Include="Content\Images\banner.static.rus.jpg" />
+    <Content Include="Content\Images\eng.gif" />
     <Content Include="Content\Images\glyphicons-halflings-white.png" />
     <Content Include="Content\Images\glyphicons-halflings.png" />
     <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo_eng.png" />
     <Content Include="Content\Images\logo_rus.png" />
+    <Content Include="Content\Images\rus.gif" />
     <Content Include="Content\uploadify.css" />
     <Content Include="Content\Images\uploadify.swf" />
     <Content Include="Content\Images\tree-minus.png" />
@@ -172,7 +185,9 @@
     <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-fileupload.js" />
     <Content Include="Scripts\bootstrap.js" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\rjeniovaacademy - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\rjeniovaacademy - Web Deploy.pubxml" />
     <Content Include="Scripts\InitAnswerHandlers.js" />
     <Content Include="Scripts\InitArticleHandlers.js" />
     <Content Include="Scripts\InitCreateAnswerForm.js" />
@@ -180,14 +195,16 @@
     <Content Include="Scripts\InitCreateCommentForm.js" />
     <Content Include="Scripts\InitCreateNoteForm.js" />
     <Content Include="Scripts\InitCreateQuestionForm.js" />
+    <Content Include="Scripts\InitNoteHandlers.js" />
     <Content Include="Scripts\InitSingleArticleHandlers.js" />
     <Content Include="Scripts\InitCommentHandlers.js" />
     <Content Include="Scripts\InitQuestionHandlers.js" />
     <Content Include="Scripts\InitSingleAnswerHandlers.js" />
     <Content Include="Scripts\InitSingleCommentHandlers.js" />
     <Content Include="Scripts\InitSingleQuestionHandlers.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -381,7 +398,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>45017</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7010/</IISUrl>
+          <IISUrl>http://localhost:7000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -121,31 +121,31 @@
     <value>About</value>
   </data>
   <data name="about.p1" xml:space="preserve">
-    <value>Social network for scientists "Academy" was established in 2013.</value>
+    <value>     Social network for scientists &lt;b&gt;"Academy"&lt;/b&gt; was established in 2013.</value>
   </data>
   <data name="about.p2" xml:space="preserve">
-    <value>Our primary goal is to create a space that would combine the work of new and expectant scientists around the world, made it possible to use publications.</value>
+    <value>     Our primary goal is to create a space that would combine the work of new and expectant scientists around the world, made it possible to use publications.</value>
   </data>
   <data name="about.p3" xml:space="preserve">
-    <value>The technical features of the site include upload, download and comment on publications, create your profile with personal information, the confidentiality of which is guaranteed. You can also ask any question and get an answer, or leave a response yourself. Leave a note in your own profile to remember important events!</value>
+    <value>     The technical features of the site include upload, download and comment on publications, create your profile with personal information, the confidentiality of which is guaranteed. You can also ask any question and get an answer, or leave a response yourself. Leave a note in your own profile to remember important events!</value>
   </data>
   <data name="about.p4" xml:space="preserve">
-    <value>We wanted to create a resource accessible from anywhere in the world which would bring benefits to all, wishing to obtain reliable information from trusted sources.</value>
+    <value>     We wanted to create a resource accessible from anywhere in the world which would bring benefits to all, wishing to obtain reliable information from trusted sources.</value>
   </data>
   <data name="about.p5" xml:space="preserve">
-    <value>Internet site "Academy" is specific. Our target audience is people with higher education and advanced degree (graduate degrees), as well as graduate students, masters - and all those who wants in the future to go into the social category of "scientists." By registering here, you will always be able to find the information you need in the fields of Mathematics, Physics, Biology, and view questions / answers of colleagues and people of interest.</value>
+    <value>     Internet site "Academy" is specific. Our target audience is people with higher education and advanced degree (graduate degrees), as well as graduate students, masters - and all those who wants in the future to go into the social category of "scientists." By registering here, you will always be able to find the information you need in the fields of Mathematics, Physics, Biology, and view questions / answers of colleagues and people of interest.</value>
   </data>
   <data name="about.p6" xml:space="preserve">
-    <value>You can use the change of language in order to view the "Academy" in the language of your choice conveniently. Upload a personal photo. Find your desired material by searching. Comment publication and thus facilitate the search for the rest of those who subscribe to this topic. Leave interesting discipline and get updates on everything going on in them! For best performance, use the website feedback form in the Contact section. We always welcome suggestions and feedback, we will answer all the questions.</value>
+    <value>     You can use the change of language in order to view the "Academy" in the language of your choice conveniently. Upload a personal photo. Find your desired material by searching. Comment publication and thus facilitate the search for the rest of those who subscribe to this topic. Leave interesting discipline and get updates on everything going on in them! For best performance, use the website feedback form in the Contact section. We always welcome suggestions and feedback, we will answer all the questions.</value>
   </data>
   <data name="about.p7" xml:space="preserve">
-    <value>Like any aspiring project, we are going to grow, providing more and more functionality to users.</value>
+    <value>     Like any aspiring project, we are going to grow, providing more and more functionality to users.</value>
   </data>
   <data name="about.p8" xml:space="preserve">
-    <value>Thank you for choosing us!</value>
+    <value>     Thank you for choosing us!</value>
   </data>
   <data name="about.p9" xml:space="preserve">
-    <value>Social network for scientists "Academy". Always on the pulse of science! © 2013</value>
+    <value>     Social network for scientists "Academy". Always on the pulse of science! © 2013</value>
   </data>
   <data name="add.new.article" xml:space="preserve">
     <value>Add new article</value>
@@ -761,7 +761,7 @@
     <value>Select</value>
   </data>
   <data name="select.disciplines" xml:space="preserve">
-    <value>Select disciplines</value>
+    <value>Choose the disciplines you are interested in.</value>
   </data>
   <data name="select.image" xml:space="preserve">
     <value>Select image</value>
@@ -837,5 +837,29 @@
   </data>
   <data name="title.profile" xml:space="preserve">
     <value>Academy: Profile</value>
+  </data>
+  <data name="banner.static" xml:space="preserve">
+    <value>banner.static.eng.jpg</value>
+  </data>
+  <data name="find.articles" xml:space="preserve">
+    <value>Find articles</value>
+  </data>
+  <data name="find.questions" xml:space="preserve">
+    <value>Find questions</value>
+  </data>
+  <data name="animation" xml:space="preserve">
+    <value>eng.gif</value>
+  </data>
+  <data name="btn.select.disciplines" xml:space="preserve">
+    <value>Select disciplines</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="logo.text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Logo</value>
   </data>
 </root>

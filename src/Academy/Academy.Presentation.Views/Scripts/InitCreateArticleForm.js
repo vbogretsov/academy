@@ -3,13 +3,14 @@
         $.validator.unobtrusive.parse('#publishArticle');
         if ($('#publishArticle').valid()) {
             $.ajax({
-                url: '#/Article/Publish',
+                url: this.action,
                 type: this.method,
                 data: $(this).serialize(),
                 success: function (result) {
                     $('#data').html(result);
                     $('#publishArticle').find(':input').each(function () {
-                        if ($(this).attr('type') != 'submit') {
+                        var type = $(this).attr('type');
+                        if (type != 'submit' && type != 'hidden' && type != 'checkbox') {
                             $(this).val('');
                         }
                     });
